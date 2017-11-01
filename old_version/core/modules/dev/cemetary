@@ -1,0 +1,429 @@
+const Trello = require("node-trello");
+
+const config = require('../config.js');
+const tokens = require('../tokens.js');
+const utils = require('../utils.js');
+const cmdName = 'suggestion';
+var trll = new Trello(tokens.trello_key, tokens.trello_token);
+
+exports.run = function (message, lang) {
+  var embed = utils.generateDekuDiv(message);
+  var args = message.content.match(utils.expression)[2].split(' ');
+  if (args[0]) {
+    var newCard = {
+      name: args.join(' '),
+      desc: 'Suggested by **' + message.author.tag + '**',
+      idList: '59c15e4d8ca40e9d33954b5b',
+      pos: 'top',
+      idLabels: '59c15dc71314a33999b052e7'
+    };
+    trll.post("/1/cards/", newCard, function (err, response) {
+      if (err) {
+        embed.setColor(config.colors.error);
+        embed.setTitle(lang.commands[cmdName].trello_error);
+        embed.setDescription(`${lang.commands[cmdName].trello_error_desc}\n\n${lang.usage} \`${lang.commands[cmdName]._usage}\`\n${lang.example} \`${lang.commands[cmdName]._example}\``);
+        message.channel.send({embed});
+      } else {
+        embed.setColor(config.colors.success);
+        embed.setTitle(lang.commands[cmdName].card_add_success);
+        embed.setDescription(response.shortUrl);
+        message.channel.send({embed});
+      }
+    });
+  } else {
+    embed.setColor(config.colors.error);
+    embed.setTitle(lang.commands[cmdName].no_suggestion);
+    embed.setDescription(`\u200b\n${lang.usage} \`${lang.commands[cmdName]. _usage}\`\n${lang.example} \`${lang.commands[cmdName]._example}\``);
+    message.channel.send({embed});
+  }
+};
+
+
+const arraySort = require('array-sort')
+const fs = require("fs");
+const gear = require('../../gearbox.js')
+
+var paths = require("../../paths.js");
+var locale = require('../../../utils/multilang_b');
+var mm = locale.getT();
+
+var cmd = 'profile';
+
+var init = async function (message, userDB, DB) {
+
+
+
+      var start = Date.now();
+
+    try{
+    var Server = message.guild;
+    var Channel = message.channel;
+    var Author = message.author;
+    if (Author.bot) return;
+    var Member = Server.member(Author);
+    var Target = message.mentions.users.first() || Author;
+    var MSG = message.content;
+    var bot = message.botUser
+    var args = MSG.split(' ').slice(1)[0]
+
+
+    var tint = (args || "0000FF")
+    var LANG = message.lang;
+
+    var nope = mm('CMD.noDM', {
+        lngs: LANG
+    });
+    var gener = mm('builds.genProf', {
+        lngs: LANG
+    });
+    var inf = mm('dict.infinite', {
+        lngs: LANG
+    });
+
+    //-------MAGIC----------------
+    if (message.channel.type === 'dm') {
+        message.reply(nope)
+        return
+    }
+    //CHECK PROFS LV ETC ---
+
+   message.reply(gener + "\n `Start...`").then(generatorMSG => {
+
+
+
+    let img = Target.defaultAvatarURL.substr(0, Target.defaultAvatarURL.length - 10).replace(/gif/g,"png")
+    if (Target.avatarURL) {
+        img = Target.avatarURL.substr(0, Target.avatarURL.length - 10).replace(/gif/g,"png");
+    }
+
+    let tgtData = Target.dDATA.modules;
+
+ //   let adm = gear.checkAdm(message, Target).toLowerCase()
+
+try{
+    generatorMSG.edit(gener+"\n `Normalising Info`").catch(e=> {let a = (new Error); gear.errLog(e,__filename,a.stack.toString())})
+gear.superDefine(Target,"ID",Target.id)
+
+        var ranked = []
+        userDB.forEach(i=>{
+            var rankItem = {}
+            rankItem.exp = i.modules.exp
+            rankItem.id = i.ID
+            rankItem.name = i.name
+            ranked.push(rankItem)
+
+        })
+
+        arraySort(ranked, 'exp', {
+            reverse: true
+        })
+
+       var Sranked = []
+        userDB.forEach(i=>{
+            var SrankItem = {}
+            if (Server.members.get(i.ID)==undefined) return;
+            SrankItem.exp = i.modules.exp
+            SrankItem.id = i.ID
+            SrankItem.name = i.name
+            Sranked.push(SrankItem)
+
+        })
+
+        arraySort(Sranked, 'exp', {
+            reverse: true
+        })
+
+
+
+if (Target.dDATA.modules.bgID == undefined) {
+    gear.paramDefine(Target, "bgID", "0")
+}
+if (Target.dDATA.modules.rep == undefined) {
+    gear.paramDefine(Target, "rep", 0)
+}
+if (Target.dDATA.modules.bgInventory == undefined) {
+    gear.paramDefine(Target, "bgInventory", [0])
+}
+if (Target.dDATA.modules.medalInventory == undefined) {
+    gear.paramDefine(Target, "medalInventory", [])
+}
+if (Target.dDATA.modules.medals == undefined) {
+    gear.paramDefine(Target, "medals", [0, 0, 0, 0, 0, 0, 0, 0])
+}
+if (Target.dDATA.modules.medals.length < 8) {
+    gear.paramDefine(Target, "medals", [0, 0, 0, 0, 0, 0, 0, 0])
+}
+
+if (Target.bot && Target.id != "271394014358405121") {
+    gear.paramDefine(Target, "bgID", "bot")
+}
+
+      generatorMSG.edit(gener+"\n `Setting up params`").catch(e=> {let a = (new Error); gear.errLog(e,__filename,a.stack.toString())})
+
+    let join = message.guild.member(Target).joinedAt
+    let joinstamp = `${join.getDate()}/${join.getMonth()+1}/${join.getFullYear()} - ${join.toLocaleTimeString()}`;
+
+    var favcolor    = (Target.dDATA.modules.favcolor || "2211EB")
+    var backgroundId    = (Target.dDATA.modules.bgID|| "5zhr3HWlQB4OmyCBFyHbFuoIhxrZY6l6")
+    console.log("backgroundId")
+    console.log(backgroundId)
+    var medals      = (Target.dDATA.modules.medals || [0,0,0,0,0,0,0,0])
+    var persotex    = (Target.dDATA.modules.persotext || "I have no personal text because i'm lazy as a sloth.")
+    var nametag     = Target.username + "#" + Target.discriminator
+    var nickname    = Server.member(Target).displayName
+    var rubines       = (Target.dDATA.modules.rubines.toString() || "00")
+    var globalrank  = "#"+(1+ranked.findIndex(i => i.id === Target.id)).toString()
+    var serverank   = "#"+(1+Sranked.findIndex(i => i.id === Target.id)).toString()
+    var exp         = Target.dDATA.modules.exp.toString()
+    var level       = Target.dDATA.modules.level.toString()
+    var exptoNex    = Math.trunc(Math.pow((Number(level) + 1) / 0.0427899, 2)).toString()
+    var exptoThis    = Math.trunc(Math.pow((Number(level)) / 0.0427899, 2)).toString()
+    var frameofact = Math.trunc(Math.pow((Number(level) + 1) / 0.0427899, 2))-Math.trunc(Math.pow((Number(level)) / 0.0427899, 2))
+    console.log(exptoThis)
+    console.log(frameofact)
+     var percent     = (((Number(exp) - Number(exptoThis)) / frameofact)*100).toFixed(0)
+   // var percent     = ((Number(exptoThis) / exptoNex)*100).toFixed(0)
+    var membSince   = joinstamp
+    var rep         = Target.dDATA.modules.rep
+    var propic      = (Target.avatarURL.replace(/gif/g,"png") || Target.defaultAvatarURL.replace(/gif/g,"png"))
+    rep = rep.toString()
+    var medals = Target.dDATA.modules.medals
+
+  generatorMSG.edit(gener+"\n `Parsing...`").catch(e=> {let a = (new Error); gear.errLog(e,__filename,a.stack.toString())})
+    var m = `
+
+favcolor:   ${favcolor}
+medals:   ${medals}
+persotex:   ${persotex}
+nametag:   ${nametag}
+nickname:   ${nickname}
+rubines:   ${rubines}
+globalrank:   ${globalrank}
+serverank:   ${serverank}
+exp:   ${exp}
+level:   ${level}
+exptoNex:   ${exptoNex}
+percent:   ${percent}
+membSince:   ${membSince}
+rep:   ${rep}
+`
+
+//    message.reply(m)
+}catch(e){console.log(e)}
+
+console.log("==============="+backgroundId)
+//console.log("==============="+backgroundId.toString().length)
+var backgroundIMAGE = paths.BUILD + 'backdrops/'+backgroundId+'.png'
+    if (backgroundId.toString().length < 10){
+
+     backgroundIMAGE = paths.BUILD + 'backdrops/5zhr3HWlQB4OmyCBFyHbFuoIhxrZY6l6.png'
+    }else{
+console.log(backgroundIMAGE)
+     backgroundIMAGE = paths.BUILD+"backdrops/"+backgroundId+".png"
+    }
+console.log("==============="+backgroundIMAGE)
+
+
+  generatorMSG.edit(gener+"\n `Processing Background`").catch(e=> {let a = (new Error); gear.errLog(e,__filename,a.stack.toString())})
+
+
+      return new Promise(async resolve => {
+
+        generatorMSG.edit(gener + "\n `Sending Buffer`").catch(e=> console.log(e))
+
+    var skin = Target.dDATA.modules.skin
+
+   console.log(__dirname)
+
+        for (i=0;i<medals.length;i++){
+          if (medals[i][0]=="") medals[i][0]=0;
+        }
+
+    gear.Jimp.read(paths.MEDALS+ medals[0][0]+'.png').then(function (md1) {
+    gear.Jimp.read(paths.MEDALS+ medals[1][0]+'.png').then(function (md2) {
+    gear.Jimp.read(paths.MEDALS+ medals[2][0]+'.png').then(function (md3) {
+    gear.Jimp.read(paths.MEDALS+ medals[3][0]+'.png').then(function (md4) {
+    gear.Jimp.read(paths.MEDALS+ medals[4][0]+'.png').then(function (md5) {
+    gear.Jimp.read(paths.MEDALS+ medals[5][0]+'.png').then(function (md6) {
+    gear.Jimp.read(paths.MEDALS+ medals[6][0]+'.png').then(function (md7) {
+    gear.Jimp.read(paths.MEDALS+ medals[7][0]+'.png').then(function (md8) {
+
+    gear.Jimp.read(paths.SKINS + skin + '/mainframe.png').then(function (frame) {
+    gear.Jimp.read(paths.SKINS + skin + '/mainframe.png').then(function (frameB) {
+    gear.Jimp.read(paths.SKINS + skin + '/sidebar.png').then(function (sidebar) {
+    gear.Jimp.read(paths.SKINS + skin + '/levbar.png').then(function (levbar) {
+    gear.Jimp.read(propic).then(function (photo) {
+    gear.Jimp.read(paths.SKINS + skin + '/lenna.png').then(function (lenna) {
+    gear.Jimp.read(backgroundIMAGE).then(function (bg) {
+
+      bg.resize(346,185)
+        photo.resize(100,100)
+         photo.mask(lenna, 0, 0)
+
+          frame.composite(bg, 43,14 )
+          frame.composite(frameB, 0,0 )
+          frame.composite(photo, 56,73 )
+try {
+    levbar.resize(parseInt(Number(percent)), 6)
+
+} catch (e) {
+
+    levbar.resize(100, 6)
+    levbar.color([
+
+        {
+            apply: 'mix',
+            params: ["#FF0000", 50]
+                                            }])
+}
+frame.composite(levbar, 54, 276)
+
+sidebar.color([
+
+    {
+        apply: 'mix',
+        params: [favcolor, 50]
+                                            }])
+
+        //sidebar.normalize();
+          frame.composite(sidebar,0,0 )
+
+
+          gear.Jimp.loadFont(paths.FONTS + "product_24_black_bold.fnt").then(function (levelf) {
+          gear.Jimp.loadFont(paths.FONTS + "roboto_12.fnt").then(function (lorem) {
+          gear.Jimp.loadFont(paths.FONTS + "product_12_grey_bold.fnt").then(function (tag) {
+          gear.Jimp.loadFont(paths.FONTS + "roboto_20_bold.fnt").then(function (name) {
+          gear.Jimp.loadFont(paths.FONTS + "visitor_18_white.fnt").then(function (rfont) {
+          gear.Jimp.loadFont(paths.FONTS + "product_12_grey_bold.fnt").then( async function (ranks) {
+
+
+
+
+
+
+              if (level.length == 4) level = "MAX";
+              var ovlat = new gear.Jimp(50, 30, 0x00000000, function (err, image) {});
+              ovlat.print(levelf, 0, 0, `${level}`, 50,  gear.Jimp.ALIGN_FONT_CENTER);
+           //   ovlat.autocrop(false)
+            //  ovlat.contain(45, 20, gear.Jimp.HORIZONTAL_ALIGN_CENTER)
+
+             await frame.composite(ovlat, 345, 20)
+
+              frame.print(name, 162, 138, `${nickname}`);
+              frame.print(tag, 170, 168, `${nametag}`);
+              var lorembox = new gear.Jimp(220, 45, 0x00000000,function (err, image) {});
+              lorembox.print(lorem, 0, 0, `${persotex}`,180);
+             // kalk.contain(226, 25, gear.Jimp.HORIZONTAL_ALIGN_LEFT);
+              frame.composite(lorembox, 165, 188) //+25 down
+
+
+              var srank = new gear.Jimp(60, 16, 0x00000000,function (err, image) {});
+              srank.print(ranks, 0, 0, `${serverank}`, 50 ,gear.Jimp.ALIGN_FONT_RIGHT);
+           //   srank.autocrop(false)
+          //    srank.contain(50, 10, gear.Jimp.HORIZONTAL_ALIGN_RIGHT)
+
+              var grank = new gear.Jimp(60, 16, 0x00000000,function (err, image) {});
+              grank.print(ranks, 0, 0, `${globalrank}`, 50,gear.Jimp.ALIGN_FONT_RIGHT);
+          //    grank.autocrop(false)
+         //     grank.contain(50, 10, gear.Jimp.HORIZONTAL_ALIGN_RIGHT)
+
+              var rrank = new gear.Jimp(60, 16,0x00000000, function (err, image) {});
+              rrank.print(ranks, 0, 0, `${rubines}`, 50,gear.Jimp.ALIGN_FONT_RIGHT);
+          //    rrank.autocrop(false)
+         //     rrank.contain(50, 10, gear.Jimp.HORIZONTAL_ALIGN_RIGHT)
+
+              var reputation = new gear.Jimp(40, 16, 0x00000000,function (err, image) {});
+              reputation.print(rfont, 0, 0, `${rep}`, 40,gear.Jimp.ALIGN_FONT_CENTER);
+             // reputation.autocrop()
+             // reputation.contain(30, 10, gear.Jimp.HORIZONTAL_ALIGN_CENTER)
+
+
+              var paasento = new gear.Jimp(100, 16,  0x00000000,function (err, image) {});
+              paasento.print(ranks, 0, 0, `${percent}% [${exp}] `, 80,gear.Jimp.ALIGN_FONT_RIGHT);
+            //  paasento.autocrop(false)
+             // paasento.contain(100, 10, gear.Jimp.HORIZONTAL_ALIGN_RIGHT)
+
+              frame.composite(srank, 105, 185) //+25 down
+              frame.composite(grank, 105, 210) //+25 down
+              frame.composite(rrank, 105, 235) //+25 down
+              frame.composite(reputation, 8, 30) //+25 down
+              frame.composite(paasento, 60, 258) //+25 down
+
+              var displays = new gear.Jimp(214, 25, 0x00000000,function (err, image) {});
+              
+              md1.resize(25,25)
+            md2.resize(25,25)
+            md3.resize(25,25)
+            md4.resize(25,25)
+            md5.resize(25,25)
+            md6.resize(25,25)
+            md7.resize(25,25)
+            md8.resize(25,25)
+            
+              displays.composite(md1, 0 * 27, 0) //+25 down
+              displays.composite(md2, 1 * 27, 0) //+25 down
+              displays.composite(md3, 2 * 27, 0) //+25 down
+              displays.composite(md4, 3 * 27, 0) //+25 down
+              displays.composite(md5, 4 * 27, 0) //+25 down
+              displays.composite(md6, 5 * 27, 0) //+25 down
+              displays.composite(md7, 6 * 27, 0) //+25 down
+              displays.composite(md8, 7 * 27, 0) //+25 down
+
+              frame.composite(displays, 169, 245) //+25 down
+
+
+
+              frame.getBuffer(gear.Jimp.MIME_PNG, function (err, image) {
+                  message.channel.send({files:[{attachment:image,name:"file.png"}]}).then(picsent=>{
+                       var stop = Date.now();
+                        var diff = (stop - start);
+                        generatorMSG.edit("DONE! \n Generated in `"+diff/1000+"s`").catch(e=> {let a = (new Error); gear.errLog(e,__filename,a.stack.toString())})
+                     // generatorMSG.delete(8000)
+
+                  })
+                  return resolve(true);
+              })
+
+
+
+    }).catch()
+    }).catch()
+    }).catch()
+    }).catch()
+    }).catch()
+    }).catch()
+    }).catch()
+    }).catch()
+    }).catch()
+
+    }).catch()
+    }).catch()
+    }).catch()
+    }).catch()
+
+    }).catch()
+    }).catch()
+    }).catch()
+    }).catch()
+    }).catch()
+    }).catch()
+    }).catch()
+    }).catch()
+
+      })
+
+
+
+
+    })}catch(e){console.log(message.channel.send("**ERROR**"))}
+      }
+
+
+
+module.exports = {
+    pub: true,
+    cmd: cmd,
+    perms: 3,
+    init: init,
+    cat: 'misc'
+};

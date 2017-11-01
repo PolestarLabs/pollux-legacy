@@ -1,0 +1,560 @@
+[
+  {
+    "name": "Beyblade",
+    "icon": "beyblade",
+    "rarity": "C",
+    "tags": "",
+    "category": "anime",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Brazil Flag",
+    "icon": "brazil",
+    "rarity": "C",
+    "tags": "south america",
+    "category": "flags",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Burger",
+    "icon": "burger",
+    "rarity": "U",
+    "tags": "fast-food",
+    "category": "food",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Counter Strike",
+    "icon": "counterstrike",
+    "rarity": "C",
+    "tags": "fps csgo",
+    "category": "games",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Dark Magician Girl",
+    "icon": "darkmagirl",
+    "rarity": "SR",
+    "tags": "yu-gi-oh yugioh",
+    "category": "anime",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Fruki Guaraná",
+    "icon": "fruki",
+    "rarity": "SR",
+    "tags": "soda brazil",
+    "category": "brands",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Gardevoir",
+    "icon": "gardevoir",
+    "rarity": "R",
+    "tags": "",
+    "category": "pokemon",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Germany Flag",
+    "icon": "germany",
+    "rarity": "C",
+    "tags": "europe",
+    "category": "flags",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Hatsune Miku",
+    "icon": "miku",
+    "rarity": "SR",
+    "tags": "vocaloid",
+    "category": "anime",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Heroes of the Storm",
+    "icon": "heroes",
+    "rarity": "U",
+    "tags": "moba blizzard",
+    "category": "games",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Hylian Shield",
+    "icon": "hyruleshield",
+    "rarity": "R",
+    "tags": "rpg nintendo zelda",
+    "category": "games",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Japan Flag",
+    "icon": "japan",
+    "rarity": "SR",
+    "tags": "asia",
+    "category": "flags",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "League of Legends",
+    "icon": "league",
+    "rarity": "R",
+    "tags": "moba",
+    "category": "games",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Megaman: Sigma",
+    "icon": "megamansigma",
+    "rarity": "SR",
+    "tags": "capcom megaman",
+    "category": "games",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Nintendo 3DS",
+    "icon": "n3ds",
+    "rarity": "R",
+    "tags": "console nintendo",
+    "category": "games",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Osu!",
+    "icon": "osu",
+    "rarity": "R",
+    "tags": "rhythm music",
+    "category": "games",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Overwatch",
+    "icon": "overwatch",
+    "rarity": "SR",
+    "tags": "fps blizzard",
+    "category": "games",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Patreon",
+    "icon": "patreon",
+    "rarity": "UR",
+    "tags": "brands",
+    "category": "exclusive",
+    "buyable": "FALSE",
+    "droppable": "FALSE",
+    "howto": "Become a Patron with 1$ or more at %site% ~"
+     },
+  {
+    "name": "Pikachu",
+    "icon": "pikachu",
+    "rarity": "R",
+    "tags": "",
+    "category": "pokemon",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Pokéball",
+    "icon": "pokeball",
+    "rarity": "C",
+    "tags": "icons",
+    "category": "pokemon",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Pollux Mansion",
+    "icon": "pollux",
+    "rarity": "UR",
+    "tags": "",
+    "category": "exclusive",
+    "buyable": "FALSE",
+    "droppable": "FALSE",
+    "howto": "Reach Level 5 at Pollux's official Server~"
+     },
+  {
+    "name": "Portugal Flag",
+    "icon": "portugal",
+    "rarity": "C",
+    "tags": "europe",
+    "category": "flags",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "StarCraft II",
+    "icon": "starcraft",
+    "rarity": "R",
+    "tags": "rts blizzard",
+    "category": "games",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Super Nintendo",
+    "icon": "snes",
+    "rarity": "R",
+    "tags": "console nintendo",
+    "category": "games",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Twitch.tv",
+    "icon": "twitch",
+    "rarity": "R",
+    "tags": "sites",
+    "category": "brands",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Umbreon",
+    "icon": "umbreon",
+    "rarity": "R",
+    "tags": "",
+    "category": "pokemon",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "WoW: Alliance",
+    "icon": "alliancewow",
+    "rarity": "R",
+    "tags": "alliance warcraft",
+    "category": "games",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Adobe",
+    "icon": "adobe",
+    "rarity": "SR",
+    "tags": "software design",
+    "category": "brands",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Argentina Flag",
+    "icon": "argentina",
+    "rarity": "C",
+    "tags": "south_america",
+    "category": "flags",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Canada Flag",
+    "icon": "canada",
+    "rarity": "U",
+    "tags": "north_america",
+    "category": "flags",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Czech Republic Flag",
+    "icon": "czech",
+    "rarity": "U",
+    "tags": "europe central_europe",
+    "category": "flags",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Discord",
+    "icon": "discord",
+    "rarity": "R",
+    "tags": "software service",
+    "category": "brands",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "D.Va Bunny",
+    "icon": "dva_logo",
+    "rarity": "UR",
+    "tags": "overwatch",
+    "category": "games",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Firefox",
+    "icon": "firefox",
+    "rarity": "R",
+    "tags": "software browser",
+    "category": "brands",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "WoW: Horde",
+    "icon": "hordewow",
+    "rarity": "R",
+    "tags": "warcraft horde",
+    "category": "games",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "World of Warcraft",
+    "icon": "wow",
+    "rarity": "C",
+    "tags": "mmo",
+    "category": "games",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Venezuela Flag",
+    "icon": "venezuela",
+    "rarity": "U",
+    "tags": "south_america",
+    "category": "flags",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "United Kingdom Flag",
+    "icon": "ukingdom",
+    "rarity": "SR",
+    "tags": "not_europe britain",
+    "category": "flags",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Ubuntu",
+    "icon": "ubuntu",
+    "rarity": "U",
+    "tags": "software os system",
+    "category": "brands",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Steam",
+    "icon": "steam",
+    "rarity": "C",
+    "tags": "software service",
+    "category": "brands",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "SNES Buttons",
+    "icon": "snesround",
+    "rarity": "R",
+    "tags": "nintendo",
+    "category": "games",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Piece of Ham",
+    "icon": "schink",
+    "rarity": "U",
+    "tags": "meat",
+    "category": "food",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "American Flag",
+    "icon": "murica",
+    "rarity": "C",
+    "tags": "north_america",
+    "category": "flags",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Romania Flag",
+    "icon": "romania",
+    "rarity": "C",
+    "tags": "europe eastern_europe",
+    "category": "flags",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Malaysia Flag",
+    "icon": "malay",
+    "rarity": "U",
+    "tags": "asia south_asia",
+    "category": "flags",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Italy Flag",
+    "icon": "italy",
+    "rarity": "C",
+    "tags": "europe mediterranean",
+    "category": "flags",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "France Flag",
+    "icon": "france",
+    "rarity": "U",
+    "tags": "europe west",
+    "category": "flags",
+    "buyable": "TRUE",
+    "droppable": "TRUE"
+     },
+  {
+    "name": "Chibi Pumpkin ",
+    "icon": "chibipumpkin",
+    "rarity": "R",
+    "tags": "halloween event",
+    "category": "event",
+    "buyable": "FALSE",
+    "droppable": "FALSE",
+    "event": "halloween_2017",
+    "howto": "Get it by collecting candies or from Event Lootboxes. More info at the<a href='http://pollux.fun/events/halloween'>Halloween Event Page</a>"
+     },
+  {
+    "name": "Black Cat",
+    "icon": "blackat",
+    "rarity": "R",
+    "tags": "halloween event",
+    "category": "event",
+    "buyable": "FALSE",
+    "droppable": "FALSE",
+    "event": "halloween_2017",
+    "howto": "Get it by collecting candies or from Event Lootboxes. More info at the<a href='http://pollux.fun/events/halloween'>Halloween Event Page</a>"
+     },
+  {
+    "name": "Chibi Spider",
+    "icon": "chibispider",
+    "rarity": "C",
+    "tags": "halloween event",
+    "category": "event",
+    "buyable": "FALSE",
+    "droppable": "FALSE",
+    "event": "halloween_2017",
+    "howto": "Get it by collecting candies or from Event Lootboxes. More info at the<a href='http://pollux.fun/events/halloween'>Halloween Event Page</a>"
+     },
+  {
+    "name": "Who you're gonna call",
+    "icon": "gbusters",
+    "rarity": "SR",
+    "tags": "halloween event",
+    "category": "movies",
+    "buyable": "FALSE",
+    "droppable": "FALSE",
+    "event": "halloween_2017",
+    "howto": "Get it by collecting candies or from Event Lootboxes. More info at the<a href='http://pollux.fun/events/halloween'>Halloween Event Page</a>"
+     },
+  {
+    "name": "Ghostling",
+    "icon": "ghostling",
+    "rarity": "R",
+    "tags": "halloween event",
+    "category": "event",
+    "buyable": "FALSE",
+    "droppable": "FALSE",
+    "event": "halloween_2017",
+    "howto": "Get it by collecting candies or from Event Lootboxes. More info at the<a href='http://pollux.fun/events/halloween'>Halloween Event Page</a>"
+     },
+  {
+    "name": "Pollux Halloween 2017",
+    "icon": "halloween_2017",
+    "howto": "Get it by collecting candies or from Event Lootboxes. More info at the<a href='http://pollux.fun/events/halloween'>Halloween Event Page</a>",
+    "rarity": "C",
+    "tags": "halloween event",
+    "category": "event",
+    "buyable": "FALSE",
+    "droppable": "FALSE",
+    "event": "halloween_2017",
+    "howto": "Get it by collecting candies or from Event Lootboxes. More info at the<a href='http://pollux.fun/events/halloween'>Halloween Event Page</a>"
+     },
+  {
+    "name": "Jack Skellington Pin",
+    "icon": "jackskell1",
+    "rarity": "UR",
+    "tags": "halloween event",
+    "category": "movies",
+    "buyable": "FALSE",
+    "droppable": "FALSE",
+    "event": "halloween_2017",
+    "howto": "Get it by collecting candies or from Event Lootboxes. More info at the<a href='http://pollux.fun/events/halloween'>Halloween Event Page</a>"
+     },
+  {
+    "name": "Pentagram",
+    "icon": "pentagram",
+    "rarity": "C",
+    "tags": "halloween event",
+    "category": "symbols",
+    "buyable": "FALSE",
+    "droppable": "FALSE",
+    "event": "halloween_2017",
+    "howto": "Get it by collecting candies or from Event Lootboxes. More info at the<a href='http://pollux.fun/events/halloween'>Halloween Event Page</a>"
+     },
+  {
+    "name": "Your Ordinary Pumpkin",
+    "icon": "pumpkin",
+    "rarity": "U",
+    "tags": "halloween event",
+    "category": "event",
+    "buyable": "FALSE",
+    "droppable": "FALSE",
+    "event": "halloween_2017",
+    "howto": "Get it by collecting candies or from Event Lootboxes. More info at the<a href='http://pollux.fun/events/halloween'>Halloween Event Page</a>"
+     },
+  {
+    "name": "Yet Another Pumpkin",
+    "icon": "pumpkin2",
+    "rarity": "U",
+    "tags": "halloween event",
+    "category": "event",
+    "buyable": "FALSE",
+    "droppable": "FALSE",
+    "event": "halloween_2017",
+    "howto": "Get it by collecting candies or from Event Lootboxes. More info at the<a href='http://pollux.fun/events/halloween'>Halloween Event Page</a>"
+     },
+  {
+    "name": "Soul Eater Shinigami",
+    "icon": "shinigami_sl_eater",
+    "rarity": "U",
+    "tags": "halloween event",
+    "category": "anime",
+    "buyable": "FALSE",
+    "droppable": "FALSE",
+    "event": "halloween_2017",
+    "howto": "Get it by collecting candies or from Event Lootboxes. More info at the<a href='http://pollux.fun/events/halloween'>Halloween Event Page</a>"
+     },
+  {
+    "name": "Vampire Pollux",
+    "icon": "hallux",
+    "rarity": "UR",
+    "tags": "halloween event",
+    "category": "anime",
+    "buyable": "FALSE",
+    "droppable": "FALSE",
+    "event": "halloween_2017",
+    "howto": "Get it by collecting candies or from Event Lootboxes. More info at the<a href='http://pollux.fun/events/halloween'>Halloween Event Page</a>"
+     }
+]

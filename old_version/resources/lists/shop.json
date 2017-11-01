@@ -1,0 +1,30 @@
+{
+    "menu" : [
+
+                  ["Fruki Guaraná", "fruki", 953]
+                  , ["Twitch", "twitch", 400]
+                  , ["SNES Controller", "snes", 400]
+                  , ["Hylian Shield", "hyruleshield", 600]
+                  , ["Hamburger", "burger", 400]
+                  , ["Gardevoir", "gardevoir", 520]
+                  , ["Heroes of the Storm", "heroes", 500]
+                  , ["League of Legends", "league", 800]
+                  , ["Counter Strike", "counterstrike", 600]
+                  , ["Pokéball", "pokeball", 1000]
+                  , ["Overwatch", "overwatch", 850]
+                  , ["Megaman: Sigma", "megamansigma", 1400]
+                  , ["Osu!", "osu", 500]
+                  , ["Nintendo 3DS", "n3ds", 800]
+                  , ["Dark Magician Girl", "darkmagirl", 1000]
+                  , ["Pikachu", "pikachu", 1700]
+                  , ["Beyblade", "beyblade", 600]
+                  , ["Pollux", "pollux", 50000]
+                  , ["Starcraft II", "starcraft", 720]
+                  , ["Umbreon", "umbreon", 800]
+                  , ["Japan Flag", "japan", 1200]
+                  , ["Germany Flag", "germany", 1000]
+                  , ["Brazil Flag", "brazil", 1000]
+                  , ["Portugal Flag", "portugal", 1000]
+             ]
+
+}
