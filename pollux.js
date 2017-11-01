@@ -16,7 +16,7 @@ POLLUX.login(cfg.token).then(loginSuccess)
 
 
 //GEARBOX | Boilerplate functions provider.
-const gearbox= require("./core/gearbox.js");
+const {getDirs, userDB,serverDB}= require("./core/gearbox.js");
 
 
 
@@ -29,7 +29,7 @@ const backendOptions = {
     addPath: './locales/dev/translation.json',
     jsonIndent: 2
 };
-gearbox.getDirs('./locales/', (list) => {
+getDirs('./locales/', (list) => {
     i18next.use(i18n_backend).init({
         backend: backendOptions,
         lng: 'en',
@@ -52,7 +52,9 @@ gearbox.getDirs('./locales/', (list) => {
 
 async function loginSuccess() {
   console.log('LOGGED IN!'.bgGreen.white.bold)
+  if(POLLUX.shard){
   console.log('Starting up Shard '+(1+POLLUX.shard.id)+'/'+POLLUX.shard.count);
+  }
   POLLUX.user.setStatus('dnd')
 };
 
@@ -63,7 +65,7 @@ fs.readdir("./eventHandlers/", (err, files) => {
     delete require.cache[require.resolve(`./eventHandlers/${file}`)];
     let eventor = require(`./eventHandlers/${file}`);
     let eventide = file.split(".")[0];
-    POLLUX.on(eventide, (...args) => eventor.run(gear,DB,userDB,POLLUX, ...args));
+    POLLUX.on(eventide, (...args) => eventor.run(POLLUX, ...args));
   });
 });
 
