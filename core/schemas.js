@@ -236,5 +236,5 @@ const Background = new Schema({
 module.exports={
   user    : mongoose.model('User', User, 'userDB'),
   server  : mongoose.model('Server', Server, 'serverDB'),
-  channel : mongoose.model('Channel', Channel, 'serverDB')
+  channel : mongoose.model('Channel', Channel, 'channelDB')
 };
