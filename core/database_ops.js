@@ -1,0 +1,56 @@
+const Schemas = require('./schemas.js');
+
+const userDB    = Schemas.user;
+const serverDB  = Schemas.server;
+const channelDB = Schemas.channel;
+
+userDB.new = function(obj){
+  return new Promise(async resolve=>{
+    let instance = new userDB;
+    instance.id=obj.id;
+    instance.tag=obj.tag;
+    instance.name=obj.username;
+    instance.save(function(e){
+      if(e)throw "Database Save Failed";
+      else resolve(userDB.findOne({id:obj.id}));
+    });
+  });
+};
+serverDB.new = function(obj){
+  return new Promise(async resolve=>{
+    let instance = new serverDB;
+    instance.id=obj.id;
+    instance.name=obj.name;
+    instance.channels=obj.channels.map(ch=>ch.id);
+    instance.save(function(e){
+      if(e)throw "Database Save Failed";
+      else resolve(serverDB.findOne({id:obj.id}));
+    });
+  });
+};
+channelDB.new = function(obj){
+  return new Promise(async resolve=>{
+    let instance = new channelDB;
+    instance.id=obj.id;
+    instance.server=obj.guild.id;
+    instance.name=obj.name;
+    instance.save(function(e){
+      if(e)throw "Database Save Failed";
+      else resolve(channelDB.findOne({id:obj.id}));
+    });
+  });
+};
+
+const set = function(query,alter){
+  if(['string','number'].includes(typeof query)){
+    query = {'id':query.toString()};
+  };
+  if(!typeof alter) throw "Invalid Alter Object";
+  return this.findOneAndUpdate(query,alter);
+};
+
+userDB.set    = set;
+serverDB.set  = set;
+channelDB.set = set;
+
+module.exports={userDB,serverDB,channelDB}
