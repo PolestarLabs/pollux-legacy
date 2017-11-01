@@ -72,37 +72,37 @@ const Server = new Schema({
             }
 
         },
-        logs: Mixed,
+        logs: {
+
+            act:{
+              userJoin:   {type:Boolean,default:true},
+              userLeave:  {type:Boolean,default:true},
+              messDel:    {type:Boolean,default:false},
+              messEdit:   {type:Boolean,default:false}
+            },
+
+            mod:{
+              usrBan:     {type:Boolean,default:true},
+              usrKick:    {type:Boolean,default:true},
+              usrMute:    {type:Boolean,default:true},
+              usrUnmute:  {type:Boolean,default:true}
+            },
+
+            adv:{
+              newChan:    {type:Boolean,default:false},
+              newRole:    {type:Boolean,default:false},
+              permsEdit:  {type:Boolean,default:false},
+              revokeBan:  {type:Boolean,default:true},
+              uptRole:    {type:Boolean,default:false},
+              delChan:    {type:Boolean,default:false},
+              usrNick:    {type:Boolean,default:true},
+              usrPhoto:   {type:Boolean,default:false},
+              usrRoles:   {type:Boolean,default:false}
+            }
+          },
         channels: Mixed
     });
-const Logs = new Schema({
 
-    act:{
-    userJoin:   {type:Boolean,default:true},
-    userLeave:  {type:Boolean,default:true},
-    messDel:    {type:Boolean,default:false},
-    messEdit:   {type:Boolean,default:false},
-    },
-
-    mod:{
-    usrBan:     {type:Boolean,default:true},
-    usrKick:    {type:Boolean,default:true},
-    usrMute:    {type:Boolean,default:true},
-    usrUnmute:  {type:Boolean,default:true},
-    },
-
-    adv:{
-    newChan:    {type:Boolean,default:false},
-    newRole:    {type:Boolean,default:false},
-    permsEdit:  {type:Boolean,default:false},
-    revokeBan:  {type:Boolean,default:true},
-    uptRole:    {type:Boolean,default:false},
-    delChan:    {type:Boolean,default:false},
-    usrNick:    {type:Boolean,default:true},
-    usrPhoto:   {type:Boolean,default:false},
-    usrRoles:   {type:Boolean,default:false},
-    }
-  });
 
 //CHANS
 const Channel = new Schema({
@@ -225,7 +225,6 @@ const Background = new Schema({
   rarity:{type:String,index:true},
   tags:{type:String,index:true}
 })
-
 
 
 
