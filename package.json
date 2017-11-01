@@ -1,0 +1,11 @@
+{
+  "name": "pollux-supernova",
+  "version": "7.0.0",
+  "description": "Rework of Polluxbot",
+  "main": "sharding.js",
+  "scripts": {
+    "test": "node pollux.js"
+  },
+  "author": "Flicky",
+  "license": "MIT"
+}
