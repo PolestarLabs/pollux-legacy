@@ -3,6 +3,7 @@ const Schemas = require('./schemas.js');
 const userDB    = Schemas.user;
 const serverDB  = Schemas.server;
 const channelDB = Schemas.channel;
+const globalDB = Schemas.global;
 
 userDB.new = function(obj){
   return new Promise(async resolve=>{
@@ -41,6 +42,7 @@ channelDB.new = function(obj){
   });
 };
 
+
 const set = function(query,alter){
   if(['string','number'].includes(typeof query)){
     query = {'id':query.toString()};
@@ -52,5 +54,9 @@ const set = function(query,alter){
 userDB.set    = set;
 serverDB.set  = set;
 channelDB.set = set;
+globalDB.set  = function(alter){
+  if(!typeof alter) throw "Invalid Alter Object";
+  return this.findOneAndUpdate({id:0},alter);
+};
 
-module.exports={userDB,serverDB,channelDB}
+module.exports={userDB,serverDB,channelDB,globalDB}

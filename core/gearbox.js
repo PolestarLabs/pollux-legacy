@@ -8,15 +8,15 @@ const Canvas = require("canvas");
 const Pixly = require("pixel-util");
 const wrap = require('canvas-text-wrapper').CanvasTextWrapper;
 
-const {userDB,serverDB,channelDB} = require('./database_ops.js');
+const {userDB,serverDB,channelDB,globalDB} = require('./database_ops.js');
 const DB = serverDB;
-
 
 module.exports={
   DB:serverDB, //legacy
   serverDB,
   userDB,
   channelDB,
+  globalDB,
   Discord,
 
 //Get Index List
