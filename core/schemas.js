@@ -115,6 +115,7 @@ const Channel = new Schema({
         LANGUAGE:String,
         id: {type:String,required: true,index:{unique:true}},
         modules: {
+            BUSTER:   Mixed,
             DROPSLY: {type:Number,default:0},
             EXP:     {type:Boolean,default:true},
             LVUP:    {type:Boolean,default:true},
