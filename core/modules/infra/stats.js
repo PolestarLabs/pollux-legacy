@@ -30,11 +30,8 @@ const LANG = message.lang;
         days > 1 ? time = days+" days " : time = time
     return time;
 }
-
     const uptime = (os.uptime() + "").toHHMMSS();
     const botuptime = (bot.uptime/1000+"").toHHMMSS();
-
-
 
 //HELP TRIGGER
     let helpkey = mm("helpkey",{lngs:message.lang})
@@ -50,7 +47,6 @@ let ramB = Math.round(util.inspect(process.memoryUsage().heapTotal) / 1000000)
 let ramA = ramB-ramC
 
 emb.setColor('#e83774')
-
 
 let a = gear.randomize(2,4)
 emb.setAuthor('Pollux Stats',bot.user.avatarURL,'https://pollux.fun/')
@@ -74,13 +70,7 @@ emb.addField('Support Server','https://discord.gg/ay48h7Q', true)
 emb.setFooter("Heart kept beating by "+os.cpus().length+"x "+os.cpus()[0].model,url)
 emb.addBlankField()
 
-
-
-message.channel.send({embed:emb})
-
-
-
-
+  message.channel.send({embed:emb})
 
 }
- module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: 'infra'};
+module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: 'infra'};

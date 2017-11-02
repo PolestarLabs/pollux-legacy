@@ -7,4 +7,4 @@ const init = function (message) {
         sendedMessage.edit(`pong \`${diff}ms\``);
     });
 };
- module.exports = {cool:1000,pub:true,cmd: cmd, perms: 3, init: init, cat: 'infra'};
+module.exports = {cool:1000,pub:true,cmd: cmd, perms: 3, init: init, cat: 'infra'};
