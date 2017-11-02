@@ -11,7 +11,7 @@ userDB.new = function(obj){
     instance.tag=obj.tag;
     instance.name=obj.username;
     instance.save(function(e){
-      if(e)throw "Database Save Failed";
+      if(e)throw ["USER Database Save Failed",e];
       else resolve(userDB.findOne({id:obj.id}));
     });
   });
@@ -23,7 +23,7 @@ serverDB.new = function(obj){
     instance.name=obj.name;
     instance.channels=obj.channels.map(ch=>ch.id);
     instance.save(function(e){
-      if(e)throw "Database Save Failed";
+      if(e)throw ["SERVER Database Save Failed",e];
       else resolve(serverDB.findOne({id:obj.id}));
     });
   });
@@ -35,7 +35,7 @@ channelDB.new = function(obj){
     instance.server=obj.guild.id;
     instance.name=obj.name;
     instance.save(function(e){
-      if(e)throw "Database Save Failed";
+      if(e)throw ["CHANNEL Database Save Failed",e];
       else resolve(channelDB.findOne({id:obj.id}));
     });
   });
