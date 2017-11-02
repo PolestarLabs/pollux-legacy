@@ -46,7 +46,7 @@ const deployer = require('./core/deployer.js'); // <------------- I DUN LIKE DIS
 // UTILITY
 
 const fs = require("fs");
-const paths = require("./core/paths.js");
+const paths = require("./core/paths.json");
 const emojya = bot.emojis.get('343314186765336576');
 //bot.ector =ector
 //var cleverbot = require("cleverbot"); // <------------- REVIEW  DIS << NEEDS $ for CB fee
