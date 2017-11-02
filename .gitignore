@@ -3,3 +3,4 @@
 *.png
 /config.json
 /old_version/
+/core/modules/cosmetics/
