@@ -56,7 +56,13 @@ serverDB.set  = set;
 channelDB.set = set;
 globalDB.set  = function(alter){
   if(!typeof alter) throw "Invalid Alter Object";
-  return this.findOneAndUpdate({id:0},alter);
+  return globalDB.findOneAndUpdate({id:0},alter);
 };
-
+globalDB.get  = async function(){
+  try{
+  return (await globalDB.findOne()).data;
+  }catch(e){
+  return (await globalDB.findOne());
+  }
+};
 module.exports={userDB,serverDB,channelDB,globalDB}

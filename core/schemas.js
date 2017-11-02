@@ -224,18 +224,21 @@ const User = new Schema({
         }
     });
 
+const Globals = new Schema({
+  id:{type:Number,default:0,unique:true},
+  data:Mixed
+})
 //MARKET
 const Background = new Schema({
   name:String,
   id:{type:String,index:{unique:true}},
   rarity:{type:String,index:true},
   tags:{type:String,index:true}
-})
-
-
+});
 
 module.exports={
   user    : mongoose.model('User', User, 'userDB'),
   server  : mongoose.model('Server', Server, 'serverDB'),
-  channel : mongoose.model('Channel', Channel, 'channelDB')
+  channel : mongoose.model('Channel', Channel, 'channelDB'),
+  global  : mongoose.model('Global', Globals, 'Globals')
 };
