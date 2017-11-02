@@ -1,6 +1,7 @@
 /node_modules/
 *.psd
 *.png
+*.jpg
 /config.json
 /old_version/
 /core/modules/cosmetics/
