@@ -2,3 +2,4 @@
 *.psd
 *.png
 /config.json
+/old_version/
