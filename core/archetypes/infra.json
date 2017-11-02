@@ -1,0 +1,81 @@
+{
+    "decoration": {
+
+        "nsfw": {
+            "color": "#240d12",
+            "thumb": "https://png.icons8.com/porn-folder/dusk/40"
+        },
+        "mod": {
+            "color": "#322be5",
+            "thumb": "https://png.icons8.com/sheriff/dusk/40"
+        },
+        "$": {
+            "color": "#51ba8e",
+            "thumb": "https://png.icons8.com/money/dusk/40"
+        },
+        "game": {
+            "color": "#9288c9",
+            "thumb": "https://png.icons8.com/game-controller/dusk/40"
+        },
+        "rubine": {
+            "color": "#ff3636",
+            "thumb": "http://i.imgur.com/qP8XHN4.png"
+        },
+        "cosmetics": {
+            "color": "#ff6ed2",
+            "thumb": "https://png.icons8.com/bow-tie/color/40"
+        },
+        "social": {
+            "color": "#24409f",
+            "thumb": "https://png.icons8.com/new-contact/dusk/40"
+        },
+        "img": {
+            "color": "#2582b4",
+            "thumb": "https://png.icons8.com/stack-of-photos/dusk/40"
+        },
+        "dev": {
+            "color": "#2a2a2a",
+            "thumb": "https://png.icons8.com/code/dusk/40"
+        },
+        "own": {
+            "color": "#00ff3b",
+            "thumb": "https://png.icons8.com/code/dusk/40"
+        },
+        "easteregg": {
+            "color": "#ea5db4",
+            "thumb": "https://png.icons8.com/easter-egg/color/40"
+        },
+        "language": {
+            "color": "#61b149",
+            "thumb": "https://png.icons8.com/world-map/dusk/40"
+        },
+        "fun": {
+            "color": "#ffd23e",
+            "thumb": "https://png.icons8.com/cocktail/dusk/40"
+        },
+        "memes": {
+            "color": "#4d49b2",
+            "thumb": "https://png.icons8.com/paper-plane/dusk/40"
+        },
+        "gambling": {
+            "color": "#f45656",
+            "thumb": "https://png.icons8.com/cards/dusk/40"
+        },
+        "infra": {
+            "color": "#6d4e81",
+            "thumb": "https://png.icons8.com/database/dusk/40"
+        },
+        "misc": {
+            "color": "#d0d4ea",
+            "thumb": "https://png.icons8.com/cardboard-box/dusk/40"
+        },
+        "util": {
+            "color": "#e24f4f",
+            "thumb": "https://png.icons8.com/swiss-army-knife/dusk/40"
+        },
+      "halloween": {
+            "color": "#e2934f",
+            "thumb": "http://pollux.fun/images/pumpxd.png"
+        }
+    }
+}
