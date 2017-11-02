@@ -1,0 +1,244 @@
+{
+
+  "lootbox_C_C":{
+
+    "id":"lootbox_C_C",
+    "name":"Chibi Common Lootbox",
+    "rarity":"C",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+  "lootbox_C_O":{
+
+    "id":"lootbox_C_O",
+    "name":" Common Lootbox",
+    "rarity":"C",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+  "lootbox_C_E":{
+    "id":"lootbox_C_E",
+    "name":"Epic Common Lootbox",
+    "rarity":"C",
+    "icon":"lootbox",
+    "emoji":"loot"
+  },
+
+
+
+
+  "lootbox_U_C":{
+
+    "id":"lootbox_U_C",
+    "name":"Chibi Uncommon Lootbox",
+    "rarity":"U",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+  "lootbox_U_O":{
+
+    "id":"lootbox_U_O",
+    "name":" Uncommon Lootbox",
+    "rarity":"U",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+  "lootbox_U_E":{
+
+    "id":"lootbox_U_E",
+    "name":"Epic Uncommon Lootbox",
+    "rarity":"U",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+
+  "lootbox_R_C":{
+
+    "id":"lootbox_R_C",
+    "name":"Chibi Rare Lootbox",
+    "rarity":"R",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+  "lootbox_R_O":{
+
+    "id":"lootbox_R_O",
+    "name":" Rare Lootbox",
+    "rarity":"R",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+  "lootbox_R_E":{
+
+    "id":"lootbox_R_E",
+    "name":"Epic Rare Lootbox",
+    "rarity":"R",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+
+  "lootbox_SR_C":{
+
+    "id":"lootbox_SR_C",
+    "name":"Chibi Super Rare Lootbox",
+    "rarity":"SR",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+  "lootbox_SR_O":{
+
+    "id":"lootbox_SR_O",
+    "name":" Super Rare Lootbox",
+    "rarity":"SR",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+  "lootbox_SR_E":{
+
+    "id":"lootbox_SR_E",
+    "name":"Epic Super Rare Lootbox",
+    "rarity":"SR",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+
+  "lootbox_UR_C":{
+
+    "id":"lootbox_UR_C",
+    "name":"Chibi Ultra Rare Lootbox",
+    "rarity":"UR",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+  "lootbox_UR_O":{
+
+    "id":"lootbox_UR_O",
+    "name":" Ultra Rare Lootbox",
+    "rarity":"UR",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+  "lootbox_UR_E":{
+
+    "id":"lootbox_UR_E",
+    "name":"Epic Ultra Rare Lootbox",
+    "rarity":"UR",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+
+    "lootbox_C_event_1":{
+
+    "id":"lootbox_C_event_1",
+    "name":"Common Halloween Lootbox",
+    "rarity":"C",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "altemoji":":jack_o_lantern:",
+    "event":"halloween_2017",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+
+    "lootbox_U_event_1":{
+
+    "id":"lootbox_U_event_1",
+    "name":"Uncommon Halloween Lootbox",
+    "rarity":"U",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "altemoji":":jack_o_lantern:",
+    "event":"halloween_2017",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+
+    "lootbox_R_event_1":{
+
+    "id":"lootbox_R_event_1",
+    "name":"Rare Halloween Lootbox",
+    "rarity":"R",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "altemoji":":jack_o_lantern:",
+    "event":"halloween_2017",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  },
+
+    "lootbox_SR_event_1":{
+
+    "id":"lootbox_SR_event_1",
+    "name":"Super Rare Halloween Lootbox",
+    "rarity":"SR",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "altemoji":":jack_o_lantern:",
+    "event":"halloween_2017",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  }
+  ,
+
+    "lootbox_UR_event_1":{
+
+    "id":"lootbox_UR_event_1",
+    "name":"Ultra Rare Halloween Lootbox",
+    "rarity":"UR",
+    "icon":"lootbox",
+    "emoji":"loot",
+    "altemoji":":jack_o_lantern:",
+    "event":"halloween_2017",
+    "type":"box",
+    "tradeable": true,
+    "destroyable":false
+  }
+
+
+}
