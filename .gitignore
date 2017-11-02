@@ -2,6 +2,8 @@
 *.psd
 *.png
 *.jpg
+*.gif
+*.ico
 /config.json
 /old_version/
 /core/modules/cosmetics/
