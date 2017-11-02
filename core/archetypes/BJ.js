@@ -8,7 +8,6 @@ const DECK_TEMPLATE = suits
     .concat(ranks)
     .map(rank => rank + suit)
   ).reduce((array, arr) => array.concat(arr));
-
 class Blackjack {
   constructor(msg) {
     this.guildID = msg.guild.id;
@@ -16,7 +15,9 @@ class Blackjack {
     this.deck = [];
     games.set(this.playerID, this);
   }
-  getHand() {return this.hit(this.hit([]))}
+  getHand() {
+    return this.hit(this.hit([]))
+  }
   hit(hand) {
     if (this.deck.length === 0) {
       if (decks.has(this.guildID) && decks.get(this.guildID).length !== 0) {
