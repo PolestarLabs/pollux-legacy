@@ -1,3 +1,5 @@
+const Discord = require('discord.js')
+
 const fs=require('fs');
 const paths = require("./paths.json");
 
@@ -12,9 +14,10 @@ const DB = serverDB;
 
 module.exports={
   DB:serverDB, //legacy
-  serverDB:serverDB,
-  userDB:userDB,
-  channelDB:channelDB,
+  serverDB,
+  userDB,
+  channelDB,
+  Discord,
 
 //Get Index List
   getDirs : function getDirs(rootDir, cb) {
@@ -40,6 +43,19 @@ module.exports={
     })
  },
 
+
+
+
+  randomize: function randomize(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+  },
+
+  emoji: function emoji(emo) {
+      delete require.cache[require.resolve(`../resources/lists/emoji.js`)];
+      let emojia = require("../resources/lists/emoji.js");
+      if (emojia[emo] === undefined) return "🅱";
+      return emojia[emo];
+  },
 
   //Get IMG from Channel MSGs
   getImg: async function getImg(message) {
