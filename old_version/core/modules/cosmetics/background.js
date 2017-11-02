@@ -24,7 +24,7 @@ var init = function (message, userDB, DB) {
   let MSG=message.content
   
     let helpkey = mm("helpkey",{lngs:message.lang})
-if (!args || MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="help"){
+if (!args || MSG.split(/ +/)[1]==helpkey || MSG.split(/ +/)[1]=="?"|| MSG.split(/ +/)[1]=="help"){
     return gear.usage(cmd,message,this.cat);
 }
   

@@ -111,7 +111,7 @@ try{
            A="C"
         }
         else{
-           A=action.split(" ")[1]
+           A=action.split(/ +/)[1]
         }
     
     

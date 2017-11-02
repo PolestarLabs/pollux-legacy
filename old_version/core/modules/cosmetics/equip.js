@@ -36,7 +36,7 @@ return message.reply("Under Re-Work; Equip Medals at <http://www.pollux.fun/dash
     const helpkey = mm("helpkey", {
         lngs: message.lang
     })
-    if (MSG.split(" ")[1] == helpkey || MSG.split(" ")[1] == "?" || MSG.split(" ")[1] == "help") {
+    if (MSG.split(/ +/)[1] == helpkey || MSG.split(/ +/)[1] == "?" || MSG.split(/ +/)[1] == "help") {
         return gear.usage(cmd, message,this.cat);
     }
 

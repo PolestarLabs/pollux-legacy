@@ -76,7 +76,7 @@ const RRLT = new Russia(message);
             }else{
 
                 responses.forEach(re=>{
-                    let bet= re.content.split(" ")[1]
+                    let bet= re.content.split(/ +/)[1]
                     if (!typeof bet === "number") bet=0;
                     RRLT.register(re.author.id,bet);
                 message.reply(re.author.id+bet)

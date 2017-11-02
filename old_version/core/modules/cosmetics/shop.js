@@ -49,7 +49,7 @@ var init = async function (message, userDB, DB) {
 return message.reply("Temporarily Disabled for a Complete Rework!\n Meanwhile, get your Bgs and Medals at the Dashboard:\n**BGs**: <http://www.pollux.fun/bgshop>\n**Medals**: <http://www.pollux.fun/medalshop> ")
     //HELP TRIGGER
     let helpkey = mm("helpkey",{lngs:message.lang})
-if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="help"){
+if (MSG.split(/ +/)[1]==helpkey || MSG.split(/ +/)[1]=="?"|| MSG.split(/ +/)[1]=="help"){
     return gear.usage(cmd,message,this.cat);
 }
 

@@ -18,7 +18,7 @@ const discoin = new Discoin(cfg.DISCOIN);
   let helpkey = mm("helpkey", {
   lngs: message.lang
 })
-if (isNaN(Number(arg))||message.content.split(" ")[1] == helpkey || message.content.split(" ")[1] == "?" || message.content.split(" ")[1] == "help") {
+if (isNaN(Number(arg))||message.content.split(/ +/)[1] == helpkey || message.content.split(/ +/)[1] == "?" || message.content.split(/ +/)[1] == "help") {
   return gear.usage(cmd, message, this.cat);
 }
   
@@ -148,4 +148,3 @@ module.exports = {
     init: init,
     cat: '$'
 };
- 

@@ -30,7 +30,7 @@ var init = function (message, userDB, DB) {
         let helpkey = mm("helpkey", {
             lngs: message.lang
         })
-        if (!regExp.test(args) || !args || args === undefined || MSG.split(" ")[1] == helpkey || MSG.split(" ")[1] == "?" || MSG.split(" ")[1] == "help") {
+        if (!regExp.test(args) || !args || args === undefined || MSG.split(/ +/)[1] == helpkey || MSG.split(/ +/)[1] == "?" || MSG.split(/ +/)[1] == "help") {
             return gear.usage(cmd, message,this.cat);
         }
     } catch (e) {

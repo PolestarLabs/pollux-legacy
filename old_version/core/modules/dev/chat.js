@@ -17,7 +17,7 @@ return
 console.log(args)
   if (args.length >80) args=args.split(".")[0];
   if (args.length >80) args=args.split(",")[0];
-  if (args.length >80) args=args.split(" ")[0];
+  if (args.length >80) args=args.split(/ +/)[0];
   if (args.length >80) args=args.split("")[0];
   delete Array.prototype.removeire
   try{
@@ -39,4 +39,3 @@ console.log(args)
     init: init,
     cat: 'dev'
 };
- 
