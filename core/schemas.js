@@ -190,9 +190,9 @@ const User = new Schema({
 
             // MISC
             audits:{
-               rubine:{earnings:Mixed,expenses:Mixed},
-                jade:{earnings:Mixed,expenses:Mixed},
-                sapphire:{earnings:Mixed,expenses:Mixed}
+               rubines:{earnings:Mixed,expenses:Mixed},
+                jades:{earnings:Mixed,expenses:Mixed},
+                sapphires:{earnings:Mixed,expenses:Mixed}
                 },
 
             build: {
