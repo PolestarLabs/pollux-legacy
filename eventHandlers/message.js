@@ -6,15 +6,6 @@ const gear      = require('../core/gearbox.js'),
 
 
 let GREYLIST=[],BLACKLIST=[],WHITELIST=[]
-/*
-FLOW
-
-> DB checks
-  -- user exist
-  -- target exist
-  -- server exist
-  -- channel exist
-*/
 
 function dataChecks(type,ent){
   return new Promise(async resolve =>{
