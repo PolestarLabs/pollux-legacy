@@ -1,0 +1,61 @@
+{
+
+  "PYB": {
+    "bot": "PyButt",
+    "icon": "**₽**",
+    "name": "PYB",
+    "rbnRate": 0
+  },
+
+  "SBT": {
+    "bot": "SmoreBot",
+    "icon": "**$BT**",
+    "name": "Tokens",
+    "rbnRate": 0
+
+  },
+
+  "ELT": {
+    "bot": "Elite Looter",
+    "icon": "<:elitecoin:363622320620830721> ",
+    "name": "Elite Coins ",
+    "rbnRate": 0
+
+  },
+
+  "DTS": {
+    "bot": "DiscordTel",
+    "icon": ":telephone:",
+    "name": "Credits",
+    "rbnRate": 0
+  },
+
+  "DCN": {
+    "bot": "DerpBot",
+    "icon": "<:derpcoin:363622320561979402> ",
+    "name": "Derpcoin",
+    "rbnRate": 0
+  },
+
+  "DUT": {
+    "bot": "DueUtil",
+    "icon": "<:duecoin:363624878039105536> ",
+    "name": "Tokens",
+    "rbnRate": 0
+  },
+  "RBN": {
+    "bot": "Pollux",
+    "icon": "<:rubine:343314186765336576> ",
+    "name": "Rubines",
+    "rbnRate": 0
+  },
+
+  "DISCOIN":{
+    "bot":"none",
+    "icon":"<:Discoin:357656754642747403> ",
+    "name": "Discoin",
+    "rbnRate" : 0
+  }
+
+
+}

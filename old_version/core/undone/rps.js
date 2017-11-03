@@ -1,4 +1,4 @@
-var paths = require("../paths.js");
+var paths = require("../paths.json");
 const fs = require("fs");
 
 var pass = 0

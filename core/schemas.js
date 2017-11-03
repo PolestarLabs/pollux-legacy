@@ -108,13 +108,13 @@ const Server = new Schema({
         channels: Mixed
     });
 
-
 //CHANS
 const Channel = new Schema({
         name: String,
         LANGUAGE:String,
         id: {type:String,required: true,index:{unique:true}},
         modules: {
+            BUSTER:   Mixed,
             DROPSLY: {type:Number,default:0},
             EXP:     {type:Boolean,default:true},
             LVUP:    {type:Boolean,default:true},
@@ -190,9 +190,9 @@ const User = new Schema({
 
             // MISC
             audits:{
-               rubine:Mixed,
-                jade:Mixed,
-                sapphire:Mixed
+               rubines:{earnings:Mixed,expenses:Mixed},
+                jades:{earnings:Mixed,expenses:Mixed},
+                sapphires:{earnings:Mixed,expenses:Mixed}
                 },
 
             build: {
@@ -223,18 +223,21 @@ const User = new Schema({
         }
     });
 
+const Globals = new Schema({
+  id:{type:Number,default:0,unique:true},
+  data:Mixed
+})
 //MARKET
 const Background = new Schema({
   name:String,
   id:{type:String,index:{unique:true}},
   rarity:{type:String,index:true},
   tags:{type:String,index:true}
-})
-
-
+});
 
 module.exports={
   user    : mongoose.model('User', User, 'userDB'),
   server  : mongoose.model('Server', Server, 'serverDB'),
-  channel : mongoose.model('Channel', Channel, 'serverDB')
+  channel : mongoose.model('Channel', Channel, 'channelDB'),
+  global  : mongoose.model('Global', Globals, 'Globals')
 };

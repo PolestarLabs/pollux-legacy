@@ -1,6 +1,6 @@
 exports.run = (bot, message, args, userData, caller, gear, points, skynet, modules) => {
 
-    var paths = require("../paths.js");
+    var paths = require("../paths.json");
 
 
 

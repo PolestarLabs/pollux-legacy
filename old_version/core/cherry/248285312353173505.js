@@ -1,7 +1,7 @@
 
 
 const fs = require("fs");
-const paths = require("../paths.js");
+const paths = require("../paths.json");
 const REACTIONS = "./resources/imgres/reactions/"
 var mentioned = []
 module.exports = {
