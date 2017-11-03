@@ -230,9 +230,9 @@
         "exchange": "Vyměň Rubíny za měnu jiných botů!",
         "slots": "Zahraj si hru na automatu na mince, sázení je dobrovolný, ale řeknu ti, ta výhra je **obrovská** pokud vsadíš. :3",
         "avatar": "Ten jeden příkaz kterej ukáže něčí avatar kterej jste tak ku*va moc požadovali!",
-        "candyrank": "See the best candy collectors around the world",
-        "candy": "Checks how much candy you or a friend have collected during this event",
-        "trickortreat": "Knocks on a Server to ask for candies, can be done once a day per Server."
+        "candyrank": "Ukáže nejlepší sběrače sladkostí kolem světa",
+        "candy": "Ukáže kolik sladkostí jsi ty nebo někdo nasbíral za tenhle event",
+        "trickortreat": "Zaťuká na server a poprosí o sladkosti, tohle může být uděláno jen jednou za den na server."
     },
     "menu": {
         "cake": "Dort",
@@ -372,8 +372,8 @@
         "slots": "`{{prefix}}slots [sázka(dobrovolná)]`",
         "avatar": "`{{prefix}}avatar [@someguy]`",
         "daily": "Napiš `{{prefix}}daily` pro získání svýho denního bonusu, sbírej 10 dní v řadě pro větší bonus\n`{{prefix}}daily epoch} pro vypsání času do dalšího globálního resetu časovače.",
-        "trickortreat": "`{{prefix}}trickortreat` or `{{prefix}}trit`",
-        "candy": "`{{prefix}}candy [@someguy]`",
+        "trickortreat": "`{{prefix}}trickortreat` nebo `{{prefix}}trit`",
+        "candy": "`{{prefix}}candy [@někdo]`",
         "candyrank": "`{{prefix}}candyrank`"
     },
     "logs": {
@@ -633,9 +633,9 @@
         "duplicateExchange": "Duplikát {{tpe}} `{{itm}}` vyměněn za {{X}} rubínů",
         "morons": "Vy bando **kreténů**! Nechali jste proklouznout Lootbox. >:U",
         "contesting": "Zápisy pro tenhle box:",
-        "eventDrop": "And there is more! This box is an **EVENT BOX** which means **special goodies inside!**",
-        "suprareDrop": "Oh my, a **SUPER RARE** Lootbox!",
-        "notThisbox": "There's no such box to open, try `{{prefix}}lootbox` again and see tha options available~"
+        "eventDrop": "A je tu ještě víc! Tenhle Lootbox je **EVENT LOOTBOX**, což znamená že obsahuje **speciální věci!**",
+        "suprareDrop": "Wow, **SUPER VZÁCNÝ** Lootbox!",
+        "notThisbox": "Takovej lootbox neexistuje, zkus `{{prefix}}lootbox` znova a mrkni se jaký máš na výběr možnosti~"
     },
     "discord": {
         "role": "Role",
@@ -676,18 +676,18 @@
         "next": "Znovu dostupné na tomto serveru v",
         "treat": "***Koleda!*** Dostal jsi **{{qtd}}** sladkostí ze špajzu serveru!",
         "treatRefresh": "Nee! Svoje sladkosti už sis vybral!\nMůžeš přijít zpátky za **{{remaining}}**",
-        "current_event": "Hey~ Did you know there is a global **Halloween Event** going on? :jack_o_lantern:\nIn this event you can get some cool and __exclusive__ pretty stuff for your `p!profile` card!\nAvailable only during this event, which will be running until **November 5th**\nMore info at <http://pollux.fun/events/haloween> *(page in english)*\n*Contact your Server Owner to check if this server is participating*",
-        "current_eventforMasters": "Hey~ Excuse me, did you know there is a global **Halloween Event** going on? :jack_o_lantern:\nIn this event people can get some cool and __exclusive__ pretty stuff for their`p!profile` cards!\nAvailable only during this event, which will be running until **November 5th**\nMore info at <http://pollux.fun/events/haloween> *(page in english)*\n\nYou, as a Server Owner, if interested in participating in the event with your community, can answer this message with an `halloween` so I know you're in! You will receive **five** Event Lootboxes, plus **one** for every 100 members on your server(s), capping at 15.\nThese can be used as rewards to any self-hosted events you may run, or just to raffle amongst your members.\nI trust you to not use these for self advantage, either way, Event Lootbox usage will be logged just in case to protect those who want to play fairly~\n\nSome Servers are not eligible for auto-joining the event. Which are:\n - Servers created after a certain date;\n - Servers in which I joined after October 1st;\n - Servers with bot x human users ratio exceeds 10%\n\n If your server fits in any of these, but it is a legit community server wanting to participate, join my Support Server and speak to my Developer for help, and eventually a Whitelisting of your server.\n\nHere are some quick instructions for the commands involved in this event:\n - `p!trickortreat` : This is like dailies, but usable once a day in every participating server i'm in. Collect candies and get ranked, the top ranked users will get goodies from myself at the end of the event in **November 5th, 3PM EDT**.\n - `p!trade box @someone` Use this to award boxes to someone.\n - `p!lootbox` Check the lootboxes in your inventory, Event Boxes are opened responding with `open EV`.\n\nAny further questions, bugs, or anything. Join the Support Server and spill it out (you can find it with `p!help`)\n\n**Stay Spooky and Happy Halloween!** :heart:",
-        "newAccOut": ":warning: Sorry, new accounts cannot participate. But join me in another event!~",
-        "newServer": "New Servers cannot participate in this event. Contact the Developer or join the Support Server if you want to participate in the event with this Server",
-        "newJoin": "This Server cannot participate in this event because I've joined here after October 1st. Contact the Developer or join the Support Server if you want to participate in the event with this Server",
-        "nextThis": "You can Trick or Treat here again at:",
-        "candiesCheck": "You collected **{{amt}}** candies so far. Keep knocking at servers to get more!",
-        "candiesCheckHim": "**{{user}}** has collected **{{amt}}** candies so far.",
-        "candieRank": "These are the most candy-rich guys around the block.",
-        "candies": "**{{amt}}** Candies",
-        "candytop": "The top-tier Candy collectors are:",
-        "candyprize": "The best ranked users will get some nice rewards at the end of the event!",
-        "yourpos": "Your position in the rank is:"
+        "current_event": "Hele~ Věděl jsi že zrovna probíhá **Halloween Event**? :jack_o_lantern:\nV tomhle eventu můžeš dostat nějaký pěkný a __exkluzivní__ věci pro tvou `p!profile` kartu!\nDostupný jen v průběhu tohodle eventu, kterej bude probíhat do **5. listopadu**\nVíc info na <http://pollux.fun/events/halloween> *(stránka je v angličtině, kontaktuj electricas#8005 pro víc info)*\n*Abys zjistil jestli se server zůčastní eventu, napiš majiteli serveru*",
+        "current_eventforMasters": "Hele~ Věděl jsi že zrovna probíhá **Halloween Event**? :jack_o_lantern:\nV tomhle eventu můžeš dostat nějaký pěkný a __exkluzivní__ věci pro tvou `p!profile` kartu!\nDostupný jen v průběhu tohodle eventu, kterej bude probíhat do **5. listopadu**\nVíc info na <http://pollux.fun/events/halloween> *(stránka je v angličtině, kontaktuj electricas#8005 pro víc info)*\n\nPokud se chceš jako majitel serveru s tvou komunitou zůčastnit eventu, můžeš odpovědět na tuhle zprávy napsáním `halloween` abych věděla že do toho jdeš! Dostaneš **pět** Event Lootboxů, plus **jeden** za každých 100 členů na tvým serveru/serverech, končící na 15. Ty můžou být použity jako ceny pro jakýkoliv eventy který chceš pořádat, nebo je prostě můžeš rozdat mezi tvou komunitu.\nVěřím ti, že je nepoužiješ jako výhodu pro sebe, tak či tak se budou radši dělat záznamy používání Event Lootboxů, aby se hrálo fér~\n\nNěkterý servery nejsou pro zůčastnění automaticky oprávněný. To jsou:\n- Servery vytvořený po daným datu;\n- Servery do kterých jsem se připojila po 1. říjnu;\n- Servery s poměrem botů ku lidem přes 10%\n\nPokud tvůj server do některých z těhle pravidel zapadá, ale je to poctivý komunitní server který chce event pořádat, připoj se na můj server podpory a zeptej se mého vývojáře o pomoc, popřípadě electricas#8005 (český helper), a eventuálně tvůj server přidáme do seznamu povolených.\n\nTady je trochu instrukcí pro příkazy pro tento event:\n- `p!trickortreat` Je to jako daily odměny, ale jsou použitelný jednou za den v jakýmkoliv serveru jsem. Sbírej sladkosti, buď hodnocen a top hodnocení členové ode mě dostanou nějaký věcičky na konci eventu **5. října, 21:00 CEST**.\n- `p!trade box @někdo` Tímhle někomu dej lootboxy jako odměny.\n- `p!lootbox` Ukáže ti lootboxy v tvém inventáři, Event Lootboxy otevřeš odpovědí `open EV`.\n\nPro jakýkoliv další otázky, nahlášení bugů, prostě cokoliv se připoj na můj server podpory a vyval to na nás (můžeš ho najít v `p!help`)\n\n**Zůstaňte spooky a Veselý Halloween!** :heart:",
+        "newAccOut": ":warning: Promiň, nový účty se nemůžou zůčastnit. Ale můžeš se připojit v dalším eventu!~",
+        "newServer": "Nový servery se v tomhle eventu nemůžou zůčastnit. Kontaktuj mého vývojáře nebo se připoj na můj server podpory pokud se chceš zůčastnit eventu s tímhle serverem",
+        "newJoin": "Tenhle server se nemůže v eventu zůčastnit protože jsem se sem připojila po 1. říjnu. Kontaktuj mého vývojáře nebo se připoj na můj server podpory pokud se chceš zůčastnit eventu s tímhle serverem",
+        "nextThis": "Můžeš tady koledovat zase v:",
+        "candiesCheck": "Zatím jsi nasbíral **{{amt}}** sladkostí. Ťukej dál na servery pro získání víc!",
+        "candiesCheckHim": "**{{user}}** zatím nasbíral **{{amt}}** sladkostí.",
+        "candieRank": "Tohle jsou ty nejvíc sladkostma bohatý lidi kolem.",
+        "candies": "**{{amt}}** Sladkosti",
+        "candytop": "Ty nejlepší sběrači sladkostí jsou:",
+        "candyprize": "Ty nejlíp hodnocený členové dostanou na konci eventu celkem pěkný ceny!",
+        "yourpos": "Tvoje pozice je:"
     }
 }
