@@ -3,7 +3,11 @@ const gear = require("../gearbox.js")
 const DB =  gear.serverDB
 const uDB = gear.userDB
 //const EKO = gear.EKO
-
+  const auditTemplate={
+                rubines:{earnings:{},expenses:{}},
+                jades:{earnings:{},expenses:{}},
+                sapphires:{earnings:{},expenses:{}}
+  }
 const currencies={
   main:{
     id:"rubines",
@@ -168,7 +172,7 @@ const normalize =  function normalize(U) {
   return uDB.findOne({id:U}).then(async USRDATA=>{
       if(!USRDATA)return;
 
-  if (!USRDATA.modules.audits)await uDB.findOneAndUpdate({id:U},{$set:{'modules.audits':{}}});
+  if (!USRDATA.modules.audits)await uDB.findOneAndUpdate({id:U},{$set:{'modules.audits':auditTemplate}});
   uDB.findOne({id:U}).then(async USRDATA=>{
 
   let unit=['main','side','premium']
@@ -222,9 +226,7 @@ const checkFunds = async function checkFunds(amount,user,unit){
 }
 
 module.exports={
-  normalize:normalize,
-  checkFunds:checkFunds,
-  pay:pay,
-  balance:balance,
-  receive:receive
+  normalize,checkFunds,
+  pay,balance,receive,
+  auditTemplate
 }
