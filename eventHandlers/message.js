@@ -40,20 +40,18 @@ function dataChecks(type,ent){
 };
 
 
-async function localExpIncrement(SERVER,servData,CHANNEL,chanData,USER,userData){
+async function localExpIncrement(message,servData,chanData,USER,userData){
 
     let channel_exp;
     if(!chanData.modules.EXP){
-      channel_exp = (await channelDB.set(CHANNEL.id,{$set:{'modules.EXP':true}})).modules.EXP;
+      channel_exp = (await channelDB.set(message.channel.id,{$set:{'modules.EXP':true}})).modules.EXP;
     }else{
       channel_exp = chanData.modules.EXP;
     };
-
     if (channel_exp){
-
         let lRanks= {};
         if(!servData.modules.LOCALRANK){
-          lRanks = (await serverDB.findOneAndUpdate({id:SERVER.id},{$set:{'modules.LOCALRANK':{}}})).modules.LOCALRANK;
+          lRanks = (await serverDB.findOneAndUpdate({id:message.guild.id},{$set:{'modules.LOCALRANK':{}}})).modules.LOCALRANK;
         }else{
           lRanks = servData.modules.LOCALRANK;
         };
@@ -64,11 +62,10 @@ async function localExpIncrement(SERVER,servData,CHANNEL,chanData,USER,userData)
           userRankLocal = lRanks[USER.id];
         }
         userRankLocal.exp+=1;
-        await serverDB.findOneAndUpdate({id:SERVER.id},{$set:{['modules.LOCALRANK.'+USER.id]:userRankLocal}});
-
+        await serverDB.findOneAndUpdate({id:message.guild.id},{$set:{['modules.LOCALRANK.'+USER.id]:userRankLocal}});
     };
 };
-async function randomDrops(SERVER,servData,CHANNEL,chanData,USER,userData){
+async function randomDrops(CHANNEL,chanData){
 
     let random_drops;
     if(!chanData.modules.EXP){
@@ -82,7 +79,7 @@ async function randomDrops(SERVER,servData,CHANNEL,chanData,USER,userData){
 
     };
 };
-async function spamBuster(SERVER,servData,CHANNEL,chanData,USER,userData){
+async function spamBuster(SERVER,servData,CHANNEL,chanData){
     //const Nightwatch = require ('./supermodules/nightwatch.js');
     let spam_buster;
     if(!chanData.modules.BUSTER){
@@ -109,6 +106,22 @@ async function spamBuster(SERVER,servData,CHANNEL,chanData,USER,userData){
     if(spam_buster.mentionSpam)/*Nightwatch.mentionBuster()*/;
 };
 
+   async function serverLanguageSets(message, servData) {
+     if (typeof (servData.modules.LANGUAGE) !== 'undefined' && servData.modules.LANGUAGE && servData.modules.LANGUAGE !== '') {
+       let langua = "en"
+       if (message.guild.region === 'brazil') langua = "pt-BR";
+       message.lang = [servData.modules.LANGUAGE, langua, 'dev'];
+     } else {
+       let langua = "en"
+       if (SERVER.region === 'brazil') langua = "pt-BR";
+       message.lang = [langua, 'dev'];
+       await serverDB.set(message.guild.id, {
+         $set: {
+           'modules.LANGUAGE': langua
+         }
+       });
+     };
+   }
 
 exports.run = async function(bot, message){
 
@@ -128,21 +141,12 @@ exports.run = async function(bot, message){
 
   if (SERVER){
 
-    await localExpIncrement(SERVER,servData,CHANNEL,chanData,USER,userData),
-    await randomDrops(SERVER,servData,CHANNEL,chanData,USER,userData),
-    await spamBuster(SERVER,servData,CHANNEL,chanData,USER,userData);
+    await localExpIncrement(message,servData,chanData,USER,userData),
+    await randomDrops(CHANNEL,chanData),
+    await spamBuster(SERVER,servData,CHANNEL,chanData);
 
     //CHECK SERVER LANG
-    if (typeof (servData.modules.LANGUAGE) !== 'undefined' && servData.modules.LANGUAGE && servData.modules.LANGUAGE !== '') {
-        let langua = "en"
-        if (SERVER.region === 'brazil') langua = "pt-BR";
-        message.lang = [servData.modules.LANGUAGE, langua, 'dev'];
-    } else {
-        let langua = "en"
-        if (SERVER.region === 'brazil') langua = "pt-BR";
-        message.lang = [langua, 'dev'];
-        await serverDB.set(SERVER.id,{$set:{'modules.LANGUAGE':langua}});
-    };
+    await serverLanguageSets(message,servData);
 
     //CHECK CHANNEL LANG
     if(chanData.modules.LANGUAGE){
