@@ -108,7 +108,6 @@ const Server = new Schema({
         channels: Mixed
     });
 
-
 //CHANS
 const Channel = new Schema({
         name: String,
@@ -191,9 +190,9 @@ const User = new Schema({
 
             // MISC
             audits:{
-               rubine:Mixed,
-                jade:Mixed,
-                sapphire:Mixed
+               rubine:{earnings:Mixed,expenses:Mixed},
+                jade:{earnings:Mixed,expenses:Mixed},
+                sapphire:{earnings:Mixed,expenses:Mixed}
                 },
 
             build: {
