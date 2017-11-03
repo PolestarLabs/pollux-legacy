@@ -59,7 +59,6 @@ const init = async function (message,userDB,DB) {
       embed.description=gear.emoji("nope")+" No Lootboxes to Open"
     }
     message.channel.send({embed});
-
       const responses = await message.channel.awaitMessages(msg2 =>
           msg2.author.id === message.author.id && (
                msg2.content.toLowerCase().includes("lootbox")
