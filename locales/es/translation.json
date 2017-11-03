@@ -32,7 +32,13 @@
         "drops": "Despojos",
         "balance": "Balance",
         "total": "Total",
-        "noFundsBet": "Supongo que no puedes financiar esta apuesta... Consigues {{number}} Rubíes"
+        "noFundsBet": "Supongo que no puedes financiar esta apuesta... Consigues {{number}} Rubíes",
+        "plus_rubines_generic": "%R% Rubines has been added to your balance. Sweet!",
+        "minus_rubines_generic": "I'm taking %R% Rubines from your balance okay~?",
+        "noBet": "Playing for fun eh? okay~",
+        "exchange": "Exchanges",
+        "crafts": "Crafting",
+        "donation": "Donations"
     },
     "forFun": {
         "saltLVL": "{{target}}' tiene un Nivel de Sal en **{{amount}}%** {{emoji}}",
@@ -90,7 +96,10 @@
         "unpermB": "Oh chico, supongo que no tengo suficientes permisos para proceder con esto... ",
         "cantFindChannel": "Um...No pude encontrar este canal :/ si no estas seguro, intenta usar #canal",
         "noChannelGiven": "Aja, ¿y donde voy a registrar esas actividades? ¿En tu cara? ¡Dime el canal en el que las registrare!",
-        "noReason": "Razones no Especificadas"
+        "noReason": "Razones no Especificadas",
+        "insuperms": "You have no permission to use this command, shoo!",
+        "not-a-NSFW-channel": "Set this channel as NSFW first, boy. There are kids around",
+        "timesOutIn": "This will timeout in {{s}} seconds"
     },
     "dict": {
         "coinHeads": "Cara",
@@ -115,7 +124,7 @@
         "usage": "Uso:",
         "module": "Modulo",
         "inst": "Instrucciones",
-        "bet": ""
+        "bet": "Bet"
     },
     "profile": {
         "persotexUpdate": "Eyyy. ¡Todo listo! Tú texto personal ahora es:\n{{pstext}} \nUsa `{{prefix}}profile` para ver esta bella linea en tu ~~no tan bella~~ TarjetaDePerfil. Teehee~"
@@ -214,8 +223,16 @@
         "read": "Leer texto de una imagen",
         "roll": "Lanza el dado ; uno, tres, diez o un putón de dados",
         "translate": "Traduce algo al Idioma predeterminado del servidor [En desarrollo]",
-        "drawcards": "",
-        "medal": ""
+        "drawcards": "Draws 5 cutesy playing cards, totally random, with no specific purpose.",
+        "medal": "Shows information about a medal from the Medal Shop",
+        "blackjack": "Play the fanciest Discord Blackjack you've ever seen!\n Spend your Rubines and go bankrupt!",
+        "alignment": "Show the Alignment Chart for your Server's members",
+        "exchange": "Exchange Rubines for other bots currencies!",
+        "slots": "Play a game of slots, betting is optional, but lemme tell you, the payout is **huge** if you do. :3",
+        "avatar": "That one command to show someone's Avatar you all asked so f*ckin much!",
+        "candyrank": "See the best candy collectors around the world",
+        "candy": "Checks how much candy you or a friend have collected during this event",
+        "trickortreat": "Knocks on a Server to ask for candies, can be done once a day per Server."
     },
     "menu": {
         "cake": "Pastel",
@@ -303,7 +320,7 @@
         "ban": "`{{prefix}}ban @alguien <razón>`\nRestringe @alguien del servidor, la razón es opcional, para cuando sea necesaria la moderación avanzada.",
         "speakAvailable": "Los Idiomas disponibles son:",
         "autorole": "`{{prefix}}autorole [add | rem | list] [Role| @role]` \n\n`{{prefix}}autorole add Games` Permite los **Juegos** Rol como Auto-asignables.\n`{{prefix}}autorole rem Games` Remueve el Rol **Juegos** de la lista.\n`{{prefix}}autorole list` Muestra la lista y los comandos para cada Rol Auto-asignable\n\nEscribe el nombre del Rol exactamente como esta registrado, sensibilidad a mayúsculas. O solo @mencionar lo.",
-        "background": "`{{prefix}}background [Imagecode]`\n\n:warning: **IMPORTANTE:** \n*Imagecode* __no son links__, son codigos obtenidos de http://www.pollux.fun/ , La tienda de Fondos esta aun en desarrollo y por ahora esta es la manera, se que apesta.\n\nEjemplo: `{{prefix}}background IlyEEDBj0GLLlFl8n6boPLSkADNuBwke`",
+        "background": "`{{prefix}}background [Imagecode]`\n\n:warning: **IMPORTANTE:** \n*Imagecode* __no son links__, son codigos obtenidos de http://krypt.pollux.fun/ , La tienda de Fondos esta aun en desarrollo y por ahora esta es la manera, se que apesta.\n\nEjemplo: `{{prefix}}background IlyEEDBj0GLLlFl8n6boPLSkADNuBwke`",
         "bye": "`{{prefix}}bye [msg|timer] [mensagem|segundos]` \n\n`{{prefix}}bye msg Asta la vista %user% !`\n Cambia el mensaje a \"Asta la vista @User !\"\n\n`{{prefix}}bye timer 10`\n Establece un tiempo en segundos para auto eliminación, 0 para mantenerlo para siempre.\n\n`{{prefix}}bye`\nsin ningún parámetro, este comando activara o desactivara la emisión de mensajes.\n\n**Wildcards**:\n`%user%` Menciona al usuario.\n`%username%` Coloca el nombre del usuario, sin mención.",
         "welcome": "`{{prefix}}welcome [msg|timer] [mensagem|segundos]` \n\n`{{prefix}}welcome  msg Bienvenido %user% !`\n Cambia el mensaje a  \"Bienvinido @User !\"\n\n`{{prefix}}welcome timer 10`\n Coloca un mensaje en segundos para la auto eliminación, 0 para mantenerlo por siempre.\n\n`{{prefix}}welcome `\nSin parámetro alguno,este comando cambiara entre encendido y apagado la emición de mensajes.\n\n**Wildcards**:\n`%user%` Menciona al usuario.\n`%username%` Coloca el nombre del usuario sin mencionarlo.",
         "chinese": "`{{prefix}}chinese [text]`",
@@ -347,8 +364,17 @@
         "roll": "`{{prefix}}roll [Amount]<d[Faces]>[extra operations]`\n`{{prefix}}roll d20` `{{prefix}}roll 5d6` `{{prefix}}roll 150d12` `{{prefix}}roll 10d4 + 8` `{{prefix}}roll d12 - 10` `{{prefix}}roll 60d7 / 7` `{{prefix}}roll 1d100*5`\n\n Añade suspenso a tus lanzamientos de dados añadiendo algo de retraso a tus segundos: `{{prefix}}roll 1d20 -t 5`",
         "translate": "`{{prefix}}translate [text]`",
         "speak": "`{{prefix}}lang [language]` o `{{prefix}}speak [language]`",
-        "medal": "",
-        "drawcards": ""
+        "medal": "`{{prefix}}medal [medal_id]` or just `{{prefix}}medal`\n For example: `{{prefix}}medal darkmagirl` for the **Dark Magician Girl** medal.",
+        "drawcards": "`{{prefix}}drawcards`",
+        "blackjack": "`{{prefix}}blackjack 50` Minimum bet is 10, maximum is 2500.",
+        "alignment": " `{{prefix}}alignment` or  `{{prefix}}alignchart`",
+        "exchange": "`{{prefix}}exchange [Amount] [Destination Currency Code]` \ne.g `{{prefix}}exchange 28 DUT` Exchanges 28 Rubines into DueUtil Credits.",
+        "slots": "`{{prefix}}slots [bet(optional)]`",
+        "avatar": "`{{prefix}}avatar [@someguy]`",
+        "daily": "`{{prefix}}daily` to get your daily bonus, streak 10 days in a row for a higher bonus1\n `{{prefix}}daily epoch` to check how much time until next global refresh.",
+        "trickortreat": "`{{prefix}}trickortreat` or `{{prefix}}trit`",
+        "candy": "`{{prefix}}candy [@someguy]`",
+        "candyrank": "`{{prefix}}candyrank`"
     },
     "logs": {
         "success": "¡Hecho! He establecido {{channel}} como el Canal para {{CHNTYPE}}!",
@@ -358,21 +384,21 @@
         "actLogs": "REGISTROS DE ACTIVIDAD",
         "advLogs": "REGISTROS AVANZADOS",
         "logChan": "REGISTROS GENERALES",
-        "userJoin": "",
-        "userLeave": "",
-        "messDel": "",
-        "messEdit": "",
-        "newChan": "",
-        "delChan": "",
-        "updtChan": "",
-        "newRole": "",
-        "uptRole": "",
-        "delRole": "",
-        "revokeBan": "",
-        "usrNick": "",
-        "usrPhoto": "",
-        "usrRoles": "",
-        "gSets": ""
+        "userJoin": "**%1%** has **joined** the Server",
+        "userLeave": "**%1%** has **left** the Server",
+        "messDel": "A message has been **deleted** at %2%",
+        "messEdit": "%1% has **edited** his message at %2%",
+        "newChan": "A new **channel** has been **created**: %2%",
+        "delChan": "A **channel** has been **deleted**: %2%",
+        "updtChan": "The channel **%2%** has been **updated**",
+        "newRole": "A new **role** has been **created**:",
+        "uptRole": "%1% roles has been updated",
+        "delRole": "A **role** has been **deleted**:",
+        "revokeBan": "Ban on **%1%** Revoked",
+        "usrNick": "From now on **%1%** calls themself **%11%**",
+        "usrPhoto": "**%1%** got a new Profile Picture",
+        "usrRoles": "Roles updated for user %1%",
+        "gSets": "Server settings has been changed!"
     },
     "error": {
         "iNeedThesePerms": "Los siguientes permisos no están presentes para proceder correctamente:\n{{PERMSLIST}}"
@@ -510,10 +536,10 @@
         "muterole": "Rol de Silencio",
         "deposit": "Depositar",
         "withdraw": "Sacar",
-        "genSets": "",
-        "chanSets": "",
-        "updtChan": "",
-        "gSets": ""
+        "genSets": "General Settings",
+        "chanSets": "Channel Settings",
+        "updtChan": "Channel Updated",
+        "gSets": "Server Settings Updated"
     },
     "modules": {
         "nsfw": "NSFW",
@@ -533,14 +559,49 @@
         "gambling": "Apuestas",
         "infra": "Infra",
         "misc": "Varios",
-        "util": "Utilidad"
+        "util": "Utilidad",
+        "music": "Music"
     },
     "games": {
         "dice": {
             "someoneRolledX": "**%U%** rolled %D%...",
             "andGot": "y sacaste **{{val}}** !",
             "rollsWere": "Los resultados fueron:"
-        }
+        },
+        "blackjack": {
+            "ongoing": "Hey dear, we are already playing a match!",
+            "newgame": "Time to play some Blackjack, I guess you know the rules, so let's get started.",
+            "result": "Result:",
+            "bust": "Bust",
+            "youwin": "Congrats! You won this time!",
+            "youlose": "Ha! I won!",
+            "hit": "Respond with `hit` to draw one more card, ",
+            "stand": "Stand",
+            "split": "`split` to Split your hand, ",
+            "doubledown": "Double Down",
+            "double": "`double down` to double your bet and draw one last card, ",
+            "pass": "or `stand` to pass.",
+            "even": "We broke even, in that case the house wins~ Your Rubines stay with me."
+        },
+        "slots": {
+            "takePrize": "Your prize for this is **%$%** %emj%",
+            "_minor": "better than nothing huh? ;)",
+            "_mid": "not bad at all!",
+            "_major": "so close!",
+            "_ultimate_1": "that's great!!! :heart:",
+            "_ultimate_2": "you're so lucky!!! :heart:",
+            "_ultimate_3": "can you believe this?! :heart:",
+            "kommunism": "KOMMUNIST JACKPOT!!! Your prize is 3x higher, and it was split by as much people as I could find!",
+            "pollux_jackpot": "Oh my oh my! Three of me! This deserves a really generous prize!",
+            "lucky": "Lucky sevens baby~",
+            "jackpot": "In addition to your prize, you also have 100 rings and an extra life",
+            "bonanza": "Yay! Rubines Bonanza! Too much Rubines to carry!",
+            "potato": "Potatoes... not bad, but not good either.",
+            "zero_1": "Ah noooo! :( You couldn't get not even one Rubine back...",
+            "zero_2": "Oh that's too bad... nothing here.",
+            "zero_3": "Better luck next time, sweetie. I believe in you! ;)"
+        },
+        "ceilingBet": "You can't bet more than **{{number}}** %emj% Rubines in this game!"
     },
     "loot": {
         "rareDrop": "¿Sabes lo que es esto? ¡Es un Botín **RARE**!",
@@ -562,17 +623,71 @@
         "reroll": "Volver a lanzarlo",
         "rerolled": "Intentemos de nuevo, mezclando el contenido de la caja...",
         "noMoreRolls": "Te has quedado sin oportunidades para repetir",
-        "noFunds": "No puedes darte el lujo de volver a intentar chiquillo, mejor suerte la próxima vez."
+        "noFunds": "No puedes darte el lujo de volver a intentar chiquillo, mejor suerte la próxima vez.",
+        "rerollRemain": "Rerolls remaining:",
+        "addedRubines": "{{X}} Rubines added to your Balance",
+        "addedJades": "{{X}} Jades added to your Pouch",
+        "addedMedal": "**{{itm}}** Medal added to your Inventory",
+        "addedSticker": "**{{itm}}** Sticker added to your Inventory",
+        "addedBG": "Background `[code:{{itm}}]` added to your Inventory",
+        "duplicateExchange": "Duplicate {{tpe}} `{{itm}}` exchanged for {{X}} Rubines",
+        "morons": "You're a bunch of **morons**! You let a Lootbox slip by. ]:U",
+        "contesting": "Entries for this Box:",
+        "eventDrop": "And there is more! This box is an **EVENT BOX** which means **special goodies inside!**",
+        "suprareDrop": "Oh my, a **SUPER RARE** Lootbox!",
+        "notThisbox": "There's no such box to open, try `{{prefix}}lootbox` again and see tha options available~"
     },
     "discord": {
-        "role": "",
-        "server": "",
-        "member": "",
-        "user": "",
-        "user_plural": "",
-        "channel": "",
-        "channel_plural": "",
-        "voice_channel": "",
-        "private": ""
+        "role": "Role",
+        "server": "Server",
+        "member": "Member",
+        "user": "User",
+        "user_plural": "Users",
+        "channel": "Channel",
+        "channel_plural": "Channels",
+        "voice_channel": "Voice Channel",
+        "private": "Private Message"
+    },
+    "music": {
+        "nowplaying": "Now Playing",
+        "comingnext": "Coming Next",
+        "playing": "Playing right now",
+        "upnext": "Upnext on this playlist"
+    },
+    "eastereggs": {
+        "konodioda": "You thought that it was Pollux, **but it was ME, DIO**!"
+    },
+    "discoin": {
+        "desc": "Your transaction is being processed, a response from %BOT% will come as soon as it is confirmed!",
+        "intake": "Pollux **Rubines** (RBN) Exchanged:",
+        "outtake": "%BOTNAME%'s **%CURRNAME%** ({{$}}) to Receive:",
+        "remainder": "Remaining Limit for {{$}}",
+        "receiptCode": "Transaction Receipt Code",
+        "amNaN": "Invalid quantity",
+        "invalidCurr": "This Currency doesn't exist!",
+        "invalidAmt": "You can't exchange this amount!",
+        "unverified": "You are not verified to make exchanges.\nPlease verify yourself at [http://discoin.sidetrip.xyz/verify]",
+        "userLimit": "Your exchange limit for today has been reached!",
+        "globalLimit": "Today's operations has been closed, thank you!",
+        "takedis": "Keep this code in case of ~shit happens~",
+        "ex-succ": "Exchange Successful!"
+    },
+    "event": {
+        "next": "Available again at this Server at",
+        "treat": "***Trick or Treat!***  You got **{{qtd}}** candies from this Server's stash!",
+        "treatRefresh": "No no no! You already got your candies, shoo!\nYou can come back in **{{remaining}}**",
+        "current_event": "Hey~ Did you know there is a global **Halloween Event** going on? :jack_o_lantern:\nIn this event you can get some cool and __exclusive__ pretty stuff for your `p!profile` card!\nAvailable only during this event, which will be running until **November 5th**\nMore info at <http://pollux.fun/events/haloween> *(page in english)*\n*Contact your Server Owner to check if this server is participating*",
+        "current_eventforMasters": "Hey~ Excuse me, did you know there is a global **Halloween Event** going on? :jack_o_lantern:\nIn this event people can get some cool and __exclusive__ pretty stuff for their`p!profile` cards!\nAvailable only during this event, which will be running until **November 5th**\nMore info at <http://pollux.fun/events/haloween> *(page in english)*\n\nYou, as a Server Owner, if interested in participating in the event with your community, can answer this message with an `halloween` so I know you're in! You will receive **five** Event Lootboxes, plus **one** for every 100 members on your server(s), capping at 15.\nThese can be used as rewards to any self-hosted events you may run, or just to raffle amongst your members.\nI trust you to not use these for self advantage, either way, Event Lootbox usage will be logged just in case to protect those who want to play fairly~\n\nSome Servers are not eligible for auto-joining the event. Which are:\n - Servers created after a certain date;\n - Servers in which I joined after October 1st;\n - Servers with bot x human users ratio exceeds 10%\n\n If your server fits in any of these, but it is a legit community server wanting to participate, join my Support Server and speak to my Developer for help, and eventually a Whitelisting of your server.\n\nHere are some quick instructions for the commands involved in this event:\n - `p!trickortreat` : This is like dailies, but usable once a day in every participating server i'm in. Collect candies and get ranked, the top ranked users will get goodies from myself at the end of the event in **November 5th, 3PM EDT**.\n - `p!trade box @someone` Use this to award boxes to someone.\n - `p!lootbox` Check the lootboxes in your inventory, Event Boxes are opened responding with `open EV`.\n\nAny further questions, bugs, or anything. Join the Support Server and spill it out (you can find it with `p!help`)\n\n**Stay Spooky and Happy Halloween!** :heart:",
+        "newAccOut": ":warning: Sorry, new accounts cannot participate. But join me in another event!~",
+        "newServer": "New Servers cannot participate in this event. Contact the Developer or join the Support Server if you want to participate in the event with this Server",
+        "newJoin": "This Server cannot participate in this event because I've joined here after October 1st. Contact the Developer or join the Support Server if you want to participate in the event with this Server",
+        "nextThis": "You can Trick or Treat here again at:",
+        "candiesCheck": "You collected **{{amt}}** candies so far. Keep knocking at servers to get more!",
+        "candiesCheckHim": "**{{user}}** has collected **{{amt}}** candies so far.",
+        "candieRank": "These are the most candy-rich guys around the block.",
+        "candies": "**{{amt}}** Candies",
+        "candytop": "The top-tier Candy collectors are:",
+        "candyprize": "The best ranked users will get some nice rewards at the end of the event!",
+        "yourpos": "Your position in the rank is:"
     }
 }
