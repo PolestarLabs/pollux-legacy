@@ -155,6 +155,7 @@ class Lootbox {
 
     checkout(USER) {
         let p = this.prizes
+        /*
         for (i=0;i<p.medals.length;++i)gear.paramAdd(USER,"medalInventory",p.medals[i]);
         for (i=0;i<p.stamps.length;++i)gear.paramAdd(USER,"mstampInventory",p.stamps[i]);
         for (i=0;i<p.bgs.length;++i)gear.paramAdd(USER,"bgInventory",p.bgs[i]);
@@ -162,6 +163,7 @@ class Lootbox {
         for (i=0;i<p.items.length;++i)gear.paramAdd(USER,"INVENTORY",p.items[i]);
         for (i=0;i<p.jades.length;++i)gear.paramIncrement(USER,"rubines",p.rubines[i])
         for (i=0;i<p.rubines.length;++i) gear.paramIncrement(USER,"jades",p.jades[i])
+    */
     }
 
         getPrize(finder, rarity, e) {
