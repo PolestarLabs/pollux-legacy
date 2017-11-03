@@ -6,7 +6,7 @@ const cmd = 'cash';
 const init = function (message,userDB,DB) {
     const Author = message.author;
     const Target = message.target;
-    const MTarget = message.mentions.members.first() || message.mentions.users.first()  || message.member;
+    const MTarget = message.mentions.members.first() || message.member;
     const MSG = message.content;
     const LANG = message.lang;
 
@@ -26,16 +26,15 @@ const P={lngs:LANG}
         c5: mm("$.cash5000", P),
         c6: mm("$.cash10000", P),
         c7: mm("$.cashInfinite", P),
-        heHas: gear.emoji("rubine")+`**${MTarget.displayName}**`+mm("$.hasAmount", {
+        heHas: whoHas('has'),
+        youHave: whoHas('you'),
+    }
+function whoHas(who){
+  return gear.emoji("rubine")+`**${MTarget.displayName}**`+mm("$."+who+"Amount", {
             lngs: LANG,
             goods: "**"+gear.miliarize(Target.dDATA.modules.rubines,"strict")+"**"
-        }),
-        youHave: gear.emoji("rubine")+`**${MTarget.displayName}**`+mm("$.youAmount", {
-            lngs: LANG,
-            goods: "**"+gear.miliarize(Author.dDATA.modules.rubines,"strict")+"**"
         })
-    }
-
+};
     if (message.mentions.users.size === 0) {
         let r = Target.dDATA.modules.rubines
         let fam = ''
