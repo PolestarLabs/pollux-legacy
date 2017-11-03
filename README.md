@@ -1,0 +1,2 @@
+# Supernova
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/73001f327c5e49d89aafbc27a16ba4c1)](https://www.codacy.com/app/Flicksie/Supernova?utm_source=github.com&utm_medium=referral&utm_content=PolluxBot/Supernova&utm_campaign=badger)
