@@ -2,7 +2,7 @@ var gear = require("../gearbox.js");
 const arraySort = require('array-sort')
 
 const fs = require("fs");
-var paths = require("../paths.js");
+var paths = require("../paths.json");
 
 exports.run = (bot, message) => {
 

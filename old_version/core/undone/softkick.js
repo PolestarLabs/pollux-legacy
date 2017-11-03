@@ -1,6 +1,6 @@
 exports.run = (bot, message, args, userData, caller, gear, points, skynet) => {
 
-    var paths = require("../paths.js");
+    var paths = require("../paths.json");
 
 
     //let fuq = message.guild.roles.find("name", "Malcriados");
