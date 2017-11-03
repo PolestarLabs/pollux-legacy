@@ -106,20 +106,16 @@ async function spamBuster(SERVER,servData,CHANNEL,chanData){
     if(spam_buster.mentionSpam)/*Nightwatch.mentionBuster()*/;
 };
 
-   async function serverLanguageSets(message, servData) {
-     if (typeof (servData.modules.LANGUAGE) !== 'undefined' && servData.modules.LANGUAGE && servData.modules.LANGUAGE !== '') {
-       let langua = "en"
+   function serverLanguageSets(message, servData) {
+     if (servData.modules.LANGUAGE) {
+       let langua = servData.modules.LANGUAGE;
        if (message.guild.region === 'brazil') langua = "pt-BR";
-       message.lang = [servData.modules.LANGUAGE, langua, 'dev'];
+       message.lang = [langua, 'dev'];
      } else {
        let langua = "en"
        if (SERVER.region === 'brazil') langua = "pt-BR";
        message.lang = [langua, 'dev'];
-       await serverDB.set(message.guild.id, {
-         $set: {
-           'modules.LANGUAGE': langua
-         }
-       });
+       serverDB.set(message.guild.id, {$set: {'modules.LANGUAGE': langua}});
      };
    }
 
