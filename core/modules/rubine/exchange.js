@@ -11,16 +11,16 @@ const coinbase = JSON.parse(fs.readFileSync("./resources/lists/discoin.json", "u
 
 const init = async function (message, userDB, DB) {
 
-  const discoin = new Discoin(cfg.DISCOIN);
+  const discoin = new Discoin(cfg.discoin);
 
+  let args = message.content.split(/ +/).slice(1)
 
   let P={lngs:message.lang}
   if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:this.cat}))return;
-  if(isNaN(Number(arg))) return gear.autoHelper('force',{cmd,message,opt:this.cat});
 
 
-  let args = message.content.split(/ +/).slice(1)
-  if (args.length < 2) return message.reply(":x:");
+
+  if (args.length < 2) return gear.autoHelper('force',{cmd,message,opt:this.cat});
   if (isNaN(parseInt(args[0]))) return message.reply("first no int");
   if (typeof args[1] != "string" || args[1].length != 3) return message.reply("invalid curr");
 
@@ -58,9 +58,11 @@ const init = async function (message, userDB, DB) {
   v.receiptCode = mm("discoin.receiptCode", P)
   v.takedis = mm("discoin.takedis", P)
 
+
   discoin.request(message.author.id, amt, $).then(async result => {
 
     let r = result
+
 
     if (r.status == "approved") {
 
