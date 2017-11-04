@@ -109,6 +109,29 @@ const Server = new Schema({
     });
 
 //CHANS
+
+const Audit = new Schema({
+        expenses: {
+        trades:{type:Number,default:0}
+        ,shop:{type:Number,default:0}
+        ,drops:{type:Number,default:0}
+        ,exchange:{type:Number,default:0}
+        ,lewd:{type:Number,default:0}
+        ,gambling:{type:Number,default:0}
+        ,crafts:{type:Number,default:0}
+      },
+      earnings: {
+        trades:{type:Number,default:0}
+        ,shop:{type:Number,default:0}
+        ,drops:{type:Number,default:0}
+        ,exchange:{type:Number,default:0}
+        ,lewd:{type:Number,default:0}
+        ,gambling:{type:Number,default:0}
+        ,crafts:{type:Number,default:0}
+        ,dailies:{type:Number,default:0}
+      }
+})
+
 const Channel = new Schema({
         name: String,
         LANGUAGE:String,
@@ -190,9 +213,9 @@ const User = new Schema({
 
             // MISC
             audits:{
-               rubines:{earnings:Mixed,expenses:Mixed},
-                jades:{earnings:Mixed,expenses:Mixed},
-                sapphires:{earnings:Mixed,expenses:Mixed}
+               rubines:Audit,
+                jades:Audit,
+                sapphires:Audit
                 },
 
             build: {

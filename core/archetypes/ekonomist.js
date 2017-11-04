@@ -175,7 +175,7 @@ const normalize =  function normalize(U) {
   if (!USRDATA.modules.audits)await uDB.findOneAndUpdate({id:U},{$set:{'modules.audits':auditTemplate}});
   uDB.findOne({id:U}).then(async USRDATA=>{
 
-  let unit=['main','side','premium']
+  let unit=['rubines','jades','sapphires']
   for (let i=0;i<3;i++){
 
   if (!USRDATA.modules.audits[unit[i]]) {
