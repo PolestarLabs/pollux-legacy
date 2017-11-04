@@ -9,12 +9,12 @@ const init = function (message,userDB,DB) {
     const MTarget = message.mentions.members.first() || message.member;
     const MSG = message.content;
     const LANG = message.lang;
+    const P={lngs:LANG}
 
 
   if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:this.cat}))return;
 
 
-const P={lngs:LANG}
     const vocab = {
         c1: mm("$.cash10", P),
         c2: mm("$.cash100", P),
