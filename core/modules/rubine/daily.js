@@ -42,6 +42,7 @@ const init = async function (message, userDB, DB) {
   const embed = new gear.Discord.RichEmbed
   embed.setColor("#d83668")
 
+
   let creation = Author.createdAt.getTime();
   let noww = Date.now();
   if (noww - creation < 86400000) return message.reply(":warning: New Accounts can't daily");

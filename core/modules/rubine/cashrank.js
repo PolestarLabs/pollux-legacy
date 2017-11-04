@@ -14,14 +14,10 @@ const init = async function (message, userDB, DB) {
   const args    = MSG.split(/ +/).slice(1)[0]||"";
   const LANG    = message.lang;
 
-    //HELP TRIGGER
-      let helpkey = mm("helpkey", {
-        lngs: message.lang
-      })
-      if (MSG.split(/ +/)[1] == helpkey || MSG.split(/ +/)[1] == "?" || MSG.split(/ +/)[1] == "help") {
-        return gear.usage(cmd, message, this.cat);
-      }
-  //------------
+
+    let P={lngs:message.lang}
+    if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:this.cat}))return;
+
 
   let GOODMOJI = gear.emoji("rubine")
   let GOOD = 'Rubine'
