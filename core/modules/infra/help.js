@@ -24,7 +24,6 @@ return message.channel.send({embed});
   let txt3 = `
 **COMMAND LIST:** http://www.pollux.fun/commands
 
-
 ${mm('help.disableNuisance', P)}
 
 ${mm('help.invite', P )}: http://goo.gl/qkGqqU

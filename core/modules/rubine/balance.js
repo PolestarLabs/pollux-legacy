@@ -9,6 +9,7 @@ const mm = locale.getT();
 
 const init = async function (message,userDB,DB) {
 
+    const Server = message.guild;
     const Channel = message.channel;
     const Target = message.mentions.users.first() || message.mentions.users.first() ||message.author;
     const MSG = message.content;
@@ -42,7 +43,7 @@ let  $S = Target.dDATA.modules.sapphires || 0
 emb.setColor('#ffd156')
 emb.setTitle(gear.emoji("chart")+bal)
 emb.setDescription(`
-**${Target.displayName}** has
+**${Server.member(Target).displayName}**
 
 ${gear.emoji('rubine') + gear.miliarize($R,true)} Rubines  |  ${gear.emoji('jade') + gear.miliarize($J,true)} Jades  |  ${gear.emoji('sapphire') + gear.miliarize($S,true)} Sapphires
 
