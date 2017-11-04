@@ -13,33 +13,23 @@ const init = function (message, userDB, DB) {
       prefix: message.prefix
     };
 
-    let helpkey = mm("helpkey", {
-      lngs: message.lang
-    })
-    if (message.content.split(/ +/)[1] == helpkey || message.content.split(/ +/)[1] == "?" || message.content.split(/ +/)[1] == "help") {
-      let embed = new gear.Discord.RichEmbed
-      emb.setDescription(mm('usage.askingHelpForHelp',P))
-      return message.channel.send({embed});
-    };
+
+let helpkey = mm("helpkey", P)
+if (message.content.split(/ +/)[1] == helpkey || message.content.split(/ +/)[1] == "?" || message.content.split(/ +/)[1] == "help") {
+let embed = new gear.Discord.RichEmbed
+emb.setDescription(mm('usage.askingHelpForHelp',P))
+return message.channel.send({embed});
+};
 
   let txt3 = `
 **COMMAND LIST:** http://www.pollux.fun/commands
 
 
-${mm('help.disableNuisance', {
-                    lngs: LANG,
-                    prefix: message.prefix,
-                })}
+${mm('help.disableNuisance', P)}
 
-${mm('help.invite', {
-                    lngs: LANG,
-                    prefix: message.prefix,
-                })}: http://goo.gl/qkGqqU
+${mm('help.invite', P )}: http://goo.gl/qkGqqU
 
-${mm('help.joinSupp', {
-                    lngs: LANG,
-                    prefix: message.prefix,
-                })}: https://discord.gg/ay48h7Q
+${mm('help.joinSupp', P)}: https://discord.gg/ay48h7Q
 `;
 
   message.author.send(txt3.replace(/\$\{message\.prefix\}/g, message.prefix)).catch(e => {'Fail Silently'})
