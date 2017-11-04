@@ -15,6 +15,7 @@ const cfg = require('../config.json');
 const errHook = new Discord.WebhookClient('376036137443000320', cfg.errHook);
 
 
+
 module.exports={
   DB:serverDB, //legacy
   serverDB,
@@ -78,7 +79,18 @@ module.exports={
  },
 
 
+gamechange : function gamechange(gamein = false) {
+        try {
+            if (gamein != false) return gamein;
+            delete require.cache[require.resolve(`../resources/lists/playing.js`)];
+            var gamelist = require("../resources/lists/playing.js");
+            var max = gamelist.games.length-1
+            var rand = this.randomize(0, max)
 
+            return gamelist.games[rand]
+
+        } catch (e) {}
+    },
 
   randomize: function randomize(min, max) {
       return Math.floor(Math.random() * (max - min + 1) + min);
