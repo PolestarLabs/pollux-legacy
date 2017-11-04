@@ -11,6 +11,10 @@ const wrap = require('canvas-text-wrapper').CanvasTextWrapper;
 const {userDB,serverDB,channelDB,globalDB} = require('./database_ops.js');
 const DB = serverDB;
 
+const cfg = require('../config.json');
+const errHook = new Discord.WebhookClient('376036137443000320', cfg.errHook);
+
+
 module.exports={
   DB:serverDB, //legacy
   serverDB,
@@ -18,6 +22,36 @@ module.exports={
   channelDB,
   globalDB,
   Discord,
+  errHook,
+  RichEmbed:Discord.RichEmbed,
+
+
+//Get Help
+  autoHelper: function autoHelper(trigger,options){
+    let message, P, M, key, cmd, opt;
+    if(options&&typeof options=='object'){
+      message = options.message || options.msg;
+      M=message.content;
+      P = {lngs:message.lang};
+      key = options.opt;
+      cmd=  options.cmd;
+      opt=  options.opt;
+    };
+
+    if (    trigger.includes(message.content.split(/ +/)[1])
+        ||  message.content.split(/ +/)[1]=="?"
+        ||  message.content.split(/ +/)[1]=="help"
+        || (message.content.split(/ +/)[1]==""&&trigger.includes('noargs'))
+        ||  trigger==='force'
+       ){
+      this.usage(cmd,message,opt);
+      return true;
+    }else{
+      return false;
+    }
+  },
+
+
 
 //Get Index List
   getDirs : function getDirs(rootDir, cb) {
@@ -192,7 +226,7 @@ module.exports={
     usage: function usage(cmd, m, third) {
       delete require.cache[require.resolve("./archetypes/usage.js")];
       let usage = require("./archetypes/usage.js");
-      return usage.run(cmd, m, third);
+      usage.run(cmd, m, third);
     },
      dropGoodies: function (a, b, c) {
        delete require.cache[require.resolve("./archetypes/drops.js")];
