@@ -4,7 +4,6 @@ const gear      = require('../core/gearbox.js'),
       userDB    = gear.userDB,
       async     = require('async');
 
-
 let GREYLIST=[],BLACKLIST=[],WHITELIST=[]
 
 function dataChecks(type,ent){
@@ -28,6 +27,22 @@ function dataChecks(type,ent){
       });
     };
   });
+};
+
+async function levelUps(message,servData,chanData,USER,userData){
+    let levelup;
+    if(!chanData.modules.LVUP){
+      levelup = (await channelDB.set(message.channel.id,{$set:{'modules.LVUP':true}})).modules.LVUP;
+    }else{
+      levelup = chanData.modules.LVUP;
+    };
+    if (levelup){
+        let xp=userData.modules.exp;
+        xp+=gear.randomize(0,2)-gear.randomize(0,3);
+        await userDB.findOneAndUpdate({id:message.author.id},{$set:{'modules.exp':xp}});
+        delete require.cache[require.resolve('../core/subroutines.js')];
+        require('../core/subroutines.js').levelChecks(message,servData,userData);
+    };
 };
 
 async function localExpIncrement(message,servData,chanData,USER,userData){
@@ -95,8 +110,7 @@ async function spamBuster(SERVER,servData,CHANNEL,chanData){
     if(spam_buster.words)/*Nightwatch.wordsBuster()*/;
     if(spam_buster.mentionSpam)/*Nightwatch.mentionBuster()*/;
 };
-
-   function serverLanguageSets(message, servData) {
+function serverLanguageSets(message, servData){
      if (servData.modules.LANGUAGE) {
        let langua = servData.modules.LANGUAGE;
        if (message.guild.region === 'brazil') langua = "pt-BR";
@@ -107,9 +121,11 @@ async function spamBuster(SERVER,servData,CHANNEL,chanData){
        message.lang = [langua, 'dev'];
        serverDB.set(message.guild.id, {$set: {'modules.LANGUAGE': langua}});
      };
-   }
+   };
 
 exports.run = async function(bot, message){
+
+
   const USER   = message.author,
         SERVER = message.guild,
         CHANNEL= message.channel,
@@ -128,6 +144,7 @@ exports.run = async function(bot, message){
     await localExpIncrement(message,servData,chanData,USER,userData),
     await randomDrops(CHANNEL,chanData),
     await spamBuster(SERVER,servData,CHANNEL,chanData);
+    await levelUps(message,servData,chanData,USER,userData);
 
     //CHECK SERVER LANG
     await serverLanguageSets(message,servData);
@@ -137,21 +154,21 @@ exports.run = async function(bot, message){
       message.lang = [chanData.LANGUAGE || servData.LANGUAGE, 'dev'];
     };
 
-
     if (typeof (servData.modules.PREFIX) !== 'undefined' && servData.modules.PREFIX && servData.modules.PREFIX !== '') {
+        message.botUser = bot;
+        message.prefix = "p!";
+        let parsedData = {servData,userData,chanData,targData};
+        if (require('../core/donFire.js').run(message,parsedData)===true)return;
+
         if (message.content.startsWith(servData.modules.PREFIX)) message.prefix=servData.modules.PREFIX;
         if (servData.globalPrefix!==false){
           if(message.content.startsWith("p!")) message.prefix = "p!";
         };
         if(message.content.startsWith("plx!")) message.prefix = "plx!";
-
-        if(!message.prefix)return;
-        message.botUser = bot;
-        let parsedData = {servData,userData,chanData,targData};
-        require('../core/commandFire.js').run(message,parsedData);
+        if(message.prefix){
+            require('../core/commandFire.js').run(message,parsedData);
+        };
     };
-
-
 
     //---SPAM BUSTER
 
@@ -159,14 +176,6 @@ exports.run = async function(bot, message){
 
     //---REACTIONS
 
-    //---REACTIONS
-
-
   }
-
-
-
-
-
 
 }
