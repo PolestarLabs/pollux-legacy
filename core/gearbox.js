@@ -270,7 +270,7 @@ gamechange : function gamechange(gamein = false) {
         console.log('----------');
         console.log(e);
         console.log("==================================");
-        //serverDB.findOneAndUpdate({_id:sv.id},{$set:{logs:def.logItems}}) <== fuck
+        //serverDB.findOneAndUpdate({id:sv.id},{$set:{logs:def.logItems}}) <== fuck
         });
     },
 
@@ -279,7 +279,7 @@ gamechange : function gamechange(gamein = false) {
     sendLog_legacy: function sendLog_legacy(eve,logtype,sv,DB,extra,alt,arg,nise){
       console.warn("Deprecation warning: This is a Legacy Function")
       try{
-        DB.findOne({_id:sv.id}).then(DBDATA=>{
+        DB.findOne({id:sv.id}).then(DBDATA=>{
           if(!DBDATA)return;
           if (DBDATA.logs[logtype][eve]==false)return;
       delete require.cache[require.resolve("./modules/dev/log.js")]
@@ -292,7 +292,7 @@ gamechange : function gamechange(gamein = false) {
         console.log(e)
         console.log("==================================")
 
-        DB.findOneAndUpdate({_id:sv.id},{$set:{logs:def.logItems}})
+        DB.findOneAndUpdate({id:sv.id},{$set:{logs:def.logItems}})
         })
       }catch(e){
         try{
@@ -357,7 +357,7 @@ gamechange : function gamechange(gamein = false) {
         };
 
         serverDB.findOne({
-          _id: Server.id
+          id: Server.id
         }).then(SDATA=>{
           if (SDATA.modules.MODROLE) {
             if (Server.member(tgt).roles.has(Server.dDATA.modules.MODROLE)) {

@@ -36,18 +36,18 @@ for (i in ITBASE){
         if (itAmt.length == 0) return message.reply(gear.emoji("nope"));
         if (itAmt.length == 1) {
            let inv_names = itAmt.map(i=>i.name);
-           let inv_ids = itAmt.map(i=>i.id);
-           hover(inv_ids,true);
+           let invids = itAmt.map(i=>i.id);
+           hover(invids,true);
         };
         if (itAmt.length >= 2) {
            let inv_names = itAmt.map(i=>i.name)
-           let inv_ids = itAmt.map(i=>i.id)
+           let invids = itAmt.map(i=>i.id)
            let opts =""
            for (i=0;i<inv_names.length;i++){
               opts+=`
 [${i}] :: ${inv_names[i]}`
            }
-            meny = await message.reply("```ml\n"+opts+"```").then(m=>hover(inv_ids,false))
+            meny = await message.reply("```ml\n"+opts+"```").then(m=>hover(invids,false))
         }
       }
     }

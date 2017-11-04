@@ -20,7 +20,7 @@ var init = async function (message, userDB, DB) {
 
   g.tweet("Red Button has been pressed! I will be down for a while!")
 
-  g.DB.findOneAndUpdate({_id:"271394014358405121"},{redButton:message.channel.id});
+  g.DB.findOneAndUpdate({id:"271394014358405121"},{redButton:message.channel.id});
   message.botUser.users.get("88120564400553984").send({embed})
   message.guild.channels.get("332025773521371137").send({embed})
   await message.channel.send({embed});

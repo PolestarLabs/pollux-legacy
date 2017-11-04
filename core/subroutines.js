@@ -22,7 +22,8 @@ async function levelChecks(message,servData,userData) {
       }
     });
   };
-  console.log({curLevel,LV: userData.modules.level})
+  await gear.userDB.set(message.author.id,{$inc:{'modules.exp':5}});
+  console.log({forNext,XP:userData.modules.exp,LV: userData.modules.level})
   if (curLevel > userData.modules.level) {
     await gear.userDB.set(message.author.id,{$set:{'modules.level':curLevel}});
     let overallevel = (await gear.userDB.findOne({id: message.author.id})).modules.level;

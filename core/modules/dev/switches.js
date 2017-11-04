@@ -4,7 +4,7 @@ const gear = require("../../gearbox.js");
 const init = function (message,userDB,DB) {
 
 let emb = new gear.Discord.RichEmbed
- gear.channelDB.findOne({_id:message.channel.id}).then(chaninfo=>{
+ gear.channelDB.findOne({id:message.channel.id}).then(chaninfo=>{
 
  function icona(x){
    return x ? gear.emoji("yep") : gear.emoji("nope")

@@ -8,7 +8,7 @@ module.exports = {
     run: async function run(gear, DB, userDB, bot, member) {
       
         const Server = member.guild
-        Server.dDATA =  await DB.findOne({_id:Server.id});
+        Server.dDATA =  await DB.findOne({id:Server.id});
         const locale = Server.dDATA.modules.LANGUAGE || "en";
 
         gear.sendLog("userLeave","act",member.guild,DB,member.user.username,false,{user: { img:(member.user.avatarURL||member.user.defaultAvatarURL)}})

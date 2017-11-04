@@ -27,9 +27,9 @@ module.exports = {
     const CHN = msg.channel;
     const L = msg.lang
 
-    if ((await channelDB.findOne({_id:SVR.id})).modules.DROPS == false) return;
+    if ((await channelDB.findOne({id:SVR.id})).modules.DROPS == false) return;
 
-    let prerf = (await DB.findOne({_id:msg.guild.id})).modules.PREFIX || "+";
+    let prerf = (await DB.findOne({id:msg.guild.id})).modules.PREFIX || "+";
     const P = {
       lngs: msg.lang
     }
