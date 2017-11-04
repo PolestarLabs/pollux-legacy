@@ -1,4 +1,9 @@
 {
+  "langIntro":{
+    "global":"I'll now speak English for this Server as the true cosmopolitan lady I am!",
+    "channel":"At this Channel I'll be speaking English for you~"
+},
+
     "$": {
       "exchange":"Exchanges",
       "crafts":"Crafting",

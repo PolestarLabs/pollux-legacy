@@ -22,19 +22,18 @@ if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:'language'}))return;
   const noPermsMe   =   mm('CMD.unperm',P)
   if (!gear.hasPerms(Member,DB))return message.reply(noperms).catch();
 
-
+  delete require.cache[require.resolve('../../../utils/i18n.json')];
   const i18n = require('../../../utils/i18n.json');
 
   let l = i18n.length;
 
-  for (i; i<l;i++){
+
+  for (i=0; i<l;i++){
     let Y = i18n[i];
     let langArray = Y.code;
     langArray.push(Y.name);
     langArray.push(Y['name-e']);
-
     if (langArray.includes(args)) {
-
       if(['c','channel','ch'].includes(scope)){
           gear.channelDB.set(Channel.id, {
             $set:{'LANGUAGE':Y.iso}
