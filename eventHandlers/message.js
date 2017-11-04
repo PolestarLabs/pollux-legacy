@@ -30,7 +30,6 @@ function dataChecks(type,ent){
   });
 };
 
-
 async function localExpIncrement(message,servData,chanData,USER,userData){
 
     let channel_exp;
@@ -111,7 +110,6 @@ async function spamBuster(SERVER,servData,CHANNEL,chanData){
    }
 
 exports.run = async function(bot, message){
-
   const USER   = message.author,
         SERVER = message.guild,
         CHANNEL= message.channel,
@@ -125,7 +123,6 @@ exports.run = async function(bot, message){
       chanData = await dataChecks( 'channel',CHANNEL ),
       targData = await dataChecks( 'user',   TARGET  );
 
-
   if (SERVER){
 
     await localExpIncrement(message,servData,chanData,USER,userData),
@@ -136,9 +133,10 @@ exports.run = async function(bot, message){
     await serverLanguageSets(message,servData);
 
     //CHECK CHANNEL LANG
-    if(chanData.modules.LANGUAGE){
-      message.lang = [chanData.modules.LANGUAGE || servData.modules.LANGUAGE, 'dev'];
+    if(chanData.LANGUAGE){
+      message.lang = [chanData.LANGUAGE || servData.LANGUAGE, 'dev'];
     };
+
 
     if (typeof (servData.modules.PREFIX) !== 'undefined' && servData.modules.PREFIX && servData.modules.PREFIX !== '') {
         if (message.content.startsWith(servData.modules.PREFIX)) message.prefix=servData.modules.PREFIX;
