@@ -25,6 +25,12 @@ airbrake.handleExceptions();
 const {getDirs, userDB,serverDB,errHook,RichEmbed}= require("./core/gearbox.js");
 
 
+setInterval(f=>{
+  delete require.cache[require.resolve('./core/overtimes.js')];
+  require('./core/overtimes.js').run(POLLUX);
+},1000);
+
+
 //Translation Engine ------------- <
 const i18next = require('i18next');
 const multilang = require('./utils/multilang_b');
@@ -34,6 +40,7 @@ const backendOptions = {
     addPath: './locales/dev/translation.json',
     jsonIndent: 2
 };
+
 getDirs('./locales/', (list) => {
     i18next.use(i18n_backend).init({
         backend: backendOptions,
@@ -101,7 +108,7 @@ process.on('uncaughtException', function (err) {
       let embed = new RichEmbed();
       embed.setTitle("Unhandled Rejection")
       embed.setColor("#e3e32a")
-      embed.setDescription(err.stack)
+      embed.setDescription(err.message)
       errHook.send(embed)
     });
     console.log("\n\n==================================")
