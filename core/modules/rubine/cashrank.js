@@ -14,7 +14,6 @@ const init = async function (message, userDB, DB) {
   const args    = MSG.split(/ +/).slice(1)[0]||"";
   const LANG    = message.lang;
 
-
     let P={lngs:message.lang}
     if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:this.cat}))return;
 
