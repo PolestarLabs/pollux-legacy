@@ -104,7 +104,8 @@
         "noChannelGiven": "Ok, and where i'm gonna log these activities? On your face? Tell me a channel to log into!",
         "noReason": "Reason not Specified",
         "insuperms": "You have no permission to use this command, shoo!",
-        "not-a-NSFW-channel": "Set this channel as NSFW first, boy. There are kids around"
+        "not-a-NSFW-channel": "Set this channel as NSFW first, boy. There are kids around",
+      "inviteText":"Invite me to your server clicking [HERE]"
     },
     "dict": {
         "coinHeads": "heads",
@@ -172,7 +173,7 @@
         "stats": "Robot-ish boring random info",
         "switch": "Changes my Display Picture",
         "joinSupp": "Join my Support Server for reporting bugs and suggesting feats",
-        "invite": "Invite me for yout server~",
+        "invite": "Invite me to your server~",
         "disableNuisance": "Disable Annoying responses:\n Goodies/Rubines: ${message.prefix}disable DROPS \n  Level Up: ${message.prefix}disable LVUP",
         "cashrank": "**GLOBAL** {{good}}s Ranking. Alternatively `{{prefix}}{{good}}`",
         "daily": "Free {{good}}s everyday.",
