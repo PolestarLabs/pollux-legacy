@@ -1,5 +1,5 @@
 module.exports = {
-    //POLLUX ORIGINAL
+
     games: [
         "p!help for commands"
         ,"p!stats for bot info"

@@ -24,12 +24,12 @@ exports.run =async function run(bot) {
   embed.setTitle('Pollux Core Reporter');
   embed.setDescription('Ready! All systems go!');
   embed.setColor('#3ed844');
-  await gear.wait(2);
-  gear.errHook.send("Ready",{embed}).then(x=>{
+  await gear.wait(4);
+
     bot.user.setStatus('online').then(y=>{
       bot.user.setGame("Ready!");
     })
-  })
+
 
 
   if (bot.shard) {
