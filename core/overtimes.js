@@ -2,9 +2,11 @@ const g=require('./gearbox.js');
 const Discoin = require("./archetypes/discoin.js");
 const cfg = require("../config.json")
 const discoin = new Discoin(cfg.discoin);
-
+const gear = g
 exports.run = function(bot){
-
+      bot.donators = [
+        "169551262981816321"
+      ]
       //DATE FOR EVERYONE
       let date = new Date();
 
