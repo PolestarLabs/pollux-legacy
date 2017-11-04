@@ -1,6 +1,6 @@
 const GifEncoder = require('gif-encoder');
 const gear = require('../../gearbox.js')
-const paths = require("../../paths.js");
+const paths = require("../../paths.json");
 const Canvas = require("canvas");
 const locale = require('../../../utils/multilang_b');
 const mm = locale.getT();
@@ -17,17 +17,26 @@ let gif = new GifEncoder(400, 225);
   gif.setRepeat(-1);
   gif.highWaterMark=800000000
   gif.setTransparent(0x000000);
+    gif.setFrameRate(18)
 
   function pad(num, size) {
     let s = num+"";
     while (s.length < size) s = "0" + s;
     return s;
 }
+  const buffers = [];
+  gif.on('data', data => buffers.push(data));
+  gif.once('end', () => {
+  let xD = Buffer.concat(buffers)
+    msg.channel.send({
+      files: [{attachment:  xD,name: "LevelUP.gif"}]
+    });
+  });
 
-  let dir='../../../resources/imgres/gif/lvup/'
+  let dir='./resources/imgres/gif/lvup/'
 
   let Target = msg.mentions.users.first()||msg.author;
-  let ID=await userDB.findOne({_id:Target.id});
+  let ID=await userDB.findOne({id:Target.id});
   let tag = await gear.tag(ctx,ID.modules.level,'900 30px Sans','#2b2b2b');
   let tagV = await gear.tag(ctx,Target.tag,'18px Whitney','#818181');
   let avit = Target.avatarURL || Target.defaultAvatarURL;

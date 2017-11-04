@@ -6,7 +6,7 @@ async function levelChecks(message,servData,userData) {
   let curLevel = Math.floor(_CURVE * Math.sqrt(userData.modules.exp));
   let forNext = Math.trunc(Math.pow((userData.modules.level + 1) / _CURVE, 2));
 
-  const thisGdata = servData.modules.LOCALRANK[message.author.id];
+  const thisGdata = servData.modules.LOCALRANK[message.author.id]||{exp:0,level:0};
   const _FACTOR = 0.0872899 || servData.modules.UPFACTOR;
 
   let curLevel_local = Math.floor(_FACTOR * Math.sqrt(thisGdata.exp));
@@ -14,11 +14,7 @@ async function levelChecks(message,servData,userData) {
 
   if (curLevel_local > thisGdata.level) {
     await gear.serverDB.findOneAndUpdate({id: message.guild.id},{
-      $set: {
-        ['modules.LOCALRANK.' + message.author.id]: {
-          exp: thisGdata.exp,
-          level: curLevel_local
-        }
+      $set: {['modules.LOCALRANK.' + message.author.id]: thisGdata
       }
     });
   };
@@ -34,6 +30,7 @@ async function levelChecks(message,servData,userData) {
 
     if (!servData.modules.LVUP) return;
     console.log("LEVEL IMAGE-------------------------------------")
+    delete require.cache[require.resolve("./modules/dev/levelUp_infra.js")]
     require("./modules/dev/levelUp_infra.js").init(message);
   }
 }
