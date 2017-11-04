@@ -18,7 +18,6 @@ const init = function (message,userDB,DB) {
 
 if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:'language'}))return;
 
-
   const noperms     =   mm('CMD.moderationNeeded',P)
   const noPermsMe   =   mm('CMD.unperm',P)
   if (!gear.hasPerms(Member,DB))return message.reply(noperms).catch();

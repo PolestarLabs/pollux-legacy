@@ -10,12 +10,9 @@ const init = function (message,userDB,DB) {
     const MSG = message.content;
     const LANG = message.lang;
 
-//HELP TRIGGER
-    let helpkey = mm("helpkey",{lngs:message.lang})
-if (MSG.split(/ +/)[1]==helpkey || MSG.split(/ +/)[1]=="?"|| MSG.split(/ +/)[1]=="help"){
-    return gear.usage(cmd,message,this.cat);
-}
-//------------
+
+  if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:this.cat}))return;
+
 
 const P={lngs:LANG}
     const vocab = {
