@@ -15,12 +15,9 @@ const init = function (message,userDB,DB) {
 
   const P = {lngs:message.lang};
 
-//HELP TRIGGER
-let helpkey = mm("helpkey",P)
-if (message.content.split(/ +/)[1]==helpkey || message.content.split(/ +/)[1]=="?"|| message.content.split(/ +/)[1]=="help"){
-return gear.usage(cmd,message,"language");
-};
-//------------
+
+if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:'language'}))return;
+
 
   const noperms     =   mm('CMD.moderationNeeded',P)
   const noPermsMe   =   mm('CMD.unperm',P)
