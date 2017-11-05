@@ -131,6 +131,8 @@ function checkAuthent(pay,receive){
 }
 
 async function audit(amount,user_paying,target,unit,type){
+    await checkDB(user_paying);
+    await checkDB(target);
   let userdata=await uDB.findOne({id:user_paying});
   let receiverdata=await uDB.findOne({id:target});
     let curr = currencies[unit].id
@@ -142,8 +144,6 @@ async function audit(amount,user_paying,target,unit,type){
   console.log("--------------------------")
 
 
-    await checkDB(user_paying);
-    await checkDB(target);
 
     userdata.modules.audits[curr].expenses[type] += amount
     receiverdata.modules.audits[curr].earnings[type] += amount
@@ -153,7 +153,6 @@ async function audit(amount,user_paying,target,unit,type){
 
   async function checkDB(UUU) {
     uDB.findOne({id:UUU}).then(async AUDITS=>{
-      console.log("AUDITS",typeof AUDITS)
       if (!AUDITS)return false;
       if (!AUDITS.modules.audits) await uDB.findOneAndUpdate({id:UUU},{$set:{'modules.audits':{}}});
       if (!AUDITS.modules.audits[unit]) {
