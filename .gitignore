@@ -19,3 +19,6 @@
 /core/donFire.js
 /core/modules/donators/
 /core/modules/rubine/give.js
+/core/modules/social/level.js
+/core/modules/social/profile.js
+/core/modules/social/rep.js
