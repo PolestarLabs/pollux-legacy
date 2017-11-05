@@ -42,7 +42,6 @@ channelDB.new = function(obj){
   });
 };
 
-
 const set = function(query,alter){
   if(['string','number'].includes(typeof query)){
     query = {'id':query.toString()};

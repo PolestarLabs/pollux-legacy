@@ -110,27 +110,7 @@ const Server = new Schema({
 
 //CHANS
 
-const Audit = new Schema({
-        expenses: {
-        trades:{type:Number,default:0}
-        ,shop:{type:Number,default:0}
-        ,drops:{type:Number,default:0}
-        ,exchange:{type:Number,default:0}
-        ,lewd:{type:Number,default:0}
-        ,gambling:{type:Number,default:0}
-        ,crafts:{type:Number,default:0}
-      },
-      earnings: {
-        trades:{type:Number,default:0}
-        ,shop:{type:Number,default:0}
-        ,drops:{type:Number,default:0}
-        ,exchange:{type:Number,default:0}
-        ,lewd:{type:Number,default:0}
-        ,gambling:{type:Number,default:0}
-        ,crafts:{type:Number,default:0}
-        ,dailies:{type:Number,default:0}
-      }
-})
+
 
 const Channel = new Schema({
         name: String,
@@ -161,6 +141,8 @@ const User = new Schema({
             //PROFILE
             persotext: {type:String, default:"I have no personal text because I'm too lazy to set one."},
             rep:{type:Number,default:0},
+            repdaily:{type:Number,default:0},
+
             favcolor: {type:String,default:"#ff1aed"},
             inventory: [],
             bgID:{type:String,default:"5zhr3HWlQB4OmyCBFyHbFuoIhxrZY6l6"},
@@ -175,6 +157,8 @@ const User = new Schema({
 
             dyStreak:  {type:Number,default:0},
             daily:  {type:Number,default:1486595162497},
+
+
 
 
             //COLLECTIBLES
@@ -213,9 +197,69 @@ const User = new Schema({
 
             // MISC
             audits:{
-               rubines:Audit,
-                jades:Audit,
-                sapphires:Audit
+               rubines:{
+        expenses: {
+        trades:{type:Number,default:0}
+        ,shop:{type:Number,default:0}
+        ,drops:{type:Number,default:0}
+        ,exchange:{type:Number,default:0}
+        ,lewd:{type:Number,default:0}
+        ,gambling:{type:Number,default:0}
+        ,crafts:{type:Number,default:0}
+      },
+      earnings: {
+        trades:{type:Number,default:0}
+        ,shop:{type:Number,default:0}
+        ,drops:{type:Number,default:0}
+        ,exchange:{type:Number,default:0}
+        ,lewd:{type:Number,default:0}
+        ,gambling:{type:Number,default:0}
+        ,crafts:{type:Number,default:0}
+        ,dailies:{type:Number,default:0}
+      }
+},
+                jades:{
+        expenses: {
+        trades:{type:Number,default:0}
+        ,shop:{type:Number,default:0}
+        ,drops:{type:Number,default:0}
+        ,exchange:{type:Number,default:0}
+        ,lewd:{type:Number,default:0}
+        ,gambling:{type:Number,default:0}
+        ,crafts:{type:Number,default:0}
+      },
+      earnings: {
+        trades:{type:Number,default:0}
+        ,shop:{type:Number,default:0}
+        ,drops:{type:Number,default:0}
+        ,exchange:{type:Number,default:0}
+        ,lewd:{type:Number,default:0}
+        ,gambling:{type:Number,default:0}
+        ,crafts:{type:Number,default:0}
+        ,dailies:{type:Number,default:0}
+      }
+},
+                sapphires:{
+        expenses: {
+        trades:{type:Number,default:0}
+        ,shop:{type:Number,default:0}
+        ,drops:{type:Number,default:0}
+        ,exchange:{type:Number,default:0}
+        ,lewd:{type:Number,default:0}
+        ,gambling:{type:Number,default:0}
+        ,crafts:{type:Number,default:0}
+      },
+      earnings: {
+        trades:{type:Number,default:0}
+        ,shop:{type:Number,default:0}
+        ,drops:{type:Number,default:0}
+        ,exchange:{type:Number,default:0}
+        ,lewd:{type:Number,default:0}
+        ,gambling:{type:Number,default:0}
+        ,crafts:{type:Number,default:0}
+        ,dailies:{type:Number,default:0}
+      }
+}
                 },
 
             build: {
