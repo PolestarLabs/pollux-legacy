@@ -145,8 +145,21 @@ async function audit(amount,user_paying,target,unit,type){
 
 
 
+  try{
     userdata.modules.audits[curr].expenses[type] += amount
+  }catch(e){
+    userdata.modules.audits[curr] = {}
+    userdata.modules.audits[curr].expenses = {}
+    userdata.modules.audits[curr].expenses[type] = amount
+  }
+  try{
     receiverdata.modules.audits[curr].earnings[type] += amount
+  }catch(e){
+    receiverdata.modules.audits[curr] = {}
+    receiverdata.modules.audits[curr].earnings = {}
+    receiverdata.modules.audits[curr].earnings[type] = amount
+  }
+
 
     await uDB.findOneAndUpdate({id:user_paying},userdata);
     await uDB.findOneAndUpdate({id:target},receiverdata);
