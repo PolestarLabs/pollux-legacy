@@ -285,7 +285,7 @@ function invent_merge(item){
   let amt;
   switch(item.prompt.type){
     case "rubines":
-      amt=parseInt(item.prompt.name);
+      amt=Number(parseInt(item.prompt.name));
       userDB.set(message.author.id,{$inc:{'modules.rubines':amt}}).then(ok=>{
         P.X = ej("rubine")+"**"+item.prompt.name +"**"
         return resolve(mm("loot.addedRubines",P));
@@ -293,7 +293,7 @@ function invent_merge(item){
       break;
 
     case "jades":
-      amt=parseInt(item.prompt.name);
+      amt=Number(parseInt(item.prompt.name));
       userDB.set(message.author.id,{$inc:{'modules.jades':amt}}).then(ok=>{
         P.X = ej("jade")+"**"+item.prompt.name +"**"
         return resolve(mm("loot.addedJades",P));
