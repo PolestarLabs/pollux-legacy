@@ -3,6 +3,8 @@ const Discoin = require("./archetypes/discoin.js");
 const cfg = require("../config.json")
 const discoin = new Discoin(cfg.discoin);
 const gear = g
+const eko = require ('./archetypes/ekonomist.js')
+
 exports.run = function(bot){
       bot.donators = [
         "169551262981816321"
@@ -62,7 +64,7 @@ exports.run = function(bot){
               g.userDB.findOneAndUpdate({id: usr}, {
                   $inc: {
                     'modules.rubines': amt,
-                    'modules.audits.main.earnings.exchange': amt
+                    'modules.audits.rubines.earnings.exchange': amt
                   }
                 }).then(ok=>{
 

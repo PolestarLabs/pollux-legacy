@@ -1,4 +1,5 @@
-const gear = require('../core/gearbox.js');
+const gear = require('./gearbox.js');
+
 
 async function levelChecks(message,servData,userData) {
 
