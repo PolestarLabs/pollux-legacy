@@ -47,7 +47,7 @@ exports.run = function(bot){
               let usr = trades[i].user + ""
               let ts = Date(trades[i].timestamp * 1000)
               let src = trades[i].source
-              let amt = Math.floor(trades[i].amount)
+              let amt = Number(Math.floor(trades[i].amount))
               let inv = trades[i].receipt
 
             if (amt < 1) {

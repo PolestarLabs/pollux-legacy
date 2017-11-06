@@ -130,6 +130,7 @@ const Channel = new Schema({
 const User = new Schema({
         name: String,
         tag:  String,
+  updated_at: { type: Date },
         id: {type:String,required: true,index:{unique:true}},
         modules: {
             PERMS: {type:Number,default:3},
@@ -289,6 +290,11 @@ const User = new Schema({
             }
         }
     });
+
+User.pre('update', function(next) {
+  this.updated_at = Date.now();
+  next();
+});
 
 const Globals = new Schema({
   id:{type:Number,default:0,unique:true},

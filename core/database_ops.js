@@ -5,6 +5,9 @@ const serverDB  = Schemas.server;
 const channelDB = Schemas.channel;
 const globalDB = Schemas.global;
 
+
+
+
 userDB.new = function(obj){
   return new Promise(async resolve=>{
     let instance = new userDB;
