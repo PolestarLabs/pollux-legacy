@@ -56,10 +56,11 @@ async function localExpIncrement(message,servData,chanData,USER,userData){
     if (channel_exp){
         let lRanks= {};
         if(!servData.modules.LOCALRANK){
-          lRanks = (await serverDB.findOneAndUpdate({id:message.guild.id},{$set:{'modules.LOCALRANK':{}}})).modules.LOCALRANK;
+          lRanks = (await serverDB.findOneAndUpdate({id:message.guild.id},{$set:{'modules.LOCALRANK':{}}})).modules.LOCALRANK||{};
         }else{
           lRanks = servData.modules.LOCALRANK;
         };
+
         let userRankLocal;
         if(!lRanks[USER.id]){
           userRankLocal = {level:0,exp:0};
@@ -130,8 +131,12 @@ exports.run = async function(bot, message){
         SERVER = message.guild,
         CHANNEL= message.channel,
         TARGET = message.mentions.users.first() ||USER;
-
+try{
   if (GREYLIST.includes(SERVER.id) || GREYLIST.includes(USER.id))return;
+
+}catch(e){
+  return;
+}
   if (USER.bot) return;
 
   let userData = await dataChecks( 'user',   USER    ),
@@ -156,7 +161,7 @@ exports.run = async function(bot, message){
 
     if (typeof (servData.modules.PREFIX) !== 'undefined' && servData.modules.PREFIX && servData.modules.PREFIX !== '') {
         message.botUser = bot;
-        message.prefix = "p!";
+
         let parsedData = {servData,userData,chanData,targData};
         if (require('../core/donFire.js').run(message,parsedData)===true)return;
 

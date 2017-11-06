@@ -7,8 +7,9 @@ const cmd = 'balance';
 const locale = require('../../../utils/multilang_b');
 const mm = locale.getT();
 
-const init = async function (message,userDB,DB) {
-
+const init = async function (message) {
+const userDB = gear.userDB
+const DB = gear.serverDB
     const Server = message.guild;
     const Channel = message.channel;
     const Target = message.mentions.users.first() || message.mentions.users.first() ||message.author;
@@ -33,6 +34,7 @@ const init = async function (message,userDB,DB) {
     const nope = mm('CMD.noDM',P);
 
   await eko.normalize(Target.id)
+  if(!Target.dDATA)Target.dDATA = await userDB.findOne({id:Target.id});
   let  balc = Target.dDATA.modules.audits||eko.auditTemplate
   console.log(balc);
 let  $R = Target.dDATA.modules.rubines   || 0

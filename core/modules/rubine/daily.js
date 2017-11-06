@@ -52,7 +52,7 @@ function calculateDaily(Author,bot) {
         let emblem;
 
       let thisguy = bot.guilds.get("277391723322408960").member(Author)
-
+if(!thisguy)return {class:regular,emblem};
       if (thisguy.roles.find("name", "Uranium")) {
         emblem = "uranium"
         return {class:uranium,emblem};

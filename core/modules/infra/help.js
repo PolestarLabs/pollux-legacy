@@ -57,7 +57,7 @@ ${mm('help.joinSupp', P)}: https://discord.gg/ay48h7Q
   embed.addField(":heart_decoration: " + inviteme, invitelink, false)
   embed.setFooter(useful + " +stats | +serverinfo | +logs | pollux+nuke | +invite")
 
-  setTimeout(t => message.channel.send({embed}), 1000)
+  setTimeout(t => message.reply({embed}), 1000)
 };
 
 module.exports = {

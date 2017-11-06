@@ -5,8 +5,8 @@ async function levelChecks(message,servData,userData) {
   const _CURVE = 0.0427899
   let curLevel = Math.floor(_CURVE * Math.sqrt(userData.modules.exp));
   let forNext = Math.trunc(Math.pow((userData.modules.level + 1) / _CURVE, 2));
-
-  const thisGdata = servData.modules.LOCALRANK[message.author.id]||{exp:0,level:0};
+  servData.modules.LOCALRANK=servData.modules.LOCALRANK?servData.modules.LOCALRANK:{};
+  let thisGdata = servData.modules.LOCALRANK[message.author.id]||{exp:0,level:0};
   const _FACTOR =  servData.modules.UPFACTOR||0.0872899;
 
   let curLevel_local = Math.floor(_FACTOR * Math.sqrt(thisGdata.exp));

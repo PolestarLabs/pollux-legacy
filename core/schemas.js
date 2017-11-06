@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://31.220.55.84:27017/politest', { useMongoClient: true });
+mongoose.connect('mongodb://localhost:27017/pollux-transfer', { useMongoClient: true });
 mongoose.Promise = global.Promise;
 
 const Schema = mongoose.Schema
@@ -303,8 +303,8 @@ const Background = new Schema({
 });
 
 module.exports={
-  user    : mongoose.model('User', User, 'userDB'),
-  server  : mongoose.model('Server', Server, 'serverDB'),
-  channel : mongoose.model('Channel', Channel, 'channelDB'),
-  global  : mongoose.model('Global', Globals, 'Globals')
+  user    : mongoose.model('User', User, 'userdb'),
+  server  : mongoose.model('Server', Server, 'serverdb'),
+  channel : mongoose.model('Channel', Channel, 'channeldb'),
+  global  : mongoose.model('Global', Globals, 'globals')
 };

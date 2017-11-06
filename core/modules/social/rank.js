@@ -26,7 +26,7 @@ const init = async function (message, userDB, DB) {
   let ranked = []
 
   Channel.startTyping();
-  let dbminiarray = await userDB.find({'modules.exp':{$gt:0}});
+  let dbminiarray = await userDB.find().sort({'modules.exp': -1}).limit(10);
   Channel.stopTyping();
 
   dbminiarray.forEach(i => {
@@ -46,6 +46,7 @@ const init = async function (message, userDB, DB) {
   arraySort(ranked, 'exp', {
     reverse: true
   })
+  console.log(ranked)
   let ids=ranked.map(x=>x.id)
    if (['server','sv','guild','local',Server.name].includes(args.toLowerCase())) {
   emb.title = mm('website.svLead',P)
