@@ -81,6 +81,13 @@ fs.readdir("./eventHandlers/", (err, files) => {
   });
 });
 
+POLLUX.on('reconnecting',()=>{
+  POLLUX.user.setStatus('dnd');
+  POLLUX.user.setGame('Reconnecting...');
+  POLLUX.destroy();
+  process.exit(0)
+})
+
 
 //=======================================//
 //      PROCESS EVENT HANDLER
