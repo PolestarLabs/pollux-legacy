@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/pollux-transfer', { useMongoClient: true });
 mongoose.Promise = global.Promise;
+const Promise = require("bluebird");
+Promise.promisifyAll(require("mongoose"));
 
 const Schema = mongoose.Schema
 
