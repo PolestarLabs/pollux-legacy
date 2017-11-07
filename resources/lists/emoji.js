@@ -32,6 +32,10 @@ module.exports = {
         nope:    "<:nope:339398829088571402> "
 
 
+
+
+
+
  ,'retweet':'<:Retweet:338764316792717322> '
  ,'api':'<:Api:338148353906966530> '
 ,'bot':'<:Bot:338148354007629845> '
@@ -184,6 +188,13 @@ module.exports = {
 ,stop:'<:stop:343664908489064457> '
 
 
+  ,marksman:'<:Marksman:377365020176285707> '
+  ,mage:'<:Mage:377365019505065985> '
+  ,fighter:'<:Fighter:377365019941142530> '
+  ,support:'<:Controller:377365020142731264> '
+  ,assassin:'<:Slayer:377365019836284928> '
+  ,specialist:'<:Specialist:377365019471511554> '
+  ,tank:'<:Tank:377365019911913472> '
 
 
         //HEROES
