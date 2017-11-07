@@ -63,6 +63,7 @@
         "colorChange": "Your favorite color has been saved!"
     },
     "CMD": {
+      "noselfRoles":"There are no Self-Roles in this Server",
       "timesOutIn":"This will timeout in {{s}} seconds",
         "denied": "You are not authorized to use this. This commands requires a Elevation Rank of {{rankNeed}}, your Rank is {{rankMe}}. Contact the Server owner or a Mod.",
         "incorrectUsage": "Oh, no no, that's not how you use this command, use it like {{usage}}. E.g.: {{example}}",
@@ -94,7 +95,7 @@
         "roleAlreadyHere": "Hey, mister, this Role is already here!",
         "nosuchrole": "Um, I couldn't find this role, type its name exactly! Case-sensitive and shit.",
         "incinerate": "I've just set fire into {{amt}} Messages! If you don't like it i'll burn {{amtB}} next time.",
-        "roleadCom": "Yo! Now **{{user}}** is included in the **{{group}}** group! WELCOME TO THE BOAT!",
+        "roleadCom": "Alright! Now **{{user}}** is included in the **{{group}}** group~!",
         "rolermCom": "Well, **{{user}}** is no longer part of the **{{group}}** group! I wonder why.",
         "kbanNone": "Tell me in whose ass i'm gonna shove this hammer, before I do it at yours!",
         "didban": ":hammer: Banned the hell out of {{target}} from here. \n **Reason:** *{{reason}}*",
