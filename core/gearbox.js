@@ -45,7 +45,7 @@ module.exports={
     if (    trigger.includes(message.content.split(/ +/)[1])
         ||  message.content.split(/ +/)[1]=="?"
         ||  message.content.split(/ +/)[1]=="help"
-        || (message.content.split(/ +/)[1]==""&&trigger.includes('noargs'))
+        || (message.content.split(/ +/).length==1&&trigger.includes('noargs'))
         ||  trigger==='force'
        ){
       this.usage(cmd,message,opt);
@@ -323,7 +323,7 @@ gamechange : function gamechange(gamein = false) {
       });
       }
     },
-    hasPerms:   function hasPerms(Member, DB) {
+    hasPerms:   function hasPerms(Member) {
         console.warn("Deprecation warning: This is a Legacy Function")
         if(Member.id =="88120564400553984" ) return true;
         let Server = Member.guild

@@ -118,22 +118,13 @@ function checkout(amount,target,payer,unit,type){
     let curr = currencies[unit].id
     console.log("ENTER CHECKOUT")
     console.log("===========================")
-
-    uDB.set(target,{$inc:{['modules.'+curr]:amount}}).then((err,ok)=>{
-      //if(err) throw err;
-      console.log("success 1")
-      uDB.set(payer,{$inc:{['modules.'+curr]:-amount}}).then((err2,ok2)=>{
-      //if(err) throw err;
-      console.log("success 2")
-      return resolve(true);
-      });
-
-    }).catch(e=>console.log(e));
-
-
-    //if(payer=="271394014358405121") await EKO.findOneAndUpdate({id:unit},{$inc:{stash:-amount}});
-
+    await gear.userDB.findOneAndUpdate({id:payer},{$inc:{['modules.'+curr]:-amount}});
+    await gear.userDB.findOneAndUpdate({id:target},{$inc:{['modules.'+curr]:amount}});
+    return resolve(true);
   });
+
+
+
 };
 
 function checkAuthent(pay,receive){
