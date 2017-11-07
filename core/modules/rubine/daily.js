@@ -37,7 +37,7 @@ async function performChecks(GLB,Author){
   }
   if (!Author.dDATA.modules.daily || isNaN(Author.dDATA.modules.daily)) {
     await gear.userDB.set(Author.id, {$set:{"modules.daily":1500271199999}});
-    Author.dDATA = await userDB.findOne({id: Author.id});
+    Author.dDATA = await gear.userDB.findOne({id: Author.id});
   }
 };
 
@@ -72,7 +72,7 @@ if(!thisguy)return {class:regular,emblem};
     return {class:regular,emblem};
   };
 
-const init = async function (message, userDB, DB) {
+const init = async function (message) {
 
   const Channel = message.channel;
   const Author = message.author;
@@ -114,15 +114,14 @@ const init = async function (message, userDB, DB) {
   if (!userEpoch || now-userEpoch >= day) {
 
     if (((userEpoch - globalEpoch) / day) <= 2) {
-          gear.userDB.set(Author.id, {$inc:{'modules.dyStreak':1}});
+         await gear.userDB.set(Author.id, {$inc:{'modules.dyStreak':1}});
     } else {
-          gear.userDB.set(Author.id, {$set:{'modules.dyStreak':0}});
+         await gear.userDB.set(Author.id, {$set:{'modules.dyStreak':0}});
     }
-
     //CONFIRM DAILY
     let dailyGet = mm('$.dailyGet',P).replace("100", "**" + myDaily + "**")
 
-    embed.setDescription(".\n" + RUBINE + dailyGet)
+    embed.setDescription(".\n" + RUBINE + dailyGet);
 
     let bar = "|▁▁▁▁▁▁▁▁▁▁|"
 
@@ -135,8 +134,8 @@ const init = async function (message, userDB, DB) {
     if (streak >= 10) {
       let dailyStreak = mm('$.dailyStreak', P)
 
-      gear.userDB.set(Author.id, {$set:{'modules.dyStreak':0}});
-      gear.userDB.set(Author.id, {$inc:{'modules.exp':80}});
+      await gear.userDB.set(Author.id, {$set:{'modules.dyStreak':0}});
+      await gear.userDB.set(Author.id, {$inc:{'modules.exp':80}});
 
       embed.description += "\n" + (gear.emoji('ticket') + dailyStreak)
       await eko.receive(myDaily * 5, Author, {type: 'dailies'});
@@ -168,5 +167,5 @@ module.exports = {
   init: init,
   cat: 'rubines',
   exp: 15,
-  cool: 5000
+  cool: 10
 };
