@@ -17,7 +17,7 @@ exports.run =async function run(bot) {
 
   gear.globalDB.set({$set:{'redbutton':false}});
 
-  await bot.user.setStatus('away')
+  await bot.user.setStatus('idle')
   bot.user.setGame(`Booting Up...`);
 
   let embed = new gear.RichEmbed
