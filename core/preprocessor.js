@@ -117,6 +117,8 @@ module.exports = {
             (await DB.findOne({id:message.guild.id})).modules.statistics.commandsUsed[command.cmd]++
             */
 
+
+
             let commandname = message.content.split(/ +/)[0]
 
             message.target={};

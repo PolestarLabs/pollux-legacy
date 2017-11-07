@@ -30,7 +30,9 @@ const Server = new Schema({
             MODROLE:    {type:String, default:"Moderators"},
             LANGUAGE:   {type:String, default:"en"},
             DISABLED:   Array,
-            AUTOROLES:  Array,
+            SELFROLES:  Array,
+            AUTOROLE:  String,
+            ROLEMARKET: Mixed,
             BANK:{
               rubines:        { type: Number,default:0, min: 0, index: true },
               jades:          { type: Number,default:0, min: 0 },

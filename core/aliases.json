@@ -35,11 +35,10 @@
     ,"putme":"roleme"
     ,"cargo":"roleme"
 
-    ,"autoroles":"autorole"
-    ,"selfroles":"autorole"
-    ,"selfrole":"autorole"
-    ,"asar":"autorole"
-    ,"sr":"autorole"
+    ,"selfroles":"selfroles"
+    ,"selfrole":"selfroles"
+    ,"asar":"selfroles"
+    ,"sr":"selfroles"
 
     ,"r+":"roleadd"
     ,"radd":"roleadd"

@@ -159,11 +159,13 @@ try{
       message.lang = [chanData.LANGUAGE || servData.LANGUAGE, 'dev'];
     };
 
+
     if (typeof (servData.modules.PREFIX) !== 'undefined' && servData.modules.PREFIX && servData.modules.PREFIX !== '') {
         message.botUser = bot;
 
         let parsedData = {servData,userData,chanData,targData};
         if (require('../core/donFire.js').run(message,parsedData)===true)return;
+
 
         if (message.content.startsWith(servData.modules.PREFIX)) message.prefix=servData.modules.PREFIX;
         if (servData.globalPrefix!==false){
