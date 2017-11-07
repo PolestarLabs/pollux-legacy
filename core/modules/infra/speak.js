@@ -26,7 +26,6 @@ if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:'language'}))return;
 
   let l = i18n.length;
 
-
   for (i=0; i<l;i++){
     let Y = i18n[i];
     let langArray = Y.code;
@@ -37,13 +36,13 @@ if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:'language'}))return;
           gear.channelDB.set(Channel.id, {
             $set:{'LANGUAGE':Y.iso}
           }).then(ok => {
-            message.reply(Y.flag+" "+mm(`langIntro.channel`,P));
+            message.reply(Y.flag+" "+mm(`langIntro.channel`,P).replace("English",gear.capitalize(Y['name-e'])));
           }).catch(e => message.reply("Error"));
       }else{
           gear.serverDB.set(Server.id, {
             $set:{'modules.LANGUAGE':Y.iso}
           }).then(ok => {
-            message.reply(Y.flag+" "+mm(`langIntro.global`,P));
+            message.reply(Y.flag+" "+mm(`langIntro.global`,P).replace("English",gear.capitalize(Y['name-e'])));
           }).catch(e => message.reply("Error"));
       }
     }
