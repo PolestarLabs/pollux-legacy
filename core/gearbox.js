@@ -1,8 +1,11 @@
+
+
 const Discord = require('discord.js')
 
 const fs=require('fs');
 const paths = require("./paths.json");
 
+const Promise = require("bluebird");
 
 const Canvas = require("canvas");
 const Pixly = require("pixel-util");
@@ -435,5 +438,9 @@ gamechange : function gamechange(gamein = false) {
         }
         return array;
     },
+  capitalize: function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 }
+console.log("Gearbox OK!")

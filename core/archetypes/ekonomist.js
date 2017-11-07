@@ -1,7 +1,7 @@
 const gear = require("../gearbox.js")
-
-const DB =  gear.serverDB
-const uDB = gear.userDB
+const DB =  gear.serverDB;
+const uDB = gear.userDB;
+const Promise = require("bluebird");
 //const EKO = gear.EKO
   const auditTemplate={
                 rubines:{earnings:{},expenses:{}},
@@ -112,14 +112,28 @@ function transaction(amount,user_paying,options){
   })
 }
 
-async function checkout(amount,target,payer,unit,type){
-  let curr = currencies[unit].id
-  console.log("ENTER CHECKOUT")
-  console.log("===========================")
-  await uDB.set(payer,{$inc:{['modules.'+curr]:-amount}});
-  await uDB.set(target,{$inc:{['modules.'+curr]:amount}});
-  //if(payer=="271394014358405121") await EKO.findOneAndUpdate({id:unit},{$inc:{stash:-amount}});
-  return true;
+function checkout(amount,target,payer,unit,type){
+  return new Promise(async resolve=>{
+
+    let curr = currencies[unit].id
+    console.log("ENTER CHECKOUT")
+    console.log("===========================")
+
+    uDB.set(target,{$inc:{['modules.'+curr]:amount}}).then((err,ok)=>{
+      //if(err) throw err;
+      console.log("success 1")
+      uDB.set(payer,{$inc:{['modules.'+curr]:-amount}}).then((err2,ok2)=>{
+      //if(err) throw err;
+      console.log("success 2")
+      return resolve(true);
+      });
+
+    }).catch(e=>console.log(e));
+
+
+    //if(payer=="271394014358405121") await EKO.findOneAndUpdate({id:unit},{$inc:{stash:-amount}});
+
+  });
 };
 
 function checkAuthent(pay,receive){
@@ -138,12 +152,10 @@ async function audit(amount,user_paying,target,unit,type){
     let curr = currencies[unit].id
 
   console.log("Ekonomist Audit ----------")
-  console.log(amount,user_paying,target,curr,type)
+  console.log("AMT: ",amount,"Paid by: ",user_paying,"\nTo: ",target,"\n$: ",curr,type)
   console.log(userdata.modules.audits[curr].earnings[type])
   console.log(userdata.modules.audits[curr].expenses[type])
   console.log("--------------------------")
-
-
 
   try{
     userdata.modules.audits[curr].expenses[type] += amount
@@ -159,8 +171,6 @@ async function audit(amount,user_paying,target,unit,type){
     receiverdata.modules.audits[curr].earnings = {}
     receiverdata.modules.audits[curr].earnings[type] = amount
   }
-
-
     await uDB.findOneAndUpdate({id:user_paying},userdata);
     await uDB.findOneAndUpdate({id:target},receiverdata);
 
