@@ -100,8 +100,9 @@ Transaction Receipt: \`\`\`${inv}\`\`\`
 
       //EVERY HOUR-----------------------------------------------------------------
       if (date.getMinutes() + date.getSeconds() == 0) {
-
-      }
+        let sweep = bot.sweepMessages()
+        console.log("Sweeping ",sweep," messages.")
+        }
 
 
 
