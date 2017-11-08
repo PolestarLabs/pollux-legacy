@@ -162,8 +162,12 @@ async function audit(amount,user_paying,target,unit,type){
     receiverdata.modules.audits[curr].earnings = {}
     receiverdata.modules.audits[curr].earnings[type] = amount
   }
-    await uDB.findOneAndUpdate({id:user_paying},userdata);
-    await uDB.findOneAndUpdate({id:target},receiverdata);
+
+  let recv_inject = receiverdata.modules.audits
+  let user_inject = receiverdata.modules.audits
+
+    await uDB.findOneAndUpdate({id:user_paying},{$set:{'modules.audits':user_inject}});
+    await uDB.findOneAndUpdate({id:target},{$set:{'modules.audits':recv_inject}});
 
   async function checkDB(UUU) {
     uDB.findOne({id:UUU}).then(async AUDITS=>{

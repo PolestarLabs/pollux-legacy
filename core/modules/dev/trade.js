@@ -113,8 +113,9 @@ for (i in ITBASE){
 
     if (response=="ok"){
       inventory.splice(inventory.indexOf(item),1)
-      userDB.set(Author.id,{$set:{'inventory':inventory}});
-      userDB.set(Target.id,{$push:{'inventory':item}});
+      userDB.set(Author.id,{$set:{'modules.inventory':inventory}});
+      userDB.set(Target.id,{$push:{'modules.inventory':item}});
+try{
 
       resp2.first().delete().catch(e=>"die silent")
       resp.first().delete().catch(e=>"die silent")
@@ -122,6 +123,9 @@ for (i in ITBASE){
       m1.delete().catch(e=>"die silent")
       m2.delete().catch(e=>"die silent")
       meny.delete().catch(e=>"die silent")
+}catch(e){
+
+}
 
       message.reply(yep).then(m=>m.delete(6000));
 

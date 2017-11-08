@@ -69,7 +69,9 @@ const Server = new Schema({
             bgInventory:  Array,
             badges: Array,
             badgesInventory:  Array,
-            flairs: Array,
+            flairTop: { type: String ,default:'default'},
+            flairDown: { type: String ,default:'default'},
+            flairArray: { type: Array ,default:[]},
             flairsInventory:  Array,
 
             UPFACTOR:{type: Number,default:0.1},
