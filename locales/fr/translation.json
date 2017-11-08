@@ -48,7 +48,9 @@
         "nsfwNofunds": "Tu n'as pas assez de Rubines pour acheter des trucs coquins ;) Donne-moi **5**Rubines et là on pourra discuter. Gagne des Rubines en tapant `{{prefix}}daily` ",
         "nsfwCheckout": "5 {{emoji}} ont été débitées de vos fonds.",
         "airwaifu": ":airplane: Cette Aerowaifu a été spécialement choisie pour toi.",
-        "leadUnap": "Si tu ne te vois pas affiché ici, écris `{{prefix}}profile` pour voir ton level. Peut être que t'es juste naze."
+        "leadUnap": "Si tu ne te vois pas affiché ici, écris `{{prefix}}profile` pour voir ton level. Peut être que t'es juste naze.",
+        "position": "Your position in this ranking is",
+        "usethisfor": "Type |p!rank {{scope}}| for {{srr}}"
     },
     "misc": {
         "memberSince": "{{target}} est membre depuis: {{joinedstamp}} ",
@@ -99,7 +101,10 @@
         "noReason": "Raison non spécifiée",
         "insuperms": "Tu n'as pas la permission d'utiliser cette commande! Ouste!",
         "not-a-NSFW-channel": "Eh oh! Rends ce salon NSFW d'abord, il y a des enfants par ici...",
-        "timesOutIn": "Cela expirera dans {{s}} secondes"
+        "timesOutIn": "Cela expirera dans {{s}} secondes",
+        "inviteText": "Invite-moi sur ton serveur en cliquant [ICI]",
+        "selfroleunAdded": "Role **{{role}}** removed from Self-roles.",
+        "noselfRoles": "There are no Self-Roles in this Server"
     },
     "dict": {
         "coinHeads": "face",
@@ -124,7 +129,8 @@
         "usage": "Utilisation:",
         "module": "Module",
         "inst": "Instructions",
-        "bet": "Pari"
+        "bet": "Pari",
+        "vacuum": "vacuum"
     },
     "profile": {
         "persotexUpdate": "Tout est bon! Ton texte personnel est désormais: \n {{pstext}} \n Utilise `{{prefix}}profile` pour voir ce joli ~~quoi que~~ profil. Hehee~ "
@@ -232,7 +238,8 @@
         "avatar": "Cette fameuse commande qui montre l'avatar à quelqu'un, vous me l'avez tellement demandée... (en plus ça sert à quoi sérieux)",
         "candyrank": "Pour voir les meilleurs récolteurs de bonbons à travers le monde!",
         "candy": "Vérifie combien toi ou un ami avez récolté de bonbons pendant cet événement",
-        "trickortreat": "Toque à la porte d'un serveur pour récolter des bonbons, tu peux le faire une fois par jour sur chaque serveur que tu veux."
+        "trickortreat": "Toque à la porte d'un serveur pour récolter des bonbons, tu peux le faire une fois par jour sur chaque serveur que tu veux.",
+        "selfroles": "Add, Remove, or List Self-Assignable Roles"
     },
     "menu": {
         "cake": "Cake",
@@ -374,7 +381,8 @@
         "daily": "`{{prefix}}daily` pour avoir ton bonus quotidien, si tu le fais 10 jours d'affilée tu auras même un petit bonus!\n `{{prefix}}daily epoch` pour voir combien de temps il reste avant que +daily soit à nouveau disponible",
         "trickortreat": "`{{prefix}}trickortreat` ou `{{prefix}}trit`",
         "candy": "`{{prefix}}candy [@nimportequi]`",
-        "candyrank": "`{{prefix}}candyrank`"
+        "candyrank": "`{{prefix}}candyrank`",
+        "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games` Allows the **Games** Role as self-assignable.\n`{{prefix}}selfroles del Games` Removes the role **Games** from the list.\n`{{prefix}}selfroles list` Shows the list and commands for each Self-Assignable Role\n\n These are Case insensitive, you can use Role ID too.\n`{{prefix}}selfroles clear` Deletes **all** selfroles from the list."
     },
     "logs": {
         "success": "Ca y est! J'ai désigné le salon {{channel}} comme salon pour {{CHNTYPE}}!",
@@ -655,7 +663,8 @@
         "upnext": "A suivre dans cette playlist"
     },
     "eastereggs": {
-        "konodioda": "Tu pensais que c'était Pollux, **mais c'était moi, DIO**!"
+        "konodioda": "Tu pensais que c'était Pollux, **mais c'était moi, DIO**!",
+        "vacuum": "**{{user}}** has given **+1 Rep** to the Vacuum. {{amount}} reps has been thrown into the void so far."
     },
     "discoin": {
         "desc": "Ta transaction est en cours, on attend une réponse de %BOT%!",
@@ -688,6 +697,10 @@
         "candies": "**{{amt}}** Candies",
         "candytop": "The top-tier Candy collectors are:",
         "candyprize": "The best ranked users will get some nice rewards at the end of the event!",
-        "yourpos": "Your position in the rank is:"
+        "yourpos": "Ta position dans le classement:"
+    },
+    "langIntro": {
+        "global": "Je vais désormais parler Français sur ce serveur, comme la belle demoiselle distinguée que je suis!",
+        "channel": "Ok! Je vais donc parler Français sur ce salon, parfait!~"
     }
 }
