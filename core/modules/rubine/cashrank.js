@@ -1,9 +1,11 @@
 const arraySort = require('array-sort')
 const fs = require("fs");
 const gear = require('../../gearbox.js')
+const paths = require('../../paths.json')
 const locale = require('../../../utils/multilang_b');
 const mm = locale.getT();
 const cmd = 'cashrank';
+
 const init = async function (message, userDB, DB) {
 
   const Server  = message.guild;
@@ -14,7 +16,7 @@ const init = async function (message, userDB, DB) {
   const args    = MSG.split(/ +/).slice(1)[0]||"";
   const LANG    = message.lang;
 
-    let P={lngs:message.lang}
+    let P={lngs:LANG,prefix:message.prefix}
     if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:this.cat}))return;
 
 
@@ -25,7 +27,7 @@ const init = async function (message, userDB, DB) {
   let ranked = []
 
   Channel.startTyping();
-  let dbminiarray = await userDB.find({'modules.rubines':{$gt:0}});
+  let dbminiarray = await userDB.find().sort({'modules.rubines': -1}).limit(11);
   Channel.stopTyping();
 
   dbminiarray.forEach(i => {
@@ -45,25 +47,46 @@ const init = async function (message, userDB, DB) {
   arraySort(ranked, 'rubines', {
     reverse: true
   })
+  console.log(ranked)
   let ids=ranked.map(x=>x.id)
-  emb.setColor('#e22449')
-  emb.title = "WEALTH RANK"
-  emb.setAuthor('Pollux', bot.user.avatarURL, 'https://github.com/Flicksie/polluxbot');
-  emb.setThumbnail("https://rebornix.gallerycdn.vsassets.io/extensions/rebornix/ruby/0.15.0/1503328840286/Microsoft.VisualStudio.Services.Icons.Default")
+   if (['server','sv','guild','local',Server.name].includes(args.toLowerCase())) {
+  emb.title = mm('website.svLead',P)
+     P.scope = 'global'
+     P.srr = mm('website.globalrank',P)
+  emb.setFooter(mm('forFun.usethisfor',P));
+    }else{
+  emb.title = mm('website.globalrank',P)
+     P.scope = 'server'
+     P.srr = mm('website.svLead',P)
+  emb.setFooter(mm('forFun.usethisfor',P));
+    }
+  emb.setAuthor('Pollux ', bot.user.avatarURL, 'http://pollux.fun/leaderboards');
 
   var medals = [':first_place: 1st',
 ':second_place: 2nd',
 ':third_place: 3rd'
 , ':medal: 4th'
 , ':medal: 5th'
+, ':medal: 6th'
+, ':medal: 7th'
+, ':medal: 8th'
+, ':medal: 9th'
+, ':medal: 10th'
 ]
-  for (i = 0; i < 5; i++) {
+
+for (i=0;i<10;i++){
+
       emb.addField(medals[i], ranked[i].name, true)
       emb.addField(GOOD + 's', ranked[i].rubines + "" + GOODMOJI, true)
-      emb.addBlankField
-  }
+}
 
-  emb.setFooter('pos='+(ids.indexOf(Author.id)+1))
+if(ids.indexOf(Author.id)+1>5){
+      emb.addField(":small_red_triangle_down:  "+mm('forFun.position',P)+": #"+(ids.indexOf(Author.id)+1),mm('forFun.leadUnap',P), false)
+}
+  emb.setColor('#ea2424');
+
+  emb.setThumbnail("https://rebornix.gallerycdn.vsassets.io/extensions/rebornix/ruby/0.15.0/1503328840286/Microsoft.VisualStudio.Services.Icons.Default")
+
 
   message.channel.send({
     embed: emb
@@ -74,11 +97,4 @@ const init = async function (message, userDB, DB) {
     }))
   });
 }
-
-module.exports = {
-  pub: true,
-  cmd: cmd,
-  perms: 5,
-  init: init,
-  cat: '$'
-};
+ module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: '$'};
