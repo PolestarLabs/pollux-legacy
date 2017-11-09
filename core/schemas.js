@@ -69,11 +69,6 @@ const Server = new Schema({
             bgInventory:  Array,
             badges: Array,
             badgesInventory:  Array,
-            flairTop: { type: String ,default:'default'},
-            flairDown: { type: String ,default:'default'},
-            flairArray: { type: Array ,default:[]},
-            flairsInventory:  Array,
-
             UPFACTOR:{type: Number,default:0.1},
             LOCALRANK:Mixed,
 
@@ -112,7 +107,7 @@ const Server = new Schema({
             }
           },
         channels: Mixed
-    });
+    },{ strict: false });
 
 //CHANS
 
@@ -130,13 +125,13 @@ const Channel = new Schema({
             DROPS:   {type:Boolean,default:true},
             DISABLED: Array
         }
-    });
+    },{ strict: false });
 
 //USRS
 const User = new Schema({
         name: String,
         tag:  String,
-  updated_at: { type: Date },
+        updated_at: { type: Date },
         id: {type:String,required: true,index:{unique:true}},
         modules: {
             PERMS: {type:Number,default:3},
@@ -165,7 +160,10 @@ const User = new Schema({
             dyStreak:  {type:Number,default:0},
             daily:  {type:Number,default:1486595162497},
 
-
+                        flairTop: { type: String ,default:'default'},
+            flairDown: { type: String ,default:'default'},
+            flairArray: { type: Array ,default:[]},
+            flairsInventory:  Array,
 
 
             //COLLECTIBLES
@@ -295,12 +293,12 @@ const User = new Schema({
 
             }
         }
-    });
+    },{ strict: false });
 
 User.pre('update', function(next) {
   this.updated_at = Date.now();
   next();
-});
+},{ strict: false });
 
 const Globals = new Schema({
   id:{type:Number,default:0,unique:true},
@@ -312,7 +310,7 @@ const Background = new Schema({
   id:{type:String,index:{unique:true}},
   rarity:{type:String,index:true},
   tags:{type:String,index:true}
-});
+},{ strict: false });
 
 module.exports={
   user    : mongoose.model('User', User, 'userdb'),
