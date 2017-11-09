@@ -46,6 +46,7 @@
         "minus_rubines_generic": "I'm taking %R% Rubines from your balance okay~?"
     },
     "forFun": {
+      "transmittedVc":"Transmitted to your voice channel!",
         "saltLVL": "{{target}}' Salt Level is **{{amount}}%** {{emoji}}",
         "booru404": "Whoopsie, i couldn't find nothing with those tags. Check if you got everything right, sweetie!",
         "nsfw404": "Boy, your porn is so freaking bizarre that I couldn't find this anywhere. Try something less kinky.",
@@ -63,6 +64,7 @@
         "colorChange": "Your favorite color has been saved!"
     },
     "CMD": {
+      "enterVoiceBetterExperience":"Join a Voice Channel to get the full potential of this command~"
       "noselfRoles":"There are no Self-Roles in this Server",
       "timesOutIn":"This will timeout in {{s}} seconds",
         "denied": "You are not authorized to use this. This commands requires a Elevation Rank of {{rankNeed}}, your Rank is {{rankMe}}. Contact the Server owner or a Mod.",
@@ -141,7 +143,7 @@
         "persotexUpdate": "Yooo. All set! Your personal text is now: \n {{pstext}} \n Use `{{prefix}}profile` to see this beautiful line on your ~~not so beautiful~~ ProfileCard. Teehee~"
     },
     "builds": {
-        "memberSince": "Member since:",
+        "memberSince": "Member since: {{date}}",
         "level": "Level:",
         "levelUp": "Level Up!",
         "genProf": "Hold on, generating your super duper ProfileCard thingy...",
@@ -694,7 +696,7 @@
     "current_event":"Hey~ Did you know there is a global **Halloween Event** going on? :jack_o_lantern:\nIn this event you can get some cool and __exclusive__ pretty stuff for your `p!profile` card!\nAvailable only during this event, which will be running until **November 5th**\nMore info at <http://pollux.fun/events/haloween> *(page in english)*\n*Contact your Server Owner to check if this server is participating*",
     "current_eventforMasters":"Hey~ Excuse me, did you know there is a global **Halloween Event** going on? :jack_o_lantern:\nIn this event people can get some cool and __exclusive__ pretty stuff for their`p!profile` cards!\nAvailable only during this event, which will be running until **November 5th**\nMore info at <http://pollux.fun/events/haloween> *(page in english)*\n\nYou, as a Server Owner, if interested in participating in the event with your community, can answer this message with an `halloween` so I know you're in! You will receive **five** Event Lootboxes, plus **one** for every 100 members on your server(s), capping at 15.\nThese can be used as rewards to any self-hosted events you may run, or just to raffle amongst your members.\nI trust you to not use these for self advantage, either way, Event Lootbox usage will be logged just in case to protect those who want to play fairly~\n\nSome Servers are not eligible for auto-joining the event. Which are:\n - Servers created after a certain date;\n - Servers in which I joined after October 1st;\n - Servers with bot x human users ratio exceeds 10%\n\n If your server fits in any of these, but it is a legit community server wanting to participate, join my Support Server and speak to my Developer for help, and eventually a Whitelisting of your server.\n\nHere are some quick instructions for the commands involved in this event:\n - `p!trickortreat` : This is like dailies, but usable once a day in every participating server i'm in. Collect candies and get ranked, the top ranked users will get goodies from myself at the end of the event in **November 5th, 3PM EDT**.\n - `p!trade box @someone` Use this to award boxes to someone.\n - `p!lootbox` Check the lootboxes in your inventory, Event Boxes are opened responding with `open EV`.\n\nAny further questions, bugs, or anything. Join the Support Server and spill it out (you can find it with `p!help`)\n\n**Stay Spooky and Happy Halloween!** :heart:",
 
-    "next":"Available again at this Server at",
+    "next":"Available again at this Server at {{remain}}",
     "treat":"***Trick or Treat!***  You got **{{qtd}}** candies from this Server's stash!",
     "treatRefresh":"No no no! You already got your candies, shoo!\nYou can come back in **{{remaining}}**",
     "newAccOut":":warning: Sorry, new accounts cannot participate. But join me in another event!~",
