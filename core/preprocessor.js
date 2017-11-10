@@ -57,10 +57,11 @@ module.exports = {
 
         return DTMN.cat
     },
-    checkUse: async function checkUse(DTMN, DB, msg) {
+    checkUse: function checkUse(DTMN, DB, msg) {
 
         try {
             let commandFile = require(DTMN.path);
+          console.log(DB.chanData.modules.DISABLED.includes(commandFile.cmd))
             switch (true) {
               case !msg.channel.nsfw && commandFile.cat.toLowerCase() == "nsfw" :
                     return "NONSFW";
