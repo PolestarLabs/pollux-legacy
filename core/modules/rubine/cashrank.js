@@ -27,13 +27,19 @@ const init = async function (message, userDB, DB) {
   let ranked = []
 
   Channel.startTyping();
-  let dbminiarray = await userDB.find().sort({'modules.rubines': -1}).limit(11);
+
+  let dbminiarray
+      if (['server','sv','guild','local',Server.name].includes(args.toLowerCase())) {
+      dbminiarray = await userDB.find().sort({'modules.rubines': -1}).limit(50);
+    }else{
+      dbminiarray = await userDB.find().sort({'modules.rubines': -1}).limit(11);
+
+    };
+
+
   Channel.stopTyping();
 
   dbminiarray.forEach(i => {
-    if (['server','sv','guild','local',Server.name].includes(args.toLowerCase())) {
-      if (!Server.members.has(i.id)) return;
-    };
 
     if (i.name !== 'Pollux' && i.name !== undefined){
       let rankItem = {};
@@ -53,12 +59,12 @@ const init = async function (message, userDB, DB) {
   emb.title = mm('website.svLead',P)
      P.scope = 'global'
      P.srr = mm('website.globalrank',P)
-  emb.setFooter(mm('forFun.usethisfor',P));
+  emb.setFooter(mm('forFun.usethisfor',P).replace('rank ','cashrank '));
     }else{
   emb.title = mm('website.globalrank',P)
      P.scope = 'server'
      P.srr = mm('website.svLead',P)
-  emb.setFooter(mm('forFun.usethisfor',P));
+  emb.setFooter(mm('forFun.usethisfor',P).replace('rank ','cashrank '));
     }
   emb.setAuthor('Pollux ', bot.user.avatarURL, 'http://pollux.fun/leaderboards');
 
@@ -74,10 +80,13 @@ const init = async function (message, userDB, DB) {
 , ':medal: 10th'
 ]
 
+console.log(ranked)
 for (i=0;i<10;i++){
+  if(ranked[i]){
 
       emb.addField(medals[i], ranked[i].name, true)
       emb.addField(GOOD + 's', ranked[i].rubines + "" + GOODMOJI, true)
+  }
 }
 
 if(ids.indexOf(Author.id)+1>5){
