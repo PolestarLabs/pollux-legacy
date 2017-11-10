@@ -56,7 +56,7 @@ const init = async function (message,userDB,DB) {
   let modrole;
   if (G.dDATA.modules.MODROLE != undefined) {modrole = G.roles.get(G.dDATA.modules.MODROLE)||"NONE";}else{modrole = "NONE";}
 
-  const autoroles = (G.dDATA.modules.AUTOROLES||[]).length
+  const autoroles = (G.dDATA.modules.SELFROLES||[]).length
   const lang = G.dDATA.modules.LANGUAGE
   const greet = G.dDATA.modules.GREET
   const bye = G.dDATA.modules.FWELL
@@ -77,7 +77,7 @@ const init = async function (message,userDB,DB) {
 
   emb.addField(" :hash: Channels","```"+ TC.size +"```", true)
   emb.addField(" :microphone2: Voice Channels ","```"+VC.size +"```", true)
-  emb.addField(" :package: Auto Roles","```"+ autoroles +"```", true)
+  emb.addField(" :package: Self Roles","```"+ autoroles +"```", true)
   emb.addField(" :package: Roles ","```"+ Server.roles.size +"```", true)
 
   emb.addField("Region",flag, true)

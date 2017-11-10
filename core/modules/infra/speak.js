@@ -45,6 +45,20 @@ if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:'language'}))return;
             message.reply(Y.flag+" "+mm(`langIntro.global`,P).replace("English",gear.capitalize(Y['name-e'])));
           }).catch(e => message.reply("Error"));
       }
+    }else{
+         if (['delete','reset','del','server'].includes(args)) {
+      if(['c','channel','ch'].includes(scope)){
+          gear.channelDB.set(Channel.id, {
+            $set:{'LANGUAGE':undefined}
+          }).then(ok => {
+            let localLY = (Server.dDATA.modules.LANGUAGE||'en')
+            let globalLang = i18n.find(x=>x.iso==localLY);
+            console.log(globalLang)
+            message.reply(globalLang.flag+" "+mm(`langIntro.channel`,P));
+          }).catch(e => {console.log(e);message.reply("Error")});
+          break;
+          }
+      }
     }
   };
 

@@ -7,16 +7,16 @@ const mm = locale.getT();
 const cmd = 'prefixSet';
 
 const init = function (message,userDB,DB) {
-const args = message.content.split(' ').slice(1)
+const args = message.content.split(/ +/).slice(1)[0]
     let Server = message.guild;
     let LANG = message.lang;
     let bot = message.botUser
 
-    gear.paramDefine(Server, 'PREFIX', args[0].toString());
-    Server.dDATA.modules.PREFIX =  args[0].toString();
+    gear.serverDB.set(Server.id, {$set:{'modules.PREFIX':args}});
+
     message.reply(mm('CMD.prefixChng', {
         lngs: LANG,
-        prefix: Server.dDATA.modules.PREFIX
+        prefix: args
     }));
 }
 
@@ -24,5 +24,5 @@ const args = message.content.split(' ').slice(1)
     cmd: cmd,
     perms: 2,
     init: init,
-    cat: 'master'
+    cat: 'mod'
 };
