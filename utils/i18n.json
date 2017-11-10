@@ -1,0 +1,64 @@
+[{
+    "code": ["en","en-us","en-gb","en-uk","en-ca"],
+    "iso": "en",
+    "name": "english",
+    "name-e": "english",
+    "flag": ":flag_gb:"
+  },{
+    "code": ["es"],
+    "iso": "es",
+    "name": "español",
+    "name-e": "spanish",
+    "flag": ":flag_es:"
+  },{
+    "code": ["cz","cs"],
+    "iso": "cz",
+    "name": "čeština",
+    "name-e": "czech",
+    "flag": ":flag_cz:"
+  },{
+    "code": ["pt","pt-br"],
+    "iso": "pt-BR",
+    "name": "português brasileiro",
+    "name-e": "Brazilian Portuguese",
+    "flag": ":flag_br:"
+  },{
+    "code": ["pt-pt","pt-eu"],
+    "iso": "pt",
+    "name": "português europeu",
+    "name-e": "European Portuguese",
+    "flag": ":flag_pt:"
+  },{
+    "code": ["ro"],
+    "iso": "ro",
+    "name": "română",
+    "name-e": "romanian",
+    "flag": ":flag_ro:"
+  },{
+    "code": ["zh","ch","zh-tw"],
+    "iso": "zh-TW",
+    "name": "繁體中文",
+    "name-e": "traditional chinese",
+    "flag": ":flag_tw:"
+  },{
+    "code": ["de"],
+    "iso": "de",
+    "name": "deutsch",
+    "name-e": "german",
+    "flag": ":flag_de:"
+
+  },{
+    "code": ["fr"],
+    "iso": "fr",
+    "name": "français",
+    "name-e": "french",
+    "flag": ":flag_fr:"
+
+  },{
+    "code": ["hu","my"],
+    "iso": "hu",
+    "name": "magyar",
+    "name-e": "hungarian",
+    "flag": ":flag_hu:"
+  }
+]

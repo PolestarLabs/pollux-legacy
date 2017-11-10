@@ -1,8 +1,11 @@
+
+
 const Discord = require('discord.js')
 
 const fs=require('fs');
 const paths = require("./paths.json");
 
+const Promise = require("bluebird");
 
 const Canvas = require("canvas");
 const Pixly = require("pixel-util");
@@ -11,6 +14,11 @@ const wrap = require('canvas-text-wrapper').CanvasTextWrapper;
 const {userDB,serverDB,channelDB,globalDB} = require('./database_ops.js');
 const DB = serverDB;
 
+const cfg = require('../config.json');
+const errHook = new Discord.WebhookClient('376036137443000320', cfg.errHook);
+
+
+
 module.exports={
   DB:serverDB, //legacy
   serverDB,
@@ -18,6 +26,36 @@ module.exports={
   channelDB,
   globalDB,
   Discord,
+  errHook,
+  RichEmbed:Discord.RichEmbed,
+
+
+//Get Help
+  autoHelper: function autoHelper(trigger,options){
+    let message, P, M, key, cmd, opt;
+    if(options&&typeof options=='object'){
+      message = options.message || options.msg;
+      M=message.content;
+      P = {lngs:message.lang};
+      key = options.opt;
+      cmd=  options.cmd;
+      opt=  options.opt;
+    };
+
+    if (    trigger.includes(message.content.split(/ +/)[1])
+        ||  message.content.split(/ +/)[1]=="?"
+        ||  message.content.split(/ +/)[1]=="help"
+        || (message.content.split(/ +/).length==1&&trigger.includes('noargs'))
+        ||  trigger==='force'
+       ){
+      this.usage(cmd,message,opt);
+      return true;
+    }else{
+      return false;
+    }
+  },
+
+
 
 //Get Index List
   getDirs : function getDirs(rootDir, cb) {
@@ -44,7 +82,18 @@ module.exports={
  },
 
 
+gamechange : function gamechange(gamein = false) {
+        try {
+            if (gamein != false) return gamein;
+            delete require.cache[require.resolve(`../resources/lists/playing.js`)];
+            var gamelist = require("../resources/lists/playing.js");
+            var max = gamelist.games.length-1
+            var rand = this.randomize(0, max)
 
+            return gamelist.games[rand]
+
+        } catch (e) {}
+    },
 
   randomize: function randomize(min, max) {
       return Math.floor(Math.random() * (max - min + 1) + min);
@@ -192,7 +241,7 @@ module.exports={
     usage: function usage(cmd, m, third) {
       delete require.cache[require.resolve("./archetypes/usage.js")];
       let usage = require("./archetypes/usage.js");
-      return usage.run(cmd, m, third);
+      usage.run(cmd, m, third);
     },
      dropGoodies: function (a, b, c) {
        delete require.cache[require.resolve("./archetypes/drops.js")];
@@ -224,7 +273,7 @@ module.exports={
         console.log('----------');
         console.log(e);
         console.log("==================================");
-        //serverDB.findOneAndUpdate({_id:sv.id},{$set:{logs:def.logItems}}) <== fuck
+        //serverDB.findOneAndUpdate({id:sv.id},{$set:{logs:def.logItems}}) <== fuck
         });
     },
 
@@ -233,7 +282,7 @@ module.exports={
     sendLog_legacy: function sendLog_legacy(eve,logtype,sv,DB,extra,alt,arg,nise){
       console.warn("Deprecation warning: This is a Legacy Function")
       try{
-        DB.findOne({_id:sv.id}).then(DBDATA=>{
+        DB.findOne({id:sv.id}).then(DBDATA=>{
           if(!DBDATA)return;
           if (DBDATA.logs[logtype][eve]==false)return;
       delete require.cache[require.resolve("./modules/dev/log.js")]
@@ -246,7 +295,7 @@ module.exports={
         console.log(e)
         console.log("==================================")
 
-        DB.findOneAndUpdate({_id:sv.id},{$set:{logs:def.logItems}})
+        DB.findOneAndUpdate({id:sv.id},{$set:{logs:def.logItems}})
         })
       }catch(e){
         try{
@@ -274,7 +323,7 @@ module.exports={
       });
       }
     },
-    hasPerms:   function hasPerms(Member, DB) {
+    hasPerms:   function hasPerms(Member) {
         console.warn("Deprecation warning: This is a Legacy Function")
         if(Member.id =="88120564400553984" ) return true;
         let Server = Member.guild
@@ -311,7 +360,7 @@ module.exports={
         };
 
         serverDB.findOne({
-          _id: Server.id
+          id: Server.id
         }).then(SDATA=>{
           if (SDATA.modules.MODROLE) {
             if (Server.member(tgt).roles.has(Server.dDATA.modules.MODROLE)) {
@@ -389,5 +438,9 @@ module.exports={
         }
         return array;
     },
+  capitalize: function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 }
+console.log("Gearbox OK!")

@@ -9,11 +9,13 @@
   "author": "Flicky",
   "license": "MIT",
   "dependencies": {
+    "airbrake": "^2.1.1",
     "array-sort": "^0.1.4",
     "canvas": "^2.0.0-alpha.3",
     "canvas-text-wrapper": "^0.10.2",
     "colors": "^1.1.2",
     "discord.js": "^11.2.1",
+    "gif-encoder": "^0.6.0",
     "i18next": "^10.0.7",
     "i18next-node-fs-backend": "^1.0.0",
     "mongodb": "^2.2.33",

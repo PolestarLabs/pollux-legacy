@@ -36,18 +36,18 @@ for (i in ITBASE){
         if (itAmt.length == 0) return message.reply(gear.emoji("nope"));
         if (itAmt.length == 1) {
            let inv_names = itAmt.map(i=>i.name);
-           let inv_ids = itAmt.map(i=>i.id);
-           hover(inv_ids,true);
+           let invids = itAmt.map(i=>i.id);
+           hover(invids,true);
         };
         if (itAmt.length >= 2) {
            let inv_names = itAmt.map(i=>i.name)
-           let inv_ids = itAmt.map(i=>i.id)
+           let invids = itAmt.map(i=>i.id)
            let opts =""
            for (i=0;i<inv_names.length;i++){
               opts+=`
 [${i}] :: ${inv_names[i]}`
            }
-            meny = await message.reply("```ml\n"+opts+"```").then(m=>hover(inv_ids,false))
+            meny = await message.reply("```ml\n"+opts+"```").then(m=>hover(invids,false))
         }
       }
     }
@@ -113,8 +113,9 @@ for (i in ITBASE){
 
     if (response=="ok"){
       inventory.splice(inventory.indexOf(item),1)
-      userDB.set(Author.id,{$set:{'inventory':inventory}});
-      userDB.set(Target.id,{$push:{'inventory':item}});
+      userDB.set(Author.id,{$set:{'modules.inventory':inventory}});
+      userDB.set(Target.id,{$push:{'modules.inventory':item}});
+try{
 
       resp2.first().delete().catch(e=>"die silent")
       resp.first().delete().catch(e=>"die silent")
@@ -122,6 +123,9 @@ for (i in ITBASE){
       m1.delete().catch(e=>"die silent")
       m2.delete().catch(e=>"die silent")
       meny.delete().catch(e=>"die silent")
+}catch(e){
+
+}
 
       message.reply(yep).then(m=>m.delete(6000));
 

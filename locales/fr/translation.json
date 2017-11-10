@@ -36,9 +36,9 @@
         "plus_rubines_generic": "%R% Rubines ont été ajoutée à ton porte-monnaie. Cool!",
         "minus_rubines_generic": "Je te prends %R% Rubines d'accord~?",
         "noBet": "Tu joues pour le fun alors? Pas de soucis~",
-        "exchange": "Exchanges",
+        "exchange": "Echanges",
         "crafts": "Crafting",
-        "donation": "Donations"
+        "donation": "Dons"
     },
     "forFun": {
         "saltLVL": "Le niveau de sel à {{target}} est de **{{amount}}%** {{emoji}} ",
@@ -48,7 +48,9 @@
         "nsfwNofunds": "Tu n'as pas assez de Rubines pour acheter des trucs coquins ;) Donne-moi **5**Rubines et là on pourra discuter. Gagne des Rubines en tapant `{{prefix}}daily` ",
         "nsfwCheckout": "5 {{emoji}} ont été débitées de vos fonds.",
         "airwaifu": ":airplane: Cette Aerowaifu a été spécialement choisie pour toi.",
-        "leadUnap": "Si tu ne te vois pas affiché ici, écris `{{prefix}}profile` pour voir ton level. Peut être que t'es juste naze."
+        "leadUnap": "Si tu ne te vois pas affiché ici, écris `{{prefix}}profile` pour voir ton level. Peut être que t'es juste naze.",
+        "position": "Your position in this ranking is",
+        "usethisfor": "Type |p!rank {{scope}}| for {{srr}}"
     },
     "misc": {
         "memberSince": "{{target}} est membre depuis: {{joinedstamp}} ",
@@ -99,7 +101,10 @@
         "noReason": "Raison non spécifiée",
         "insuperms": "Tu n'as pas la permission d'utiliser cette commande! Ouste!",
         "not-a-NSFW-channel": "Eh oh! Rends ce salon NSFW d'abord, il y a des enfants par ici...",
-        "timesOutIn": "Cela expirera dans {{s}} secondes"
+        "timesOutIn": "Cela expirera dans {{s}} secondes",
+        "inviteText": "Invite-moi sur ton serveur en cliquant [ICI]",
+        "selfroleunAdded": "Role **{{role}}** removed from Self-roles.",
+        "noselfRoles": "There are no Self-Roles in this Server"
     },
     "dict": {
         "coinHeads": "face",
@@ -124,7 +129,8 @@
         "usage": "Utilisation:",
         "module": "Module",
         "inst": "Instructions",
-        "bet": "Pari"
+        "bet": "Pari",
+        "vacuum": "vacuum"
     },
     "profile": {
         "persotexUpdate": "Tout est bon! Ton texte personnel est désormais: \n {{pstext}} \n Utilise `{{prefix}}profile` pour voir ce joli ~~quoi que~~ profil. Hehee~ "
@@ -230,9 +236,10 @@
         "exchange": "Echange de Rubines en monnaie d'autres bots!",
         "slots": "Joue une partie de machine à sous, le pari est optionnel. Sache que le gain est **énorme** par contre :3",
         "avatar": "Cette fameuse commande qui montre l'avatar à quelqu'un, vous me l'avez tellement demandée... (en plus ça sert à quoi sérieux)",
-        "candyrank": "See the best candy collectors around the world",
-        "candy": "Checks how much candy you or a friend have collected during this event",
-        "trickortreat": "Knocks on a Server to ask for candies, can be done once a day per Server."
+        "candyrank": "Pour voir les meilleurs récolteurs de bonbons à travers le monde!",
+        "candy": "Vérifie combien toi ou un ami avez récolté de bonbons pendant cet événement",
+        "trickortreat": "Toque à la porte d'un serveur pour récolter des bonbons, tu peux le faire une fois par jour sur chaque serveur que tu veux.",
+        "selfroles": "Add, Remove, or List Self-Assignable Roles"
     },
     "menu": {
         "cake": "Cake",
@@ -372,9 +379,10 @@
         "slots": "`{{prefix}}slots [pari(optionnel)]`",
         "avatar": "`{{prefix}}avatar [@n'importequi]`",
         "daily": "`{{prefix}}daily` pour avoir ton bonus quotidien, si tu le fais 10 jours d'affilée tu auras même un petit bonus!\n `{{prefix}}daily epoch` pour voir combien de temps il reste avant que +daily soit à nouveau disponible",
-        "trickortreat": "`{{prefix}}trickortreat` or `{{prefix}}trit`",
-        "candy": "`{{prefix}}candy [@someguy]`",
-        "candyrank": "`{{prefix}}candyrank`"
+        "trickortreat": "`{{prefix}}trickortreat` ou `{{prefix}}trit`",
+        "candy": "`{{prefix}}candy [@nimportequi]`",
+        "candyrank": "`{{prefix}}candyrank`",
+        "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games` Allows the **Games** Role as self-assignable.\n`{{prefix}}selfroles del Games` Removes the role **Games** from the list.\n`{{prefix}}selfroles list` Shows the list and commands for each Self-Assignable Role\n\n These are Case insensitive, you can use Role ID too.\n`{{prefix}}selfroles clear` Deletes **all** selfroles from the list."
     },
     "logs": {
         "success": "Ca y est! J'ai désigné le salon {{channel}} comme salon pour {{CHNTYPE}}!",
@@ -633,9 +641,9 @@
         "duplicateExchange": "Doublon {{tpe}} `{{itm}}` échangé contre {{X}} Rubines",
         "morons": "Bande **d'abrutis**! Vous avez laissé un lootbox filer!! >:U",
         "contesting": "Participants pour cette lootbox:",
-        "eventDrop": "And there is more! This box is an **EVENT BOX** which means **special goodies inside!**",
-        "suprareDrop": "Oh my, a **SUPER RARE** Lootbox!",
-        "notThisbox": "There's no such box to open, try `{{prefix}}lootbox` again and see tha options available~"
+        "eventDrop": "Et c'est pas fini! Cette lootbox est une **LOOTBOX D'EVENEMENT** ce qui signifie *goodies spéciaux!**",
+        "suprareDrop": "Oh mon Dieu... une Lootbox **SUPER RARE**!",
+        "notThisbox": "Tu ne possèdes pas ce genre de lootbox, retente `{{prefix}}lootbox` et regarde ce que tu as~"
     },
     "discord": {
         "role": "Rôle",
@@ -655,7 +663,8 @@
         "upnext": "A suivre dans cette playlist"
     },
     "eastereggs": {
-        "konodioda": "Tu pensais que c'était Pollux, **mais c'était moi, DIO**!"
+        "konodioda": "Tu pensais que c'était Pollux, **mais c'était moi, DIO**!",
+        "vacuum": "**{{user}}** has given **+1 Rep** to the Vacuum. {{amount}} reps has been thrown into the void so far."
     },
     "discoin": {
         "desc": "Ta transaction est en cours, on attend une réponse de %BOT%!",
@@ -674,9 +683,9 @@
     },
     "event": {
         "next": "Disponible à nouveau sur ce serveur à",
-        "treat": "***Trick or Treat!***  You got **{{qtd}}** candies from this Server's stash!",
-        "treatRefresh": "No no no! You already got your candies, shoo!\nYou can come back in **{{remaining}}**",
-        "current_event": "Hey~ Did you know there is a global **Halloween Event** going on? :jack_o_lantern:\nIn this event you can get some cool and __exclusive__ pretty stuff for your `p!profile` card!\nAvailable only during this event, which will be running until **November 5th**\nMore info at <http://pollux.fun/events/haloween> *(page in english)*\n*Contact your Server Owner to check if this server is participating*",
+        "treat": "***Des bonbons ou un sort!***  Tu viens de récolter **{{qtd}}** bonbons dans la planque de ce serveur!",
+        "treatRefresh": "Eh oh t'as déjà eu des bonbons! Ouste! Reviens dans **{{remaining}}**",
+        "current_event": "Hey~ Tu savais qu'il y a un **événement d'Halloween** en ce moment? :jack_o_lantern:\nDans cet event tu peux avoir des items exclusifs pour décorer ton profil!\nCet événement est disponible jusqu'au **5 Novembre**!\nPlus d'infos sur: <http://pollux.fun/events/haloween> *(page en anglais)*\n*Contacte le gérant de ton serveur pour savoir si ce dernier participe à l'event*",
         "current_eventforMasters": "Hey~ Excuse me, did you know there is a global **Halloween Event** going on? :jack_o_lantern:\nIn this event people can get some cool and __exclusive__ pretty stuff for their`p!profile` cards!\nAvailable only during this event, which will be running until **November 5th**\nMore info at <http://pollux.fun/events/haloween> *(page in english)*\n\nYou, as a Server Owner, if interested in participating in the event with your community, can answer this message with an `halloween` so I know you're in! You will receive **five** Event Lootboxes, plus **one** for every 100 members on your server(s), capping at 15.\nThese can be used as rewards to any self-hosted events you may run, or just to raffle amongst your members.\nI trust you to not use these for self advantage, either way, Event Lootbox usage will be logged just in case to protect those who want to play fairly~\n\nSome Servers are not eligible for auto-joining the event. Which are:\n - Servers created after a certain date;\n - Servers in which I joined after October 1st;\n - Servers with bot x human users ratio exceeds 10%\n\n If your server fits in any of these, but it is a legit community server wanting to participate, join my Support Server and speak to my Developer for help, and eventually a Whitelisting of your server.\n\nHere are some quick instructions for the commands involved in this event:\n - `p!trickortreat` : This is like dailies, but usable once a day in every participating server i'm in. Collect candies and get ranked, the top ranked users will get goodies from myself at the end of the event in **November 5th, 3PM EDT**.\n - `p!trade box @someone` Use this to award boxes to someone.\n - `p!lootbox` Check the lootboxes in your inventory, Event Boxes are opened responding with `open EV`.\n\nAny further questions, bugs, or anything. Join the Support Server and spill it out (you can find it with `p!help`)\n\n**Stay Spooky and Happy Halloween!** :heart:",
         "newAccOut": ":warning: Sorry, new accounts cannot participate. But join me in another event!~",
         "newServer": "New Servers cannot participate in this event. Contact the Developer or join the Support Server if you want to participate in the event with this Server",
@@ -688,6 +697,10 @@
         "candies": "**{{amt}}** Candies",
         "candytop": "The top-tier Candy collectors are:",
         "candyprize": "The best ranked users will get some nice rewards at the end of the event!",
-        "yourpos": "Your position in the rank is:"
+        "yourpos": "Ta position dans le classement:"
+    },
+    "langIntro": {
+        "global": "Je vais désormais parler Français sur ce serveur, comme la belle demoiselle distinguée que je suis!",
+        "channel": "Ok! Je vais donc parler Français sur ce salon, parfait!~"
     }
 }

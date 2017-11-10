@@ -1,9 +1,13 @@
+
+
 const Schemas = require('./schemas.js');
 
 const userDB    = Schemas.user;
 const serverDB  = Schemas.server;
 const channelDB = Schemas.channel;
 const globalDB = Schemas.global;
+
+const Promise = require("bluebird");
 
 userDB.new = function(obj){
   return new Promise(async resolve=>{
@@ -42,13 +46,14 @@ channelDB.new = function(obj){
   });
 };
 
-
 const set = function(query,alter){
-  if(['string','number'].includes(typeof query)){
-    query = {'id':query.toString()};
-  };
-  if(!typeof alter) throw "Invalid Alter Object";
-  return this.findOneAndUpdate(query,alter);
+  return new Promise(async resolve=>{
+    if(['string','number'].includes(typeof query)){
+      query = {'id':query.toString()};
+    };
+    if(!typeof alter) throw "Invalid Alter Object";
+    return resolve(this.findOneAndUpdate(query,alter));
+  })
 };
 
 userDB.set    = set;
@@ -66,3 +71,6 @@ globalDB.get  = async function(){
   }
 };
 module.exports={userDB,serverDB,channelDB,globalDB}
+
+
+console.log("Database Ops OK!")

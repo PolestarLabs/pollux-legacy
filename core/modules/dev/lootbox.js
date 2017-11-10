@@ -102,7 +102,7 @@ const init = async function (message,userDB,DB) {
           try{
               require("../dev/loot.js").init(mess,userDB,DB,"pollux",undefined,Ev)
             message.author.dDATA.modules.inventory.splice(inventory.indexOf(avlb[A][0]),1) //less shit
-            await userDB.update({_id:message.author.id},message.author.dDATA)
+            await userDB.update({id:message.author.id},message.author.dDATA)
           }catch(e){
             message.reply("ERROR")
           }

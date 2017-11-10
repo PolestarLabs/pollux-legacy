@@ -7,22 +7,19 @@ const cmd = 'balance';
 const locale = require('../../../utils/multilang_b');
 const mm = locale.getT();
 
-const init = async function (message,userDB,DB) {
-
+const init = async function (message) {
+const userDB = gear.userDB
+const DB = gear.serverDB
+    const Server = message.guild;
     const Channel = message.channel;
     const Target = message.mentions.users.first() || message.mentions.users.first() ||message.author;
     const MSG = message.content;
     const bot = message.botUser
-    const LANG = message.lang;
     const emb = new gear.Discord.RichEmbed();
 
-//HELP TRIGGER
-    let helpkey = mm("helpkey",{lngs:message.lang})
-if (MSG.split(/ +/)[1]==helpkey || MSG.split(/ +/)[1]=="?"|| MSG.split(/ +/)[1]=="help"){
-    return gear.usage(cmd,message,this.cat);
-}
-//------------
-    const P={lngs:LANG};
+    let P={lngs:message.lang}
+    if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:this.cat}))return;
+
     const bal =  mm('$.balance',P);
     const put =  mm('$.lewdery',P);
     const jog =  mm('$.gambling',P);
@@ -37,8 +34,9 @@ if (MSG.split(/ +/)[1]==helpkey || MSG.split(/ +/)[1]=="?"|| MSG.split(/ +/)[1]=
     const nope = mm('CMD.noDM',P);
 
   await eko.normalize(Target.id)
+  if(!Target.dDATA)Target.dDATA = await userDB.findOne({id:Target.id});
   let  balc = Target.dDATA.modules.audits||eko.auditTemplate
-  console.log(balc)
+  console.log(balc);
 let  $R = Target.dDATA.modules.rubines   || 0
 let  $J = Target.dDATA.modules.jades     || 0
 let  $S = Target.dDATA.modules.sapphires || 0
@@ -47,7 +45,7 @@ let  $S = Target.dDATA.modules.sapphires || 0
 emb.setColor('#ffd156')
 emb.setTitle(gear.emoji("chart")+bal)
 emb.setDescription(`
-**${Target.displayName}** has
+**${Server.member(Target).displayName}**
 
 ${gear.emoji('rubine') + gear.miliarize($R,true)} Rubines  |  ${gear.emoji('jade') + gear.miliarize($J,true)} Jades  |  ${gear.emoji('sapphire') + gear.miliarize($S,true)} Sapphires
 

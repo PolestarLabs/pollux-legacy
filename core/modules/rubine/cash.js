@@ -6,18 +6,15 @@ const cmd = 'cash';
 const init = function (message,userDB,DB) {
     const Author = message.author;
     const Target = message.target;
-    const MTarget = message.mentions.members.first() || message.mentions.users.first()  || message.member;
+    const MTarget = message.mentions.members.first() || message.member;
     const MSG = message.content;
     const LANG = message.lang;
+    const P={lngs:LANG}
 
-//HELP TRIGGER
-    let helpkey = mm("helpkey",{lngs:message.lang})
-if (MSG.split(/ +/)[1]==helpkey || MSG.split(/ +/)[1]=="?"|| MSG.split(/ +/)[1]=="help"){
-    return gear.usage(cmd,message,this.cat);
-}
-//------------
 
-const P={lngs:LANG}
+  if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:this.cat}))return;
+
+
     const vocab = {
         c1: mm("$.cash10", P),
         c2: mm("$.cash100", P),
@@ -26,16 +23,15 @@ const P={lngs:LANG}
         c5: mm("$.cash5000", P),
         c6: mm("$.cash10000", P),
         c7: mm("$.cashInfinite", P),
-        heHas: gear.emoji("rubine")+`**${MTarget.displayName}**`+mm("$.hasAmount", {
+        heHas: whoHas('has'),
+        youHave: whoHas('you'),
+    }
+function whoHas(who){
+  return gear.emoji("rubine")+`**${MTarget.displayName}**`+mm("$."+who+"Amount", {
             lngs: LANG,
             goods: "**"+gear.miliarize(Target.dDATA.modules.rubines,"strict")+"**"
-        }),
-        youHave: gear.emoji("rubine")+`**${MTarget.displayName}**`+mm("$.youAmount", {
-            lngs: LANG,
-            goods: "**"+gear.miliarize(Author.dDATA.modules.rubines,"strict")+"**"
         })
-    }
-
+};
     if (message.mentions.users.size === 0) {
         let r = Target.dDATA.modules.rubines
         let fam = ''

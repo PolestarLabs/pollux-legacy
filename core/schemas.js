@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://31.220.55.84:27017/politest', { useMongoClient: true });
+mongoose.connect('mongodb://localhost:27017/pollux-transfer', { useMongoClient: true });
 mongoose.Promise = global.Promise;
+const Promise = require("bluebird");
+Promise.promisifyAll(require("mongoose"));
 
 const Schema = mongoose.Schema
 
@@ -28,7 +30,9 @@ const Server = new Schema({
             MODROLE:    {type:String, default:"Moderators"},
             LANGUAGE:   {type:String, default:"en"},
             DISABLED:   Array,
-            AUTOROLES:  Array,
+            SELFROLES:  Array,
+            AUTOROLE:  String,
+            ROLEMARKET: Mixed,
             BANK:{
               rubines:        { type: Number,default:0, min: 0, index: true },
               jades:          { type: Number,default:0, min: 0 },
@@ -65,9 +69,6 @@ const Server = new Schema({
             bgInventory:  Array,
             badges: Array,
             badgesInventory:  Array,
-            flairs: Array,
-            flairsInventory:  Array,
-
             UPFACTOR:{type: Number,default:0.1},
             LOCALRANK:Mixed,
 
@@ -106,9 +107,12 @@ const Server = new Schema({
             }
           },
         channels: Mixed
-    });
+    },{ strict: false });
 
 //CHANS
+
+
+
 const Channel = new Schema({
         name: String,
         LANGUAGE:String,
@@ -121,12 +125,13 @@ const Channel = new Schema({
             DROPS:   {type:Boolean,default:true},
             DISABLED: Array
         }
-    });
+    },{ strict: false });
 
 //USRS
 const User = new Schema({
         name: String,
         tag:  String,
+        updated_at: { type: Date },
         id: {type:String,required: true,index:{unique:true}},
         modules: {
             PERMS: {type:Number,default:3},
@@ -138,6 +143,8 @@ const User = new Schema({
             //PROFILE
             persotext: {type:String, default:"I have no personal text because I'm too lazy to set one."},
             rep:{type:Number,default:0},
+            repdaily:{type:Number,default:0},
+
             favcolor: {type:String,default:"#ff1aed"},
             inventory: [],
             bgID:{type:String,default:"5zhr3HWlQB4OmyCBFyHbFuoIhxrZY6l6"},
@@ -152,6 +159,11 @@ const User = new Schema({
 
             dyStreak:  {type:Number,default:0},
             daily:  {type:Number,default:1486595162497},
+
+                        flairTop: { type: String ,default:'default'},
+            flairDown: { type: String ,default:'default'},
+            flairArray: { type: Array ,default:[]},
+            flairsInventory:  Array,
 
 
             //COLLECTIBLES
@@ -190,9 +202,69 @@ const User = new Schema({
 
             // MISC
             audits:{
-               rubines:{earnings:Mixed,expenses:Mixed},
-                jades:{earnings:Mixed,expenses:Mixed},
-                sapphires:{earnings:Mixed,expenses:Mixed}
+               rubines:{
+        expenses: {
+        trades:{type:Number,default:0}
+        ,shop:{type:Number,default:0}
+        ,drops:{type:Number,default:0}
+        ,exchange:{type:Number,default:0}
+        ,lewd:{type:Number,default:0}
+        ,gambling:{type:Number,default:0}
+        ,crafts:{type:Number,default:0}
+      },
+      earnings: {
+        trades:{type:Number,default:0}
+        ,shop:{type:Number,default:0}
+        ,drops:{type:Number,default:0}
+        ,exchange:{type:Number,default:0}
+        ,lewd:{type:Number,default:0}
+        ,gambling:{type:Number,default:0}
+        ,crafts:{type:Number,default:0}
+        ,dailies:{type:Number,default:0}
+      }
+},
+                jades:{
+        expenses: {
+        trades:{type:Number,default:0}
+        ,shop:{type:Number,default:0}
+        ,drops:{type:Number,default:0}
+        ,exchange:{type:Number,default:0}
+        ,lewd:{type:Number,default:0}
+        ,gambling:{type:Number,default:0}
+        ,crafts:{type:Number,default:0}
+      },
+      earnings: {
+        trades:{type:Number,default:0}
+        ,shop:{type:Number,default:0}
+        ,drops:{type:Number,default:0}
+        ,exchange:{type:Number,default:0}
+        ,lewd:{type:Number,default:0}
+        ,gambling:{type:Number,default:0}
+        ,crafts:{type:Number,default:0}
+        ,dailies:{type:Number,default:0}
+      }
+},
+                sapphires:{
+        expenses: {
+        trades:{type:Number,default:0}
+        ,shop:{type:Number,default:0}
+        ,drops:{type:Number,default:0}
+        ,exchange:{type:Number,default:0}
+        ,lewd:{type:Number,default:0}
+        ,gambling:{type:Number,default:0}
+        ,crafts:{type:Number,default:0}
+      },
+      earnings: {
+        trades:{type:Number,default:0}
+        ,shop:{type:Number,default:0}
+        ,drops:{type:Number,default:0}
+        ,exchange:{type:Number,default:0}
+        ,lewd:{type:Number,default:0}
+        ,gambling:{type:Number,default:0}
+        ,crafts:{type:Number,default:0}
+        ,dailies:{type:Number,default:0}
+      }
+}
                 },
 
             build: {
@@ -221,7 +293,12 @@ const User = new Schema({
 
             }
         }
-    });
+    },{ strict: false });
+
+User.pre('update', function(next) {
+  this.updated_at = Date.now();
+  next();
+},{ strict: false });
 
 const Globals = new Schema({
   id:{type:Number,default:0,unique:true},
@@ -233,11 +310,11 @@ const Background = new Schema({
   id:{type:String,index:{unique:true}},
   rarity:{type:String,index:true},
   tags:{type:String,index:true}
-});
+},{ strict: false });
 
 module.exports={
-  user    : mongoose.model('User', User, 'userDB'),
-  server  : mongoose.model('Server', Server, 'serverDB'),
-  channel : mongoose.model('Channel', Channel, 'channelDB'),
-  global  : mongoose.model('Global', Globals, 'Globals')
+  user    : mongoose.model('User', User, 'userdb'),
+  server  : mongoose.model('Server', Server, 'serverdb'),
+  channel : mongoose.model('Channel', Channel, 'channeldb'),
+  global  : mongoose.model('Global', Globals, 'globals')
 };

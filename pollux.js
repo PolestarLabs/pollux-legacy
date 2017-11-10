@@ -13,11 +13,22 @@ const POLLUX = new Client({
     disabledEvents: ['typingStart', 'typingStop', 'guildMemberSpeaking']
 });
 POLLUX.login(cfg.token).then(loginSuccess)
+global.airbrake = require('airbrake').createClient(
+  '163054', // Project ID
+  '906b4956553da45ce79b9ae7d14b79ee' // Project key
+);
+
+airbrake.handleExceptions();
 
 
 //GEARBOX | Boilerplate functions provider.
-const {getDirs, userDB,serverDB}= require("./core/gearbox.js");
+const {getDirs, userDB,serverDB,errHook,RichEmbed}= require("./core/gearbox.js");
 
+
+setInterval(f=>{
+  delete require.cache[require.resolve('./core/overtimes.js')];
+  require('./core/overtimes.js').run(POLLUX);
+},1000);
 
 
 //Translation Engine ------------- <
@@ -29,6 +40,7 @@ const backendOptions = {
     addPath: './locales/dev/translation.json',
     jsonIndent: 2
 };
+
 getDirs('./locales/', (list) => {
     i18next.use(i18n_backend).init({
         backend: backendOptions,
@@ -69,13 +81,27 @@ fs.readdir("./eventHandlers/", (err, files) => {
   });
 });
 
+POLLUX.on('reconnecting',()=>{
+  POLLUX.user.setStatus('dnd');
+  POLLUX.user.setGame('Reconnecting...');
+  POLLUX.destroy();
+  process.exit(0)
+})
+
 
 //=======================================//
 //      PROCESS EVENT HANDLER
 //=======================================/*/
 
 process.on('unhandledRejection', function(reason, p){
-
+    airbrake.notify(reason,ok=>{
+      console.log('Airbrake Notified');
+      let embed = new RichEmbed();
+      embed.setTitle("Unhandled Rejection")
+      embed.setColor("#e3e32a")
+      embed.setDescription(reason.stack)
+      errHook.send(embed)
+    });
     console.log("\n\n==================================")
     console.log("Possibly Unhandled Rejection at: Promise \n".red,p, "\n\n reason: ".red, reason.stack);
     console.log("==================================\n\n")
@@ -84,7 +110,14 @@ process.on('unhandledRejection', function(reason, p){
 });
 
 process.on('uncaughtException', function (err) {
-
+     airbrake.notify(err,ok=>{
+      console.log('Airbrake Notified');
+      let embed = new RichEmbed();
+      embed.setTitle("Unhandled Rejection")
+      embed.setColor("#e3e32a")
+      embed.setDescription(err.message)
+      errHook.send(embed)
+    });
     console.log("\n\n==================================")
     console.log('EXCEPTION: \n' + err);
     console.log(err.stack);
@@ -92,3 +125,4 @@ process.on('uncaughtException', function (err) {
     //process.exit(1);
 
 });
+console.log("Pollux Core OK!")

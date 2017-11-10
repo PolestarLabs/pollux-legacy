@@ -18,7 +18,8 @@ exports.run = async function commandFire(message, payload) {
 
     bot.dDATA = Database_bot;
 
-    let forbiddens = []//Server.dDATA.channels[Channel.id].modules.DISABLED
+    let forbiddens = chanData.modules.DISABLED;
+
 
     let DTMN = deployer.determine(message)
     let MDLE = deployer.checkModule(DTMN);
@@ -35,6 +36,7 @@ exports.run = async function commandFire(message, payload) {
       }
     };
     let mm = multilang.getT();
+  console.log(deployer.checkUse(DTMN, {chanData,servData}, message))
     switch (deployer.checkUse(DTMN, {chanData,servData}, message)) {
         case "NONSFW":
         message.reply(mm('CMD.not-a-NSFW-channel', {

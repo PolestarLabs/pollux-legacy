@@ -50,7 +50,7 @@ emb.setColor('#e83774')
 
 let a = gear.randomize(2,4)
 emb.setAuthor('Pollux Stats',bot.user.avatarURL,'https://pollux.fun/')
-emb.addBlankField()
+
 emb.addField(':hash:   Channels ',"```"+(bot.channels.size)+"```", true)
 emb.addField(':microphone2:   Voice Channels ',"```"+(bot.voiceConnections.size)+"```", true)
 emb.addField(gear.emoji('mobo')+'   Servers',"```"+(bot.guilds.size)+"```", true)
@@ -59,16 +59,15 @@ emb.addField(gear.emoji('cog')+'   Ping',"```"+parseFloat(Math.round(bot.ping * 
 emb.addField(gear.emoji('memslot')+'    RAM Usage',"```"+ramA+" MB```", true)
 emb.addField(gear.emoji('comp')+'   Server Uptime',"```"+uptime+"```", true)
 emb.addField(gear.emoji('cpu')+'   Process Uptime',"```"+(botuptime)+"```", true)
-emb.addBlankField()
 let url ="http://icons.veryicon.com/png/Love/Valentine/heart.png"
 
-emb.addField('Donate',"https://patreon.com/Pollux                ", true)
-emb.addField('Invite','http://goo.gl/qkGqqU', true)
-emb.addBlankField()
-emb.addField('Commands','http://pollux.fun/commands', true)
-emb.addField('Support Server','https://discord.gg/ay48h7Q', true)
+emb.addField('Donate',":moneybag:  https://patreon.com/Pollux", true)
+emb.addField('Invite',':love_letter:  http://goo.gl/qkGqqU        .', true)
+emb.addField('Commands',':gear:  http://pollux.fun/commands', true)
+emb.addField('Support Server',':question:  https://discord.gg/ay48h7Q', true)
+
 emb.setFooter("Heart kept beating by "+os.cpus().length+"x "+os.cpus()[0].model,url)
-emb.addBlankField()
+
 
   message.channel.send({embed:emb})
 
