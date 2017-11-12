@@ -5,6 +5,7 @@ const Pixly = require("pixel-util");
 const Canvas = require("canvas");
 const locale = require('../../../utils/multilang_b');
 const mm = locale.getT();
+const eko = require("../../archetypes/ekonomist.js")
 
 const cmd = 'loot';
 
@@ -29,7 +30,7 @@ event = event //|| faker
   let box_rarity = (message.content.split(/ +/)[1] ||'c').toUpperCase();
   let factors = ["C", "U", "R", "SR", "UR"].indexOf(box_rarity) || 0
 
-  let rerollCost = Math.floor(50*Math.pow(3,rollNo+factors/3));
+  let rerollCost = Math.floor(50*Math.pow(2,(rollNo+factors)/8));
 
   let now = Date.now();
   let  rerolls = 3
@@ -313,7 +314,14 @@ function invent_merge(item){
       break;
 
     case "bgs":
-      let b=item.prompt.name.replace(/"/g,"");
+      let b
+      try{
+        b=item.prompt.name.replace(/"/g,"");
+      }catch(e){
+        console.log(e)
+        console.log(item)
+        b=item.prompt.name
+      }
       if(message.author.dDATA.modules.bgInventory.includes(b)){
         dupeExchange().then(res=>resolve(res));
       }else{
@@ -397,7 +405,7 @@ ${ej("retweet")} ${mm("loot.rerollRemain",P)} **${rerolls}**
           ////console.log("timeout")
           action = "keep"
         }else{
-        action = responses.first().content
+        action = responses.first().content.toLowerCase()
         }
         let A;
         if (action === "keep"){
@@ -405,8 +413,7 @@ ${ej("retweet")} ${mm("loot.rerollRemain",P)} **${rerolls}**
         }
         else if(action==="reroll"){
 
-          message.author.dDATA.modules.rubines -= rerollCost
-          message.author.dDATA.modules.rubines
+          eko.pay( rerollCost,message.author.id,{type: 'shop'})
 
           lootpic.delete().catch(e=>{})
           lootembed.delete().catch(e=>{})

@@ -27,7 +27,7 @@ module.exports = {
     const CHN = msg.channel;
     const L = msg.lang
 
-    if ((await channelDB.findOne({id:SVR.id})).modules.DROPS == false) return;
+    if ((await channelDB.findOne({id:CHN.id})).modules.DROPS == false) return;
 
     let prerf = (await DB.findOne({id:msg.guild.id})).modules.PREFIX || "+";
     const P = {
@@ -152,7 +152,7 @@ MdNMMMMMMmhmMMMMMs           +   -o      -hdmNNy-MMMMss+yMM+  .MhNMMMMMMMMMMM- .
           break;
       };
       let itemPic = "chest.png"
-      if (gear.randomize(0, 3) == 3) {
+      if (gear.randomize(0, 3) == 8) {
         cax[1].replace("O", "event_1")
         cax[0] += "\n" + v.eventDrop
         itemPic = "halloween_chest.png"
@@ -166,7 +166,7 @@ MdNMMMMMMmhmMMMMMs           +   -o      -hdmNNy-MMMMss+yMM+  .MhNMMMMMMMMMMM- .
               CHN.send(cax[0])
                 .then(dropMsg => event.channel.send(v.disputing)
                   .then(dispMsg => processDropChest(dropMsg, dispMsg, cax[1])))
-                .catch(err => gear.hook.send("**DROP REFUSES** \n" + err.error))
+                .catch(err => console.log(err))
             })
           }
         })
@@ -191,7 +191,7 @@ MdNMMMMMMmhmMMMMMs           +   -o      -hdmNNy-MMMMss+yMM+  .MhNMMMMMMMMMMM- .
             } else {
               return false
             }
-          }, {time: 35000});
+          }, {time: 8350});
 
           if (pickers.size === 0) {
               drop.delete()
@@ -216,7 +216,7 @@ MdNMMMMMMmhmMMMMMs           +   -o      -hdmNNy-MMMMss+yMM+  .MhNMMMMMMMMMMM- .
 
             let rnd = gear.randomize(0, ments.length - 1);
 
-            console.log("----------- PICK by" + Picker.username)
+            console.log("----------- PICK by" + drama[rnd])
             await pickers.deleteAll();
             await drop.delete().catch(e => {});
             await disp.delete().catch(e => {});
@@ -226,11 +226,14 @@ MdNMMMMMMmhmMMMMMs           +   -o      -hdmNNy-MMMMss+yMM+  .MhNMMMMMMMMMMM- .
                 setTimeout(async fn => {
                   drama[rnd] = ments[rnd]
                   await dra.edit(drama).then(async fin => {
-                    await userDB.set(ids[rnd],{$push:{'inventory':it}});
+                    console.log(ids[rnd],it,"A A A")
+                     userDB.set(ids[rnd],{$push:{'modules.inventory':it}}).then(ok=>{
+
                     setTimeout(async fn => {
                       event.guild.lootie = false
                       fin.delete().catch(e => {event.guild.lootie = false})
                     }, 5000);
+                     });
                   });
                 }, 5000)
               });

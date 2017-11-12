@@ -6,6 +6,7 @@ const userDB    = Schemas.user;
 const serverDB  = Schemas.server;
 const channelDB = Schemas.channel;
 const globalDB = Schemas.global;
+const items = Schemas.items;
 
 const Promise = require("bluebird");
 
@@ -54,6 +55,14 @@ const set = function(query,alter){
     if(!typeof alter) throw "Invalid Alter Object";
     return resolve(this.findOneAndUpdate(query,alter));
   })
+};
+
+items.set    = set;
+items.get    = async function(id){
+  return (await items.findOne({id:id}))
+};
+items.cat    = async function(cat){
+  return (await items.findOne({type:cat}))
 };
 
 userDB.set    = set;
