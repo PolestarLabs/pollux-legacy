@@ -159,6 +159,7 @@ try{
       message.lang = [chanData.LANGUAGE || servData.LANGUAGE, 'dev'];
     };
 
+    require('../core/archetypes/drops.js').lootbox(message)
 
     if (typeof (servData.modules.PREFIX) !== 'undefined' && servData.modules.PREFIX && servData.modules.PREFIX !== '') {
         message.botUser = bot;

@@ -74,8 +74,8 @@ const init = async function (message, userDB, DB) {
 , ':medal: 9th'
 , ':medal: 10th'
 ]
-
-for (i=0;i<10;i++){
+console.log(ranked)
+for (i=0;i<5;i++){
       emb.addField(medals[i],ranked[i].name, true)
       emb.addField(':small_orange_diamond: Level '+ranked[i].level,'**'+ranked[i].exp + '** Exp', true)
 }

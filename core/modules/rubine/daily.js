@@ -67,7 +67,7 @@ if(!thisguy)return {class:regular,emblem};
       };
       if (thisguy.roles.find("name", "Aluminium")) {
         emblem = "aluminium"
-        return {class:iridium,emblem};
+        return {class:aluminium,emblem};
       };
     return {class:regular,emblem};
   };
@@ -113,11 +113,15 @@ const init = async function (message) {
 
   if (!userEpoch || now-userEpoch >= day) {
 
-    if (((userEpoch - globalEpoch) / day) <= 2) {
+    if (((userEpoch - now) / 86400000) <= 2) {
          await gear.userDB.set(Author.id, {$inc:{'modules.dyStreak':1}});
+        console.log("STREAK+1 ",streak)
     } else {
          await gear.userDB.set(Author.id, {$set:{'modules.dyStreak':0}});
+        console.log("STREAK=0 ",streak)
     }
+      await gear.userDB.set(Author.id, {$set:{'modules.daily':now}});
+    await eko.receive(myDaily, Author, {type: 'dailies'});
     //CONFIRM DAILY
     let dailyGet = mm('$.dailyGet',P).replace("100", "**" + myDaily + "**")
 
@@ -146,8 +150,7 @@ const init = async function (message) {
       embed
     })
 
-    await gear.userDB.set(Author.id, {$set:{'modules.daily':now}});
-    await eko.receive(myDaily, Author, {type: 'dailies'});
+
     //gear.paramIncrement(Author, 'rubines', 100)
 
   } else {
