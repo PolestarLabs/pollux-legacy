@@ -1,7 +1,15 @@
 const gear = require('../../gearbox.js');
-const v = {}
+const embed = new gear.RichEmbed;
+const cmd = 'voteboard';
+const v = {};
 
-init=function(message){
+
+
+
+
+
+
+const init=function init(message){
 
 const Server = message.guild
 const ACTION = message.content.split(/ +/).slice(1)[0]
@@ -10,7 +18,7 @@ const TAG    = message.content.split(/ +/).slice(1)[1]
 const utChans = Server.dDATA.utilityChannels || await gear.serverDB.set(Server.id,{$set:{'utilityChannels':{}}});
 
 if (!utChans.voting){
-  utChans.voting = (await gear.serverDB.set(Server.id,{$set:{'utilityChannels.voting':{}}})).utilityChannels.voting;
+  Server.dDATA.utilityChannels.voting = (await gear.serverDB.set(Server.id,{$set:{'utilityChannels.voting':{}}})).utilityChannels.voting;
 }
 
 
@@ -22,22 +30,27 @@ const P = {lngs:message.lang};
 
 //verbosity
 
-v.mustMentionChannel 
-v.serverOwnerMismatch // server owners must be the same
-v.voteType
-v.contentType
-v.isThatIt
-v.cancel
-v.allSet
-v.overwriteAlert
-v.nosuchTag
-v.boardRemoved
+v.mustMentionChannel  = mm('vtBoards.mustMentionChannel',P) 
+v.serverOwnerMismatch = mm('vtBoards.serverOwnerMismatch',P) // server owners must be the same
+v.voteType  = mm('vtBoards.voteType',P)
+v.contentType = mm('vtBoards.contentType',P)
+v.isThatIt  = mm('vtBoards.isThatIt',P)
+v.cancel  = mm('vtBoards.cancel',P)
+v.allSet  = mm('vtBoards.allSet',P)
+v.overwriteAlert  = mm('vtBoards.overwriteAlert',P)
+v.nosuchTag = mm('vtBoards.nosuchTag',P)
+v.boardRemoved  = mm('vtBoards.boardRemoved',P)
 //---
-  
+    
   if(['add','+','new','set'].includes(ACTION))   return add(Server.dDATA,message,TAG);
   if(['del','remove','delete'].includes(ACTION)) return del(Server.dDATA,message,TAG);
   if(['edit','setup','change'].includes(ACTION)) return edt(Server.dDATA,message,TAG);
+  if(['list','all'].includes(ACTION))            return lst(Server.dDATA,message,TAG);
   
+}
+
+function lst(svData,msg,TG){
+
 }
 
 function edt(svData,msg,TG){
@@ -107,6 +120,7 @@ function del(svData,msg,TG){
 }
 
 async function add(svData,msg,TG){
+  let PP = {lngs:msg.lang};
   if(!edit){
     if(!msg.mentions.channels.first()){
       return msg.channel.send(v.mustMentionChannel);
@@ -129,6 +143,13 @@ async function add(svData,msg,TG){
   }
   
   if(!edit || edit=='type'){
+    
+    voteOpts:"```"+`
+[1][\`updown\`] ${mm('vtBoards.updown',PP)}
+[2][\`plusone\`] ${mm('vtBoards.plusone',PP)}
+[3][\`yesno\`] ${mm('vtBoards.yesno',PP)}
+`+"```"
+    
     let m1 = await msg.channel.send(v.voteType);
     const response_1 = await msg.channel.awaitMessages(me=>
         me.author.id===msg.author.id && ['1','2','3','updown','plusone','yesno'].includes(me.content.toLowerCase()),
@@ -181,4 +202,8 @@ async function add(svData,msg,TG){
   msg.channel.send(v.allSet);
   msg.delete().catch();
   
+}
+
+module.exports = {
+ init,cmd,pub:false,cat:'util',perms:2 
 }
