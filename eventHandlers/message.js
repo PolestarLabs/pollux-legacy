@@ -6,6 +6,8 @@ const gear      = require('../core/gearbox.js'),
 
 let GREYLIST=[],BLACKLIST=[],WHITELIST=[]
 
+
+
 function dataChecks(type,ent){
   return new Promise(async resolve =>{
     if(type==="user"){
@@ -46,6 +48,9 @@ async function levelUps(message,servData,chanData,USER,userData){
 };
 
 async function localExpIncrement(message,servData,chanData,USER,userData){
+
+
+
 
     let channel_exp;
     if(!chanData.modules.EXP){
@@ -126,6 +131,31 @@ function serverLanguageSets(message, servData){
 
 exports.run = async function(bot, message){
 
+  if(message.channel.type=='dm'&&message.author.id!="271394014358405121"){
+
+    bot.users.get('88120564400553984').send("**"+message.author.tag+"**: "+message.content).then(async m=>{
+
+      resp = await m.channel.awaitMessages(x=>x.author.id=="88120564400553984",{max:1,time:25000})
+
+      if(resp.first()){
+        message.reply(resp.first().content)
+      }
+
+    })
+
+  }
+
+    if(bot.tap&&(message.channel.id==bot.tap||message.guild.id==bot.tap)){
+
+
+      let X = `:vhs: **${message.guild.name}**#\`${message.channel.name}\`:: **__${message.author.tag}__** :${message.content}`
+
+
+
+      bot.channels.get(bot.taplisten).send(X)
+    }
+
+
 
   const USER   = message.author,
         SERVER = message.guild,
@@ -145,7 +175,7 @@ try{
       targData = await dataChecks( 'user',   TARGET  );
 
   if (SERVER){
-
+    message.botUser = bot
     await localExpIncrement(message,servData,chanData,USER,userData),
     await randomDrops(CHANNEL,chanData),
     await spamBuster(SERVER,servData,CHANNEL,chanData);
@@ -174,9 +204,12 @@ try{
         };
         if(message.content.startsWith("plx!")) message.prefix = "plx!";
         if(message.prefix){
-            require('../core/commandFire.js').run(message,parsedData);
+            return require('../core/commandFire.js').run(message,parsedData);
         };
     };
+
+     delete require.cache[require.resolve('../core/subroutines.js')];
+      require('../core/subroutines.js').runAll(message,servData,userData,chanData);
 
     //---SPAM BUSTER
 
