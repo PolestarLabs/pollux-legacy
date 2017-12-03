@@ -1,14 +1,15 @@
 {
   "languages": [
     ":flag_ca: `en` English",
-    ":flag_de: `cz` Čeština",
     ":flag_br: `pt-br` Português Brasileiro",
-    ":flag_es: `es` Español",
+    ":flag_cz: `cz` Čeština",
+    ":flag_ru: `ru` Pусский",
+    ":flag_fr: `fr` Français",
     ":flag_tw: `zh-t` 繁體中文",
+    ":flag_es: `es` Español",
     ":flag_de: `de` Deutsch (70%)",
     ":flag_ro: **soon** `ro` Română (35%)",
     ":flag_hu: **soon** `hu` Magyar (20%)",
-    ":flag_pt: ~~`pt-eu` Português Europeu (20%)~~",
-    ":flag_ru: ~~`ru` Pусский (MACHINE)~~"
+    ":flag_pt: ~~`pt-eu` Português Europeu (DROPPED)~~"
     ]
 }

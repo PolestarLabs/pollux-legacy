@@ -60,5 +60,11 @@
     "name": "magyar",
     "name-e": "hungarian",
     "flag": ":flag_hu:"
+  },{
+    "code": ["ru","py"],
+    "iso": "ru",
+    "name": "русский",
+    "name-e": "russian",
+    "flag": ":flag_ru:"
   }
 ]
