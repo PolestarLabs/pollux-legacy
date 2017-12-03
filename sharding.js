@@ -20,7 +20,7 @@ function TFS() {
         getServs();
         setInterval(() => {
             getServs();
-        }, 1000 * 60 * 5);
+        }, 1000 * 60 * 50);
     }, 1000 * 10);
 }
 
@@ -39,9 +39,9 @@ function updateStats(guilds) {
 
     let rqOptions = {
         headers: {
-            Authorization: cfg.pwTok3
+            Authorization: cfg.discordbots
         },
-        url: `https://bots.discord.pw/api/bots/${cfg.pwID}/stats`,
+        url: `https://bots.discord.pw/api/bots/271394014358405121/stats`,
         method: 'POST',
         json: {
             "server_count": guilds
@@ -61,7 +61,7 @@ function updateStats(guilds) {
         method: 'POST',
         json: {
             "server_count": guilds,
-            "key": cfg.carbon_token
+            "key": cfg.carbonitex
         }
     };
 
@@ -69,7 +69,7 @@ function updateStats(guilds) {
         if (err) {
             console.log(err)
         }
-
+console.log(body)
     });
 
 }
