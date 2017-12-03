@@ -78,6 +78,7 @@ fs.readdir("./eventHandlers/", (err, files) => {
     let eventor = require(`./eventHandlers/${file}`);
     let eventide = file.split(".")[0];
     POLLUX.on(eventide, (...args) => eventor.run(POLLUX, ...args));
+    delete require.cache[require.resolve(`./eventHandlers/${file}`)]
   });
 });
 
