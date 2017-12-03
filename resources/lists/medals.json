@@ -615,5 +615,295 @@
           "buyable": "TRUE",
           "droppable": "TRUE",
           "event": false
+     },
+     {
+          "name": "BMW Logo",
+          "icon": "bmw",
+          "rarity": "SR",
+          "tags": "automobile",
+          "category": "brands",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Code Geass",
+          "icon": "geass",
+          "rarity": "R",
+          "tags": "anime icon symbol",
+          "category": "anime",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "DareDevil",
+          "icon": "daredev",
+          "rarity": "C",
+          "tags": "anime icon symbol logo",
+          "category": "anime",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Naruto: Leaf",
+          "icon": "narutoleaf",
+          "rarity": "C",
+          "tags": "anime icon symbol logo",
+          "category": "anime",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Mitsubishi",
+          "icon": "mitsu",
+          "rarity": "SR",
+          "tags": "automobile",
+          "category": "brands",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Mercedes Logo",
+          "icon": "mercedes",
+          "rarity": "R",
+          "tags": "automobile",
+          "category": "brands",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Fairy Tail",
+          "icon": "ftail",
+          "rarity": "U",
+          "tags": "anime icon symbol logo",
+          "category": "anime",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "One Piece 1",
+          "icon": "opc1",
+          "rarity": "R",
+          "tags": "anime icon symbol logo",
+          "category": "anime",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "One Piece 2",
+          "icon": "opc2",
+          "rarity": "U",
+          "tags": "anime icon symbol logo",
+          "category": "anime",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Volkswagen",
+          "icon": "volks",
+          "rarity": "SR",
+          "tags": "automobile",
+          "category": "brands",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Soul Eater",
+          "icon": "seater",
+          "rarity": "SR",
+          "tags": "anime icon symbol logo",
+          "category": "anime",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Soul Eater Logo",
+          "icon": "seaterlog",
+          "rarity": "SR",
+          "tags": "anime icon symbol logo",
+          "category": "anime",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Dragon Ball Z - Goku",
+          "icon": "gokudbz",
+          "rarity": "C",
+          "tags": "anime icon symbol logo",
+          "category": "anime",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Windows Setup",
+          "icon": "winstall",
+          "rarity": "C",
+          "tags": "software os system",
+          "category": "icons",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "The Coco Froot",
+          "icon": "cocofroot",
+          "rarity": "UR",
+          "tags": "pollux random",
+          "category": "misc",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Coca Cola",
+          "icon": "coke",
+          "rarity": "U",
+          "tags": "soda beverage",
+          "category": "brands",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Pepsi",
+          "icon": "pepsi",
+          "rarity": "R",
+          "tags": "soda beverage",
+          "category": "brands",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Dream Eater",
+          "icon": "dreameater",
+          "rarity": "R",
+          "tags": "kingdom_hearts ",
+          "category": "games",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Sq Fluttershy",
+          "icon": "fluttersq",
+          "rarity": "SR",
+          "tags": "mlp tv",
+          "category": "cartoon",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Sq Rainbowdash",
+          "icon": "raibowdshsq",
+          "rarity": "C",
+          "tags": "mlp tv",
+          "category": "cartoon",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Umbrella Corp.",
+          "icon": "umbrella",
+          "rarity": "R",
+          "tags": "resident_evil biohazard",
+          "category": "games",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Giant Dad",
+          "icon": "gdad",
+          "rarity": "SR",
+          "tags": "dark_souls meme",
+          "category": "games",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Chao",
+          "icon": "chao",
+          "rarity": "C",
+          "tags": "sonic",
+          "category": "games",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Mortal Kombad Tier 1",
+          "icon": "mortalk1",
+          "rarity": "C",
+          "tags": "multitier fighting",
+          "category": "games",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Mortal Kombad Tier 2",
+          "icon": "mortalk2",
+          "rarity": "R",
+          "tags": "multitier fighting",
+          "category": "games",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Mortal Kombad Tier 3",
+          "icon": "mortalk3",
+          "rarity": "UR",
+          "tags": "multitier fighting",
+          "category": "games",
+          "buyable": "TRUE",
+          "droppable": "FALSE",
+          "event": false
+     },
+     {
+          "name": "Need for Speed",
+          "icon": "needfspeed",
+          "rarity": "C",
+          "tags": "racing",
+          "category": "games",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Swedish Meatball",
+          "icon": "meatball",
+          "rarity": "UR",
+          "tags": "meme pollux internal sweden food",
+          "category": "food",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
+     },
+     {
+          "name": "Smash Bros.",
+          "icon": "ssb",
+          "rarity": "R",
+          "tags": "fighting nintendo",
+          "category": "games",
+          "buyable": "TRUE",
+          "droppable": "TRUE",
+          "event": false
      }
 ]

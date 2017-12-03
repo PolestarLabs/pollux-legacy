@@ -1182,5 +1182,341 @@
           "buyable": "FALSE",
           "droppable": "FALSE",
           "event": "halloween_2017"
+     },
+     {
+          "name": "0cabd7ec44e4a486cf537bfea5937183",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "b08a91c10201d867ca6627cc854705ac",
+          "rarity": "UR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "45af1916590fd9295cdd4be6a947f97c",
+          "rarity": "UR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "b22cce653eec5a9be650ba443aeac596",
+          "rarity": "UR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "d5943e56865894ed9428402d8b1cc4bd",
+          "rarity": "UR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "7ecd3bacc757a4cdd0654912220638d2",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "909f42b1ecdd36e8d65eff72fa75d3d1",
+          "rarity": "SR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "9f5dc6afe17602f2998b4b6c132cefce",
+          "rarity": "SR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "3ea2a7eb9bf4060da5b0b8f3ec52476f",
+          "rarity": "R",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "529dfd4eed7b039c4550b7d440c22bea",
+          "rarity": "R",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "39a95da127a1283a91470a358c22a9bf",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "db02bc3f1a28064e4e37c98927871ca7",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "bd67263dec8e342d59c6f82bc240785e",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "3acf0f7b5281b294877acc3c8a756c0d",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "5ed96c8210f0de42d1e4dc1ce95071d4",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "2172fdeac7c2a8ccbf53fc680c7248b0",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "9bfb43874e031d50e633f122ce04ba6a",
+          "rarity": "UR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "832e5f73f7a97dc9551e79ed087b71f7",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "cad8c3eb5301e535264aec51f0ea74cb",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "527c04610787bd52a357426cbf352797",
+          "rarity": "SR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "cfcb68f5adee30dfe4056df53fc342dc",
+          "rarity": "SR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "73c20cc99c2bf0d1cab16c03c0eadcb4",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "0708c273f860061665d28357d89d9be0",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "d9ca2f06a9420d7d3301632ae6a7f10a",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "4fdec35b97f887df8d3c5c45f6e5a234",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "d7e9013c0fc42b043451407ecf82cafa",
+          "rarity": "UR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "be2235d70602b528458ea425771b5699",
+          "rarity": "R",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "6dc654eef8c191e7a781660caef60947",
+          "rarity": "R",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "c20ad709fd968d45537b7387357a5f89",
+          "rarity": "SR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "8a8b5d73735dbe8ea227e84b5f1375a9",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "9fb24344a17a2a43fc48eb9d5e594ece",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "1a85c6ab5967c049872e8b1470292956",
+          "rarity": "R",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "1fe9b4e99db852fcd79271b847bf9f90",
+          "rarity": "R",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "693488facdd6c4839a19ed20fa225360",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "dc6f6a1700933a049f966aa2dbd54e38",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "e3bbb9cd03e0c4ee21e665d0e41bc0a5",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "70ad77bc46ac8aadf209de70e3f7b89a",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "6f7c47e522880e16b695a3a301bc45ce",
+          "rarity": "SR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "974a2cc1af5ac188fba2fcf8ff50eee3",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "3a57278ae4524bba6b7c8d1e842ce814",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "578e41b99fabcc93922221e866e42b8f",
+          "rarity": "R",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "aa2779e42661f15a186eb9d2f9c6e459",
+          "rarity": "R",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "abf12b7f93b3b890e3305ee27e46a0df",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "0b888a60f104f9dfe45354eef04c517d",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "70f5f4f664d2949b050057e07dc5467a",
+          "rarity": "SR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "174d00da25eeee7790d1fcca945e792d",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "1da09bcbc7d40add4e06ee0c768629d1",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "29dd82376a596debfd0a84d26b44a361",
+          "rarity": "R",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
      }
 ]
