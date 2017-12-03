@@ -9,19 +9,25 @@ const Schema = mongoose.Schema
 const Mixed = Schema.Types.Mixed;
 //SERVER
 const Server = new Schema({
+        utilityChannels:Mixed,
         id: {type:String,required: true,index:{unique:true}},
         name: String,
-        logging: false,
+        logging: {type:Boolean, default:false},
+        imgwelcome: {type:Boolean, default:false},
+        splitLogs:{type:Boolean, default:false},
         modules: {
+          shitpostFeed:Mixed,
         GREET: {
                 enabled:      {type:Boolean,default:false},
                 text:         {type:String,default:"Welcome to the Server **%username%**!"},
                 channel:  String,
+                timer: {type:Number,default:0}
             },
             FWELL: {
                 enabled:{type:Boolean,default:false},
                 text:   {type:String,default:"%username% has left us!"},
-                channel:  String
+                channel:  String,
+                    timer: {type:Number,default:0}
             },
             LVUP:       {type:Boolean, default:true},
             DROPS:      {type:Boolean, default:true},
@@ -33,6 +39,10 @@ const Server = new Schema({
             SELFROLES:  Array,
             AUTOROLE:  String,
             ROLEMARKET: Mixed,
+            ACTLOG:String,
+            MODLOG:String,
+            ADVLOG:String,
+            LOGCHANNEL:String,
             BANK:{
               rubines:        { type: Number,default:0, min: 0, index: true },
               jades:          { type: Number,default:0, min: 0 },
@@ -75,8 +85,10 @@ const Server = new Schema({
             statistics: {
                 commandsUsed: Mixed,
                 rubineHistory: { type: Number,default:0}
-            }
+            },
 
+        putometro_last:{type: Number},
+        putometro_max:{type: Number}
         },
         logs: {
 
@@ -131,6 +143,8 @@ const Channel = new Schema({
 const User = new Schema({
         name: String,
         tag:  String,
+        eventGoodie:Number,
+        eventDaily:Number,
         updated_at: { type: Date },
         id: {type:String,required: true,index:{unique:true}},
         modules: {
@@ -142,12 +156,14 @@ const User = new Schema({
 
             //PROFILE
             persotext: {type:String, default:"I have no personal text because I'm too lazy to set one."},
+            tagline:{type:String, default:"A fellow Pollux user"},
             rep:{type:Number,default:0},
             repdaily:{type:Number,default:0},
 
             favcolor: {type:String,default:"#ff1aed"},
-            inventory: [],
+            inventory: {type:Array,default:['lootbox_SR_O']},
             bgID:{type:String,default:"5zhr3HWlQB4OmyCBFyHbFuoIhxrZY6l6"},
+            sticker:String,
             bgInventory:{type:Array,default:["5zhr3HWlQB4OmyCBFyHbFuoIhxrZY6l6"]},
             skin: {type: String, default:'default'},
             skinsAvailable: Array,
@@ -182,7 +198,6 @@ const User = new Schema({
                     stampCollection: Array,
 
                  //----STICKERS
-                    stickers: Array,
                     stickerInventory: Array,
                     stickerCollection: Array,
 
@@ -312,9 +327,29 @@ const Background = new Schema({
   tags:{type:String,index:true}
 },{ strict: false });
 
+
+const Item = new Schema({
+name:         String,
+id:           {type:String,index:{unique:true}},
+rarity:       {type:String,default:"C"},
+icon:         {type:String,default:"item"},
+emoji:        {type:String,default:":package:"},
+price:        {type:Number,default:1000},
+altEmoji:     {type:String,default:":package:"},
+event:        String,
+event_id:     Number,
+type:         {type:String,default:'item'},
+tradeable:    {type:Boolean,default:true},
+buyable:      {type:Boolean,default:true},
+destroyable:  {type:Boolean,default:true},
+usefile:      {type:String,default:'notusable'},
+
+},{ strict: false });
+
 module.exports={
   user    : mongoose.model('User', User, 'userdb'),
   server  : mongoose.model('Server', Server, 'serverdb'),
   channel : mongoose.model('Channel', Channel, 'channeldb'),
-  global  : mongoose.model('Global', Globals, 'globals')
+  global  : mongoose.model('Global', Globals, 'globals'),
+  items  : mongoose.model('Item', Item, 'items')
 };

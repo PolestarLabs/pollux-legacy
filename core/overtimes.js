@@ -1,11 +1,16 @@
 const g=require('./gearbox.js');
 const Discoin = require("./archetypes/discoin.js");
 const cfg = require("../config.json")
+const fs = require("fs")
 const discoin = new Discoin(cfg.discoin);
 const gear = g
 const eko = require ('./archetypes/ekonomist.js')
+const coinbase = JSON.parse(fs.readFileSync("./resources/lists/discoin.json", "utf8"))
 
 exports.run = function(bot){
+
+
+
       bot.donators = [
         "169551262981816321"
       ]
@@ -15,7 +20,36 @@ exports.run = function(bot){
       //EVERY MIDNITE-----------------------------------------------------------------
       if (date.getHours() === 0 && date.getMinutes() == 0 && date.getSeconds() == 0) {
 
+
+
+        gear.globalDB.get().then(async BOTDB => {
+
+          if (!BOTDB.servsnow) {
+            await gear.globalDB.set({
+              $set: {
+                "data.servsnow": bot.guilds.size
+              }
+            });
+          }
+
+
+          gear.globalDB.get().then(async BOTDB => {
+
+            let payload = `
+**Today's Growth Report**
+Total new servers: ${bot.guilds.size - BOTDB.servsnow}
+`
+            await bot.channels.get("382413370579484694").send(payload);
+            await gear.globalDB.set({
+              $set: {
+                "data.servsnow": bot.guilds.size
+              }
+            });
+          })
+        })
       }
+
+
       //------------------------------------------------------------------------------
 
 
@@ -49,8 +83,11 @@ exports.run = function(bot){
               let src = trades[i].source
               let amt = Number(Math.floor(trades[i].amount))
               let inv = trades[i].receipt
+              let taxes =  Math.ceil(amt*0.1837)
+              let coinfee =  Math.floor(amt*(coinbase[src]||{rbnRate:0.005}).rbnRate)
+              let newAmt = amt - taxes - coinfee
 
-            if (amt < 1) {
+            if (newAmt < 1) {
               discoin.reverse(inv);
               return bot.fetchUser(usr).then(u => u.send(`:warning: Transaction Reversed :: Amount of Rubines below Zero`))
             };
@@ -63,21 +100,51 @@ exports.run = function(bot){
               };
               g.userDB.findOneAndUpdate({id: usr}, {
                   $inc: {
-                    'modules.rubines': amt,
-                    'modules.audits.rubines.earnings.exchange': amt
+                    'modules.rubines': newAmt,
+                    'modules.audits.rubines.earnings.exchange': newAmt
                   }
                 }).then(ok=>{
+function aN(inc,ref=amt){
+  let len  = ref.toString().length
+  let len2 = inc.toString().length
+  let spaces = ""
+  for (i=0;i<len-len2;i++){
+   spaces += " "
+  }
+  return spaces+inc
 
+}
 
-              bot.fetchUser(usr).then(u => u.send(`
-:currency_exchange:
+              bot.fetchUser(usr).then(u => {
+
+                try{
+
+                u.send(`
+\`${src}\` ${coinbase[src].icon}:currency_exchange: ${gear.emoji('rubine')} \`RBN\`
 **Exchange Processed!**
-Received **${amt}** Rubines converted from ${src}!
 
-At \`${ts}\`
-Transaction Receipt: \`\`\`${inv}\`\`\`
+Inbound  : ${gear.emoji('rubine')} × **${amt}**
+Fees         : ${gear.emoji('rubine')} × **${taxes+coinfee}**
+\`\`\`diff
++Inbound Amount   :  ${aN(amt)}
+-Transaction Fee  :  ${aN(taxes)}
+-Exg. Tax for ${src} :  ${aN(coinfee)}
+---------------------------
+ Net Income       :  ${aN(newAmt)}
+\`\`\`
+Received **${newAmt}** **RBN**(*Pollux Rubines*) converted from **${src}**(*${coinbase[src].bot+" "+coinbase[src].name}*)!
+---
+*Transaction Receipt:*
+\`${ts}\`
+\`\`\`${inv}\`\`\`
 
-`)).catch(async e => console.log(e))
+`)
+                }catch(e){
+                  console.log(e)
+                  console.log("ERROR MESSAGE TO USER")
+                }
+
+              }).catch(e => console.log(e,"\n\nERROR ON FETCH"))
                  })
             })
           }
@@ -92,7 +159,7 @@ Transaction Receipt: \`\`\`${inv}\`\`\`
               /* Change Game */
               let gchange = gear.gamechange()
               console.log("newGame:  " + gchange)
-              bot.user.setGame(gchange)
+              bot.user.setPresence({status:'online',game:{name:gchange[0],type:gchange[1]}})
         }
 
       }

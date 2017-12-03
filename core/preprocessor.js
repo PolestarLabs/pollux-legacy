@@ -104,7 +104,7 @@ module.exports = {
                }
             let now = Date.now();
             if (message.author.cd_timer && (now - message.author.cd_timer)<cooldown){
-              return message.reply(":hourglass_flowing_sand: Cooldown: `"+Math.abs((message.author.cd_timer+cooldown)-now )+"ms`")
+              return message.reply(":hourglass_flowing_sand: Cooldown: `"+Math.abs((message.author.cd_timer+cooldown)-now )+"ms`").then(m=>m.delete(Math.abs((message.author.cd_timer+cooldown)-now )))
             }
 
             message.author.cd_timer = Date.now();
