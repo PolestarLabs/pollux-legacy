@@ -280,6 +280,10 @@
   ,"câmbio":"exchange"
   ,"exg":"exchange"
 
+  ,"yt":"youtube"
+  ,"video":"youtube"
+  ,"teucano":"youtube"
+
   ,"trit":"trickortreat"
   ,"docesoutravessuras":"trickortreat"
 
@@ -290,5 +294,6 @@
   ,"cdy":"candy"
   ,"doce":"candy"
   ,"$cy":"candy"
+
 
 }

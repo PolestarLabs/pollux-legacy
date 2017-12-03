@@ -1,7 +1,5 @@
 const gear = require("../gearbox.js");
 const paths = require("../paths.json");
-const locale = require('../../utils/multilang_b');
-const mm = locale.getT();
 
 const channelDB = gear.channelDB,
       userDB    = gear.userDB,
@@ -9,6 +7,8 @@ const channelDB = gear.channelDB,
 
 module.exports = {
   lootbox: async function loot(event) {
+const locale = require('../../utils/multilang_b');
+const mm = locale.getT();
 
     let date = new Date();
      if (event.content !== "--forcedroploot" && event.author.id!=="88120564400553984") {
@@ -58,10 +58,16 @@ module.exports = {
       return new Promise(async resolve => {
 
       let droprate = gear.randomize(1, 4258)
+      event.botUser.ivetal = event.botUser.ivetal || 0
+        event.botUser.ivetal++
 
       if (event.content === "--forcedroploot" && event.author.id==="88120564400553984") droprate=777;
     if (droprate === 777) {
      // gear.tweetPic("A lootbox dropped somewhere. More specifically at \""+event.guild.name+"\" Server! Who's going to pick?",'./resources/imgres/build/chest.png')
+
+      event.botUser.channels.get('382413370579484694').send("Lootbox Drop at **"+event.guild.name+"** | #"+event.channel.name+` after ${event.botUser.ivetal} messages`);
+      event.botUser.ivetal = 0;
+
 
           console.log(`
 
@@ -191,7 +197,7 @@ MdNMMMMMMmhmMMMMMs           +   -o      -hdmNNy-MMMMss+yMM+  .MhNMMMMMMMMMMM- .
             } else {
               return false
             }
-          }, {time: 8350});
+          }, {time: 30000});
 
           if (pickers.size === 0) {
               drop.delete()

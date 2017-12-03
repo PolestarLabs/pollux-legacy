@@ -11,15 +11,16 @@ const Canvas = require("canvas");
 const Pixly = require("pixel-util");
 const wrap = require('canvas-text-wrapper').CanvasTextWrapper;
 
-const {userDB,serverDB,channelDB,globalDB} = require('./database_ops.js');
+const {userDB,serverDB,channelDB,globalDB,items} = require('./database_ops.js');
 const DB = serverDB;
 
 const cfg = require('../config.json');
 const errHook = new Discord.WebhookClient('376036137443000320', cfg.errHook);
-
+const colorname= require('name-this-color');
 
 
 module.exports={
+  colorname,
   DB:serverDB, //legacy
   serverDB,
   userDB,
@@ -27,6 +28,7 @@ module.exports={
   globalDB,
   Discord,
   errHook,
+  items,
   RichEmbed:Discord.RichEmbed,
 
 

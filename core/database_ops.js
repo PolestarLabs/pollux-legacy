@@ -22,6 +22,14 @@ userDB.new = function(obj){
     });
   });
 };
+items.new = function(obj){
+  return new Promise(async resolve=>{
+    let instance = new items;
+    instance.save(function(e){
+      if(e)throw ["USER Database Save Failed",e];
+    });
+  });
+};
 serverDB.new = function(obj){
   return new Promise(async resolve=>{
     let instance = new serverDB;
@@ -79,7 +87,7 @@ globalDB.get  = async function(){
   return (await globalDB.findOne());
   }
 };
-module.exports={userDB,serverDB,channelDB,globalDB}
+module.exports={userDB,serverDB,channelDB,globalDB,items}
 
 
 console.log("Database Ops OK!")
