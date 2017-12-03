@@ -274,7 +274,7 @@ const box={
   ,"U":  75
   ,"C":  50
   }
-
+console.log(box)
 let prize_lineup = [
   box[LOOTS[0].prompt.rarity] + box[LOOTS[0].prompt.type] + LOOTS[0].prompt.name,
   box[LOOTS[1].prompt.rarity] + box[LOOTS[1].prompt.type] + LOOTS[1].prompt.name,

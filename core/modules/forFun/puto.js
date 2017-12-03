@@ -28,16 +28,31 @@ const init = async function (message) {
       }
     });
   };
+
+  let a = Math.round((now - Server.dDATA.modules.putometro_last) / 1000 / 60 / 60 / 60 / 24) || 0;
+
   if (!Server.dDATA.modules.putometro_max) {
     await gear.serverDB.set(Server.id, {
       $set: {
         'modules.putometro_max': 0
       }
     });
+  }else{
+if(Server.dDATA.modules.putometro_max<a||!Server.dDATA.modules.putometro_max){
+
+    await gear.serverDB.set(Server.id, {
+      $set: {
+        'modules.putometro_max': a
+      }
+    })
   };
 
-  let a = Math.round((now - Server.dDATA.modules.putometro_last) / 1000 / 60 / 60 / 60 / 24) || 0;
-  let s = Server.dDATA.modules.putometro_max || 0;
+}
+
+
+  let s = a||Server.dDATA.modules.putometro_max || 0;
+
+
 
   let puto = await gear.getCanvas(paths.BUILD + "puto.jpg");
   await ctx.drawImage(puto, 0, 0, 482, 270);

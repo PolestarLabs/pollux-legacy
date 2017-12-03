@@ -1,12 +1,13 @@
 const gear = require("../../gearbox.js");
-const paths = require("../../paths.js");
+const paths = require("../../paths.json");
 const locale = require('../../../utils/multilang_b');
 const mm = locale.getT();
 
 const cmd = 'saltlevel';
 
 const init = function (message, userDB, DB) {
-
+  let Target = message.mentions.users.first()||message.author
+let MSG=message.content
     var args = MSG.split(/ +/).slice(1)
     var LANG = message.lang;
     //HELP TRIGGER
@@ -18,7 +19,6 @@ const init = function (message, userDB, DB) {
     //-------MAGIC----------------
 
     let saltmoji = "<:salty:277280624900046849>"
-
     //let target = message.mentions.users.first();
     var multiplier = 1
     try {
@@ -32,7 +32,7 @@ const init = function (message, userDB, DB) {
         }
     } catch (err) {}
     try {
-        if (message.mentions.users.first().username === "Sona") {
+        if (message.mentions.users.first().username.toLowerCase().includes("sona")) {
             multiplier = 0.23
         }
     } catch (err) {}
@@ -40,7 +40,7 @@ const init = function (message, userDB, DB) {
     var vocab = mm('forFun.saltLVL', {
         lngs: LANG,
         target: Target.username,
-        amount: r * multiplier,
+        amount: Math.floor(r * multiplier),
         emoji: saltmoji,
         interpolation: {
             'escapeValue': false

@@ -58,7 +58,7 @@ function whoHas(who){
                 fam = vocab.c7
                 break;
         }
-        return message.reply(vocab.youHave + fam);
+        return message.channel.send(vocab.youHave + fam);
     };
     return message.channel.send(vocab.heHas);
 };

@@ -25,28 +25,58 @@ const init = async function (message, userDB, DB) {
 
   let ranked = []
 
+  let dbminiarray
   Channel.startTyping();
-  let dbminiarray = await userDB.find().sort({'modules.exp': -1}).limit(10);
+      if (['server','sv','guild','local',Server.name].includes(args.toLowerCase())) {
+          dbminiarray = Object.keys(Server.dDATA.modules.LOCALRANK).map(ky=>{
+            let OBJ = Server.dDATA.modules.LOCALRANK[ky]
+            //Server.dDATA.modules.LOCALRANK[ky].id = ky
+            OBJ.id=ky
+            return OBJ
+          })
+      }else{
+
+          dbminiarray = await userDB.find({id:{$not:{$in:['271394014358405121','88120564400553984']}}}).sort({'modules.exp': -1}).limit(10);
+      }
+
+
+dbminiarray = dbminiarray.map(usr => {
+  try{
+
+  let a = {
+    id: usr.id,
+    name: bot.users.get(usr.id).tag,
+    exp: usr.exp||usr.modules.exp,
+    level: usr.level||(usr.modules||{level:0}).level,
+  };
+  return a;
+  }catch(e){
+
+  }
+});
+
   Channel.stopTyping();
 
   dbminiarray.forEach(i => {
-    if (['server','sv','guild','local',Server.name].includes(args.toLowerCase())) {
-      if (!Server.members.has(i.id)) return;
-    };
+
+  if(i){
+
 
     if (i.name !== 'Pollux' && i.name !== undefined){
       let rankItem = {};
       rankItem.id = i.id;
       rankItem.name = i.name;
-      rankItem.exp = i.modules.exp || 0;
-      rankItem.level = i.modules.level;
+      rankItem.exp = i.exp || 0;
+      rankItem.level = i.level;
       ranked.push(rankItem);
     }
+  }
+
   });
   arraySort(ranked, 'exp', {
     reverse: true
   })
-  console.log(ranked)
+
   let ids=ranked.map(x=>x.id)
    if (['server','sv','guild','local',Server.name].includes(args.toLowerCase())) {
   emb.title = mm('website.svLead',P)
@@ -75,7 +105,7 @@ const init = async function (message, userDB, DB) {
 , ':medal: 10th'
 ]
 console.log(ranked)
-for (i=0;i<5;i++){
+for (i=0;i<ranked.length&&i<10;i++){
       emb.addField(medals[i],ranked[i].name, true)
       emb.addField(':small_orange_diamond: Level '+ranked[i].level,'**'+ranked[i].exp + '** Exp', true)
 }

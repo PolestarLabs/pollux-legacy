@@ -15,7 +15,7 @@ const init = function (message,userDB,DB) {
 
   const P = {lngs:message.lang};
 
-if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:'language'}))return;
+if(gear.autoHelper([mm("helpkey",P),'noargs'],{cmd,message,opt:'language'}))return;
 
   const noperms     =   mm('CMD.moderationNeeded',P)
   const noPermsMe   =   mm('CMD.unperm',P)

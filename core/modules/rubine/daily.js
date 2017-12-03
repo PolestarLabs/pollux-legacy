@@ -129,7 +129,7 @@ const init = async function (message) {
 
     let bar = "|▁▁▁▁▁▁▁▁▁▁|"
 
-    for (i = 0; i < streak + 1; i++) {
+    for (i = 0; i < streak; i++) {
       bar = bar.replace("▁", "▇")
     }
 

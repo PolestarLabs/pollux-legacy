@@ -7,7 +7,7 @@ const mm = locale.getT();
 const userDB=gear.userDB;
 const DB=gear.serverDB;
 
-const init= async function run(msg) {
+const init= async function run(msg,LV) {
 
 const canvas = new Canvas.createCanvas(400, 225);
 const ctx = canvas.getContext('2d');
@@ -37,7 +37,7 @@ let gif = new GifEncoder(400, 225);
 
   let Target = msg.mentions.users.first()||msg.author;
   let ID=await userDB.findOne({id:Target.id});
-  let tag = await gear.tag(ctx,ID.modules.level,'900 30px Sans','#2b2b2b');
+  let tag = await gear.tag(ctx,LV||ID.modules.level,'900 30px Sans','#2b2b2b');
   let tagV = await gear.tag(ctx,Target.tag,'18px Whitney','#818181');
   let avit = Target.avatarURL || Target.defaultAvatarURL;
   avit= avit.replace('gif','png');

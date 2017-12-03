@@ -4,7 +4,7 @@ const paths = require("../../paths.json");
 const locale = require('../../../utils/multilang_b');
 const mm = locale.getT();
 
-const init= async function run(msg,userDB,DB,target,chan) {
+const init= async function run(msg,target,chan) {
 
     const canvas = new Canvas.createCanvas(800, 600);
     const ctx = canvas.getContext('2d');
@@ -15,9 +15,9 @@ const init= async function run(msg,userDB,DB,target,chan) {
   }catch(e){
     return;
   };
-
-  let frame = await gear.getCanvas(paths.BUILD+"poly_greet.png")
-  let phot =  await gear.getCanvas((target.avatarURL||target.defaultAvatarURL))
+  let avi = target.avatarURL||target.defaultAvatarURL;
+  let frame = await gear.getCanvas(paths.BUILD+"poly_greet.png");
+  let phot =  await gear.getCanvas(avi);
 
   ctx.drawImage(phot,367,340,134,134)
   ctx.fillStyle= "#ff74ef"
@@ -38,7 +38,8 @@ const init= async function run(msg,userDB,DB,target,chan) {
   ctx.fillStyle = "#272727";
 
   const P={lngs:msg.lang}
-  const phrases=[
+  /*
+  const phrasesx=[
      mm('imgGreets.1',P)
     ,mm('imgGreets.2',P)
     ,mm('imgGreets.3',P)
@@ -46,8 +47,8 @@ const init= async function run(msg,userDB,DB,target,chan) {
     ,mm('imgGreets.5',P)
     ,mm('imgGreets.6',P)
   ]
-
-  let phrases_hardcode = [
+*/
+  let phrases = [
                 "Hey everyone,|say hello to|our new friend!"
                 ,"Hey guys,|someone just arrived|let's greet them!"
                 ,"Oh, who's there?,|welcome to the Server.|Make yourself at home!"
