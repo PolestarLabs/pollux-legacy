@@ -48,7 +48,10 @@
         "nsfwNofunds": "你窮到上不了車啦！交出**5**個紅寶石我就讓你上車。紅寶石不夠就輸入`{{prefix}}daily`",
         "nsfwCheckout": "已經從你的帳號拿走5個{{emoji}}",
         "airwaifu": ":airplane:為您精心挑選的飛機娘",
-        "leadUnap": "如果你的名字沒有出現在這裡，輸入`{{prefix}}profile`來查看你的等級，說不定只是你太廢。"
+        "leadUnap": "如果你的名字沒有出現在這裡，輸入`{{prefix}}profile`來查看你的等級，說不定只是你太廢。",
+        "position": "你在這個排行中的位置是：",
+        "usethisfor": "Type |p!rank {{scope}}| for {{srr}}",
+        "transmittedVc": "已傳送到你所在的語音頻道"
     },
     "misc": {
         "memberSince": "{{target}}加入的時間是：{{joinedstamp}}",
@@ -87,19 +90,26 @@
         "incinerate": "我剛剛燒毀了{{amt}}條訊息！如果你不滿意，我下次會燒{{amtB}}條",
         "roleadCom": "喲！**{{user}}**現在是**{{group}}**群組的一員啦！歡迎上船！",
         "rolermCom": "好ㄅ，**{{user}}**現在不再是**{{group}}**群組的一員了，我好奇為什麼",
-        "kbanNone": "Tell me in whose ass i'm gonna shove this hammer, before I do it at yours!",
-        "didban": ":hammer: Banned the hell out of {{target}} from here. \n **Reason:** *{{reason}}*",
+        "kbanNone": "告訴我要ban誰，不然我就用制裁之錘敲你",
+        "didban": ":hammer:{{target}}被ban了\n**理由：** *{{reason}}*",
         "superRoleadCom": "好der，**{{user}}**拿到了**{{group}}**身分組！",
         "superRolermCom": "完成。**{{user}}**不再是**{{group}}**身分組的一員！",
         "superRoleNope": "**{{user}}**並沒有**{{group}}**身分組！",
-        "banNone": "Tell me in whose ass i'm gonna shove this hammer, before I do it at yours!",
+        "banNone": "告訴我要ban誰，不然我就用制裁之錘敲你",
         "unpermB": "喔，少年...我想你的權限不夠...",
         "cantFindChannel": "呃...我找不到這個頻道 :/ 如果你不確定，你可以試試#channel",
         "noChannelGiven": "OK，所以我要把這些紀錄放到哪裡？總不能寫在你臉上吧？告訴我你要把紀錄放到哪個頻道",
         "noReason": "沒有明確原因",
         "insuperms": "你沒有權限使用該指令",
         "not-a-NSFW-channel": "騷年，先把這個頻道設成NSFW。",
-        "timesOutIn": "指令將於{{s}}秒後過期"
+        "timesOutIn": "指令將於{{s}}秒後過期",
+        "inviteText": "點[這裡]來邀請我到你的伺服",
+        "selfroleunAdded": "**{{role}}**身分組已不能自行加入",
+        "noselfRoles": "這個伺服裡沒有可以自行加入的身分組",
+        "enterVoiceBetterExperience": "進入一個語音頻道來讓這個指令發揮全部功能",
+        "useThis": "Use `{{prefix}}` as prefix for this.",
+        "acceptDec": "點擊{{icon}}來接收，你一天最多只能接收5筆轉帳",
+        "declinedTrans": "看來{{user}}不想接受你的紅寶石"
     },
     "dict": {
         "coinHeads": "人頭",
@@ -124,7 +134,8 @@
         "usage": "用途：",
         "module": "模組",
         "inst": "說明",
-        "bet": "賭"
+        "bet": "賭",
+        "vacuum": "真空"
     },
     "profile": {
         "persotexUpdate": "都弄好了！ 你的個性簽名現在是：\n{{pstext}}\n用`{{prefix}}profile`來看你那~~不怎麼精美的~~名片上華麗的詞藻吧。顆顆~"
@@ -218,7 +229,7 @@
         "playlist": "目前的播放清單",
         "catgirl": "喵",
         "personaltxt": "修改你的個性簽名讓你看起來酷一點",
-        "rep": "Commend someone and let everyone know they're trustful",
+        "rep": "標記某人讓大家知道他是個好人",
         "servers": "看看我所加入的伺服器中哪些是人最多的(不包含bot)",
         "read": "讀出圖片中的文字",
         "roll": "骰1/3/10個或是成噸的骰子",
@@ -226,13 +237,16 @@
         "drawcards": "抽5張可愛的牌，完全隨機而沒有特殊用途",
         "medal": "顯示徽章商店裡的徽章資訊",
         "blackjack": "玩你在Discord中所看過最酷的21點\n盡情的花紅寶石然後破產吧！",
-        "alignment": "Show the Alignment Chart for your Server's members",
+        "alignment": "輸出一張陣營九宮格",
         "exchange": "把紅寶石換成其他bot的貨幣！",
-        "slots": "Play a game of slots, betting is optional, but lemme tell you, the payout is **huge** if you do. :3",
+        "slots": "玩拉霸，可賭可不賭，但是賭了可以**賺很大**  :3",
         "avatar": "顯示某個人的頭像",
         "candyrank": "看看世界上最厲害的糖果收集者",
         "candy": "看看你或你朋友在這次活動中收集了多少糖果",
-        "trickortreat": "敲敲門來要糖果，每個伺服一天只能要一次"
+        "trickortreat": "敲敲門來要糖果，每個伺服一天只能要一次",
+        "selfroles": "增加/移除/列出可自行加入的身分組",
+        "prune": "刪除某特定用戶的訊息",
+        "cage": "Your dose of Nicholas cage, just the best Cage pics for your Cage needs!"
     },
     "menu": {
         "cake": "蛋糕",
@@ -267,10 +281,10 @@
         "timerby": "好的，我將在{{timeMin}}秒後刪除再見訊息"
     },
     "reput": {
-        "noSelf": "Hey hey smart ass! You cannot rep yourself!",
-        "noTarget": "Tell me who to +Rep, unless you're Repping the vacuum.",
-        "confirm": ":fleur_de_lis:  **{{who}}** has kindly added **+1Rep** to **{{target}}**. How sweet~",
-        "cooldown": "Hold up dude! You can rep again in {{remaining}}. Be patient."
+        "noSelf": "想給自己聲望？你真的好棒棒",
+        "noTarget": "告訴我你要給誰聲望，除非你想讚嘆真空",
+        "confirm": ":fleur_de_lis:  **{{who}}**給了**{{target}}****1點聲望**。他人真好",
+        "cooldown": "喂，等等！你在{{remaining}}內不能再使用這個指令，耐心點"
     },
     "shop": {
         "whatShop": "哪個商店？",
@@ -284,7 +298,11 @@
         "confirmed": "徽章獲得確認！",
         "cancelled": "改變心意了嗎？好吧，交易已取消！",
         "timeout": "你想太久了！想好再回來找我",
-        "alreadyPosess": "你已經有這個徽章了！"
+        "alreadyPosess": "你已經有這個徽章了！",
+        "cancelGeneric": "就這樣？OK，待會見～",
+        "alreadyPosessBg": "你早就有這個背景了！",
+        "alreadyPosessItem": "你早就有這樣物品了！",
+        "alreadyPosessSticker": "你早就有這張貼紙了！"
     },
     "helpkey": "幫助",
     "usage": {
@@ -309,7 +327,7 @@
         "rank": "`{{prefix}}rank` = 全球\n`{{prefix}}rank server` = 伺服",
         "cash": "`{{prefix}}cash`，`{{prefix}}Rubine`，`{{prefix}}$`\n 你也可以@提及某人來查看他們的紅寶石數量",
         "stats": "就這麼簡單：`{{prefix}}stats`",
-        "switch": "`{{prefix}}switch [X]` Choose wisely and do not abuse.",
+        "switch": "`{{prefix}}switch [X]` 好好選，不要濫用",
         "invite": "你他媽的只需要把指令裡的help拿掉就好...",
         "cashrank": "`{{prefix}}cashrank`或是`{{prefix}}Rubinerank` = 全球\n`{{prefix}}cashrank server`或是`{{prefix}}Rubinerank server` = 伺服",
         "rule34": "`{{prefix}}rule34 [標籤]`\n空白鍵用 _ ：`{{prefix}}rule34 blue_hair`\n多個標籤用 + ：`{{prefix}}rule34 blue_hair+pointy_ears`\n在要過濾的標籤前面用 - ： `{{prefix}}rule34 blue_hair+pointy_ears+-furry`",
@@ -360,7 +378,7 @@
         "personaltxt": "`{{prefix}}personaltxt [文字]`",
         "rep": "`{{prefix}}rep @其他人`",
         "servers": "`{{prefix}}servers`",
-        "read": "`{{prefix}}read` Gets last image posted if available on cache\n`{{prefix}} read [ url|image attachment ]` Reads text contained on an image attached or linked",
+        "read": "`{{prefix}}read` 讀取快取中最後一張圖片\n`{{prefix}} read [ URL|圖片附件]` 讀出圖片中所含的文字",
         "roll": "`{{prefix}}roll [Amount][d[Faces]][extra operations]`\n`{{prefix}}roll d20` `{{prefix}}roll 5d6` `{{prefix}}roll 150d12` `{{prefix}}roll 10d4 + 8` `{{prefix}}roll d12 - 10` `{{prefix}}roll 60d7 / 7` `{{prefix}}roll 1d100*5`\n\n Add thrill to your rolls by adding some delay in seconds: `{{prefix}}roll 1d20 -t 5`",
         "translate": "`{{prefix}}translate [文字]`",
         "speak": "`{{prefix}}lang [language]`或者`{{prefix}}speak [language]`",
@@ -374,7 +392,9 @@
         "daily": "輸入`{{prefix}}daily`來領取你的每日獎勵，連續10天簽到會有更多獎勵\n輸入`{{prefix}}daily epoch`來確認下次刷新時間",
         "trickortreat": "`{{prefix}}trickortreat`或是`{{prefix}}trit`",
         "candy": "`{{prefix}}candy [@某某人]`",
-        "candyrank": "`{{prefix}}candyrank`"
+        "candyrank": "`{{prefix}}candyrank`",
+        "selfroles": " `{{prefix}}selfroles [add | del | list] [身分組| @身分組 | 身分組ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games`允許所有人自行加入**Games**身分組\n`{{prefix}}selfroles del Games`讓**Games**身分組不能再被自行加入\n`{{prefix}}selfroles list`列出所有可自行加入的身分組\n\n這些都有區別大小寫，你也可以輸入身分組ID\n`{{prefix}}selfroles clear`刪除**所有**可以自行加入的身分組",
+        "prune": "`{{prefix}}prune X [@user | user ID]`\nYou can use the user's ID if mentioning is not available, as in `{{prefix}}prune 50 271394014358405121`, If no user is specified, it defaults to Pollux's messages.\n\n**Attention** X must be __Greater than 1__ and __Lower than 101__.\nBasic maths, I know you can get this straight!"
     },
     "logs": {
         "success": "完成！我已經把{{channel}}設定成{{CHNTYPE}}了！",
@@ -410,7 +430,7 @@
     "equip": {
         "nomedals": "嘿，你沒有徽章可以裝備，但是你可以買個！",
         "equipSlot": "選擇你要裝備你新徽章的位置",
-        "pleaseWaitReas": "Wait until all reactions before the X load!",
+        "pleaseWaitReas": "請等到所有反應都出現",
         "timeout": "我想你忘記裝上你的徽章了，想裝的時候再叫我～",
         "cancelled": "好吧，如果你沒有要現在裝上徽章的話，我會幫你保管的。",
         "youSure": "你確定要裝在這裡嗎？",
@@ -557,7 +577,7 @@
         "forfun": "娛樂",
         "memes": "梗",
         "gambling": "賭博",
-        "infra": "Infra",
+        "infra": "下文",
         "misc": "其他",
         "util": "功能",
         "music": "音樂"
@@ -632,7 +652,7 @@
         "addedBG": "背景 `[code:{{itm}}]`已加入你的物品欄",
         "duplicateExchange": "Duplicate {{tpe}} `{{itm}}` exchanged for {{X}} Rubines",
         "morons": "You're a bunch of **morons**! You let a Lootbox slip by. ]:U",
-        "contesting": "Entries for this Box:",
+        "contesting": "這個箱子裡有：",
         "eventDrop": "這個箱子是個**活動限定寶箱**這代表裡面會有**特殊好康**！",
         "suprareDrop": "噢，我的天啊！一個**超級稀有**寶箱",
         "notThisbox": "你沒有這種類型的箱子，試著用`{{prefix}}lootbox`來確認你的箱子"
@@ -655,7 +675,8 @@
         "upnext": "這個播放清單中的下一首"
     },
     "eastereggs": {
-        "konodioda": "跟你玩21點不是Pollux，**而是我，迪奧！**"
+        "konodioda": "跟你玩21點不是Pollux，**而是我，迪奧！**",
+        "vacuum": "**{{user}}**給了真空**1點聲望**。{{amount}}點聲望已回歸虛無"
     },
     "discoin": {
         "desc": "交易進行中，當交易完成後，你應該會收到一則來自%BOT%的私人訊息",
@@ -675,19 +696,54 @@
     "event": {
         "next": "下次可在此伺服使用的時間：",
         "treat": "***不給糖就搗蛋！***你從這個伺服器拿到了**{{qtd}}**個糖果",
-        "treatRefresh": "No no no! You already got your candies, shoo!\nYou can come back in **{{remaining}}**",
+        "treatRefresh": "你已經拿過糖果了！你可以等**{{remaining}}**之後再來",
         "current_event": "嘿～ 你知道現在有個全球的**聖誕節活動**嗎？:jack_o_lantern:\n你可以在活動中拿到一些酷炫且__限定__的物品來裝飾你的`p!profile`名片\n只在這個活動中開放，活動將於**11月5號**結束\n更多資訊：<http://pollux.fun/events/haloween> *（英文頁面）*\n*聯絡你的管理員來確認這個伺服是否有參與活動*",
         "current_eventforMasters": "--DO NOT TRANSLATE THIS--",
         "newAccOut": ":warning: 抱歉，新的帳號無法參與。但是你可以參加下次活動",
         "newServer": "新的伺服器不能參與這個活動，如果你想要讓這個伺服也參與活動，請聯絡開發人員或是加入支援伺服",
         "newJoin": "這個伺服器不能參與這個活動因為我是在10月1號之前加入的，如果你想要讓這個伺服也參與活動，請聯絡開發人員或是加入支援伺服",
-        "nextThis": "You can Trick or Treat here again at:",
+        "nextThis": "下次要糖時間：",
         "candiesCheck": "你到目前為止收集了**{{amt}}**顆糖果，繼續去每個伺服器挨家挨戶的敲門吧！",
         "candiesCheckHim": "**{{user}}**到目前為止收集了**{{amt}}**顆糖果",
         "candieRank": "These are the most candy-rich guys around the block.",
         "candies": "**{{amt}}**個糖果",
         "candytop": "收集最多糖果的人是：",
         "candyprize": "排名最上位的用戶將在活動結束後拿到一些不錯的獎勵",
-        "yourpos": "你在排名中的位置是："
+        "yourpos": "你在排名中的位置是：",
+        "give": "給發條",
+        "droprates": "這個伺服器的活動寶箱掉落率加成是**{{amount}}倍**",
+        "bori_receive": "Borealis從這個伺服器收到了**{{herKeys}}隻鑰匙** %EMJ%",
+        "absentElf": "看樣子{{elfie}}並不在附近，等等在試吧",
+        "shopUpdate": "{{role2}} {{role1}}:\n**新商品**上市啦！",
+        "noFunds_key": "看來你沒有足夠的發條",
+        "windky_PLURAL": "發條",
+        "windky_SINGULAR": "發條",
+        "austra_buy": "這些就是你想要的嗎?只要**{{price}}**個發條你就可以全部帶走！",
+        "austra_checkout": "**完成！**合作愉快～！",
+        "austra_noFunds": "抱歉，你在浪費我的時間，你沒發條還想來跟我買東西？算了，給我**{{rubAmount}}**個紅寶石我就勉強賣你",
+        "austra_ultimatePoverty": "但是你好像也沒那麼多紅寶石，你走吧",
+        "austra_exg": "我可以用發條跟你換紅寶石，但是我個人是比較喜歡發條啦。用下面的指令來進行交換：",
+        "help_elf": "看看周圍有沒有妖精",
+        "help_info": "活動資訊總覽",
+        "help_austra": "商人互動菜單",
+        "help_borea": "收集者互動菜單",
+        "australis_bio": "Australis是仲夏聖誕的妖精，在聖誕老人的南半球組裝線工作。因為聖誕老人管很鬆，她為了拿到遺失的發條什麼都做得出來，像是偷人家東西再低價脫手",
+        "borealis_bio": "Borealis是聖誕老人主要組裝線的工讀生。她自願協助尋找遺失的發條。她是聖誕老人最疼愛的跟班之一，也因此比較容易說服他",
+        "au_function": "Australis會把商店裡的東西賣掉來換發條，物品稀有度將根據她擁有的發條量而提升",
+        "bo_function": "Borealis收集發條並將他們還給聖誕老人，活動寶箱的掉落率將根據她擁有的發條量而大幅提升",
+        "elfAppears": "{{notify_roles}}：\n就在剛剛，一位聖誕老人的妖精來到了這個伺服！\n**{{aust_or_borea}}**將在這裡停留{{amount}}個小時，輸入`{{prefix}}{{elf}}`來跟她對話",
+        "automessage": "**PolluXmas全球活動通知**\n這個頻道將會用於紀錄所由此伺服的活動更新/通知，包含：\n  - *妖精出現*\n  - *新商品上架*\n  - *寶箱掉落率提升量*\n\n以下三個身分組是用於在活動中通知你的，有需要就加入吧\n**全部**通知 - {{genericRole}}\n**商人**通知 - {{austri}}\n**收集者**通知 - {{bori}}",
+        "theTrader": "Australis - 商人",
+        "theCollector": "Borealis - 收集者",
+        "traderElfText": "我在找聖誕老人工廠遺失的發條，你有看到任何相似的物品嗎？\n**我可以用一些好東西跟你換發條**",
+        "collectorElfText": "我正在四處尋找發條，你有印象看到任何發條嗎？\n**有了這些發條，我就可以更快的在你的伺服器送寶箱了**"
+    },
+    "langIntro": {
+        "global": "I'll now speak English for this Server as the true cosmopolitan lady I am!",
+        "channel": "現在在這個頻道我只說英文"
+    },
+    "info": {
+        "checkPin": "更多資訊請查看釘選訊息",
+        "reactThis": "回應這則訊息以獲得身分組"
     }
 }
