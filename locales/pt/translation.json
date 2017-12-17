@@ -48,7 +48,10 @@
         "nsfwNofunds": "Não tens Rubys para comprar coisas marotas. Dá-me **5**Rubys e depois falamos. Ganha Rubys com `{{prefix}}daily`",
         "nsfwCheckout": "5 {{emoji}} foram debitados dos teus fundos.",
         "airwaifu": ":airplane: Esta Aerowaifu foi cuidadosamente escolhida por ti.",
-        "leadUnap": "Se não te vês aqui, escreve `{{prefix}}profile` para veres o teu nível. Talvez tu és podre mesmo."
+        "leadUnap": "Se não te vês aqui, escreve `{{prefix}}profile` para veres o teu nível. Talvez tu és podre mesmo.",
+        "position": "Your position in this ranking is",
+        "usethisfor": "Type |p!rank {{scope}}| for {{srr}}",
+        "transmittedVc": "Transmitted to your voice channel!"
     },
     "misc": {
         "memberSince": "{{target}} é um membro desde: {{joinedstamp}}",
@@ -99,7 +102,14 @@
         "noReason": "semRazão",
         "insuperms": "You have no permission to use this command, shoo!",
         "not-a-NSFW-channel": "Set this channel as NSFW first, boy. There are kids around",
-        "timesOutIn": "This will timeout in {{s}} seconds"
+        "timesOutIn": "This will timeout in {{s}} seconds",
+        "inviteText": "Invite me to your server clicking [HERE]",
+        "selfroleunAdded": "Role **{{role}}** removed from Self-roles.",
+        "noselfRoles": "There are no Self-Roles in this Server",
+        "enterVoiceBetterExperience": "Join a Voice Channel to get the full potential of this command~",
+        "useThis": "Use `{{prefix}}` as prefix for this.",
+        "acceptDec": "Click on {{icon}} to accept these, you can only accept 5 transactions a day.",
+        "declinedTrans": "{{user}} doesn't seem to want your rubines."
     },
     "dict": {
         "coinHeads": "cara",
@@ -124,7 +134,8 @@
         "usage": "Utilização:",
         "module": "Module",
         "inst": "Instructions",
-        "bet": "Bet"
+        "bet": "Bet",
+        "vacuum": "vacuum"
     },
     "profile": {
         "persotexUpdate": "Ok, tudo pronto! O teu texto pessoal é agora {{pstext}}\nUsa `{{prefix}}profile` para veres esta linha no teu ProfileCard ~~não tão bonito~~. Hehe~"
@@ -232,7 +243,10 @@
         "avatar": "That one command to show someone's Avatar you all asked so f*ckin much!",
         "candyrank": "See the best candy collectors around the world",
         "candy": "Checks how much candy you or a friend have collected during this event",
-        "trickortreat": "Knocks on a Server to ask for candies, can be done once a day per Server."
+        "trickortreat": "Knocks on a Server to ask for candies, can be done once a day per Server.",
+        "selfroles": "Add, Remove, or List Self-Assignable Roles",
+        "prune": "Deletes Messages from a specific User",
+        "cage": "Your dose of Nicholas cage, just the best Cage pics for your Cage needs!"
     },
     "menu": {
         "cake": "Bolo",
@@ -284,7 +298,11 @@
         "confirmed": "Aquisição de medalha confirmada!",
         "cancelled": "Mudaste de ideias? Compra cancelada!",
         "timeout": "Pensas de mais! Volta quando souberes o que comprar.",
-        "alreadyPosess": "Já tens esta medalha!"
+        "alreadyPosess": "Já tens esta medalha!",
+        "cancelGeneric": "Is that it? Ok, see you later~",
+        "alreadyPosessBg": "You already own this background!",
+        "alreadyPosessItem": "You already own this item!",
+        "alreadyPosessSticker": "You already own this sticker!"
     },
     "helpkey": "ajuda",
     "usage": {
@@ -374,7 +392,9 @@
         "daily": "`{{prefix}}daily` to get your daily bonus, streak 10 days in a row for a higher bonus1\n `{{prefix}}daily epoch` to check how much time until next global refresh.",
         "trickortreat": "`{{prefix}}trickortreat` or `{{prefix}}trit`",
         "candy": "`{{prefix}}candy [@someguy]`",
-        "candyrank": "`{{prefix}}candyrank`"
+        "candyrank": "`{{prefix}}candyrank`",
+        "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games` Allows the **Games** Role as self-assignable.\n`{{prefix}}selfroles del Games` Removes the role **Games** from the list.\n`{{prefix}}selfroles list` Shows the list and commands for each Self-Assignable Role\n\n These are Case insensitive, you can use Role ID too.\n`{{prefix}}selfroles clear` Deletes **all** selfroles from the list.",
+        "prune": "`{{prefix}}prune X [@user | user ID]`\nYou can use the user's ID if mentioning is not available, as in `{{prefix}}prune 50 271394014358405121`, If no user is specified, it defaults to Pollux's messages.\n\n**Attention** X must be __Greater than 1__ and __Lower than 101__.\nBasic maths, I know you can get this straight!"
     },
     "logs": {
         "success": "Feito! Defini o canal {{channel}} para {{CHNTYPE}}!",
@@ -655,7 +675,8 @@
         "upnext": "Upnext on this playlist"
     },
     "eastereggs": {
-        "konodioda": "You thought that it was Pollux, **but it was ME, DIO**!"
+        "konodioda": "You thought that it was Pollux, **but it was ME, DIO**!",
+        "vacuum": "**{{user}}** has given **+1 Rep** to the Vacuum. {{amount}} reps has been thrown into the void so far."
     },
     "discoin": {
         "desc": "Your transaction is being processed, a response from %BOT% will come as soon as it is confirmed!",
@@ -673,7 +694,7 @@
         "ex-succ": "Exchange Successful!"
     },
     "event": {
-        "next": "Available again at this Server at",
+        "next": "Available again at this Server at {{remain}}",
         "treat": "***Trick or Treat!***  You got **{{qtd}}** candies from this Server's stash!",
         "treatRefresh": "No no no! You already got your candies, shoo!\nYou can come back in **{{remaining}}**",
         "current_event": "Hey~ Did you know there is a global **Halloween Event** going on? :jack_o_lantern:\nIn this event you can get some cool and __exclusive__ pretty stuff for your `p!profile` card!\nAvailable only during this event, which will be running until **November 5th**\nMore info at <http://pollux.fun/events/haloween> *(page in english)*\n*Contact your Server Owner to check if this server is participating*",
@@ -688,6 +709,41 @@
         "candies": "**{{amt}}** Candies",
         "candytop": "The top-tier Candy collectors are:",
         "candyprize": "The best ranked users will get some nice rewards at the end of the event!",
-        "yourpos": "Your position in the rank is:"
+        "yourpos": "Your position in the rank is:",
+        "give": "Give Keys",
+        "droprates": "This Server's Event Box drop rate has been increased by **{{amount}}x**",
+        "bori_receive": "Borealis received **{{herKeys}} Keys** %EMJ% from this Server",
+        "absentElf": "Seems like {{elfie}} is not around, try again later.",
+        "shopUpdate": "{{role2}} {{role1}}:\n The trader has **new items** in stock!",
+        "noFunds_key": "Hmmm... seems that you don't have enough Keys",
+        "windky_PLURAL": "Winding Keys",
+        "windky_SINGULAR": "Winding Key",
+        "austra_buy": "Is that the item you'd like? For **{{price}}** Winding Keys it can be all yours! Deal?",
+        "austra_checkout": "**Done!** It has been a great pleasure doing business with you~!",
+        "austra_noFunds": "Sorry, we're both wasting our times here. You don't have enough Keys for that. But I can give it to you anyways if you give me **{{rubAmount}}** Rubines.",
+        "austra_ultimatePoverty": "...which appearantly you don't have either. Shoo!",
+        "austra_exg": "I can exchange my Keys for a fair amount of your Rubines, but I'm much more interested on Keys.Use commands like these to exchange with me:",
+        "help_elf": "Checks if there are elves around",
+        "help_info": "General Event Information",
+        "help_austra": "Trader Interaction Menu",
+        "help_borea": "Collector Interaction Menu",
+        "australis_bio": "Australis is the elf of Midsummer Xmas, at Santa's southern assembly lines. Since Santa doesn't supervise them, she does anything on her reach to get the lost Winding Keys, even sneaking goodies and reselling them for a much lower price",
+        "borealis_bio": "Borealis is a young part-time elf from Santa's main assembly lines at the North Pole. She volunteered to help finding the lost Winding Keys. She's one of Santa's favorite apprendices, for that reason, he takes her suggestions quite seriously.",
+        "au_function": "Australis trades Items from shops for Winding Keys, the Rarity Tier chances of the items depends on how much keys she has.",
+        "bo_function": "Borealis collects Winding Keys and take them back to Santa, the Drop Rate of Event Lootboxes are increased significantly depending on how much keys she has.",
+        "elfAppears": "{{notify_roles}}:\nOne of Santa's elves just spawned at this server!\n**{{aust_or_borea}}** will be here for {{amount}} hours. Use `{{prefix}}{{elf}}` to talk to her.",
+        "automessage": "**PolluXmas Global Event Info**\nThis channel will be used to post event updates for this Server.\n\nUpdates include:\n  - *Santa's elfs Spawns*\n  - *New items on the Trader Elf*\n  - *Drop Rate updates from Collector Elf*\n\nThere are three Utility Roles for this event, get them if you want to be notified.\n{{genericRole}} - for **all** updates.\n{{austri}} - for **trader** updates.\n{{bori}} - for **collector** updates.",
+        "theTrader": "Australis - The Trader",
+        "theCollector": "Borealis - The Collector",
+        "traderElfText": "I need some Winding Keys that were lost from Santa's Factory did you see any?\n**I can exchange them for some neat goodies!**",
+        "collectorElfText": "I'm Collecting lost Winding Keys around servers, did you see any?\n**With these keys we will be able to deliver Present Boxes faster to your server!**"
+    },
+    "langIntro": {
+        "global": "I'll now speak English for this Server as the true cosmopolitan lady I am!",
+        "channel": "At this Channel I'll be speaking English for you~"
+    },
+    "info": {
+        "checkPin": "Check the Pinned Message for more Info",
+        "reactThis": "React to this message to auto-receive the roles"
     }
 }
