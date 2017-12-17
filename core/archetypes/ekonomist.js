@@ -225,7 +225,7 @@ const normalize =  function normalize(U) {
   }
 
 const checkFunds = async function checkFunds(amount,user,unit){
-
+console.log(unit)
   if(user=="271394014358405121")return true;
   if(!unit)unit='main';
    amount = Number(amount)

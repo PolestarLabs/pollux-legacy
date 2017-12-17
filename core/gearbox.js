@@ -32,6 +32,18 @@ module.exports={
   RichEmbed:Discord.RichEmbed,
 
 
+  manageLimits: async function manageLimits(param,limit,TDATA,message){
+    if(TDATA.limits && TDATA.limits[param] > limit){
+      return message.channel.send('**'+TDATA.name+' is ratelimited, try again tomorrow**')
+    }else{
+      if(!TDATA.limits || !TDATA.limits[param]){
+
+        await userDB.set(TDATA.id,{$set:{['limits.'+param]:1}});
+      }
+        await userDB.set(TDATA.id,{$inc:{['limits.'+param]:1}});
+    }
+  } ,
+
 //Get Help
   autoHelper: function autoHelper(trigger,options){
     let message, P, M, key, cmd, opt;
@@ -109,9 +121,11 @@ gamechange : function gamechange(gamein = false) {
   },
 
   //Get IMG from Channel MSGs
-  getImg: async function getImg(message) {
-    if (message.attachments.url && message.attachments.width) return message.attachments.url;
+  getImg: async function getImg(message,nopool) {
+    if (message.attachments.first()) return message.attachments.first().url;
     let sevmesgs = message.channel.messages;
+
+    if(nopool)return;
 
     const messpool = sevmesgs.filter(mes => {
       try {
