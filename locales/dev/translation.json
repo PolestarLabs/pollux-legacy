@@ -64,6 +64,9 @@
 		"colorChange": "Your favorite color has been saved!"
 	},
 	"CMD": {
+    "useThis":"Use `{{prefix}}` as prefix for this.",
+    "acceptDec":"Click on {{icon}} to accept these, you can only accept 5 transactions a day.",
+    "declinedTrans":"{{user}} doesn't seem to want your rubines.",
 		"enterVoiceBetterExperience": "Join a Voice Channel to get the full potential of this command~",
 		"noselfRoles": "There are no Self-Roles in this Server",
 		"timesOutIn": "This will timeout in {{s}} seconds",
@@ -158,7 +161,7 @@
 		"avatar": "That one command to show someone's Avatar you all asked so f*ckin much!",
 		"slots": "Play a game of slots, betting is optional, but lemme tell you, the payout is **huge** if you do. :3",
 		"exchange": "Exchange Rubines for other bots currencies!",
-		"alignment": "Show the Alignment Chart for your Server's members",
+		"alignment": "Show the Alignment Chart forev your Server's members",
 		"checkYeDM": "Psst! I sent you some stuffz in DM, give it a look.",
 		"availableComms": "Available Commands",
 		"airwaifu": "Aeroplanatic Waifu Material",
@@ -288,18 +291,19 @@
 		"cooldown": "Hold up dude! You can rep again in {{remaining}}. Be patient."
 	},
 	"shop": {
-		"whatShop": "What Shop?",
-		"medalShop": "Medal Shop",
-		"bgShop": "Background Shop",
+
+		"cancelGeneric": "Is that it? Ok, see you later~",
 		"goodShop": "Goodies Shop",
 		"useBelow": "Use the Reactions below",
-		"noFundsFormal": "Use the Reactions below",
 		"processing": "Processing Purchase",
 		"youSure": "Is that it?",
 		"confirmed": "Medal acquisition confirmed!",
 		"cancelled": "Changed your mind? Well, purchase cancelled!",
 		"timeout": "You think too much! Combe back when you know what you want.",
-		"alreadyPosess": "You already own this medal!"
+		"alreadyPosess": "You already own this medal!",
+		"alreadyPosessBg": "You already own this background!",
+		"alreadyPosessItem": "You already own this item!",
+		"alreadyPosessSticker": "You already own this sticker!"
 	},
 	"helpkey": "help",
 	"usage": {
@@ -694,25 +698,45 @@
 		"globalLimit": "Today's operations has been closed, thank you!",
 		"takedis": "Keep this code in case of ~shit happens~"
 	},
-
+  "info":{
+    "checkPin":"Check the Pinned Message for more Info",
+    "reactThis":"React to this message to auto-receive the roles"
+  },
 	"event": {
-		"current_event": "Hey~ Did you know there is a global **Halloween Event** going on? :jack_o_lantern:\nIn this event you can get some cool and __exclusive__ pretty stuff for your `p!profile` card!\nAvailable only during this event, which will be running until **November 5th**\nMore info at <http://pollux.fun/events/haloween> *(page in english)*\n*Contact your Server Owner to check if this server is participating*",
-		"current_eventforMasters": "Hey~ Excuse me, did you know there is a global **Halloween Event** going on? :jack_o_lantern:\nIn this event people can get some cool and __exclusive__ pretty stuff for their`p!profile` cards!\nAvailable only during this event, which will be running until **November 5th**\nMore info at <http://pollux.fun/events/haloween> *(page in english)*\n\nYou, as a Server Owner, if interested in participating in the event with your community, can answer this message with an `halloween` so I know you're in! You will receive **five** Event Lootboxes, plus **one** for every 100 members on your server(s), capping at 15.\nThese can be used as rewards to any self-hosted events you may run, or just to raffle amongst your members.\nI trust you to not use these for self advantage, either way, Event Lootbox usage will be logged just in case to protect those who want to play fairly~\n\nSome Servers are not eligible for auto-joining the event. Which are:\n - Servers created after a certain date;\n - Servers in which I joined after October 1st;\n - Servers with bot x human users ratio exceeds 10%\n\n If your server fits in any of these, but it is a legit community server wanting to participate, join my Support Server and speak to my Developer for help, and eventually a Whitelisting of your server.\n\nHere are some quick instructions for the commands involved in this event:\n - `p!trickortreat` : This is like dailies, but usable once a day in every participating server i'm in. Collect candies and get ranked, the top ranked users will get goodies from myself at the end of the event in **November 5th, 3PM EDT**.\n - `p!trade box @someone` Use this to award boxes to someone.\n - `p!lootbox` Check the lootboxes in your inventory, Event Boxes are opened responding with `open EV`.\n\nAny further questions, bugs, or anything. Join the Support Server and spill it out (you can find it with `p!help`)\n\n**Stay Spooky and Happy Halloween!** :heart:",
+    "give":"Give Keys",
+    "droprates":"This Server's Event Box drop rate has been increased by **{{amount}}x**",
+    "bori_receive":"Borealis received **{{herKeys}} Keys** %EMJ% from this Server",
+    "absentElf":"Seems like {{elfie}} is not around, try again later.",
+    "shopUpdate":"{{role2}} {{role1}}:\n The trader has **new items** in stock!",
+    "noFunds_key":"Hmmm... seems that you don't have enough Keys",
+    "windky_PLURAL":"Winding Keys",
+    "windky_SINGULAR":"Winding Key",
+    "austra_buy":"Is that the item you'd like? For **{{price}}** Winding Keys it can be all yours! Deal?",
+    "austra_checkout":"**Done!** It has been a great pleasure doing business with you~!",
+    "austra_noFunds":"Sorry, we're both wasting our times here. You don't have enough Keys for that. But I can give it to you anyways if you give me **{{rubAmount}}** Rubines.",
+    "austra_ultimatePoverty":"...which appearantly you don't have either. Shoo!",
+    "austra_exg":"I can exchange my Keys for a fair amount of your Rubines, but I'm much more interested on Keys.Use commands like these to exchange with me:",
+    "help_elf":"Checks if there are elves around",
+    "help_info":"General Event Information",
+    "help_austra":"Trader Interaction Menu",
+    "help_borea":"Collector Interaction Menu",
+    "australis_bio":"Australis is the elf of Midsummer Xmas, at Santa's southern assembly lines. Since Santa doesn't supervise them, she does anything on her reach to get the lost Winding Keys, even sneaking goodies and reselling them for a much lower price",
 
-		"next": "Available again at this Server at {{remain}}",
-		"treat": "***Trick or Treat!***  You got **{{qtd}}** candies from this Server's stash!",
+        "borealis_bio":"Borealis is a young part-time elf from Santa's main assembly lines at the North Pole. She volunteered to help finding the lost Winding Keys. She's one of Santa's favorite apprendices, for that reason, he takes her suggestions quite seriously.",
+
+    "au_function":"Australis trades Items from shops for Winding Keys, the Rarity Tier chances of the items depends on how much keys she has.",
+    "bo_function":"Borealis collects Winding Keys and take them back to Santa, the Drop Rate of Event Lootboxes are increased significantly depending on how much keys she has.",
+    "elfAppears":"{{notify_roles}}:\nOne of Santa's elves just spawned at this server!\n**{{aust_or_borea}}** will be here for {{amount}} hours. Use `{{prefix}}{{elf}}` to talk to her.",
+    "automessage":"**PolluXmas Global Event Info**\nThis channel will be used to post event updates for this Server.\n\nUpdates include:\n  - *Santa's elfs Spawns*\n  - *New items on the Trader Elf*\n  - *Drop Rate updates from Collector Elf*\n\nThere are three Utility Roles for this event, get them if you want to be notified.\n{{genericRole}} - for **all** updates.\n{{austri}} - for **trader** updates.\n{{bori}} - for **collector** updates.",
+    "theTrader":"Australis - The Trader",
+    "theCollector":"Borealis - The Collector",
+		"traderElfText":"I need some Winding Keys that were lost from Santa's Factory did you see any?\n**I can exchange them for some neat goodies!**",
+		"collectorElfText":"I'm Collecting lost Winding Keys around servers, did you see any?\n**With these keys we will be able to deliver Present Boxes faster to your server!**",
 		"treatRefresh": "No no no! You already got your candies, shoo!\nYou can come back in **{{remaining}}**",
 		"newAccOut": ":warning: Sorry, new accounts cannot participate. But join me in another event!~",
 		"newServer": "New Servers cannot participate in this event. Contact the Developer or join the Support Server if you want to participate in the event with this Server",
-		"newJoin": "This Server cannot participate in this event because I've joined here after October 1st. Contact the Developer or join the Support Server if you want to participate in the event with this Server",
-		"nextThis": "You can Trick or Treat here again at:",
-		"candiesCheck": "You collected **{{amt}}** candies so far. Keep knocking at servers to get more!",
-		"candiesCheckHim": "**{{user}}** has collected **{{amt}}** candies so far.",
-		"candieRank": "These are the most candy-rich guys around the block.",
-		"candies": "**{{amt}}** Candies",
-		"candytop": "The top-tier Candy collectors are:",
-		"candyprize": "The best ranked users will get some nice rewards at the end of the event!",
-		"yourpos": "Your position in the rank is:"
+		"newJoin": "This Server cannot participate in this event because I've joined here after October 1st. Contact the Developer or join the Support Server if you want to participate in the event with this Server"
+
 	}
 
 }
