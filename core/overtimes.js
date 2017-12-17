@@ -7,7 +7,7 @@ const gear = g
 const eko = require ('./archetypes/ekonomist.js')
 const coinbase = JSON.parse(fs.readFileSync("./resources/lists/discoin.json", "utf8"))
 
-exports.run = function(bot){
+exports.run = async function(bot){
 
 
 
@@ -20,7 +20,10 @@ exports.run = function(bot){
       //EVERY MIDNITE-----------------------------------------------------------------
       if (date.getHours() === 0 && date.getMinutes() == 0 && date.getSeconds() == 0) {
 
-
+       await g.userDB.updateMany({},{$set:{'limits.slots':0}});
+       await g.userDB.updateMany({},{$set:{'limits.bjack':0}});
+       await g.userDB.updateMany({},{$set:{'limits.receive':0}});
+       await g.userDB.updateMany({},{$set:{'limits.give':0}});
 
         gear.globalDB.get().then(async BOTDB => {
 
