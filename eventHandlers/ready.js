@@ -31,10 +31,18 @@ exports.run =async function run(bot) {
     })
 
 
-
   if (bot.shard) {
     console.log('Shard' + (1 + bot.shard.id) + '/' + bot.shard.count + " [ONLINE]")
   }
+
+  gear.serverDB.find({'event.enabled':true}).then(arr=>{
+      console.log(arr.length)
+    arr.forEach(sv=>{
+      try{
+        bot.channels.get(sv.event.channel).fetchMessage(sv.event.message)
+      }catch(e){}
+    })
+  })
 
 }
 
