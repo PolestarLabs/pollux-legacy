@@ -20,8 +20,8 @@
         "cash10000": "T'as braqué une banque ?",
         "cashInfinite": "Tu cheat batard",
         "goodDrop": "O TOU LMOND !! Une Rubine {{emoji}} est tombée! Celui qui écrira `{{prefix}}pick` en premier la gagnera!",
-        "rareDrop": "OH PUTAIN! Un coffre entier de Rubines {{emoji}}! Ecris `{{prefix}}pick` pour tout ramasser! ",
-        "userDrop": "{{user}} a lâché **{{amt}}x** Rubines {{emoji}} dans ce salon! Ecris `{{prefix}}pick` !",
+        "rareDrop": "SACRÉBLEU! Un coffre entier de Rubines {{emoji}}! Écris `{{prefix}}pick` pour tout ramasser! ",
+        "userDrop": "{{user}} a lâché **{{amt}}x** Rubines {{emoji}} dans ce salon! Écris `{{prefix}}pick` !",
         "cantDrop": "Tu n'as pas de Rubines à lâcher...",
         "pick": "{{user}} a ramassé **{{count}}** Rubines! ",
         "earnings": "Gains",
@@ -50,7 +50,8 @@
         "airwaifu": ":airplane: Cette Aerowaifu a été spécialement choisie pour toi.",
         "leadUnap": "Si tu ne te vois pas affiché ici, écris `{{prefix}}profile` pour voir ton level. Peut être que t'es juste naze.",
         "position": "Your position in this ranking is",
-        "usethisfor": "Type |p!rank {{scope}}| for {{srr}}"
+        "usethisfor": "Type |p!rank {{scope}}| for {{srr}}",
+        "transmittedVc": "Transmis à ton salon auditoire!"
     },
     "misc": {
         "memberSince": "{{target}} est membre depuis: {{joinedstamp}} ",
@@ -62,7 +63,7 @@
         "incorrectUsage": "Ah non, ce n'est pas comme ça que l'on utilise cette commande! Regarde: {{usage}}. Exemple: {{example}}",
         "disabledModule": ":no_entry_sign: Notre maître a déclaré {{module}} interdit ici. Dommage...",
         "genericInvalid": "Oh, oh... Commande invalide ;~;",
-        "prefixChng": "D'accord, mon préfixe est désormais {{prefix}}, essaye-le en utilisant `{{prefix}}stats`.␣",
+        "prefixChng": "D'accord, mon préfixe est maintenant {{prefix}}, essaye-le en utilisant `{{prefix}}stats`.␣",
         "moderationNeeded": "Tu ne peux pas utiliser cette commande, tu dois soit avoir les permissions **Gérer serveur**, ou avoir un rôle de Modérateur. Configure un rôle de modérateur en utilisant `{{prefix}}modrole [Role]` ",
         "noDM": "Désolé, je ne peux pas répondre à cette commande en MP",
         "chooseAmod": "Choisis un module s'il te plaît.",
@@ -75,20 +76,20 @@
         "enabledComSer": "La commande **{{command}}** a été **globalement** activée. ",
         "enabledComChn": "La commande **{{command}}** a été activée pour le salon #{{channel}} ",
         "kinNone": "Dans un premier temps, dis-moi qui je dois frapper. Avant que je te frappe à sa place.",
-        "kin404": "Ouuuups, je n'arrive pas à trouver cette personne :< Il est pas déjà parti? En fait il existe? C'est pas ton imagination? T'ES SÛR???",
-        "unperm": "Pour une quelconque raison je n'ai pas les droits pour faire ça. DONNE-MOI LES DROITS BORDEL",
+        "kin404": "Ouuuups, je n'arrive pas à trouver cette personne :< Il n'est pas déjà parti? En fait, existe-t-il? C'est pas ton imagination? T'ES SÛR???",
+        "unperm": "Pour une quelconque raison je n'ai pas les droits pour faire cela. DONNE-MOI LES DROITS BORDEL",
         "jas": "Yep, deux secondes...",
         "didkik": ":boot: {{target}} S'est fait dégager d'ici.\n **Raison:** *{{reason}}* ",
         "autoroleunAdded": "Le rôle **{{role}}** a été supprimé d'Autoroles.",
-        "modroleunAdded": "Le rôle **{{role}}** n'est plus un rôle de Modérateur. Tu tentes un coup d'Etat?",
+        "modroleunAdded": "Le rôle **{{role}}** n'est plus un rôle de Modérateur. Tu tentes un coup d'État?",
         "noRoleHere": "Ce rôle n'est pas dans la liste, relis-toi bordel!",
-        "noRolesGiven": "Aucun rôle n'a été mentionné, tu es sûr que tu le fais correctement?",
+        "noRolesGiven": "Aucun rôle n'a été mentionné, t'es sûr que tu le fais correctement?",
         "roleAdded": "YES! Rôle ajouté, tout est en place~ ! :heart:",
         "roleAlreadyHere": "Eh, oh, môssieur, ce rôle existe déjà!",
         "nosuchrole": "Mmmhh... Je n'ai pas pu trouver ce rôle... Ecris son nom exact! C'est sensible à la casse.",
         "incinerate": "Je viens de brûler {{amt}} messages! Et si ça ne te plaît pas j'en brûlerais {{amtB}} la prochaine fois. ",
-        "roleadCom": "YO! **{{user}}** a été ajouté au groupe **{{group}}** ! BIENVENUE A BORD!",
-        "rolermCom": "Bon, **{{user}}** ne fait plus partie du groupe **{{group}}** ! a+",
+        "roleadCom": "YO! **{{user}}** a été ajouté au groupe **{{group}}** ! BIENVENUE À BORD!",
+        "rolermCom": "Bon, **{{user}}** ne fait plus partie du groupe **{{group}}** ! C'est dommage.",
         "kbanNone": "Dis-moi à qui je dois foutre ce marteau dans le cul, avant que je le mette dans le tiens!",
         "didban": ":hammer: J'ai banni {{target}} d'ici. \n **Raison:** *{{reason}}* ",
         "superRoleadCom": "Parfait! **{{user}}** a reçu le rôle de **{{group}}** !",
@@ -104,7 +105,11 @@
         "timesOutIn": "Cela expirera dans {{s}} secondes",
         "inviteText": "Invite-moi sur ton serveur en cliquant [ICI]",
         "selfroleunAdded": "Role **{{role}}** removed from Self-roles.",
-        "noselfRoles": "There are no Self-Roles in this Server"
+        "noselfRoles": "There are no Self-Roles in this Server",
+        "enterVoiceBetterExperience": "Join a Voice Channel to get the full potential of this command~",
+        "useThis": "Utilise `{{prefix}}` en tant que préfixe pour ceci",
+        "acceptDec": "Click on {{icon}} to accept these, you can only accept 5 transactions a day.",
+        "declinedTrans": "{{user}} doesn't seem to want your rubines."
     },
     "dict": {
         "coinHeads": "face",
@@ -130,7 +135,7 @@
         "module": "Module",
         "inst": "Instructions",
         "bet": "Pari",
-        "vacuum": "vacuum"
+        "vacuum": "Aspirateur"
     },
     "profile": {
         "persotexUpdate": "Tout est bon! Ton texte personnel est désormais: \n {{pstext}} \n Utilise `{{prefix}}profile` pour voir ce joli ~~quoi que~~ profil. Hehee~ "
@@ -239,7 +244,9 @@
         "candyrank": "Pour voir les meilleurs récolteurs de bonbons à travers le monde!",
         "candy": "Vérifie combien toi ou un ami avez récolté de bonbons pendant cet événement",
         "trickortreat": "Toque à la porte d'un serveur pour récolter des bonbons, tu peux le faire une fois par jour sur chaque serveur que tu veux.",
-        "selfroles": "Add, Remove, or List Self-Assignable Roles"
+        "selfroles": "Add, Remove, or List Self-Assignable Roles",
+        "prune": "Deletes Messages from a specific User",
+        "cage": "Ta petite dose de Nicholas Cage, les meilleures photos de Monsieur Cage pour combler tes besoins!"
     },
     "menu": {
         "cake": "Cake",
@@ -291,7 +298,11 @@
         "confirmed": "Achat de médaille confirmé!",
         "cancelled": "Tu as changé d'avis? Très bien! Achat annulé!",
         "timeout": "Tu réfléchis trop! Reviens quand tu seras sûr de ce que tu veux!",
-        "alreadyPosess": "Tu possèdes déjà cette médaille!"
+        "alreadyPosess": "Tu possèdes déjà cette médaille!",
+        "cancelGeneric": "Is that it? Ok, see you later~",
+        "alreadyPosessBg": "You already own this background!",
+        "alreadyPosessItem": "You already own this item!",
+        "alreadyPosessSticker": "You already own this sticker!"
     },
     "helpkey": "Aide",
     "usage": {
@@ -382,7 +393,8 @@
         "trickortreat": "`{{prefix}}trickortreat` ou `{{prefix}}trit`",
         "candy": "`{{prefix}}candy [@nimportequi]`",
         "candyrank": "`{{prefix}}candyrank`",
-        "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games` Allows the **Games** Role as self-assignable.\n`{{prefix}}selfroles del Games` Removes the role **Games** from the list.\n`{{prefix}}selfroles list` Shows the list and commands for each Self-Assignable Role\n\n These are Case insensitive, you can use Role ID too.\n`{{prefix}}selfroles clear` Deletes **all** selfroles from the list."
+        "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games` Allows the **Games** Role as self-assignable.\n`{{prefix}}selfroles del Games` Removes the role **Games** from the list.\n`{{prefix}}selfroles list` Shows the list and commands for each Self-Assignable Role\n\n These are Case insensitive, you can use Role ID too.\n`{{prefix}}selfroles clear` Deletes **all** selfroles from the list.",
+        "prune": "`{{prefix}}prune X [@user | user ID]`\nYou can use the user's ID if mentioning is not available, as in `{{prefix}}prune 50 271394014358405121`, If no user is specified, it defaults to Pollux's messages.\n\n**Attention** X must be __Greater than 1__ and __Lower than 101__.\nBasic maths, I know you can get this straight!"
     },
     "logs": {
         "success": "Ca y est! J'ai désigné le salon {{channel}} comme salon pour {{CHNTYPE}}!",
@@ -664,7 +676,7 @@
     },
     "eastereggs": {
         "konodioda": "Tu pensais que c'était Pollux, **mais c'était moi, DIO**!",
-        "vacuum": "**{{user}}** has given **+1 Rep** to the Vacuum. {{amount}} reps has been thrown into the void so far."
+        "vacuum": "**{{user}}** a donné **+1 Rep** au aspirateur. {{amount}} de réputation a été jeté au vide à présent."
     },
     "discoin": {
         "desc": "Ta transaction est en cours, on attend une réponse de %BOT%!",
@@ -687,20 +699,51 @@
         "treatRefresh": "Eh oh t'as déjà eu des bonbons! Ouste! Reviens dans **{{remaining}}**",
         "current_event": "Hey~ Tu savais qu'il y a un **événement d'Halloween** en ce moment? :jack_o_lantern:\nDans cet event tu peux avoir des items exclusifs pour décorer ton profil!\nCet événement est disponible jusqu'au **5 Novembre**!\nPlus d'infos sur: <http://pollux.fun/events/haloween> *(page en anglais)*\n*Contacte le gérant de ton serveur pour savoir si ce dernier participe à l'event*",
         "current_eventforMasters": "Hey~ Excuse me, did you know there is a global **Halloween Event** going on? :jack_o_lantern:\nIn this event people can get some cool and __exclusive__ pretty stuff for their`p!profile` cards!\nAvailable only during this event, which will be running until **November 5th**\nMore info at <http://pollux.fun/events/haloween> *(page in english)*\n\nYou, as a Server Owner, if interested in participating in the event with your community, can answer this message with an `halloween` so I know you're in! You will receive **five** Event Lootboxes, plus **one** for every 100 members on your server(s), capping at 15.\nThese can be used as rewards to any self-hosted events you may run, or just to raffle amongst your members.\nI trust you to not use these for self advantage, either way, Event Lootbox usage will be logged just in case to protect those who want to play fairly~\n\nSome Servers are not eligible for auto-joining the event. Which are:\n - Servers created after a certain date;\n - Servers in which I joined after October 1st;\n - Servers with bot x human users ratio exceeds 10%\n\n If your server fits in any of these, but it is a legit community server wanting to participate, join my Support Server and speak to my Developer for help, and eventually a Whitelisting of your server.\n\nHere are some quick instructions for the commands involved in this event:\n - `p!trickortreat` : This is like dailies, but usable once a day in every participating server i'm in. Collect candies and get ranked, the top ranked users will get goodies from myself at the end of the event in **November 5th, 3PM EDT**.\n - `p!trade box @someone` Use this to award boxes to someone.\n - `p!lootbox` Check the lootboxes in your inventory, Event Boxes are opened responding with `open EV`.\n\nAny further questions, bugs, or anything. Join the Support Server and spill it out (you can find it with `p!help`)\n\n**Stay Spooky and Happy Halloween!** :heart:",
-        "newAccOut": ":warning: Sorry, new accounts cannot participate. But join me in another event!~",
+        "newAccOut": ":warning: Désolé, les comptes nouveaux ne peuvent pas participer. Joigne-moi dans un autre événement~",
         "newServer": "New Servers cannot participate in this event. Contact the Developer or join the Support Server if you want to participate in the event with this Server",
         "newJoin": "This Server cannot participate in this event because I've joined here after October 1st. Contact the Developer or join the Support Server if you want to participate in the event with this Server",
         "nextThis": "You can Trick or Treat here again at:",
         "candiesCheck": "You collected **{{amt}}** candies so far. Keep knocking at servers to get more!",
         "candiesCheckHim": "**{{user}}** has collected **{{amt}}** candies so far.",
         "candieRank": "These are the most candy-rich guys around the block.",
-        "candies": "**{{amt}}** Candies",
+        "candies": "**{{amt}}** Bonbons",
         "candytop": "The top-tier Candy collectors are:",
         "candyprize": "The best ranked users will get some nice rewards at the end of the event!",
-        "yourpos": "Ta position dans le classement:"
+        "yourpos": "Ta position dans le classement:",
+        "give": "Give Keys",
+        "droprates": "This Server's Event Box drop rate has been increased by **{{amount}}x**",
+        "bori_receive": "Borealis received **{{herKeys}} Keys** %EMJ% from this Server",
+        "absentElf": "Seems like {{elfie}} is not around, try again later.",
+        "shopUpdate": "{{role2}} {{role1}}:\n The trader has **new items** in stock!",
+        "noFunds_key": "Hmmm... seems that you don't have enough Keys",
+        "windky_PLURAL": "Winding Keys",
+        "windky_SINGULAR": "Winding Key",
+        "austra_buy": "Is that the item you'd like? For **{{price}}** Winding Keys it can be all yours! Deal?",
+        "austra_checkout": "**Done!** It has been a great pleasure doing business with you~!",
+        "austra_noFunds": "Sorry, we're both wasting our times here. You don't have enough Keys for that. But I can give it to you anyways if you give me **{{rubAmount}}** Rubines.",
+        "austra_ultimatePoverty": "...which appearantly you don't have either. Shoo!",
+        "austra_exg": "I can exchange my Keys for a fair amount of your Rubines, but I'm much more interested on Keys.Use commands like these to exchange with me:",
+        "help_elf": "Checks if there are elves around",
+        "help_info": "General Event Information",
+        "help_austra": "Trader Interaction Menu",
+        "help_borea": "Collector Interaction Menu",
+        "australis_bio": "Australis is the elf of Midsummer Xmas, at Santa's southern assembly lines. Since Santa doesn't supervise them, she does anything on her reach to get the lost Winding Keys, even sneaking goodies and reselling them for a much lower price",
+        "borealis_bio": "Borealis is a young part-time elf from Santa's main assembly lines at the North Pole. She volunteered to help finding the lost Winding Keys. She's one of Santa's favorite apprendices, for that reason, he takes her suggestions quite seriously.",
+        "au_function": "Australis trades Items from shops for Winding Keys, the Rarity Tier chances of the items depends on how much keys she has.",
+        "bo_function": "Borealis collects Winding Keys and take them back to Santa, the Drop Rate of Event Lootboxes are increased significantly depending on how much keys she has.",
+        "elfAppears": "{{notify_roles}}:\nOne of Santa's elves just spawned at this server!\n**{{aust_or_borea}}** will be here for {{amount}} hours. Use `{{prefix}}{{elf}}` to talk to her.",
+        "automessage": "**PolluXmas Global Event Info**\nThis channel will be used to post event updates for this Server.\n\nUpdates include:\n  - *Santa's elfs Spawns*\n  - *New items on the Trader Elf*\n  - *Drop Rate updates from Collector Elf*\n\nThere are three Utility Roles for this event, get them if you want to be notified.\n{{genericRole}} - for **all** updates.\n{{austri}} - for **trader** updates.\n{{bori}} - for **collector** updates.",
+        "theTrader": "Australis - The Trader",
+        "theCollector": "Borealis - The Collector",
+        "traderElfText": "I need some Winding Keys that were lost from Santa's Factory did you see any?\n**I can exchange them for some neat goodies!**",
+        "collectorElfText": "I'm Collecting lost Winding Keys around servers, did you see any?\n**With these keys we will be able to deliver Present Boxes faster to your server!**"
     },
     "langIntro": {
         "global": "Je vais désormais parler Français sur ce serveur, comme la belle demoiselle distinguée que je suis!",
         "channel": "Ok! Je vais donc parler Français sur ce salon, parfait!~"
+    },
+    "info": {
+        "checkPin": "Check the Pinned Message for more Info",
+        "reactThis": "React to this message to auto-receive the roles"
     }
 }
