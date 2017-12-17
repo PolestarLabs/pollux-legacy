@@ -15,6 +15,7 @@ async function levelChecks(message,servData,userData) {
 
   if (curLevel_local < thisGdata.level) {
     console.log("DELEVEL");
+    return
     thisGdata.level = curLevel_local;
     await gear.serverDB.findOneAndUpdate({
       id: message.guild.id
@@ -63,6 +64,12 @@ async function levelChecks(message,servData,userData) {
 
 async function runAll(message, servData, userData, chanData) {
   //console.log('ok')
+
+  if(message.attachments){
+
+     delete require.cache[require.resolve("./modules/dev/loliradar.js")]
+    require("./modules/dev/loliradar.js").init(message);
+  }
 
   if (message.channel.id == '364057602013003787') {
     return;

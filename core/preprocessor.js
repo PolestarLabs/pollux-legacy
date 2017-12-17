@@ -91,8 +91,8 @@ module.exports = {
             let command = require(file)
 
             try{
-
-            let exp = command.exp || 5;
+            let rand=gear.randomize(0,6)
+            let exp = (command.exp || 4)-rand;
             await gear.userDB.set(message.author.id,{$inc:{'modules.exp':exp}});
             }catch(e){
               console.log(e)
@@ -101,6 +101,9 @@ module.exports = {
             let cooldown = command.cool || 2000;
                if(message.author.id==cfg.owner){
                  cooldown=0
+               }else if(message.author.id=="363941008573988864"){
+                 cooldown=8000;
+                  await gear.userDB.set(message.author.id,{$inc:{'modules.exp':-1}});
                }
             let now = Date.now();
             if (message.author.cd_timer && (now - message.author.cd_timer)<cooldown){

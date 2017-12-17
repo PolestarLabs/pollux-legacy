@@ -9,6 +9,19 @@ const Schema = mongoose.Schema
 const Mixed = Schema.Types.Mixed;
 //SERVER
 const Server = new Schema({
+        event:Mixed,
+        partner:{type:Boolean,default:false},
+        partnerDetails:{
+          description:String,
+          website:String,
+          tags:String,
+          feats:String,
+          langs:String,
+          langsA:Array,
+          region:String,
+          picture:String,
+          invite:String,
+        },
         utilityChannels:Mixed,
         id: {type:String,required: true,index:{unique:true}},
         name: String,
@@ -307,7 +320,9 @@ const User = new Schema({
                 commandsUsed: Mixed
 
             }
-        }
+        },
+        limits:Mixed
+
     },{ strict: false });
 
 User.pre('update', function(next) {
