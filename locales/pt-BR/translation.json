@@ -48,7 +48,10 @@
         "nsfwNofunds": "você não tem Rubines suficientes para comprar putaria. Você precisa pelo menos **5**. Descole Rubines com `{{prefix}}daily`, apostando, pegando emprestado...",
         "nsfwCheckout": "Foram debitados 5 {{emoji}} de sua conta.",
         "airwaifu": ":airplane: Esta Aerowaifu foi cuidadosamente escolhida para você!",
-        "leadUnap": "Se você não aparece aqui, digite `{{prefix}}profile` para ver seu Level. Talvez você só seja noob"
+        "leadUnap": "Se você não aparece aqui, digite `{{prefix}}profile` para ver seu Level. Talvez você só seja noob",
+        "position": "Sua posição no ranking é",
+        "usethisfor": "Digite |p!rank {{scope}}| para {{srr}}",
+        "transmittedVc": "Transmitido para seu canal de voz!"
     },
     "misc": {
         "memberSince": "{{target}} é membro desde: {{joinedstamp}}",
@@ -99,7 +102,14 @@
         "noReason": "Motivo não especificado",
         "insuperms": "Você não tem permissão pra usar esse comando, xô!",
         "not-a-NSFW-channel": "Primeiro defina esse canal como NSFW, rapaz. Tem crianças por perto.",
-        "timesOutIn": "Você tem {{s}} segundos antes que a ação padrão seja tomada"
+        "timesOutIn": "Você tem {{s}} segundos antes que a ação padrão seja tomada",
+        "inviteText": "Me convide pro seu servidor clicando [AQUI]",
+        "selfroleunAdded": "Cargo **{{role}}** removido das Selfroles.",
+        "noselfRoles": "Não tem nenhuma selfrole nesse servidor, flor.",
+        "enterVoiceBetterExperience": "Entre num canal de voz para ter a experiência completa desse comando~",
+        "useThis": "Use `{{prefix}}` as prefix for this.",
+        "acceptDec": "Click on {{icon}} to accept these, you can only accept 5 transactions a day.",
+        "declinedTrans": "{{user}} doesn't seem to want your rubines."
     },
     "dict": {
         "coinHeads": "cara",
@@ -124,7 +134,8 @@
         "usage": "Uso:",
         "module": "Módulo",
         "inst": "Instruções",
-        "bet": "Aposta"
+        "bet": "Aposta",
+        "vacuum": "vácuo"
     },
     "profile": {
         "persotexUpdate": "Woo, tudo certinho! Seu texto pessoal mudou para: \n {{pstext}} \n Digite `{{prefix}}profile` para visualizar esta linda frase no seu ~~não tão lindo~~ ProfileCard. Hihihi~"
@@ -232,7 +243,10 @@
         "avatar": "O comando de mostrar o Avatar de alguém que vocês tanto pediam!",
         "candyrank": "Veja os melhores colecionadores mundo afora",
         "candy": "Confere o tanto de balinhas que você ou uma amigo coletaram neste evento",
-        "trickortreat": "Bate num Servidor e pergunta por balinhas, pode ser usado uma ves por dia por Servidor"
+        "trickortreat": "Bate num Servidor e pergunta por balinhas, pode ser usado uma ves por dia por Servidor",
+        "selfroles": "Adiciona, remove, ou lista Cargos que os usuários podem pegar.",
+        "prune": "Deletes Messages from a specific User",
+        "cage": "Your dose of Nicholas cage, just the best Cage pics for your Cage needs!"
     },
     "menu": {
         "cake": "Bolo",
@@ -284,7 +298,11 @@
         "confirmed": "Certo! Você comprou esta medalhinha~",
         "cancelled": "Mudou de idéia?... Tudo bem, compra cancelada!",
         "timeout": "Pensou demais! Volta quando souber exatamente o que quer.",
-        "alreadyPosess": "Você já tem esta medalha!"
+        "alreadyPosess": "Você já tem esta medalha!",
+        "cancelGeneric": "Is that it? Ok, see you later~",
+        "alreadyPosessBg": "You already own this background!",
+        "alreadyPosessItem": "You already own this item!",
+        "alreadyPosessSticker": "You already own this sticker!"
     },
     "helpkey": "ajuda",
     "usage": {
@@ -374,7 +392,9 @@
         "daily": "`{{prefix}}daily`para juntar seu bônus diário, junte 10 dias seguidos para um bônus ainda maior!\n `{{prefix}}daily epoch` para checar a próxima atualização de horário.",
         "trickortreat": "`{{prefix}}trickortreat` ou `{{prefix}}trit` ",
         "candy": "`{{prefix}}candy [@fulano]`",
-        "candyrank": "`{{prefix}}candyrank`"
+        "candyrank": "`{{prefix}}candyrank`",
+        "selfroles": " `{{prefix}}selfroles [add | del | list] [Cargo| @Cargo | ID] [\"Atalho\"]` \n\n`{{prefix}}selfroles add Games` Permite o cargo **Games** como auto-definível.\n`{{prefix}}selfroles del Games` Remove o cargo **Games** da lista.\n`{{prefix}}selfroles list` Mostra a lista de comandos de cada selfrole\n\nSelfroles agora não exigem maiúsculas,e você pode usar a ID do cargo também.\n`{{prefix}}selfroles clear` Apaga **todas** selfroles da lista.",
+        "prune": "`{{prefix}}prune X [@user | user ID]`\nYou can use the user's ID if mentioning is not available, as in `{{prefix}}prune 50 271394014358405121`, If no user is specified, it defaults to Pollux's messages.\n\n**Attention** X must be __Greater than 1__ and __Lower than 101__.\nBasic maths, I know you can get this straight!"
     },
     "logs": {
         "success": "Pronto, defini o Canal {{channel}} como o canal de {{CHNTYPE}}!",
@@ -655,7 +675,8 @@
         "upnext": "Próximas"
     },
     "eastereggs": {
-        "konodioda": "Você achou que fosse a Pollux, **mas era EU, DIO**!"
+        "konodioda": "Você achou que fosse a Pollux, **mas era EU, DIO**!",
+        "vacuum": "**{{user}}** deu **+1 Rep** para o vácuo. Até o momento {{amount}} reps foram jogados ao oblívio."
     },
     "discoin": {
         "desc": "Sua transação está sendo processada, aguarde pela resposta de %BOT% confirmando.",
@@ -688,6 +709,41 @@
         "candies": " **{{amt}}** Balinhas",
         "candytop": "Os pica-das-galáxias das balinhas são:",
         "candyprize": "Os mais bem posicionados nesse ranking vão ganhar mimos no fim do evento~",
-        "yourpos": "Sua posição no Rank é: "
+        "yourpos": "Sua posição no Rank é: ",
+        "give": "Give Keys",
+        "droprates": "This Server's Event Box drop rate has been increased by **{{amount}}x**",
+        "bori_receive": "Borealis received **{{herKeys}} Keys** %EMJ% from this Server",
+        "absentElf": "Seems like {{elfie}} is not around, try again later.",
+        "shopUpdate": "{{role2}} {{role1}}:\n The trader has **new items** in stock!",
+        "noFunds_key": "Hmmm... seems that you don't have enough Keys",
+        "windky_PLURAL": "Winding Keys",
+        "windky_SINGULAR": "Winding Key",
+        "austra_buy": "Is that the item you'd like? For **{{price}}** Winding Keys it can be all yours! Deal?",
+        "austra_checkout": "**Done!** It has been a great pleasure doing business with you~!",
+        "austra_noFunds": "Sorry, we're both wasting our times here. You don't have enough Keys for that. But I can give it to you anyways if you give me **{{rubAmount}}** Rubines.",
+        "austra_ultimatePoverty": "...which appearantly you don't have either. Shoo!",
+        "austra_exg": "I can exchange my Keys for a fair amount of your Rubines, but I'm much more interested on Keys.Use commands like these to exchange with me:",
+        "help_elf": "Checks if there are elves around",
+        "help_info": "General Event Information",
+        "help_austra": "Trader Interaction Menu",
+        "help_borea": "Collector Interaction Menu",
+        "australis_bio": "Australis is the elf of Midsummer Xmas, at Santa's southern assembly lines. Since Santa doesn't supervise them, she does anything on her reach to get the lost Winding Keys, even sneaking goodies and reselling them for a much lower price",
+        "borealis_bio": "Borealis is a young part-time elf from Santa's main assembly lines at the North Pole. She volunteered to help finding the lost Winding Keys. She's one of Santa's favorite apprendices, for that reason, he takes her suggestions quite seriously.",
+        "au_function": "Australis trades Items from shops for Winding Keys, the Rarity Tier chances of the items depends on how much keys she has.",
+        "bo_function": "Borealis collects Winding Keys and take them back to Santa, the Drop Rate of Event Lootboxes are increased significantly depending on how much keys she has.",
+        "elfAppears": "{{notify_roles}}:\nOne of Santa's elves just spawned at this server!\n**{{aust_or_borea}}** will be here for {{amount}} hours. Use `{{prefix}}{{elf}}` to talk to her.",
+        "automessage": "**PolluXmas Global Event Info**\nThis channel will be used to post event updates for this Server.\n\nUpdates include:\n  - *Santa's elfs Spawns*\n  - *New items on the Trader Elf*\n  - *Drop Rate updates from Collector Elf*\n\nThere are three Utility Roles for this event, get them if you want to be notified.\n{{genericRole}} - for **all** updates.\n{{austri}} - for **trader** updates.\n{{bori}} - for **collector** updates.",
+        "theTrader": "Australis - The Trader",
+        "theCollector": "Borealis - The Collector",
+        "traderElfText": "I need some Winding Keys that were lost from Santa's Factory did you see any?\n**I can exchange them for some neat goodies!**",
+        "collectorElfText": "I'm Collecting lost Winding Keys around servers, did you see any?\n**With these keys we will be able to deliver Present Boxes faster to your server!**"
+    },
+    "langIntro": {
+        "global": "Agora falo Português nesse servidor! É sempre bom falar minha língua original de vez enquando~",
+        "channel": "Ok, neste canal vou falar só Português!"
+    },
+    "info": {
+        "checkPin": "Check the Pinned Message for more Info",
+        "reactThis": "React to this message to auto-receive the roles"
     }
 }
