@@ -43,14 +43,17 @@ if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="h
 
 
             emb.setColor('#a47ee2')
-            emb.setTitle(':airplane: Aerowaifu do Dia')
+            emb.setTitle(':airplane: This is your Airwaifu')
 
 
-            message.channel.send({embed:emb}).then(function (m) {
-                m.react('👍').catch(e=> {let a = (new Error); gear.errLog(e,__filename,a.stack.toString())})
-                m.react('👎').catch(e=> {let a = (new Error); gear.errLog(e,__filename,a.stack.toString())})
-                m.react('❤').catch(e=> {let a = (new Error); gear.errLog(e,__filename,a.stack.toString())})
-                m.react('😠').catch(e=> {let a = (new Error); gear.errLog(e,__filename,a.stack.toString())})
+            message.channel.send({embed:emb}).then(async function (m) {
+               await  m.react('👍').catch();
+
+                await m.react('👎').catch();
+
+               await m.react('❤').catch();
+
+                await m.react('😠').catch();
 
             }).catch(e=> {let a = (new Error); gear.errLog(e,__filename,a.stack.toString())})
         }
