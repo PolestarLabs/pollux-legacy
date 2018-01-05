@@ -9,7 +9,10 @@ const Schema = mongoose.Schema
 const Mixed = Schema.Types.Mixed;
 //SERVER
 const Server = new Schema({
+        globalPrefix:{type:Boolean,default:true},
+        respondDisabled:{type:Boolean,default:true},
         event:Mixed,
+        eventReg:String,
         partner:{type:Boolean,default:false},
         partnerDetails:{
           description:String,
@@ -29,6 +32,41 @@ const Server = new Schema({
         imgwelcome: {type:Boolean, default:false},
         splitLogs:{type:Boolean, default:false},
         modules: {
+            BUSTER:{
+              switches:{
+                flood:{type:Boolean, default: false},
+                links:{type:Boolean, default: false},
+                invites:{type:Boolean, default: false},
+                words:{type:Boolean, default: false},
+                mentionSpam:{type:Boolean, default: false}
+              },
+              bypass:{
+                flood:String,
+                links:String,
+                invites:String,
+                words:String,
+                mentionSpam:String,
+                users:Array,
+                roles:Array,
+                channels:Array,
+              },
+              params:
+              {
+                flood: Number, //intensity
+                links: Array, // whitelist
+                invites: Array, // whitelist
+                words: {type:Array,default:[]},
+                mentionSpam: {type:Number,default:5},
+              },
+              action:{
+                flood: String,
+                links: String,
+                invites: String,
+                words: String,
+                mentionSpam: String,
+                default: {type:String,default:'none'},
+              }
+            },
           shitpostFeed:Mixed,
         GREET: {
                 enabled:      {type:Boolean,default:false},
@@ -49,8 +87,10 @@ const Server = new Schema({
             MODROLE:    {type:String, default:"Moderators"},
             LANGUAGE:   {type:String, default:"en"},
             DISABLED:   Array,
+            MUTEDUSERS: Array,
+            MUTEROLE:   String,
             SELFROLES:  Array,
-            AUTOROLE:  String,
+            AUTOROLES:  Array,
             ROLEMARKET: Mixed,
             ACTLOG:String,
             MODLOG:String,
@@ -157,6 +197,8 @@ const User = new Schema({
         name: String,
         tag:  String,
         eventGoodie:Number,
+        cherries:Number,
+        cherrySet:Mixed,
         eventDaily:Number,
         updated_at: { type: Date },
         id: {type:String,required: true,index:{unique:true}},
@@ -174,7 +216,7 @@ const User = new Schema({
             repdaily:{type:Number,default:0},
 
             favcolor: {type:String,default:"#ff1aed"},
-            inventory: {type:Array,default:['lootbox_SR_O']},
+            inventory: {type:Array,default:[]},
             bgID:{type:String,default:"5zhr3HWlQB4OmyCBFyHbFuoIhxrZY6l6"},
             sticker:String,
             bgInventory:{type:Array,default:["5zhr3HWlQB4OmyCBFyHbFuoIhxrZY6l6"]},
@@ -182,8 +224,9 @@ const User = new Schema({
             skinsAvailable: Array,
 
             //FINANCES
-            rubines:  {type:Number,default:50, index:true},
-            jades:  {type:Number,default:1000, index:true},
+            sapphires: {type:Number,default:0},
+            rubines:  {type:Number,default:5, index:true},
+            jades:  {type:Number,default:10, index:true},
             coins:  {type:Number,default:0},
 
             dyStreak:  {type:Number,default:0},
@@ -193,7 +236,6 @@ const User = new Schema({
             flairDown: { type: String ,default:'default'},
             flairArray: { type: Array ,default:[]},
             flairsInventory:  Array,
-
 
             //COLLECTIBLES
 
@@ -358,6 +400,8 @@ tradeable:    {type:Boolean,default:true},
 buyable:      {type:Boolean,default:true},
 destroyable:  {type:Boolean,default:true},
 usefile:      {type:String,default:'notusable'},
+misc:         Mixed,
+series:       String,
 
 },{ strict: false });
 
