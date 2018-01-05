@@ -66,6 +66,9 @@ const set = function(query,alter){
 };
 
 items.set    = set;
+items.getAll    = async function(){
+  return (await items.find({}))
+}
 items.get    = async function(id){
   return (await items.findOne({id:id}))
 };
