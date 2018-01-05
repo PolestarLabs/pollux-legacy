@@ -31,6 +31,63 @@ module.exports={
   items,
   RichEmbed:Discord.RichEmbed,
 
+  getTier: async function getTier(Author,bot,m) {
+return m.botUser.shard.broadcastEval('try{this.guilds.get("277391723322408960").member("'+Author.id+'").roles.map(r=>{return {"id":r.id,"name":r.name}})}catch(e){}')
+  .then(hisroles=> {
+hisroles=hisroles.find(x=>x)
+        let emblem;
+if(!hisroles)return false;
+      if (hisroles.find(f=>f.name== "Aluminium")) {
+        emblem = "aluminium"
+      };
+      if (hisroles.find(f=>f.name== "Iridium")) {
+
+        emblem = "iridium"
+      };
+      if (hisroles.find(f=>f.name== "Palladium")) {
+        emblem = "palladium"
+      };
+      if (hisroles.find(f=>f.name== "Uranium")) {
+        emblem = "uranium"
+      };
+    return emblem;
+})
+  },
+ calculateDaily:function calculateDaily(Author,bot) {
+        let semibanned  = 1
+        let penalised   = 5
+        let regular     = 15
+        let aluminium   = 20
+        let iridium     = 30
+        let palladium   = 40
+        let uranium     = 50
+        let emblem;
+
+      return bot.shard.broadcastEval('try{this.guilds.get("277391723322408960").member("'+Author.id+'").roles.map(r=>{return {"id":r.id,"name":r.name}})}catch(e){}')
+  .then(hisroles=> {
+hisroles=hisroles.find(x=>x)
+        let emblem;
+if(!hisroles)return false;
+      if (hisroles.find(f=>f.name== "Uranium")) {
+        emblem = "uranium"
+        return {class:uranium,emblem};
+      };
+
+      if (hisroles.find(f=>f.name== "Palladium")) {
+        emblem = "palladium"
+        return {class:palladium,emblem};
+      };
+      if (hisroles.find(f=>f.name== "Iridium")) {
+        emblem = "iridium"
+         return {class:iridium,emblem};
+      };
+      if (hisroles.find(f=>f.name== "Aluminium")) {
+        emblem = "aluminium"
+        return {class:aluminium,emblem};
+      };
+    return {class:regular,emblem};
+})
+  },
 
   manageLimits: async function manageLimits(param,limit,TDATA,message){
     if(TDATA.limits && TDATA.limits[param] > limit){
@@ -113,7 +170,11 @@ gamechange : function gamechange(gamein = false) {
       return Math.floor(Math.random() * (max - min + 1) + min);
   },
 
-  emoji: function emoji(emo) {
+  emoji: function emoji(emo,technical) {
+    if(technical){
+      return technical.shard.broadcastEval("this.emojis.get('"+emo+"')").then(x=>x.find(it=>it!=null))
+    }
+
       delete require.cache[require.resolve(`../resources/lists/emoji.js`)];
       let emojia = require("../resources/lists/emoji.js");
       if (emojia[emo] === undefined) return "🅱";
