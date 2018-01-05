@@ -149,6 +149,14 @@
         "myProf": "Hold up! Building my super duper Profilecard here..."
     },
     "help": {
+      "tarot":"Read your fortune with Tarot cards. (English Only)",
+      "weather":"The cutest Weather Information ever",
+      "australis":"Interact with the Collector",
+      "borealis":"Interact with the Trader",
+      "collectkeys":"Get your daily winding keys",
+      "elf":"Checks which elves ara available",
+      "elfkeys":"Checks how much Keys one has",
+      "eventinfo":"Links to Event Info Page",
         "checkYeDM": "Psst! I sent you some stuffz in DM, give it a look.",
         "availableComms": "Available Commands",
         "airwaifu": "Aeroplanatic Waifu Material",
@@ -306,6 +314,14 @@
     },
     "helpkey": "help",
     "usage": {
+      "tarot":"To read your fortune, just do `{{prefix}}tarot`.\nTo customise your Deck, use `{{prefix}}tarot deck`.",
+      "weather":"`{{prefix}}weather [city name]` Provides weather information card from that city.\nE.g. `{{prefix}}weather Melbourne Australia`\n\n*THIS COMMAND HAS EASTER EGSS*",
+              "australis":"`{{prefix}}australis` Menu\n`{{prefix}}australis rates` Exchange Rates\n`{{prefix}}australis buy` Access Shop\n`{{prefix}}australis exg [NUMBER] [KEY / RBN]` Exchange NUMBER Rubines or Keys to what you declare either KEY or RBN",
+      "borealis":"`{{prefix}}borealis` Menu\n`{{prefix}}borealis give [NUMBER]` gives Winding Keys to Borealis\n`{{prefix}}borealis rates` See current drop rates",
+      "collectkeys":"`{{prefix}}collectkeys`",
+      "elf":"`{{prefix}}elf`",
+      "elfkeys":"`{{prefix}}elfkeys [@user]`",
+
         "logs": " `{{prefix}}logs #channel`\n Set all logs at the chosen Channel.\n\n`{{prefix}}logs mod #channel`\n Set moderation logs (Bans, Kicks and Mutes) at the chosen Channel.\n\n`{{prefix}}logs atv #channel`\n Set Activity logs (Members in and out, nickname edits) at the chosen Channel.\n\n`{{prefix}}logs adv #channel`\n Set Advanced Logs (Deleted and edited messages, Channels created, Activation or Deactivation of modules) at the chosen Channel.\n\n`{{prefix}}logs mod #channel delete`\nLogs will no more be sent to this Channel",
         "ahegao": "Quite simple, just type `{{prefix}}ahegao` and you get a アヘ顔",
         "askingHelpForHelp": "Are you fuckin' serious?",
