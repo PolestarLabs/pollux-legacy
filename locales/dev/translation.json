@@ -149,14 +149,6 @@
         "myProf": "Hold up! Building my super duper Profilecard here..."
     },
     "help": {
-      "tarot":"Read your fortune with Tarot cards. (English Only)",
-      "weather":"The cutest Weather Information ever",
-      "australis":"Interact with the Collector",
-      "borealis":"Interact with the Trader",
-      "collectkeys":"Get your daily winding keys",
-      "elf":"Checks which elves ara available",
-      "elfkeys":"Checks how much Keys one has",
-      "eventinfo":"Links to Event Info Page",
         "checkYeDM": "Psst! I sent you some stuffz in DM, give it a look.",
         "availableComms": "Available Commands",
         "airwaifu": "Aeroplanatic Waifu Material",
@@ -314,14 +306,6 @@
     },
     "helpkey": "help",
     "usage": {
-      "tarot":"To read your fortune, just do `{{prefix}}tarot`.\nTo customise your Deck, use `{{prefix}}tarot deck`.",
-      "weather":"`{{prefix}}weather [city name]` Provides weather information card from that city.\nE.g. `{{prefix}}weather Melbourne Australia`\n\n*THIS COMMAND HAS EASTER EGSS*",
-              "australis":"`{{prefix}}australis` Menu\n`{{prefix}}australis rates` Exchange Rates\n`{{prefix}}australis buy` Access Shop\n`{{prefix}}australis exg [NUMBER] [KEY / RBN]` Exchange NUMBER Rubines or Keys to what you declare either KEY or RBN",
-      "borealis":"`{{prefix}}borealis` Menu\n`{{prefix}}borealis give [NUMBER]` gives Winding Keys to Borealis\n`{{prefix}}borealis rates` See current drop rates",
-      "collectkeys":"`{{prefix}}collectkeys`",
-      "elf":"`{{prefix}}elf`",
-      "elfkeys":"`{{prefix}}elfkeys [@user]`",
-
         "logs": " `{{prefix}}logs #channel`\n Set all logs at the chosen Channel.\n\n`{{prefix}}logs mod #channel`\n Set moderation logs (Bans, Kicks and Mutes) at the chosen Channel.\n\n`{{prefix}}logs atv #channel`\n Set Activity logs (Members in and out, nickname edits) at the chosen Channel.\n\n`{{prefix}}logs adv #channel`\n Set Advanced Logs (Deleted and edited messages, Channels created, Activation or Deactivation of modules) at the chosen Channel.\n\n`{{prefix}}logs mod #channel delete`\nLogs will no more be sent to this Channel",
         "ahegao": "Quite simple, just type `{{prefix}}ahegao` and you get a アヘ顔",
         "askingHelpForHelp": "Are you fuckin' serious?",
@@ -710,23 +694,10 @@
         "ex-succ": "Exchange Successful!"
     },
     "event": {
-        "theseElf":"These are the elves that are currently around at this server:",
-        "thisElf":"This is the elf that is currently around at this server:",
-        "noElf":"There is no elf currently around at this server:",
-
-        "configIntro":"PolluXmas event has been configured in your server! Feel free to move around and rename these roles and Channels, if you delete them, you may need to run autoconfig again. **All event progress will be lost if you do so.**",
-        "evChan":"Event Channel",
-        "gNot":"Event Generic Role",
-        "tNot":"Trader Notification Role",
-        "cNot":"Collector Notification Role",
-        "configInfo":"Tell your members to use these roles to get notifications about the event and/or to be notified about their preferred elf spawning.\n**DO __NOT__ EDIT POLLUX PERMS ON THE EVENT CHANNEL!** The developer cannot recover lost event data if that ever occurs.",
-
-
         "next": "---",
         "treat": "---",
         "treatRefresh": "---",
         "current_event": "---",
-        "current_eventforMasters": "---",
         "newAccOut": ":warning: Sorry, new accounts cannot participate. But join me in another event!~",
         "newServer": "New Servers cannot participate in this event. Contact the Developer or join the Support Server if you want to participate in the event with this Server",
         "newJoin": "This Server cannot participate in this event because I've joined here after the event had started. Contact the Developer or join the Support Server if you want to participate in the event with this Server",
@@ -737,11 +708,7 @@
         "candies": "---",
         "candytop": "---",
         "candyprize": "----",
-
-        "thankKys": "Thanks a lot! Santa may deliver presents here **{{amount}}x** faster now due to your kindness~",
-        "howmanyKys": "Ah, thank you! How many keys you have there to give me?",
-        "noFunds_bo": "It seems you don't have that much keys.",
-        "hasAmount":"{{username}} has collected {{amount}} Winding Keys",
+        "yourpos": "Your position in the rank is:",
         "give": "Give Keys",
         "droprates": "This Server's Event Box drop rate has been increased by **{{amount}}x**",
         "bori_receive": "Borealis received **{{herKeys}} Keys** %EMJ% from this Server",
@@ -768,7 +735,21 @@
         "theTrader": "Australis - The Trader",
         "theCollector": "Borealis - The Collector",
         "traderElfText": "I need some Winding Keys that were lost from Santa's Factory did you see any?\n**I can exchange them for some neat goodies!**",
-        "collectorElfText": "I'm Collecting lost Winding Keys around servers, did you see any?\n**With these keys we will be able to deliver Present Boxes faster to your server!**"
+        "collectorElfText": "I'm Collecting lost Winding Keys around servers, did you see any?\n**With these keys we will be able to deliver Present Boxes faster to your server!**",
+        "theseElf": "These are the elves that are currently around at this server:",
+        "thisElf": "This is the elf that is currently around at this server:",
+        "noElf": "There is no elf currently around at this server:",
+        "configIntro": "PolluXmas event has been configured in your server! Feel free to move around and rename these roles and Channels, if you delete them, you may need to run autoconfig again. **All event progress will be lost if you do so.**",
+        "evChan": "Event Channel",
+        "gNot": "Event Generic Role",
+        "tNot": "Trader Notification Role",
+        "cNot": "Collector Notification Role",
+        "configInfo": "Tell your members to use these roles to get notifications about the event and/or to be notified about their preferred elf spawning.\n**DO __NOT__ EDIT POLLUX PERMS ON THE EVENT CHANNEL!** The developer cannot recover lost event data if that ever occurs.",
+        "current_eventforMasters": "---",
+        "thankKys": "Thanks a lot! Santa may deliver presents here **{{amount}}x** faster now due to your kindness~",
+        "howmanyKys": "Ah, thank you! How many keys you have there to give me?",
+        "noFunds_bo": "It seems you don't have that much keys.",
+        "hasAmount": "{{username}} has collected {{amount}} Winding Keys"
     },
     "langIntro": {
         "global": "I'll now speak English for this Server as the true cosmopolitan lady I am!",
