@@ -51,7 +51,11 @@
         "leadUnap": "Pokud se tu nevidíš, napiš `{{prefix}}profile` a zjisti svůj level. Možná jsi jen špatnej.",
         "position": "Tvoje pozice v tomhle žebříčku je",
         "usethisfor": "Napiš |p!rank {{scope}}| pro {{srr}}",
-        "transmittedVc": "Přenáším do tvého hlasového kanálu!"
+        "transmittedVc": "Přenáším do tvého hlasového kanálu!",
+        "decon": "{{user}} se dekontaminuje.",
+        "decon2": "{{user}} dekontaminuje {{user2}}.",
+        "cancer": "{{user}} měří level rakoviny tohoto chatu.",
+        "geiger": ":radioactive: Podle Geigerova detektoru je potenciál rakoviny chatu **{{percentage}}%** (**{{radiation}}μSv/h**)"
     },
     "misc": {
         "memberSince": "{{target}} je členem od: {{joinedstamp}}",
@@ -246,7 +250,9 @@
         "trickortreat": "Zaťuká na server a poprosí o sladkosti, tohle může být uděláno jen jednou za den na server.",
         "selfroles": "Přidej, odeber nebo ukaž samopřiřaditelné role",
         "prune": "Vymaže zprávy od daného uživatele",
-        "cage": "klec"
+        "cage": "klec",
+        "decontaminate": "Dej sobě nebo kamarádovi dobrou dekontaminační sprchu",
+        "geiger": "Použij Geigerův detektor aby jsi se mrknul, zda je v kanálu potenciální rakovina"
     },
     "menu": {
         "cake": "Dort",
@@ -394,7 +400,8 @@
         "candy": "`{{prefix}}candy [@někdo]`",
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{prefix}}selfroles [add | del | list] [Role | @role | Role ID] [\"Shorthand\"]`\n\n`{{prefix}}selfroles add Hry` Přidá roli **Hry** do samopřiřaditelných rolí.\n`{{prefix}}selfroles del Hry` Vymaže roli **Hry** ze samopřiřaditelných rolí.\n`{{prefix}}selfroles list` Ukáže seznam a příkazy pro každou samopřiřaditelnou roli.",
-        "prune": "`{{prefix}}prune X [@uživatel | ID uživatele]`\nMůžeš použít ID uživatele pokud zmiňování není k dispozici, třeba `{{prefix}}prune 50 271394014358405121`, pokud není žádný uživatel zmíněn, použijou se zprávy od Pollux.\n\n**Varování** X musí být __větší než 1__ a __menší než 101__.\nZákladní matematika, to prostě musíš napsat správně.."
+        "prune": "`{{prefix}}prune X [@uživatel | ID uživatele]`\nMůžeš použít ID uživatele pokud zmiňování není k dispozici, třeba `{{prefix}}prune 50 271394014358405121`, pokud není žádný uživatel zmíněn, použijou se zprávy od Pollux.\n\n**Varování** X musí být __větší než 1__ a __menší než 101__.\nZákladní matematika, to prostě musíš napsat správně..",
+        "decontaminate": "`{{prefix}}decontaminate [@uživatel (dobrovolné)]`"
     },
     "logs": {
         "success": "Hotovo! Nastavila jsem {{channel}} jako kanál pro {{CHNTYPE}}!",
