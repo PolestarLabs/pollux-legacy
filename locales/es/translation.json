@@ -51,7 +51,11 @@
         "leadUnap": "Si no te ves a ti mismo aquí, escribe `{{prefix}}profile` para ver tu Nivel. Quizá solo apestas.",
         "position": "Tu posición en este ranking es",
         "usethisfor": "Escribe |p!rank {{scope}}| para {{srr}} ",
-        "transmittedVc": "¡Transmitido a tu canal de voz!"
+        "transmittedVc": "¡Transmitido a tu canal de voz!",
+        "decon": "{{user}} is decontaminating themself.",
+        "decon2": "{{user}} is decontaminating {{user2}}.",
+        "cancer": "{{user}} is inspecting this chat's cancer level.",
+        "geiger": ":radioactive: According to the Geiger counter, this chat cancer potential is **{{percentage}}%** with **{{radiation}}μSv/h**"
     },
     "misc": {
         "memberSince": "{{target}} es miembro desde : {{joinedstamp}}",
@@ -246,7 +250,9 @@
         "trickortreat": "Llama a un servidor para pedir dulces, se puede hacer una vez al día por servidor.",
         "selfroles": "Agregar, eliminar o enumerar Roles autoasignables",
         "prune": "Elimina mensajes de un usuario específico",
-        "cage": "Fotos de Nicholas Cage"
+        "cage": "Fotos de Nicholas Cage",
+        "decontaminate": "Give yourself or a friend a good decontamination shower",
+        "geiger": "Use a Geiger counter dosimeter to check for the potential of cancer at the channel"
     },
     "menu": {
         "cake": "Pastel",
@@ -394,7 +400,8 @@
         "candy": "`{{prefix}}candy [@someguy]`",
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games` Permite que ** Juegos ** Rol se asigne a sí mismo.\n`{{prefix}}selfroles del Games` Quita el Rol ** Games ** de la lista.\n`{{prefix}}selfroles list` Muestra la lista y los comandos para cada rol autoasignable\n\n Estos son insensibles a las mayúsculas y minúsculas; también puede usar ID de función.\n`{{prefix}}selfroles clear` Elimina ** todos ** selfroles de la lista.",
-        "prune": "`{{prefix}}prune X [@user | user ID]`\nPuede utilizar la ID del usuario si la mención no está disponible, como en `{{prefix}}prune 50 271394014358405121`, si no se especifica ningún usuario, se establece de forma predeterminada en los mensajes de Pollux.\n\n**Atención** X debe ser __ Mayor que 1__ y __ Menor que 101__.\nMatemáticas básicas, estoy seguro de que puedes hacerlo."
+        "prune": "`{{prefix}}prune X [@user | user ID]`\nPuede utilizar la ID del usuario si la mención no está disponible, como en `{{prefix}}prune 50 271394014358405121`, si no se especifica ningún usuario, se establece de forma predeterminada en los mensajes de Pollux.\n\n**Atención** X debe ser __ Mayor que 1__ y __ Menor que 101__.\nMatemáticas básicas, estoy seguro de que puedes hacerlo.",
+        "decontaminate": "`{{prefix}}decontaminate [@user (optional)]`"
     },
     "logs": {
         "success": "¡Hecho! He establecido {{channel}} como el Canal para {{CHNTYPE}}!",
