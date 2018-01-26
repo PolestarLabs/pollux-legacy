@@ -51,7 +51,11 @@
         "leadUnap": "Si tu ne te vois pas affiché ici, écris `{{prefix}}profile` pour voir ton level. Peut être que t'es juste naze.",
         "position": "Your position in this ranking is",
         "usethisfor": "Type |p!rank {{scope}}| for {{srr}}",
-        "transmittedVc": "Transmis à ton salon auditoire!"
+        "transmittedVc": "Transmis à ton salon auditoire!",
+        "decon": "{{user}} sé décontamine !",
+        "decon2": "{{user}} décontamine {{user2}} !",
+        "cancer": "{{user}} inspecte le niveau de cancer du chat...",
+        "geiger": ":radioactive: Hmmm... selon le compteur Geiger le potentiel de cancer de ce chat est de **{{percentage}}%** avec **{{radiation}}μSv/h**"
     },
     "misc": {
         "memberSince": "{{target}} est membre depuis: {{joinedstamp}} ",
@@ -105,8 +109,8 @@
         "timesOutIn": "Cela expirera dans {{s}} secondes",
         "inviteText": "Invite-moi sur ton serveur en cliquant [ICI]",
         "selfroleunAdded": "Role **{{role}}** removed from Self-roles.",
-        "noselfRoles": "There are no Self-Roles in this Server",
-        "enterVoiceBetterExperience": "You have to be in a voice channel for the full experience.",
+        "noselfRoles": "Il n'y a pas de rôle auto-assignable sur ce serveur.",
+        "enterVoiceBetterExperience": "Tu dois être dans un salon vocal pour vivre l'expérience complète.",
         "useThis": "Utilise `{{prefix}}` en tant que préfixe pour ceci",
         "acceptDec": "Cliquez sur {{icon}} pour les accepter, vous ne pouvez accepter que 5 transactions par jour.",
         "declinedTrans": "{{user}} ne semble pas vouloir vos rubines."
@@ -244,9 +248,11 @@
         "candyrank": "Pour voir les meilleurs récolteurs de bonbons à travers le monde!",
         "candy": "Vérifie combien toi ou un ami avez récolté de bonbons pendant cet événement",
         "trickortreat": "Toque à la porte d'un serveur pour récolter des bonbons, tu peux le faire une fois par jour sur chaque serveur que tu veux.",
-        "selfroles": "Add, Remove, or List Self-Assignable Roles",
+        "selfroles": "Ajoute, supprime, ou liste des rôles auto-assignables",
         "prune": "Supprime les messages d'un utilisateur spécifique",
-        "cage": "Ta petite dose de Nicholas Cage, les meilleures photos de Monsieur Cage pour combler tes besoins!"
+        "cage": "Ta petite dose de Nicholas Cage, les meilleures photos de Monsieur Cage pour combler tes besoins!",
+        "decontaminate": "Offrez-vous, ou à l'un de vos amis une bonne douche de décontamination !",
+        "geiger": "Utilise un compteu Geiger pour vérifier le potentiel de cancer sur ce channel."
     },
     "menu": {
         "cake": "Cake",
@@ -393,8 +399,9 @@
         "trickortreat": "`{{prefix}}trickortreat` ou `{{prefix}}trit`",
         "candy": "`{{prefix}}candy [@nimportequi]`",
         "candyrank": "`{{prefix}}candyrank`",
-        "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games` Allows the **Games** Role as self-assignable.\n`{{prefix}}selfroles del Games` Removes the role **Games** from the list.\n`{{prefix}}selfroles list` Shows the list and commands for each Self-Assignable Role\n\n These are Case insensitive, you can use Role ID too.\n`{{prefix}}selfroles clear` Deletes **all** selfroles from the list.",
-        "prune": "`{{prefix} prune X [@user | ID utilisateur] `\nVous pouvez utiliser l'ID de l'utilisateur si la mention n'est pas disponible, comme dans {{{prefix}}prune 50 271394014358405121`, si aucun utilisateur n'est spécifié, il utilise par défaut les messages de Pollux.\n\n**Attention** X doit être __Plus de 1__ et __Moins de 101__.\nMathématiques de base, je sais que vous pouvez le comprendre!"
+        "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Gros noob\"]` \n\n`{{prefix}}selfroles add Gros noob` Autorise le rôle **Gros Noob** à être auto-assignable.\n`{{prefix}}selfroles del Gros noob` Supprime le rôle **Gros Noob** de la liste.\n`{{prefix}}selfroles list` Montre la liste et les commandes de chaque rôle auto-assignable.\n\n Attention, le nom des rôles est sensible à la casse (respecter les majuscules, etc...).\n`{{prefix}}selfroles clear` Supprime **tous** les rôles auto-assignables de la liste.",
+        "prune": "`{{prefix} prune X [@user | ID utilisateur] `\nVous pouvez utiliser l'ID de l'utilisateur si la mention n'est pas disponible, comme dans {{{prefix}}prune 50 271394014358405121`, si aucun utilisateur n'est spécifié, il utilise par défaut les messages de Pollux.\n\n**Attention** X doit être __Plus de 1__ et __Moins de 101__.\nMathématiques de base, je sais que vous pouvez le comprendre!",
+        "decontaminate": "`{{prefix}}decontaminate [@utilisateur (optionnel)]`"
     },
     "logs": {
         "success": "Ca y est! J'ai désigné le salon {{channel}} comme salon pour {{CHNTYPE}}!",
