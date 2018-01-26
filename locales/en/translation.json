@@ -51,7 +51,11 @@
         "leadUnap": "If you don't see yourself here, type `{{prefix}}profile` to see your Level. Not everyone can be on the Leaderboard after all.",
         "position": "Your position in this ranking is",
         "usethisfor": "Type |p!rank {{scope}}| for {{srr}}",
-        "transmittedVc": "Transmitted to your voice channel!"
+        "transmittedVc": "Transmitted to your voice channel!",
+        "decon": "{{user}} is decontaminating themself.",
+        "decon2": "{{user}} is decontaminating {{user2}}.",
+        "cancer": "{{user}} is inspecting this channel's chance of cancer.",
+        "geiger": ":radioactive: According to the Geiger counter, this channel's cancer potential is **{{percentage}}%** with **{{radiation}}μSv/h** "
     },
     "misc": {
         "memberSince": "{{target}} has been a member since: {{joinedstamp}}",
@@ -246,7 +250,9 @@
         "trickortreat": "Knocks on a Server to ask for candies, can be done once a day per Server.",
         "selfroles": "Add, Remove, or List Self-Assignable Roles",
         "prune": "Deletes Messages from a specific User",
-        "cage": "Your dose of Nicholas cage, just the best Cage pics for your Cage needs!"
+        "cage": "Your dose of Nicholas cage, just the best Cage pics for your Cage needs!",
+        "decontaminate": "Give yourself or a friend a good decontamination shower",
+        "geiger": "Use a Geiger counter dosimeter to check for the potential of cancer in a channel"
     },
     "menu": {
         "cake": "Cake",
@@ -394,7 +400,8 @@
         "candy": "`{{prefix}}candy [@someguy]`",
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games` Allows the **Games** Role as self-assignable.\n`{{prefix}}selfroles del Games` Removes the role **Games** from the list.\n`{{prefix}}selfroles list` Shows the list and commands for each Self-Assignable Role\n\n These are Case insensitive, you can use Role ID too.\n`{{prefix}}selfroles clear` Deletes **all** selfroles from the list.",
-        "prune": "`{{prefix}}prune X [@user | user ID]`\nYou can use the user's ID if mentioning is not available, as in `{{prefix}}prune 50 271394014358405121`, If no user is specified, it defaults to Pollux's messages.\n\n**Attention** X must be __Greater than 1__ and __Lower than 101__.\nBasic math, I'm sure you can do it."
+        "prune": "`{{prefix}}prune X [@user | user ID]`\nYou can use the user's ID if mentioning is not available, as in `{{prefix}}prune 50 271394014358405121`, If no user is specified, it defaults to Pollux's messages.\n\n**Attention** X must be __Greater than 1__ and __Lower than 101__.\nBasic math, I'm sure you can do it.",
+        "decontaminate": "`{{prefix}}decontaminate [@user (optional)]`"
     },
     "logs": {
         "success": "Done! I've set {{channel}} as the Channel for {{CHNTYPE}}!",
