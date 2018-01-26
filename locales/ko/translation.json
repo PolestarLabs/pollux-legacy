@@ -51,7 +51,11 @@
         "leadUnap": "여기서 자신을 볼 수 없다면`{{prefix}} profile '을 입력하여 레벨을 확인하십시오.",
         "position": "Your position in this ranking is",
         "usethisfor": "Type |p!rank {{scope}}| for {{srr}}",
-        "transmittedVc": "음성 채널로 보냈습니다!"
+        "transmittedVc": "음성 채널로 보냈습니다!",
+        "decon": "{{user}}이 (가) 자신을 오염 제거하고 있습니다.",
+        "decon2": "{{user}}이 (가) {{user2}}의 오염을 제거합니다.",
+        "cancer": "{{user}} 님이이 채팅의 암 발생 정도를 검사하고 있습니다.",
+        "geiger": ":radioactive: 가이거 계수기에 따르면이 채팅 암 잠재력은 **{{radiation}}μSv/h** 의 **{{percentage}}%**"
     },
     "misc": {
         "memberSince": "{{target}} 님은  이후 멤버입니다 {{joinedstamp}}.",
@@ -246,7 +250,9 @@
         "trickortreat": "Knocks on a Server to ask for candies, can be done once a day per Server.",
         "selfroles": "자체 지정 가능 역할 추가, 제거 또는 나열",
         "prune": "특정 사용자의 메시지 삭제",
-        "cage": "최고의 니콜라스 케이지 사진이 당신을 위해!"
+        "cage": "최고의 니콜라스 케이지 사진이 당신을 위해!",
+        "decontaminate": "자신이나 친구에게 좋은 오염 제거 샤워",
+        "geiger": "가이거 카운터 선량계를 사용하여 채널에서 암의 가능성을 확인하십시오."
     },
     "menu": {
         "cake": "케이크",
@@ -394,7 +400,8 @@
         "candy": "`{{prefix}}candy [@someguy]`",
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{prefix}} selfroles [add | del | list] [Role| @role | Role ID]\n[\"Shorthand\"]`\n\n`{{prefix}}selfroles add Games` **Games** 역할은 스스로 할당 할 수 있습니다.\n{{{prefix}}selfroles del Games` **Games** 목록의 역할을 제거합니다..\n`{{prefix}}selfroles list` 각 자체 할당 가능 역할에 대한 목록 및 명령을 표시합니다.\n\n  대소 문자를 구별하여 정확하게 역할 이름을 입력하십시오. 아니면 단지 @mention 그것",
-        "prune": "`{{prefix}}prune X [@user | user ID]`\n사용자 ID를 사용할 수 없다면 사용자 ID를 사용할 수 있습니다. `{{prefix}}prune 50 271394014358405121`, 사용자를 지정하지 않으면 기본적으로 Pollux의 메시지가 표시됩니다..\n\n**주의**  X 반드시 있어야합니다. __이상 1 과 ___보다 낮은101.\n나는 당신이 도움없이 수학을 할 수 있다고 확신합니다."
+        "prune": "`{{prefix}}prune X [@user | user ID]`\n사용자 ID를 사용할 수 없다면 사용자 ID를 사용할 수 있습니다. `{{prefix}}prune 50 271394014358405121`, 사용자를 지정하지 않으면 기본적으로 Pollux의 메시지가 표시됩니다..\n\n**주의**  X 반드시 있어야합니다. __이상 1 과 ___보다 낮은101.\n나는 당신이 도움없이 수학을 할 수 있다고 확신합니다.",
+        "decontaminate": "`{{prefix}}decontaminate [@사용자 (선택 과목)]`"
     },
     "logs": {
         "success": "끝난! {{CHNTYPE}}의 채널로 {{channel}}을 (를) 설정했습니다.",
