@@ -51,7 +51,11 @@
         "leadUnap": "Wenn du dich hier nicht siehst, liegt das daran, dass du noch `{{prefix}}profile` eingeben musst, um dein Level zu sehen. Vielleicht bist du auch einfach zu dumm ;).",
         "position": "Deine Position im Ranking ist ",
         "usethisfor": "Schreibe |p!rank {{scope}}| für {{srr}}",
-        "transmittedVc": "Dies wirde auf deinen Voice-Channel übertragen"
+        "transmittedVc": "Dies wirde auf deinen Voice-Channel übertragen",
+        "decon": "{{user}} dekontaminiert sich selbst.",
+        "decon2": "{{user}} dekontaminiert {{user2}}.",
+        "cancer": "{{user}} untersucht das Cancer Level des Chats.",
+        "geiger": ":radioactive: Laut dem Strahlungsmesser ist das Cancer Potential dieses Chats **{{percentage}}%** mit **{{radiation}}μSv/h**"
     },
     "misc": {
         "memberSince": "\n {{target}} ist ein Mitglied seit: {{joinedstamp}}",
@@ -246,7 +250,9 @@
         "trickortreat": "Du kannst einmal pro Tag nach Süßigkeiten auf diesen Server fragen.",
         "selfroles": "Füge eine hinzu, löschen welche oder sieh dir alle verfügbaren Rollen an, denen du selbst beitreten kannst.",
         "prune": "Löscht eine Nachicht von einem Nutzer",
-        "cage": "Käfig"
+        "cage": "Käfig",
+        "decontaminate": "Gib dirselbst oder einen Freund eine ordentliche Dekontaminationsdusche.",
+        "geiger": "Benutze einen Strahlungsmesserdosimeter um das cancer potential des Channels zu überprüfen."
     },
     "menu": {
         "cake": "Kuchen",
@@ -394,7 +400,8 @@
         "candy": "`{{prefix}}candy  [@jemand]`",
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{prefix}}selfroles [add | del | list] [Rolle| @rolle | Rollen ID] [\"Kurzhand\"]` \n\n`{{prefix}}selfroles add Games` Erlaubt die Selbstzuweisung der Rolle **Games** \n`{{prefix}}selfroles del Games` Verbietet die Selbstzuweisung der Rolle **Games**\n`{{prefix}}selfroles list` Zeigt eine Liste der Selbstzuweisbaren Rollen und die ensprechenden Befehle.\n\nGroß/Kleinschreibung muss beachtet werden, du kannst auch die Rollen ID benutzen. \n\n`{{prefix}}selfroles clear` Löscht **alle** Selbstzuweisbaren Rollen von der Liste.",
-        "prune": "`{{prefix}}prune X [@Benutzer | Benutzer-ID]`\nDu kannst die Benutzer ID benutzen, falls Erwähnungen nicht möglich sind. z.B. bei `{{prefix}}prune 50 271394014358405121`. Wenn kein Nutzer spezifiziert wird, wählt Pollux standardmäßig alle Nachrichten aus.\n\n**Achtung** X muss _größer als 1_ und _kleiner als 101_ sein!!!\nIch denke, du wirst das schaffen xD"
+        "prune": "`{{prefix}}prune X [@Benutzer | Benutzer-ID]`\nDu kannst die Benutzer ID benutzen, falls Erwähnungen nicht möglich sind. z.B. bei `{{prefix}}prune 50 271394014358405121`. Wenn kein Nutzer spezifiziert wird, wählt Pollux standardmäßig alle Nachrichten aus.\n\n**Achtung** X muss _größer als 1_ und _kleiner als 101_ sein!!!\nIch denke, du wirst das schaffen xD",
+        "decontaminate": "`{{prefix}}decontaminate [@user (optional)]`"
     },
     "logs": {
         "success": "Fertig! Ich habe {{channel}} als den Kanal für {{CHNTYPE}} gesetzt!",
