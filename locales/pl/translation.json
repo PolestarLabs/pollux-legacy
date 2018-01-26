@@ -51,7 +51,11 @@
         "leadUnap": "Jeśli nie widzisz siebie tutaj, wpisz `{{prefix}}profile`, aby zobaczyć swój poziom. Jednak nie wszyscy mogą być na tablicy wyników.",
         "position": "Twoja pozycja w tym rankingu to",
         "usethisfor": "Wpisz |p!Rank {{scope}}| dla {{srr}}",
-        "transmittedVc": "Przesłane do Twojego kanału głosowego!"
+        "transmittedVc": "Przesłane do Twojego kanału głosowego!",
+        "decon": "{{user}} sam się dezynfekuje.",
+        "decon2": "{{user}} dezynfekuje {{user2}}.",
+        "cancer": "{{user}} sprawdza poziom raka na tym kanale.",
+        "geiger": ":radioactive: według licznika Geigera procent raka na tym kanale wynosi \n**{{percentage}}%* s **{{radiation}}μSv/h**"
     },
     "misc": {
         "memberSince": "{{target}}: сzłonek z {{joinedstamp}}",
@@ -246,7 +250,9 @@
         "trickortreat": "Knocks on a Server to ask for candies, can be done once a day per Server.",
         "selfroles": "Dodawaj, usuwaj lub wyświetlaj role samokonfigurowalne",
         "prune": "Usuwa wiadomości od określonego użytkownika",
-        "cage": "Zdjęcia Nicolasa Cage"
+        "cage": "Zdjęcia Nicolasa Cage",
+        "decontaminate": "Osadź siebie lub swojego przyjaciela świętą w 100% ekskluzywną wodą dezynfekującą",
+        "geiger": "Użyj dozymetru licznika Geigera, aby zobaczyć procent raka na tym kanale"
     },
     "menu": {
         "cake": "Ciasto\n",
@@ -394,7 +400,8 @@
         "candy": "`{{prefix}}candy [@someguy]`",
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{prefix}}selfroles [dodaj | del | lista] [Role | @role | ID roli] [\"Shorthand\"] `\n\n`{{prefix}}selfroles add Games` Zezwala na **Gry** Role jako samodzielną.\n`{{prefix}}selfroles del Games` Usuwa z listy rolę **Gry**.\n`{{prefix}}selfroles list` Pokazuje listę i polecenia dla każdej Roli samozwijalnej\n\n  Są one niewrażliwe na wielkość liter, można również użyć identyfikatora Role ID.\n`{{prefix}}selfroles clear` Usuwa **wszystkie** selfroles z listy.",
-        "prune": "`{{prefix}}prune X [@user | ID użytkownika] `\nMożesz użyć identyfikatora użytkownika, jeśli wymienienie jest niedostępne, jak w `{{prefix}}prune 50 271394014358405121`, jeśli nie podano użytkownika, domyślnie jest to komunikat Pollux.\n\n**Uwaga** X musi być __Więcej niż 1__ i __Lower niż 101__.\nPodstawowa matematyka, jestem pewien, że możesz to zrobić."
+        "prune": "`{{prefix}}prune X [@user | ID użytkownika] `\nMożesz użyć identyfikatora użytkownika, jeśli wymienienie jest niedostępne, jak w `{{prefix}}prune 50 271394014358405121`, jeśli nie podano użytkownika, domyślnie jest to komunikat Pollux.\n\n**Uwaga** X musi być __Więcej niż 1__ i __Lower niż 101__.\nPodstawowa matematyka, jestem pewien, że możesz to zrobić.",
+        "decontaminate": "`{{prefix}}decontaminate [@użytkownik (Opcjonalne)]`"
     },
     "logs": {
         "success": "Gotowe! Ustawiłem {{channel}} jako kanał dla {{CHNTYPE}}!",
