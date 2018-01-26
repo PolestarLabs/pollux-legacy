@@ -154,6 +154,8 @@
         "myProf": "Hold up! Building my super duper Profilecard here..."
     },
     "help": {
+      "decontaminate": "Give yourself or a friend a good decontamination shower",
+      "geiger": "Use a Geiger counter dosimeter to check for the potential of cancer at the channel",
         "checkYeDM": "Psst, I sent you the info through DM. Go take a look.",
         "availableComms": "Available Commands",
         "airwaifu": "Aeroplanatic Waifu Material",
@@ -311,6 +313,7 @@
     },
     "helpkey": "help",
     "usage": {
+      "decontaminate":"`{{prefix}}decontaminate [@user (optional)]`",
         "logs": "␣`{{prefix}}logs #channel`\n Set all logs at the chosen Channel.\n\n`{{prefix}}logs mod #channel`\n Set moderation logs (Bans, Kicks and Mutes) at the chosen Channel.\n\n`{{prefix}}logs atv #channel`\n Set Activity logs (Members in and out, nickname edits) at the chosen Channel.\n\n`{{prefix}}logs adv #channel`\n Set Advanced Logs (Deleted and edited messages, Channels created, Activation or Deactivation of modules) at the chosen Channel.\n\n`{{prefix}}logs mod #channel delete`\nLogs will no more be sent to this Channel",
         "ahegao": "Quite simple, just type `{{prefix}}ahegao` and you get an アヘ顔",
         "askingHelpForHelp": "You are messing with me, correct?",
