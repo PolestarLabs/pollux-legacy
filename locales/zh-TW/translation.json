@@ -32,13 +32,15 @@
         "drops": "掉落",
         "balance": "餘額",
         "total": "總數",
-        "noFundsBet": "␣Seems you can't back that bet... You have {{number}} Rubines",
+        "noFundsBet": "Seems you can't back that bet... You have {{number}} Rubines",
         "plus_rubines_generic": "%R%個紅寶石已加入你的餘額，真棒！",
         "minus_rubines_generic": "我要從你的餘額中拿走%R%個紅寶石了，顆顆",
         "noBet": "賭好玩的是嗎?ok~",
         "exchange": "轉換",
         "crafts": "合成",
-        "donation": "捐獻"
+        "donation": "捐獻",
+        "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!"
     },
     "forFun": {
         "saltLVL": "{{target}}的爆氣指數達到了**{{amount}}%** {{emoji}}",
@@ -51,7 +53,11 @@
         "leadUnap": "如果你的名字沒有出現在這裡，輸入`{{prefix}}profile`來查看你的等級，說不定只是你太廢。",
         "position": "你在這個排行中的位置是：",
         "usethisfor": "Type |p!rank {{scope}}| for {{srr}}",
-        "transmittedVc": "已傳送到你所在的語音頻道"
+        "transmittedVc": "已傳送到你所在的語音頻道",
+        "decon": "{{user}}正在淨化自己",
+        "decon2": "{{user}}正在淨化{{user2}}",
+        "cancer": "{{user}}正在測量這個聊天室的致癌程度",
+        "geiger": ":radioactive:根據蓋格計數器，這個聊天室中的輻射劑量為**{{radiation}}μSv/h**，並有著**{{percentage}}%**的致癌機率"
     },
     "misc": {
         "memberSince": "{{target}}加入的時間是：{{joinedstamp}}",
@@ -246,7 +252,9 @@
         "trickortreat": "敲敲門來要糖果，每個伺服一天只能要一次",
         "selfroles": "增加/移除/列出可自行加入的身分組",
         "prune": "刪除某特定用戶的訊息",
-        "cage": "Your dose of Nicholas cage, just the best Cage pics for your Cage needs!"
+        "cage": "Your dose of Nicholas cage, just the best Cage pics for your Cage needs!",
+        "decontaminate": "幫你或你的朋友去除汙染源",
+        "geiger": "用蓋格計數器來測量這個聊天室的致癌程度"
     },
     "menu": {
         "cake": "蛋糕",
@@ -257,8 +265,8 @@
         "eggplant": "茄子",
         "custard": "布丁",
         "goaway": "畢竟我還有其他工作要做，在您決定的時候我先去做其他事情，等您決定好在叫我",
-        "chargeA": "I've charged {{total}}␣",
-        "chargeB": "␣from your account. I'll be back in a moment with your order."
+        "chargeA": "I've charged {{total}}",
+        "chargeB": "from your account. I'll be back in a moment with your order."
     },
     "nuke": {
         "confirm": ":radioactive: **__這將會重置所有本地伺服設定，包含：__**\n```\n -指令前綴\n -管理員身分組\n -已啟用/禁用的模組及指令\n -紅寶石掉落將被設置為關閉\n -升等訊息將被設定為開啟\n -自訂回應將被清除\n -記錄頻道\n```\n -這次的核彈將會被記錄在我的支援伺服器中。讓所有人知道你搞砸了多少東西。\n -你將不能在48小時內再度核炸這個伺服，如果你濫用這個指令，我將會禁用這個伺服的核彈指令。是否濫用這個指令取決於我的判斷\n\n\n **你真的要我發射核彈嗎？** \n 是的話輸入**ok**，要取消的話輸入**c**",
@@ -394,7 +402,8 @@
         "candy": "`{{prefix}}candy [@某某人]`",
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": " `{{prefix}}selfroles [add | del | list] [身分組| @身分組 | 身分組ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games`允許所有人自行加入**Games**身分組\n`{{prefix}}selfroles del Games`讓**Games**身分組不能再被自行加入\n`{{prefix}}selfroles list`列出所有可自行加入的身分組\n\n這些都有區別大小寫，你也可以輸入身分組ID\n`{{prefix}}selfroles clear`刪除**所有**可以自行加入的身分組",
-        "prune": "`{{prefix}}prune X [@user | user ID]`\nYou can use the user's ID if mentioning is not available, as in `{{prefix}}prune 50 271394014358405121`, If no user is specified, it defaults to Pollux's messages.\n\n**Attention** X must be __Greater than 1__ and __Lower than 101__.\nBasic math, I'm sure you can do it."
+        "prune": "`{{prefix}}prune X [@user | user ID]`\nYou can use the user's ID if mentioning is not available, as in `{{prefix}}prune 50 271394014358405121`, If no user is specified, it defaults to Pollux's messages.\n\n**Attention** X must be __Greater than 1__ and __Lower than 101__.\nBasic math, I'm sure you can do it.",
+        "decontaminate": "`{{prefix}}decontaminate [@某某人(選擇性)]`"
     },
     "logs": {
         "success": "完成！我已經把{{channel}}設定成{{CHNTYPE}}了！",
@@ -562,7 +571,7 @@
         "gSets": "伺服器設定更新"
     },
     "modules": {
-        "nsfw": "NSFW",
+        "nsfw": "兒童不宜",
         "mod": "管理",
         "$": "經濟",
         "game": "遊戲",
