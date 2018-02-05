@@ -38,7 +38,9 @@
         "noBet": "Гуляеце проста так? Занадта бедныя, каб зрабіць стаўку?",
         "exchange": "Абмены",
         "crafts": "Крафт",
-        "donation": "ДАнаты"
+        "donation": "ДАнаты",
+        "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!"
     },
     "forFun": {
         "saltLVL": "{{Target}}' паводзіць сябе як прыдурак на **{{amount}}%** {{emoji}}",
