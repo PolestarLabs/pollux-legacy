@@ -38,7 +38,9 @@
         "noBet": "재미있게 놀고 있니? 너무 가난하니?",
         "exchange": "교류",
         "crafts": "제작",
-        "donation": "기부"
+        "donation": "기부",
+        "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!"
     },
     "forFun": {
         "saltLVL": "{{target}}' 나쁘다 **{{amount}}%** {{emoji}}",
