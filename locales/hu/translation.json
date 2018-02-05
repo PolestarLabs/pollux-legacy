@@ -38,7 +38,9 @@
         "noBet": "Csak szórakozás miatt játszunk? Vagy csak túl szegény vagy, hogy feltedd a téted?",
         "exchange": "Átváltások",
         "crafts": "Crafting",
-        "donation": "Adományok"
+        "donation": "Adományok",
+        "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!"
     },
     "forFun": {
         "saltLVL": "{{target}}-nak **{{amount}}%**-ban sós a p*csája {{emoji}}",
@@ -55,7 +57,7 @@
         "decon": "{{user}} megtisztította magát a radioaktív szennyezéstől.",
         "decon2": "{{user}} megtisztította {{user2}}t a radioaktív szennyezéstől.",
         "cancer": "{{user}} épp most nézi, hogy mennyire rákos ez a channel.",
-        "geiger": ":radioactive: According to the Geiger counter, this chat cancer potential is **{{percentage}}%** with **{{radiation}}μSv/h**"
+        "geiger": ":radioactive: According to the Geiger counter, this channel's cancer potential is **{{percentage}}%** with **{{radiation}}μSv/h** "
     },
     "misc": {
         "memberSince": "{{target}} tag {{joinedstamp}} óta",
@@ -71,7 +73,7 @@
         "moderationNeeded": "You can't use this command, you need **Manage Server** perms, or you can set a Modrole. Set a Modrole using `{{prefix}}modrole [Role]`",
         "noDM": "Bocsi, de nem tudok erre DM-en keresztül válaszolni",
         "chooseAmod": "Képes lennél végre egy modult választani?",
-        "disabledSer": "The **{{module}}** module has been disabled **Globally**.␣",
+        "disabledSer": "The **{{module}}** module has been disabled **Globally**.",
         "disabledChn": "A {{module}} modult már nem lehet a #{{channel}} channelen használni.",
         "disabledComSer": "The **{{command}}** command has been disabled **Globally**",
         "disabledComChn": "A **{{command}}** parancsot most már nem lehet a #{{channel}} channelen használni",
@@ -218,7 +220,7 @@
         "pasquale": "[CSAK BRAZIL VERZIÓBAN ÉRHETŐ EL] Demonstre desprezo gramatical",
         "ascii": "[NEM MŰKÖDIK] Művészi Ascii Cucc",
         "cat": "Meow",
-        "morse": "␣*'WE GET SIGNAL'* Encode a message in Morse and send via voice-channel␣",
+        "morse": "*'WE GET SIGNAL'* Encode a message in Morse and send via voice-channel",
         "say": "Mondass ki velem bármit. Tényleg bármit",
         "modrole": "Adds Role as a Moderation role for this Server",
         "mute": "Adds Role as a MUTE Role for this Server (Default: POLLUX-MUTE)",
@@ -252,7 +254,7 @@
         "prune": "Kitörli egy bizonyos ember személy által írt üzeneteket",
         "cage": "Your dose of Nicholas cage, just the best Cage pics for your Cage needs!",
         "decontaminate": "Lepd meg magad, vagy valakii mást, egy dekontamináló zuhannyal",
-        "geiger": "Use a Geiger counter dosimeter to check for the potential of cancer at the channel"
+        "geiger": "Use a Geiger counter dosimeter to check for the potential of cancer in a channel"
     },
     "menu": {
         "cake": "Süti",
@@ -269,8 +271,8 @@
     "nuke": {
         "confirm": ":radioactive: **__Ez minden szerver specifikus beállítást ki fog törölni, közte:__**\n```\n -Prefixumot\n -ModRole-oket\n -Elérhető/Nem elérhető Parancsokat és Modulokat\n -A Rubinok eldobásának lehetősége KIkapcsolásra kerül\n -A Szintlépésről értesítő üzenetek BEkapcsolásra kerülnek\n -Az egyedi reakciók kitörlésre kerülnek \n -Log Channelek\n```\n -Erről értesítést kap az szerverem, hogy mindenki láthassa, hogy mennyire ki vagy akadva. \n -A következő 48 órában nem tudsz majd atomot küldeni, ha mégis megpróbálnád, akkor én döntöm el, hogy visszaélsz-e ezzel vagy sem. Ismétlődő visszaélés esetén blokkolom ennek a parancsnak a használatát a szerveren.\n\n\n **Biztosan azt szeretnéd, hogy küldjem az atomot?** \nKüldd, hogy **ok**, ha igen, vagy **c**-t, ha meggondoltad magad.",
         "confirmB": "**Írd le, hogy miért akarsz atomot küldeni a szerverre a megerősítéshez**\n Küldd a **c** betűt, ha meggondoltad magad.",
-        "start": ":radioactive: **NUKING SERVER INFO** :radioactive:␣ ",
-        "cancel": "Nuke Aborted!␣",
+        "start": ":radioactive: **NUKING SERVER INFO** :radioactive: ",
+        "cancel": "Nuke Aborted!",
         "timeout": "Nuke Timed Out!",
         "completed": "Server Info has been successfully wiped and reset. Try using **+serverinfo** to see if everything was properly reset. I'm no responsible for any afterward Nuclear Fallout contamination."
     },
@@ -282,7 +284,7 @@
         "inTex": "Üdvözlés mentve!",
         "outTex": "Búcsú üzenet mentve!",
         "tellmeMSG": "Az üzenet túl rövid vagy nem található.",
-        "tellmeCHN": "␣Channel not specified!",
+        "tellmeCHN": "Channel not specified!",
         "timer": "Természetesen, most már törölni fogom az üdvözléseket {{timeMin}} másodperc után!",
         "timerby": "Rendben, törlöm az búcsú üzenetet {{timeMin}} másodperc után!"
     },
@@ -312,7 +314,7 @@
     },
     "helpkey": "segítség",
     "usage": {
-        "logs": "␣`{{prefix}}logs #channel`\n Set all logs at the chosen Channel.\n\n`{{prefix}}logs mod #channel`\n Set moderation logs (Bans, Kicks and Mutes) at the chosen Channel.\n\n`{{prefix}}logs atv #channel`\n Set Activity logs (Members in and out, nickname edits) at the chosen Channel.\n\n`{{prefix}}logs adv #channel`\n Set Advanced Logs (Deleted and edited messages, Channels created, Activation or Deactivation of modules) at the chosen Channel.\n\n`{{prefix}}logs mod #channel delete`\nLogs will no more be sent to this Channel",
+        "logs": "`{{prefix}}logs #channel`\n Set all logs at the chosen Channel.\n\n`{{prefix}}logs mod #channel`\n Set moderation logs (Bans, Kicks and Mutes) at the chosen Channel.\n\n`{{prefix}}logs atv #channel`\n Set Activity logs (Members in and out, nickname edits) at the chosen Channel.\n\n`{{prefix}}logs adv #channel`\n Set Advanced Logs (Deleted and edited messages, Channels created, Activation or Deactivation of modules) at the chosen Channel.\n\n`{{prefix}}logs mod #channel delete`\nLogs will no more be sent to this Channel",
         "ahegao": "Nagyon egyszerű, csak írd, hogy `{{prefix}}aheago` és ilyet kapsz: アヘ顔",
         "askingHelpForHelp": "Most csak szórakozol velem, igaz?",
         "airwaifu": "`{{prefix}}airwaifu` vagy `{{prefix}}aerowaifu`",
@@ -593,7 +595,7 @@
         "dice": {
             "someoneRolledX": "**%U%** %D% -t dobott...",
             "andGot": "and got **{{val}}** !",
-            "rollsWere": "Rolls were:␣"
+            "rollsWere": "Rolls were:"
         },
         "blackjack": {
             "ongoing": "Nem gondolod, hogy be kellene előbb fejezni a játékot, amit elkezdtél, mielőtt újat kezdenél?",
@@ -602,11 +604,11 @@
             "bust": "Bust",
             "youwin": "Gratulálok! Most te nyertél!",
             "youlose": "Oh? Nyertem~",
-            "hit": "Respond with `hit` to draw one more card,␣",
+            "hit": "Respond with `hit` to draw one more card,",
             "stand": "Stand",
-            "split": "`split` to Split your hand,␣",
+            "split": "`split` to Split your hand,",
             "doubledown": "Double Down",
-            "double": "`double down` to double your bet and draw one last card,␣",
+            "double": "`double down` to double your bet and draw one last card,",
             "pass": "or `stand` to pass.",
             "even": "We broke even, in that case the house wins~ Your Rubines stay with me."
         },
