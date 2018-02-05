@@ -7,9 +7,7 @@
         "coinDefeat": "Oh my, {{result}}. Seems you lost...",
         "dailyGet": "{{emoji}} You've received 100 Rubines as your daily bonus!",
         "dailyNope": "{{emoji}} Hmm? Seems you already claimed your Rubines, you can get more in: **{{remaining}}**",
-        "dailyStreak": "{{emoji}} **+500 Rubines** for collecting 10 days in a row!",
-        "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
-        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!",
+        "dailyStreak": "{{emoji}} **+500 Rubines** for 10 days of Dailies in a row!",
         "noFundsGeneric": "Not enough Rubines",
         "giveGoods": "{{author}} has given **{{donate}}** Rubines to **{{target}}** !",
         "hasAmount": "{{target}} has {{goods}} Rubines.",
@@ -40,7 +38,9 @@
         "noBet": "Playing for fun? to poor to bet?",
         "exchange": "Exchanges",
         "crafts": "Crafting",
-        "donation": "Donations"
+        "donation": "Donations",
+        "dailyStreakJades": "{{emoji}} **+1000 Jades** for 3 days of Dailies in a row!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for 250 days of Dailies in a row!"
     },
     "forFun": {
         "saltLVL": "{{target}}' Salt Level is **{{amount}}%** {{emoji}}",
