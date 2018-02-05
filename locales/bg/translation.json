@@ -38,7 +38,9 @@
         "noBet": "Играете ли точно така? Твърде бедни, за да направите залог?",
         "exchange": "Борси",
         "crafts": "Крафт",
-        "donation": "Дарения"
+        "donation": "Дарения",
+        "dailyStreakJades": "{{emoji}} **+1000 Нефрити**, защото сте събирали 3 дни единг, след друг!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Сапфир** защото сте събирали 250 дни единг, след друг!"
     },
     "forFun": {
         "saltLVL": "{{target}}' се държи като глупак **{{amount}}%** {{emoji}}",
@@ -52,10 +54,10 @@
         "position": "Вашата позиция в списъка",
         "usethisfor": "Напишете |p!rank {{scope}}| за {{srr}}",
         "transmittedVc": "Предава се на вашия гласов канал!",
-        "decon": "{{user}} is decontaminating themself.",
-        "decon2": "{{user}} is decontaminating {{user2}}.",
-        "cancer": "{{user}} is inspecting this chat's cancer level.",
-        "geiger": ":radioactive: According to the Geiger counter, this chat cancer potential is **{{percentage}}%** with **{{radiation}}μSv/h**"
+        "decon": "{{user}} се дезинфекцира",
+        "decon2": "{{user}} дезинфекзира {{user2}}",
+        "cancer": "{{user}} проверява нивото на рак в този чат",
+        "geiger": ":radioactive: Според измерванията на индикатора за радиация, потенциалът на рак за този чат е **{{percentage}}%**  със **{{radiation}}μSv/h**"
     },
     "misc": {
         "memberSince": "{{target}} е член от: {{joinedstamp}}",
@@ -223,9 +225,9 @@
         "modrole": "Добавете ролята на модератор за този сървър",
         "mute": "Добавете ролята като заглушаване на този сървър (по подразбиране: POLLUX-MUTE)",
         "prefixset": "Задайте друг префикс, ако не ви харесва моят префикс по подразбиране",
-        "roleadd": "Добавяне на роля на потребителя",
+        "roleadd": "Добавяне на роля на члена",
         "roleme": "Добавете роля за себе си",
-        "rolerem": "Премахване на роля от потребителя",
+        "rolerem": "Премахване на роля от члена",
         "leave": "Излиза от галсобият канал",
         "next": "Следващата песен",
         "np": "В момента се изпълнява",
@@ -249,10 +251,10 @@
         "candy": "Виж колко бонбона сте събрали ти и твойте приятели през това събитие",
         "trickortreat": "Събирате бонбони от другите сървъри, това може да се напарви веднъж на всеки 24 часа.",
         "selfroles": "Добавете, изтрийте или разгледайте списъка със самонаемащи роли.",
-        "prune": "Изтрива съобщенията на конкретен потребител",
+        "prune": "Изтрива съобщенията на конкретен члена",
         "cage": "Снимки на Никълъс Кейдж",
-        "decontaminate": "Give yourself or a friend a good decontamination shower",
-        "geiger": "Use a Geiger counter dosimeter to check for the potential of cancer at the channel"
+        "decontaminate": "Даваш на себеси или на твой приятел дезинфекциращ душ",
+        "geiger": "Използвай индикатора за радиация за да видиш потенциалът на рак в този канал"
     },
     "menu": {
         "cake": "Торта",
@@ -345,8 +347,8 @@
         "speakAvailable": "Налични езици:",
         "autorole": "`{{prefix}}autorole [add | rem | list] [Role| @role]` \n\n`{{prefix}}autorole add Games` Позволява ролята **Games** да бъдат самонасочваема.\n`{{prefix}}autorole rem Games` Премахва **Games** от списъка.\n`{{prefix}}autorole list` Показва списъка и командите за всяка отделна роля\n\n Уверете се че сте написали правилно името на ролята или просто я споменете с маймунското а (\"@\") и името на ролята",
         "background": "`{{prefix}}background [връзка към изображението]`\n\n  :warning: ** ВАЖНО: **\n*Imagecode* __това не са линкове__, а това са кодове, които можете да получите от сайта http://www.pollux.fun/bgshop.\n\nПример: `{{prefix}}backgrounds IlyEEDBj0GLLlFl8n6boPLSkADNuBwke`",
-        "bye": "`{{prefix}}bye [msg | timer] [mensagem|segundos] '\n\n`{{prefix}}bye msg Довиждане %user%!`\n  Променя съобщението на \"Довиждане @User !\"\n\n`{{prefix}}bye timer 10`\n  Променя бремето за автоматичното изтрибане на съобщението, Ако задъдете таймера за 0 секуди съобщението няма да бъде изтрито\n\n`{{prefix}}bye`\nБез параметри тази команда ще бъде акитиврана или деактивирана.\n\n**Wildcards**:\n`%user%' Споменава потребителя.\n`%username%` Показва името на потребителя без да го споменава.",
-        "welcome": "`{{prefix}}welcome [msg | timer] [mensagem|segundos] '\n\n`{{prefix}}welcome  msg Добре дошли %user% !`\n  Променя съобщението на \"Добре дошли @User !\"\n\n`{{prefix}}welcome timer 10`\n  Променя бремето за автоматичното изтрибане на съобщението, Ако задъдете таймера за 0 секуди съобщението няма да бъде изтрито\n\n`{{prefix}}welcome`\nБез параметри тази команда ще бъде акитиврана или деактивирана.\n\n**Wildcards**:\n`%user%' Споменава потребителя.\n`%username%` Показва името на потребителя без да го споменава.",
+        "bye": "`{{prefix}}bye [msg | timer] [mensagem|segundos] '\n\n`{{prefix}}bye msg Довиждане %user%!`\n  Променя съобщението на \"Довиждане @User !\"\n\n`{{prefix}}bye timer 10`\n  Променя бремето за автоматичното изтрибане на съобщението, Ако задъдете таймера за 0 секуди съобщението няма да бъде изтрито\n\n`{{prefix}}bye`\nБез параметри тази команда ще бъде акитиврана или деактивирана.\n\n**Wildcards**:\n`%user%' Споменава члена.\n`%username%` Показва името на члена без да го споменава.",
+        "welcome": "`{{prefix}}welcome [msg | timer] [mensagem|segundos] '\n\n`{{prefix}}welcome  msg Добре дошли %user% !`\n  Променя съобщението на \"Добре дошли @User !\"\n\n`{{prefix}}welcome timer 10`\n  Променя бремето за автоматичното изтрибане на съобщението, Ако задъдете таймера за 0 секуди съобщението няма да бъде изтрито\n\n`{{prefix}}welcome`\nБез параметри тази команда ще бъде акитиврана или деактивирана.\n\n**Wildcards**:\n`%user%' Споменава члена.\n`%username%` Показва името на потребителя без да го споменава.",
         "chinese": "`{{prefix}}chinese [текст]`",
         "clear": "`{{prefix}}clear X`\n**Внимание!** \"X\" трябва да е __ повече от 1__ и __ по-малко от 101__.\nСигурен съм, че можете да разчитате без мен.",
         "color": "`{{prefix}}color #FF0000`",
@@ -358,7 +360,7 @@
         "fortunecookie": "`{{prefix}}fortunecookie` (тази команда има неизправности)",
         "menu": "[Спрян]",
         "puto": "Достъпен само на тези езици: [PT-BR]",
-        "saltlevel": " `{{prefix}}saltlevel @потребителя`",
+        "saltlevel": "`{{prefix}}saltlevel @потребителя`",
         "ship": "`{{prefix}}ship @той @тя`",
         "triggered": "`{{prefix}}triggered [@някой]`",
         "menesueco": "Достъпен само на тези езици: [PT-BR]",
@@ -400,8 +402,8 @@
         "candy": "`{{prefix}}candy [@потребителя]`",
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games` Позволява на ролята **Игри** да бъде самостоятелна.\n`{{prefix}}selfroles del Games` Премахва ролята **Игри** от списъка.\n`{{prefix}}selfroles list` Показва списъка и командите за всяка самостоятелна роля\n\n Всичко, описано по-горе, е \"чувствително\" към формата. Също така можете да използвате ID-тата на ролите.\n`{{prefix}}selfroles clear` Премахва  **всички** самостоятелни роли от списъка.",
-        "prune": "{{prefix}}prune X [@user | потребителското ID]\nМожете да използвате потребителското ID, ако не можете да го споменавате, например \"{{prefix}}prune 50 271394014358405121\", ако потребителят не е избран, той изтрива Pollux съобщенията по подразбиране.\n\n**Внимание** X трябва да бъде __Повече от 1__ и __Не повече от 101__.\nПроста математика, мисля, че можете да го направите.",
-        "decontaminate": "`{{prefix}}decontaminate [@user (optional)]`"
+        "prune": "{{prefix}}prune X [@user | член ID]\nМожете да използвате член ID, ако не можете да го споменавате, например \"{{prefix}}prune 50 271394014358405121\", ако член не е избран, той изтрива Pollux съобщенията по подразбиране.\n\n**Внимание** X трябва да бъде __Повече от 1__ и __Не повече от 101__.\nПроста математика, мисля, че можете да го направите.",
+        "decontaminate": "`{{prefix}}decontaminate [@член (не е задължително)]`"
     },
     "logs": {
         "success": "Готово е! Този {{channel}} се отнася за {{CHNTYPE}}!",
@@ -424,7 +426,7 @@
         "revokeBan": "Банът **%1%** беше анулиран",
         "usrNick": "Отсега нататък **%1%** се наричат **%11%**",
         "usrPhoto": "Потребител **%1%** промени снимката на профила си",
-        "usrRoles": "Ролите са актуализирани за потребител %1%",
+        "usrRoles": "Ролите са актуализирани за член %1%",
         "gSets": "Настройките на сървъра са променени"
     },
     "error": {
@@ -505,17 +507,17 @@
         "logs": "Регистър на дейностите",
         "activity": "Дейност",
         "moderation": "Модерация",
-        "userJoin": "Потребителя се присъедини към сървъра",
-        "userLeave": "Потребителя напусна сървъра",
+        "userJoin": "Член се присъедини към сървъра",
+        "userLeave": "Член напусна сървъра",
         "messDel": "Съобщението бе изтрито",
         "messEdit": "Редактирано съобщение",
-        "usrKick": "Потребителя е изключен",
-        "usrBan": "Потребителя е изключен",
-        "usrMute": "Потребителя е заглушен",
-        "usrUnmute": "Потребителя вече не е заглушен",
-        "usrPhoto": "Снимката на Потребителя се промени",
-        "usrNick": "Псевдонимът или Потребителя име са променени",
-        "usrRoles": "Ролите на Потребителя бяха актуализирани",
+        "usrKick": "Член е изключен",
+        "usrBan": "Член е изключен",
+        "usrMute": "Член е заглушен",
+        "usrUnmute": "Член вече не е заглушен",
+        "usrPhoto": "Снимката на Члена се промени",
+        "usrNick": "Псевдонимът или Члена име са променени",
+        "usrRoles": "Ролите на Члена бяха актуализирани",
         "newChan": "Каналът е създаден",
         "delChan": "Каналът е изтрит",
         "newRole": "Ролята е създадена",
@@ -643,7 +645,7 @@
         "lootPick": "ВНИМАНИЕ всики имат **20 секунди**за да грабнат този Lootbox. Напиши `{{prefix}}pick` и има шанс да го вземеш.",
         "goesTo": "Времето изтече! Нека видим кой получава тази кутия.\n**Тази Lootbox ще се играе между:**",
         "congrats": "Честито! Тази кутия бе добавена към вашия инвентар. Можете да я отворите с помощта на командата `{{prefix}}lootbox`.",
-        "opening": "{{user}} отвори Lootbox...",
+        "opening": "{{user}} отвори Лутбокс...",
         "contains": "В Lootbox садържа",
         "options": "Можете да го оставите или да направите ребар, като платите {{amt}}",
         "keep": "Запази",
@@ -668,8 +670,8 @@
         "role": "Роля",
         "server": "Сървър",
         "member": "Член",
-        "user": "Потребител",
-        "user_plural": "Потребители",
+        "user": "Член",
+        "user_plural": "Член",
         "channel": "Канал",
         "channel_plural": "Канали",
         "voice_channel": "Гласов канал",
@@ -756,7 +758,7 @@
         "thankKys": "Thanks a lot! Santa may deliver presents here **{{amount}}x** faster now due to your kindness~",
         "howmanyKys": "Ah, thank you! How many keys do you have to give me?",
         "noFunds_bo": "It seems you don't have that many keys.",
-        "hasAmount": "{{username}} has collected {{amount}} Winding Keys"
+        "hasAmount": "{{username}} събра {{amount}} Winding Keys"
     },
     "langIntro": {
         "global": "Вече ще говоря на български език за този сървър!",
