@@ -2,12 +2,14 @@
     "$": {
         "insuFloor": "You do not have enough Rubines. You need at least **{{number}}** {{emoji}}",
         "insuBet": "Bet at least {{number}}",
-        "noFunds": "␣It seems you cannot afford this, your balance is {{number}} Rubines",
+        "noFunds": "It seems you cannot afford this, your balance is {{number}} Rubines",
         "coinVictory": "You won! {{result}}, You got **{{prize}}** Rubines {{emoji}}",
         "coinDefeat": "Oh my, {{result}}. Seems you lost...",
         "dailyGet": "{{emoji}} You've received 100 Rubines as your daily bonus!",
         "dailyNope": "{{emoji}} Hmm? Seems you already claimed your Rubines, you can get more in: **{{remaining}}**",
-        "dailyStreak": "{{emoji}} You've recieved 500 more Rubines for collecting 10 days in a row! Congratulations.",
+        "dailyStreak": "{{emoji}} **+500 Rubines** for collecting 10 days in a row!",
+        "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!",
         "noFundsGeneric": "Not enough Rubines",
         "giveGoods": "{{author}} has given **{{donate}}** Rubines to **{{target}}** !",
         "hasAmount": "{{target}} has {{goods}} Rubines.",
@@ -32,7 +34,7 @@
         "drops": "Drops",
         "balance": "Balance",
         "total": "Total",
-        "noFundsBet": "␣Seems you can't back that bet... You have {{number}} Rubines",
+        "noFundsBet": "Seems you can't back that bet... You have {{number}} Rubines",
         "plus_rubines_generic": "%R% Rubines has been added to your balance. Isn't that nice?",
         "minus_rubines_generic": "I'm taking %R% Rubines from your balance okay~?",
         "noBet": "Playing for fun? to poor to bet?",
@@ -41,11 +43,6 @@
         "donation": "Donations"
     },
     "forFun": {
-      "decon":"{{user}} is decontaminating themself.",
-      "decon2":"{{user}} is decontaminating {{user2}}.",
-      "cancer":"{{user}} is inspecting this chat's cancer level.",
-      "geiger":":radioactive: According to the Geiger counter, this chat cancer potential is **{{percentage}}%** with **{{radiation}}μSv/h**",
-
         "saltLVL": "{{target}}' Salt Level is **{{amount}}%** {{emoji}}",
         "booru404": "I'm sorry, But I couldn't find anything with those tags. You should check to make sure those are correct.",
         "nsfw404": "Excuse me, But your porn is so bizarre I couldn't find it anywhere. As Expected of someone like you.",
@@ -56,7 +53,11 @@
         "leadUnap": "If you don't see yourself here, type `{{prefix}}profile` to see your Level. Not everyone can be on the Leaderboard after all.",
         "position": "Your position in this ranking is",
         "usethisfor": "Type |p!rank {{scope}}| for {{srr}}",
-        "transmittedVc": "Transmitted to your voice channel!"
+        "transmittedVc": "Transmitted to your voice channel!",
+        "decon": "{{user}} is decontaminating themself.",
+        "decon2": "{{user}} is decontaminating {{user2}}.",
+        "cancer": "{{user}} is inspecting this channel's chance of cancer.",
+        "geiger": ":radioactive: According to the Geiger counter, this channel's cancer potential is **{{percentage}}%** with **{{radiation}}μSv/h** "
     },
     "misc": {
         "memberSince": "{{target}} has been a member since: {{joinedstamp}}",
@@ -72,7 +73,7 @@
         "moderationNeeded": "You can't use this command, you need **Manage Server** perms, or you can set a Modrole. Set a Modrole using `{{prefix}}modrole [Role]`",
         "noDM": "My bad, I can't respond to this command via DM",
         "chooseAmod": "Choose a module, would you.",
-        "disabledSer": "The **{{module}}** module has been disabled **Globally**.␣",
+        "disabledSer": "The **{{module}}** module has been disabled **Globally**.",
         "disabledChn": "The {{module}} module has been disabled in the channel #{{channel}}",
         "disabledComSer": "The **{{command}}** command has been disabled **Globally**",
         "disabledComChn": "The **{{command}}** command has been disabled in #{{channel}}",
@@ -154,8 +155,6 @@
         "myProf": "Hold up! Building my super duper Profilecard here..."
     },
     "help": {
-      "decontaminate": "Give yourself or a friend a good decontamination shower",
-      "geiger": "Use a Geiger counter dosimeter to check for the potential of cancer at the channel",
         "checkYeDM": "Psst, I sent you the info through DM. Go take a look.",
         "availableComms": "Available Commands",
         "airwaifu": "Aeroplanatic Waifu Material",
@@ -221,7 +220,7 @@
         "pasquale": "[BRAZILIAN VERSION-EXCLUSIVE] Demonstre desprezo gramatical",
         "ascii": "[BROKEN] Ascii Art Thing",
         "cat": "Meow",
-        "morse": "␣*'WE GET SIGNAL'* Encode a message in Morse and send via voice-channel␣",
+        "morse": "*'WE GET SIGNAL'* Encode a message in Morse and send via voice-channel",
         "say": "Make me say anything. Really",
         "modrole": "Adds Role as a Moderation role for this Server",
         "mute": "Adds Role as a MUTE Role for this Server (Default: POLLUX-MUTE)",
@@ -253,7 +252,9 @@
         "trickortreat": "Knocks on a Server to ask for candies, can be done once a day per Server.",
         "selfroles": "Add, Remove, or List Self-Assignable Roles",
         "prune": "Deletes Messages from a specific User",
-        "cage": "Your dose of Nicholas cage, just the best Cage pics for your Cage needs!"
+        "cage": "Your dose of Nicholas cage, just the best Cage pics for your Cage needs!",
+        "decontaminate": "Give yourself or a friend a good decontamination shower",
+        "geiger": "Use a Geiger counter dosimeter to check for the potential of cancer in a channel"
     },
     "menu": {
         "cake": "Cake",
@@ -264,14 +265,14 @@
         "eggplant": "Eggplant",
         "custard": "Pudding",
         "goaway": "You know, I can't just wait on you all day. Call me again when you know what you want.",
-        "chargeA": "I've charged {{total}}␣",
-        "chargeB": "␣from your account. I'll be back in a moment with your order."
+        "chargeA": "I've charged {{total}}",
+        "chargeB": "from your account. I'll be back in a moment with your order."
     },
     "nuke": {
-        "confirm": "␣:radioactive: **__This will reset all server-specific settings, including:__**\n```\n -Prefix\n -ModRoles\n -Enabled/Disabled Commands and Modules\n -Drops of Rubines will be turned OFF\n -LevelUp Messages will be turned ON\n -Custom Reactions will be wiped \n -Log Channels\n```\n -This nuke will be notified in my Support Server. For everyone to see how much you fucked up. \n -You will be unable to Nuke for 48 hours if you abuse this command I decide whether you're abusing or not. Recurring abuse and I block the command at this server.\n\n\n **Do you really wish me to send nukes?** \n send **ok** for yes, **c** for cancel.",
+        "confirm": ":radioactive: **__This will reset all server-specific settings, including:__**\n```\n -Prefix\n -ModRoles\n -Enabled/Disabled Commands and Modules\n -Drops of Rubines will be turned OFF\n -LevelUp Messages will be turned ON\n -Custom Reactions will be wiped \n -Log Channels\n```\n -This nuke will be notified in my Support Server. For everyone to see how much you fucked up. \n -You will be unable to Nuke for 48 hours if you abuse this command I decide whether you're abusing or not. Recurring abuse and I block the command at this server.\n\n\n **Do you really wish me to send nukes?** \n send **ok** for yes, **c** for cancel.",
         "confirmB": "**Write the nuke reason below to confirm**\n Send **c** for cancel.",
-        "start": ":radioactive: **NUKING SERVER INFO** :radioactive:␣ ",
-        "cancel": "Nuke Aborted!␣",
+        "start": ":radioactive: **NUKING SERVER INFO** :radioactive: ",
+        "cancel": "Nuke Aborted!",
         "timeout": "Nuke Timed Out!",
         "completed": "Server Info has been successfully wiped and reset. Try using **+serverinfo** to see if everything was properly reset. I'm no responsible for any afterward Nuclear Fallout contamination."
     },
@@ -282,8 +283,8 @@
         "helloON": "Welcome Message enabled in this channel. I'm sure people will appreciate my hard work greeting them.",
         "inTex": "Greeting message saved!",
         "outTex": "Farewell message saved!",
-        "tellmeMSG": "␣Message too short or no message found.",
-        "tellmeCHN": "␣Channel not specified!",
+        "tellmeMSG": "Message too short or no message found.",
+        "tellmeCHN": "Channel not specified!",
         "timer": "Of course, I will now delete Welcome Messages after {{timeMin}} seconds!",
         "timerby": "Sure, I will now delete Bye Messages after {{timeMin}} seconds!"
     },
@@ -313,8 +314,7 @@
     },
     "helpkey": "help",
     "usage": {
-      "decontaminate":"`{{prefix}}decontaminate [@user (optional)]`",
-        "logs": "␣`{{prefix}}logs #channel`\n Set all logs at the chosen Channel.\n\n`{{prefix}}logs mod #channel`\n Set moderation logs (Bans, Kicks and Mutes) at the chosen Channel.\n\n`{{prefix}}logs atv #channel`\n Set Activity logs (Members in and out, nickname edits) at the chosen Channel.\n\n`{{prefix}}logs adv #channel`\n Set Advanced Logs (Deleted and edited messages, Channels created, Activation or Deactivation of modules) at the chosen Channel.\n\n`{{prefix}}logs mod #channel delete`\nLogs will no more be sent to this Channel",
+        "logs": "`{{prefix}}logs #channel`\n Set all logs at the chosen Channel.\n\n`{{prefix}}logs mod #channel`\n Set moderation logs (Bans, Kicks and Mutes) at the chosen Channel.\n\n`{{prefix}}logs atv #channel`\n Set Activity logs (Members in and out, nickname edits) at the chosen Channel.\n\n`{{prefix}}logs adv #channel`\n Set Advanced Logs (Deleted and edited messages, Channels created, Activation or Deactivation of modules) at the chosen Channel.\n\n`{{prefix}}logs mod #channel delete`\nLogs will no more be sent to this Channel",
         "ahegao": "Quite simple, just type `{{prefix}}ahegao` and you get an アヘ顔",
         "askingHelpForHelp": "You are messing with me, correct?",
         "airwaifu": "`{{prefix}}airwaifu` or `{{prefix}}aerowaifu`",
@@ -393,7 +393,7 @@
         "medal": "`{{prefix}}medal [medal_id]` or just `{{prefix}}medal`\n For example: `{{prefix}}medal darkmagirl` for the **Dark Magician Girl** medal.",
         "drawcards": "`{{prefix}}drawcards`",
         "blackjack": "`{{prefix}}blackjack 50` Minimum bet is 10, maximum is 2500.",
-        "alignment": "␣`{{prefix}}alignment` or  `{{prefix}}alignchart`",
+        "alignment": "`{{prefix}}alignment` or  `{{prefix}}alignchart`",
         "exchange": "`{{prefix}}exchange [Amount] [Destination Currency Code]` \ne.g `{{prefix}}exchange 28 DUT` Exchanges 28 Rubines into DueUtil Credits.",
         "slots": "`{{prefix}}slots [bet(optional)]",
         "avatar": "`{{prefix}}avatar [@someguy]`",
@@ -402,7 +402,8 @@
         "candy": "`{{prefix}}candy [@someguy]`",
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games` Allows the **Games** Role as self-assignable.\n`{{prefix}}selfroles del Games` Removes the role **Games** from the list.\n`{{prefix}}selfroles list` Shows the list and commands for each Self-Assignable Role\n\n These are Case insensitive, you can use Role ID too.\n`{{prefix}}selfroles clear` Deletes **all** selfroles from the list.",
-        "prune": "`{{prefix}}prune X [@user | user ID]`\nYou can use the user's ID if mentioning is not available, as in `{{prefix}}prune 50 271394014358405121`, If no user is specified, it defaults to Pollux's messages.\n\n**Attention** X must be __Greater than 1__ and __Lower than 101__.\nBasic math, I'm sure you can do it."
+        "prune": "`{{prefix}}prune X [@user | user ID]`\nYou can use the user's ID if mentioning is not available, as in `{{prefix}}prune 50 271394014358405121`, If no user is specified, it defaults to Pollux's messages.\n\n**Attention** X must be __Greater than 1__ and __Lower than 101__.\nBasic math, I'm sure you can do it.",
+        "decontaminate": "`{{prefix}}decontaminate [@user (optional)]`"
     },
     "logs": {
         "success": "Done! I've set {{channel}} as the Channel for {{CHNTYPE}}!",
@@ -594,7 +595,7 @@
         "dice": {
             "someoneRolledX": "**%U%** rolled %D%...",
             "andGot": "and got **{{val}}** !",
-            "rollsWere": "Rolls were:␣"
+            "rollsWere": "Rolls were:"
         },
         "blackjack": {
             "ongoing": "You should really finish a game before trying to start another.",
@@ -603,11 +604,11 @@
             "bust": "Bust",
             "youwin": "Congratulations! You won, this time.",
             "youlose": "Oh? I've won, to bad for you.",
-            "hit": "Respond with `hit` to draw one more card,␣",
+            "hit": "Respond with `hit` to draw one more card,",
             "stand": "Stand",
-            "split": "`split` to Split your hand,␣",
+            "split": "`split` to Split your hand,",
             "doubledown": "Double Down",
-            "double": "`double down` to double your bet and draw one last card,␣",
+            "double": "`double down` to double your bet and draw one last card,",
             "pass": "or `stand` to pass.",
             "even": "We broke even, in that case the house wins~ Your Rubines stay with me."
         },
@@ -641,7 +642,7 @@
             "4": "Sorry to interrupt, but did anyone notice this Lootbox lying over here?",
             "5": "Amazing! Look at what I've found!"
         },
-        "lootPick": "␣You all have **__20 Seconds__** to dispute it! Type `{{prefix}}pick` for a chance to claim it!",
+        "lootPick": "You all have **__20 Seconds__** to dispute it! Type `{{prefix}}pick` for a chance to claim it!",
         "goesTo": "Time's up! Let's see who's getting this Box.\n**This Loot Box will be raffled between:**",
         "congrats": "Well done! The box has been added to your inventory. You can open it using the `{{prefix}}lootbox` command.",
         "opening": "{{user}} opened their Lootbox...",
