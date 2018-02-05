@@ -38,7 +38,9 @@
         "noBet": "Tu joues pour le fun alors? Pas de soucis~",
         "exchange": "Echanges",
         "crafts": "Crafting",
-        "donation": "Dons"
+        "donation": "Dons",
+        "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!"
     },
     "forFun": {
         "saltLVL": "Le niveau de sel à {{target}} est de **{{amount}}%** {{emoji}} ",
