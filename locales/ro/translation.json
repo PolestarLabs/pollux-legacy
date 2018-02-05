@@ -38,7 +38,9 @@
         "noBet": "Playing for fun? to poor to bet?",
         "exchange": "Exchanges",
         "crafts": "Crafting",
-        "donation": "Donations"
+        "donation": "Donations",
+        "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!"
     },
     "forFun": {
         "saltLVL": "{{target}}' Salt Level este de **{{amount}}%** {{emoji}}",
@@ -54,8 +56,8 @@
         "transmittedVc": "Transmitted to your voice channel!",
         "decon": "{{user}} is decontaminating themself.",
         "decon2": "{{user}} is decontaminating {{user2}}.",
-        "cancer": "{{user}} is inspecting this chat's cancer level.",
-        "geiger": ":radioactive: According to the Geiger counter, this chat cancer potential is **{{percentage}}%** with **{{radiation}}μSv/h**"
+        "cancer": "{{user}} is inspecting this channel's chance of cancer.",
+        "geiger": ":radioactive: According to the Geiger counter, this channel's cancer potential is **{{percentage}}%** with **{{radiation}}μSv/h** "
     },
     "misc": {
         "memberSince": "{{target}} este membru din: {{joinedstamp}}",
@@ -252,7 +254,7 @@
         "prune": "Deletes Messages from a specific User",
         "cage": "Your dose of Nicholas cage, just the best Cage pics for your Cage needs!",
         "decontaminate": "Give yourself or a friend a good decontamination shower",
-        "geiger": "Use a Geiger counter dosimeter to check for the potential of cancer at the channel"
+        "geiger": "Use a Geiger counter dosimeter to check for the potential of cancer in a channel"
     },
     "menu": {
         "cake": "Prajitura",
@@ -391,7 +393,7 @@
         "medal": "`{{prefix}}medal [medal_id]` or just `{{prefix}}medal`\n For example: `{{prefix}}medal darkmagirl` for the **Dark Magician Girl** medal.",
         "drawcards": "`{{prefix}}drawcards`",
         "blackjack": "`{{prefix}}blackjack 50` Minimum bet is 10, maximum is 2500.",
-        "alignment": "␣`{{prefix}}alignment` or  `{{prefix}}alignchart`",
+        "alignment": "`{{prefix}}alignment` or  `{{prefix}}alignchart`",
         "exchange": "`{{prefix}}exchange [Amount] [Destination Currency Code]` \ne.g `{{prefix}}exchange 28 DUT` Exchanges 28 Rubines into DueUtil Credits.",
         "slots": "`{{prefix}}slots [bet(optional)]",
         "avatar": "`{{prefix}}avatar [@someguy]`",
@@ -602,11 +604,11 @@
             "bust": "Bust",
             "youwin": "Congratulations! You won, this time.",
             "youlose": "Oh? I've won, to bad for you.",
-            "hit": "Respond with `hit` to draw one more card,␣",
+            "hit": "Respond with `hit` to draw one more card,",
             "stand": "Stand",
-            "split": "`split` to Split your hand,␣",
+            "split": "`split` to Split your hand,",
             "doubledown": "Double Down",
-            "double": "`double down` to double your bet and draw one last card,␣",
+            "double": "`double down` to double your bet and draw one last card,",
             "pass": "or `stand` to pass.",
             "even": "We broke even, in that case the house wins~ Your Rubines stay with me."
         },
@@ -640,7 +642,7 @@
             "4": "Sorry to interrupt, but did anyone notice this Lootbox lying over here?",
             "5": "Amazing! Look at what I've found!"
         },
-        "lootPick": "␣You all have **__20 Seconds__** to dispute it! Type `{{prefix}}pick` for a chance to claim it!",
+        "lootPick": "You all have **__20 Seconds__** to dispute it! Type `{{prefix}}pick` for a chance to claim it!",
         "goesTo": "Time's up! Let's see who's getting this Box.\n**This Loot Box will be raffled between:**",
         "congrats": "Well done! The box has been added to your inventory. You can open it using the `{{prefix}}lootbox` command.",
         "opening": "{{user}} opened their Lootbox...",
