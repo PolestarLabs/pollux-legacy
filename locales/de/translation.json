@@ -7,7 +7,7 @@
         "coinDefeat": "Oh man, {{result}}... Du hast leider verlohren!",
         "dailyGet": "{{emoji}} Durch deinen Tagesbonus hast du 100 Rubine bekommen.\n",
         "dailyNope": "{{result}}! Hey! Du hast deinen Preis heute schon erhalten!\nDu musst noch **{{remaining}}** warten, bevor du erneut einen Preis erhälst!",
-        "dailyStreak": "SUPER! {{emoji}} du erhälst 500 extra Rubine, da du 10 Tage hintereinander\nAbgesahnt hast!",
+        "dailyStreak": "{{emoji}} **+500 Rubine** für das sammeln von 10 Tagen hintereinander!",
         "noFundsGeneric": "Nicht genügend Rubine.",
         "giveGoods": "{{author}} hat **{{target}}**  **{{donate}}** Rubine geschenkt!",
         "hasAmount": "{{target}} hat {{goods}} Rubine.",
@@ -38,7 +38,9 @@
         "noBet": "Spielst du bloß zum Spaß? Okay~",
         "exchange": "Austausch",
         "crafts": "Erstellen",
-        "donation": "Spenden "
+        "donation": "Spenden ",
+        "dailyStreakJades": "{{emoji}} **+1000 Jade** für das sammeln von 3 Tagen hintereinander!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Saphir** für das sammeln von 250 Tagen hintereinander!"
     },
     "forFun": {
         "saltLVL": "Das \"Salz-Level\" {{target}}' ist **{{amount}}%** {{emoji}}",
