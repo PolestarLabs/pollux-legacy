@@ -38,7 +38,9 @@
         "noBet": "Grałeś dla zabawy? Zbyt biedni, aby postawić zakład?",
         "exchange": "Wymiany",
         "crafts": "Tworzenie rzeczy",
-        "donation": "Darowizny"
+        "donation": "Darowizny",
+        "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!"
     },
     "forFun": {
         "saltLVL": "{{target}}' zachowuje się jak kretyń **{{amount}}%** {{emoji}}",
