@@ -38,7 +38,9 @@
         "noBet": "To hraješ jen tak pro srandu? okay~",
         "exchange": "Výměny",
         "crafts": "Craftění",
-        "donation": "Dary"
+        "donation": "Dary",
+        "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!"
     },
     "forFun": {
         "saltLVL": "Level naštvanosti {{target}} je **{{amount}}%** {{emoji}}.",
