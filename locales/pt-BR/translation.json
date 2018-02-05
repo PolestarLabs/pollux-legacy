@@ -38,7 +38,9 @@
         "noBet": "Jogando só por diversão é? okei~",
         "exchange": "Câmbios",
         "crafts": "Crafting",
-        "donation": "Doações"
+        "donation": "Doações",
+        "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!"
     },
     "forFun": {
         "saltLVL": "O nível de sal de {{target}} é de **{{amount}}%** {{emoji}}",
