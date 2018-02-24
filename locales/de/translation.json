@@ -71,15 +71,15 @@
         "genericInvalid": "Schade, Falsches Kommando ;~;",
         "prefixChng": "Na gut, jetzt habe ich den Präfix {{prefix}}, versuch mal `{{prefix}}stats`.␣",
         "moderationNeeded": "Sorry, du kannst dieses Kommando nicht benutzen, du brauchst entweder **Manage Server** Berechtigungen oder du musst eine Modrolle setzen, indem du `{{prefix}}modrole [Role]` nutzt.",
-        "noDM": "Sorry man, ich kann dem Kommando nicht über DM antworten.",
+        "noDM": "Sorry man, ich kann auf Diesen Befehl nicht über DM antworten.",
         "chooseAmod": "Wähle ein Modul, was du willst.",
         "disabledSer": "Schade, das **{{module}}** Modul wurde **Globally** deaktiviert.\nWie gemein...\n",
         "disabledChn": "Schade, das **{{module}}** Modul wurde in dem Channel #{{channel}} deaktiviert.\n",
         "disabledComSer": "Schade, das **{{command}}** Kommando wurde **Globally** deaktiviert.",
         "disabledComChn": "Schade, das **{{command}}** Kommando wurde **Globally** deaktiviert.\nWie gemein...",
-        "enabledSer": "Schade, das **{{module}}** Modul wurde **Globally** deaktiviert.\nWie gemein...",
+        "enabledSer": "Schade, das **{{module}}** Modul wurde **Global** deaktiviert.\nWie gemein...",
         "enabledChn": "Das **{{module}}** Modul wurde im channel #{{channel}} erlaubt.",
-        "enabledComSer": "Der **{{command}}** Befehl wurde**global** aktiviert",
+        "enabledComSer": "Der **{{command}}** Befehl wurde **Global** aktiviert",
         "enabledComChn": "Der **{{command}}** Befehl wurde im Channel #{{channel}} erlaubt",
         "kinNone": "Erst die Arbeit, dann das Vergnügen. Nenn mir sofort den Namen der Person, die ich kicken soll. Sonst kicke ich **dich**.",
         "kin404": "Ups,I denke ich kann diese Person nicht finden :< Ist er nicht gegangen? Existiert der überhaupt. Halluzinierst du nicht nur?",
@@ -208,7 +208,7 @@
         "fausto": "Beschwört Fausto Silva. Der bestr Brazillianische TV Moderator",
         "feats": "Zeige die kürzlich benutzen Befehle an.",
         "shop": "Kaufe Schmuck für dein Profil, Vielleicht auch paar andere Sachen",
-        "fortunecookie": "Ein Glpckskeks für dir etwas unsinniges erzählen... ",
+        "fortunecookie": "Ein Glückskeks der dir etwas unsinniges erzählen wird.",
         "menu": "[DISCONTINUED] Ein Cafe Menü",
         "puto": "[BROKEN] mad-o-meter",
         "saltlevel": "Sehe wie salty du oder deine Freunde gerade sind.",
@@ -408,7 +408,7 @@
     "logs": {
         "success": "Fertig! Ich habe {{channel}} als den Kanal für {{CHNTYPE}} gesetzt!",
         "successDelete": "Alles Erledigt! {{channel}} ist nun nicht länger der Kanal für \n{{CHNTYPE}}!",
-        "failure": "Upss....Irgendwas ist fehlgeschlagen. Entschuldigung",
+        "failure": "Upss.... Es scheint das etwas schief gelaufen ist. Sorry.",
         "modLogs": "Moderations Verlauf",
         "actLogs": "Aktivitäts verlauf",
         "advLogs": "Erweitertes Protokoll",
@@ -628,7 +628,7 @@
             "potato": "Kartoffeln.....nicht schlecht, aber gut ist das auch nicht.",
             "zero_1": "Verdammt! :( Du hast nicht mal einen Rubin wiederbekommen...",
             "zero_2": "Oh...das ist traurig......hier ist nichts.",
-            "zero_3": "Viel Glück beim nächsten mal.  Ich glaub an dich! ;)"
+            "zero_3": "Viel Glück beim nächsten mal, ich glaub an dich! ;)"
         },
         "ceilingBet": "Du kannst nicht mehr als **{{number}}** %emj% Rubine bieten in diesem Spiel!"
     },
@@ -761,8 +761,8 @@
         "hasAmount": "{{username}} hat {{betrag}} aufzugschlüssel gesammelt"
     },
     "langIntro": {
-        "global": "Ab jetzt werde ich Englisch sprechen. Vielleicht sogar höflich.",
-        "channel": "Ich spreche hier Englisch. Nur für dich."
+        "global": "Ab jetzt werde ich Deutsch sprechen. Vielleicht sogar höflich.",
+        "channel": "Ich spreche hier Deutsch. Nur für dich."
     },
     "info": {
         "checkPin": "Überprüfen Sie die angeheftete Nachricht auf weitere Informationen",
