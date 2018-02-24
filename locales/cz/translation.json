@@ -39,8 +39,8 @@
         "exchange": "Výměny",
         "crafts": "Craftění",
         "donation": "Dary",
-        "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
-        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!"
+        "dailyStreakJades": "{{emoji}} **+1000 jadeitů** za sbírání 3 dny v kuse!",
+        "dailyStreakSapphs": "{{emoji}} **+1 safír** za sbírání 250 dní v kuse!"
     },
     "forFun": {
         "saltLVL": "Level naštvanosti {{target}} je **{{amount}}%** {{emoji}}.",
