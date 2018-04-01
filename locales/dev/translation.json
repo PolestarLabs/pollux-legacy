@@ -155,6 +155,7 @@
         "myProf": "Hold up! Building my super duper Profilecard here..."
     },
     "help": {
+      "eggtrade":"Trade repeated Easter Eggs with your friends!",
         "checkYeDM": "Psst, I sent you the info through DM. Go take a look.",
         "availableComms": "Available Commands",
         "airwaifu": "Aeroplanatic Waifu Material",
@@ -254,7 +255,11 @@
         "prune": "Deletes Messages from a specific User",
         "cage": "Your dose of Nicholas cage, just the best Cage pics for your Cage needs!",
         "decontaminate": "Give yourself or a friend a good decontamination shower",
-        "geiger": "Use a Geiger counter dosimeter to check for the potential of cancer in a channel"
+        "geiger": "Use a Geiger counter dosimeter to check for the potential of cancer in a channel",
+        "craft": "Create items you can use to do awesome stuff with!",
+        "marriage": "Officialise your love, or just show off as acouple with someone else. On this very capitalist wedding system!",
+      "lewd":"Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!"
+
     },
     "menu": {
         "cake": "Cake",
@@ -286,7 +291,10 @@
         "tellmeMSG": "Message too short or no message found.",
         "tellmeCHN": "Channel not specified!",
         "timer": "Of course, I will now delete Welcome Messages after {{timeMin}} seconds!",
-        "timerby": "Sure, I will now delete Bye Messages after {{timeMin}} seconds!"
+        "timerby": "Sure, I will now delete Bye Messages after {{timeMin}} seconds!",
+        "noTimer": "Ok, no messages will be deleted.",
+        "outChan": "Alright! Farewell messages will be posted at **{{channel}}**",
+        "inChan": "Alright! Welcome messages will be posted at **{{channel}}**"
     },
     "reput": {
         "noSelf": "No, I refuse to let you rep yourself.",
@@ -314,6 +322,10 @@
     },
     "helpkey": "help",
     "usage": {
+      "eggtrade":"**Making a Trade**\n`{{prefix}}trade [Egg ID] @someone`\nE.g.`{{prefix}}trade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
+      "lewd":"`{{prefix}}lewd`\nYou can also choose from which curator you will want to see the picks from! Just type their name after the command like `{{prefix}}lewd pollyanna` for example, to see only stuff curated by **Pollyanna**.\n\n Our current curator squad is:\n {{squad}}",
+      "marry":"Marriage relies directly on `{{prefix}}craft`, since you need a ring before you can propose.\n\nTo marry your loved one, do `{{prefix}}marry @user [ring]`. There are 4 tiers of wedding rings, each one made of a different gemstone, to show off how fancy your marriage is. In the future, higher rank rings will provide the couple more Love Points that they will be able to spend together.\n\nExample usage: `{{prefix}}marry @someone rubine` to propose with a Rubine ring.\n\nRequires Embed, Manage Messages and Reaction Permissions",
+      "craft":"`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item.",
         "logs": "`{{prefix}}logs #channel`\n Set all logs at the chosen Channel.\n\n`{{prefix}}logs mod #channel`\n Set moderation logs (Bans, Kicks and Mutes) at the chosen Channel.\n\n`{{prefix}}logs atv #channel`\n Set Activity logs (Members in and out, nickname edits) at the chosen Channel.\n\n`{{prefix}}logs adv #channel`\n Set Advanced Logs (Deleted and edited messages, Channels created, Activation or Deactivation of modules) at the chosen Channel.\n\n`{{prefix}}logs mod #channel delete`\nLogs will no more be sent to this Channel",
         "ahegao": "Quite simple, just type `{{prefix}}ahegao` and you get an アヘ顔",
         "askingHelpForHelp": "You are messing with me, correct?",
@@ -347,8 +359,8 @@
         "speakAvailable": "Available languages are:",
         "autorole": "`{{prefix}}autorole [add | rem | list] [Role| @role]` \n\n`{{prefix}}autorole add Games` Allows the **Games** Role as self-assignable.\n`{{prefix}}autorole rem Games` Removes the role **Games** da lista.\n`{{prefix}}autorole list` Shows the list and commands for each Self-Assignable Role\n\n Type the Role name exactly as registered, case sensitive. Or just @mention it",
         "background": "`{{prefix}}background [Imagecode]`\n\n :warning: **IMPORTANT:** \n*Imagecode* __are not links__, are codes obtained from http://www.pollux.fun/bgshop. \n\nExample: `{{prefix}}background IlyEEDBj0GLLlFl8n6boPLSkADNuBwke`",
-        "bye": "`{{prefix}}bye [msg|timer] [mensagem|segundos]` \n\n`{{prefix}}bye msg Goodbye %user% !`\n Changes the message to \"Goodbye @User !\"\n\n`{{prefix}}bye timer 10`\n Set a time in seconds for auto deletion, 0 for keep it forever.\n\n`{{prefix}}bye`\nWithout any parameters, this command will toggle on and off the emittion of messages.\n\n**Wildcards**:\n`%user%` Mentions the user.\n`%username%` Outputs the user's name, without mention.",
-        "welcome": "`{{prefix}}welcome [msg|timer] [mensagem|segundos]` \n\n`{{prefix}}welcome  msg Welcome %user% !`\n Changes the message to \"Welcome @User !\"\n\n`{{prefix}}welcome timer 10`\n Set a time in seconds for auto deletion, 0 for keep it forever.\n\n`{{prefix}}welcome `\nWithout any parameters, this command will toggle on and off Welcome messages.\n\n**Wildcards**:\n`%user%` Mentions the user.\n`%username%` Outputs the user's name, without mention.",
+        "bye": "`{{prefix}}bye [msg|timer|chn] [message|seconds|channel]` \n\n`{{prefix}}bye msg Goodbye %user% !`\n Changes the message to \"Goodbye @User !\"\n\n`{{prefix}}bye timer 10`\n Set a time in seconds for auto deletion, 0 for keep it forever.\n\n`{{prefix}}bye`\nWithout any parameters, this command will toggle on and off the emittion of messages.\n\n**Wildcards**:\n`%user%` Mentions the user.\n`%username%` Outputs the user's name, without mention.",
+        "welcome": "`{{prefix}}welcome [msg|timer|chn] [message|seconds|channel]` \n\n`{{prefix}}welcome  msg Welcome %user% !`\n Changes the message to \"Welcome @User !\"\n\n`{{prefix}}welcome timer 10`\n Set a time in seconds for auto deletion, 0 for keep it forever.\n\n`{{prefix}}welcome `\nWithout any parameters, this command will toggle on and off Welcome messages.\n\n**Wildcards**:\n`%user%` Mentions the user.\n`%username%` Outputs the user's name, without mention.",
         "chinese": "`{{prefix}}chinese [text]`",
         "clear": "`{{prefix}}clear X`\n**Attention** X must be __Greater than 1__ and __Lower than 101__.\nI'm sure you can do the math without help.",
         "color": "`{{prefix}}color #FF0000`",
@@ -703,6 +715,14 @@
         "ex-succ": "Exchange Successful!"
     },
     "event": {
+        "egghunt":"***{{user}}** is looking around for eggs in this channel...*",
+        "egghuntfail":"*But couldn't find a single thing*",
+        "egghuntsuccess":"Great! There's an egg here! Let's see...",
+        "egghuntsuccess2":"{{rarity_emoji}} {{user}} found a **{{rarity}} Egg**!",
+        "egghuntsuccess3":"You have a total of **{{X}}** eggs with you.\n**{{Y}}** of them are unique.\n\nMore info at: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
+        "delaytrade": "Hold on! You can trade eggs again in {{remaining}}",
+        "wanttrade":"{{user}} wants to trade {{tradingEgg}} with you.\n*To accept, type `accept` followed by the ID of the Egg you're sending back.*\nE.g. `accept C1`",
+
         "next": "Available again in this Server at {{remain}}",
         "treat": "***Trick or Treat!***  You got **{{qtd}}** candies from this Server's stash!",
         "treatRefresh": "No no no! You already got your candies, shoo!\nYou can come back in **{{remaining}}**",
@@ -763,6 +783,13 @@
     "langIntro": {
         "global": "I'll speak English from now on. Maybe I'll even be polite.",
         "channel": "I'll speak english here, just for you."
+    },
+    "rarity_tiers":{
+      "C": "Common",
+      "U": "Uncommon",
+      "R": "Rare",
+      "SR": "Super Rare",
+      "UR": "Ultra Rare"
     },
     "info": {
         "checkPin": "Check the Pinned Message for more Info",
