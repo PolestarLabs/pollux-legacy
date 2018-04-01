@@ -65,6 +65,7 @@
         "colorChange": "Your favorite color has been saved!"
     },
     "CMD": {
+      "ongoingTrade":"You cannot start a trade while another one is going on!",
         "denied": "You are not authorized to use this. This commands requires a Elevation Rank of {{rankNeed}}, your Rank is {{rankMe}}. Contact the Server owner or a Mod.",
         "incorrectUsage": "That's not how you use that Command. Try {{usage}}. E.g.: {{example}}",
         "disabledModule": ":no_entry_sign: Our master has declared {{module}} forbidden here. That's too bad.",
@@ -721,7 +722,13 @@
         "egghuntsuccess2":"{{rarity_emoji}} {{user}} found a **{{rarity}} Egg**!",
         "egghuntsuccess3":"You have a total of **{{X}}** eggs with you.\n**{{Y}}** of them are unique.\n\nMore info at: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
         "delaytrade": "Hold on! You can trade eggs again in {{remaining}}",
-        "wanttrade":"{{user}} wants to trade {{tradingEgg}} with you.\n*To accept, type `accept` followed by the ID of the Egg you're sending back.*\nE.g. `accept C1`",
+        "wanttrade":"{{user}} wants to trade **{{tradingEgg}}** with you.",
+        "wanttrade2":"*To accept it, type `accept` followed by the ID of the Egg you're sending back.*\n\nE.g. `accept C1` to give a [**C1**] Egg in exchange for this [**{{eggcode}}**] Egg",
+      "eggtradetitle":"Easter Egg Trading",
+      "noegginvent":"This egg either doesn't exist or isn't in your inventory.",
+      "needegg":"You need to specify an egg to give in return!",
+      "tradeok":"**Success!** {{user1}}'s {{egg1}} was exchanged for {{user2}}'s {{egg2}}.",
+
 
         "next": "Available again in this Server at {{remain}}",
         "treat": "***Trick or Treat!***  You got **{{qtd}}** candies from this Server's stash!",
