@@ -115,7 +115,8 @@
         "enterVoiceBetterExperience": "Aby uzyskać pełne wrażenia, musisz mieć kanał głosowy.",
         "useThis": "Jako przedrostka należy użyć `{{prefix}}`.",
         "acceptDec": "Kliknij {{icon}}, aby potwierdzić, możesz otrzymać przelew nie więcej niż 5 razy dziennie.",
-        "declinedTrans": "{{user}} wydaje się nie chcieć twoich rubinów."
+        "declinedTrans": "{{user}} wydaje się nie chcieć twoich rubinów.",
+        "ongoingTrade": "Nie możesz rozpocząć handlu dopóki inna osoba nie przyjdzie!"
     },
     "dict": {
         "coinHeads": "reszka",
@@ -254,7 +255,11 @@
         "prune": "Usuwa wiadomości od określonego użytkownika",
         "cage": "Zdjęcia Nicolasa Cage",
         "decontaminate": "Osadź siebie lub swojego przyjaciela świętą w 100% ekskluzywną wodą dezynfekującą",
-        "geiger": "Użyj dozymetru licznika Geigera, aby zobaczyć procent raka na tym kanale"
+        "geiger": "Użyj dozymetru licznika Geigera, aby zobaczyć procent raka na tym kanale",
+        "eggtrade": "Wymień powtarzające się pisanki ze swoimi przyjaciółmi!",
+        "craft": "Twórz przedmioty, które możesz użyć do świetnych rzeczy!",
+        "marriage": "Zoficjalizuj swoją miłość lub pokaż jak blisko z kimś jesteś. Za pomocą tego systemu ślubów!",
+        "lewd": "Zdobądź najlepsze, ręcznie, starannie wybrane sprośne zdjęcia przez naszych najlepszych kustoszy Lewd w Pollux!"
     },
     "menu": {
         "cake": "Ciasto",
@@ -286,7 +291,10 @@
         "tellmeMSG": "Zbyt krótka wiadomość lub brak wiadomości.",
         "tellmeCHN": "Kanał nie został określony!",
         "timer": "Oczywiście, będę teraz usuwał wiadomości powitalne po {{timeMin}} sekundach!",
-        "timerby": "Oczywiście, teraz będę usuwać wiadomości po {{timeMin}} sekundach!"
+        "timerby": "Oczywiście, teraz będę usuwać wiadomości po {{timeMin}} sekundach!",
+        "noTimer": "Dobra, nie usunę żadnej wiadomości",
+        "outChan": "Okej! Wiadomości pożegnalne będą wrzucane na kanał **{{chanell}}**",
+        "inChan": "Okej! Wiadomości z przywitaniami będą wrzucane na kanał **{{chanell}}**"
     },
     "reput": {
         "noSelf": "Nie, nie pozwolę ci na dawanie reputacji sobie.",
@@ -403,7 +411,11 @@
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{prefix}}selfroles [add | del | list] [Role | @rola | ID roli] [\"Shorthand\"] `\n\n`{{prefix}}selfroles add Games` Zezwala na **Gry** Role jako samodzielną.\n`{{prefix}}selfroles del Games` Usuwa z listy rolę **Gry**.\n`{{prefix}}selfroles list` Pokazuje listę i polecenia dla każdej Roli samozwijalnej\n\n  Są one niewrażliwe na wielkość liter, można również użyć identyfikatora Role ID.\n`{{prefix}}selfroles clear` Usuwa **wszystkie** selfroles z listy.",
         "prune": "`{{prefix}}prune X [@użytkownik | ID użytkownika] `\nMożesz użyć identyfikatora użytkownika, jeśli wspomnienie jest niedostępne, jak w `{{prefix}}prune 50 271394014358405121`, jeśli nie podano użytkownika, domyślnie jest to komunikat Pollux.\n\n**Uwaga** X musi być __Wyższe niż 1__ i __Niższe niż 101__.\nProste kalkulowanie, jestem pewna, że możesz to zrobić samemu.",
-        "decontaminate": "`{{prefix}}decontaminate [@użytkownik (Opcjonalne)]`"
+        "decontaminate": "`{{prefix}}decontaminate [@użytkownik (Opcjonalne)]`",
+        "eggtrade": "**Tworzenie wymiany**\n`{{prefix}}trade [Egg ID] @ktoś`\nNp. `{{prefix}}trade U2 @ktoś` wymieni *Akwamarynowe Pulsujące Jajko* z *@Kimś*\n\n**Akceptowanie wymiany**\nAby zaakceptować wymianę musisz w ciągu 30 sekund napisać *accept* + jedno ID twojego jajka, jedynie wymiany, które dają obopólną korzyść są dozwolone.\n`accept SR1` wyśle *Magiczne Jajko Ciemności* w zamiast za *Akwamarynowo Pulsujące Jajko* wysłane przez pierwszego użytkownika.\n\n**Wymieniać się możesz tylko raz na 2 godziny, więc nie zmarnuj tego! __Za nie odczytane wymiany również będziesz musiał czekać 2 godziny!__**",
+        "lewd": "`{{prefix}}lewd`\nMożesz również wybrać od którego opiekuna chcesz zobaczyć obrazki! Wystarczy, że napiszesz jego imię po komendzie. Np. : `{{prefix}} lewd pollyanna` aby zobaczyć rzeczy, które ma w swojej kolekcji **Pollyanna**.\n\nNasza drużyna opiekunów:\n{{squad}}",
+        "marry": "Małżeństwo polega bezpośrednio na `{{prefix}}craft`, więc musisz pierw zrobić pierścionek by się z kimś ożenić.\n\nAby ożenić kogoś kogo kochasz musisz wpisać `{{prefix}}marry @użytkownik [pierścionek]`. Są 4 poziomy pierścionków zaręczynowych i każdy typ jest z innej błyskotki, a wszystko po to byś mógł pokazać jaka wspaniała z was para. W przyszłości lepsze pierścionki będą dawać więcej punktów miłości, które będziecie mogli razem wydawać.\n\nNp.: `{{prefix}}mary @ktoś rubine` aby zaręczyć się z kimś korzystając z Rubinowego Pierścionka.\n\nWymaga permisji Zarządzanie serwerem i Dodaj Reakcję.",
+        "craft": "`{{prefix}}craft [numer itemu]`\nMożesz znaleźć wszystkie informacje na stronie: http://pollux.fun/crafting.\n\nAby stworzyć przedmiot musisz tylko posiadać wszystkie potrzebne materiały. Pamiętaj tylko, że niektóre z nich trzeba wcześniej stworzyć, ponieważ one same się nie stworzą."
     },
     "logs": {
         "success": "Gotowe! Ustawiłem {{channel}} jako kanał dla {{CHNTYPE}}!",
@@ -758,7 +770,19 @@
         "thankKys": "Wielkie dzięki! Święty Mikołaj może teraz dostarczać prezenty **{{amount}}x** szybciej dzięki Twojej życzliwości~",
         "howmanyKys": "Ach, dziękuję! Ile kluczy masz dla mnie?",
         "noFunds_bo": "Wygląda na to, że nie masz tylu kluczy.",
-        "hasAmount": "{{username}} zebrane {{amount}} Mechaniczne Kluczy"
+        "hasAmount": "{{username}} zebrane {{amount}} Mechaniczne Kluczy",
+        "egghunt": "**{{user}}** poszukuje jajek na tym kanale...*",
+        "egghuntfail": "*Lecz niczego nie znalazł*",
+        "egghuntsuccess": "Super! Mamy jajko! Spójrzmy...",
+        "egghuntsuccess2": "{{rarity_emoji}} {{user}} znalazł **{{rarity}} Jajko**!",
+        "egghuntsuccess3": "Masz **{{X}}** jajek.\n**{{Y}}** jest unikatowych.\nWięc informacji na: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
+        "delaytrade": "Prr! Możesz dopiero wymienić się za: {{remaining}",
+        "wanttrade": "{{user}} chce się wymienić się z tobą swoim **{{tradingEgg}}**.",
+        "wanttrade2": "Aby akceptować napisz  `accept` a następnie identyfikator wysłanego jaja.*\n\nNp.: `accept C1`, aby dać Jajko [**C1**] w zamian za Jajko [**{{eggcode}}**]",
+        "eggtradetitle": "Wymiana Pisanek",
+        "noegginvent": "To Jajko nie istnieje lub nie znajduje się w twoim ekwipunku.",
+        "needegg": "Musisz wybrać jajko, które oddasz!",
+        "tradeok": "**Sukces!** {{user1}} {{egg1}} zostało wymienione na {{user2}} {{egg2}}."
     },
     "langIntro": {
         "global": "Odtąd będę mówić po polsku. Może nawet będę miła.",
@@ -767,5 +791,12 @@
     "info": {
         "checkPin": "Sprawdź przypiętą wiadomość, aby uzyskać więcej informacji",
         "reactThis": "Zareaguj na tę wiadomość, aby automatycznie otrzymywać role"
+    },
+    "rarity_tiers": {
+        "C": "Zwyczajne",
+        "U": "Niezwykłe",
+        "R": "Rzadki",
+        "SR": "Super Rzadki",
+        "UR": "Ultra Rzadki"
     }
 }
