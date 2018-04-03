@@ -40,7 +40,7 @@
         "crafts": "Elaboración",
         "donation": "Donaciones",
         "dailyStreakJades": "{{emoji}} **+1000 Jades** por recolectar 3 días seguidos!",
-        "dailyStreakSapphs": "{{emoji}} **+1 Sapphine** por recolectar 250 días seguidos!"
+        "dailyStreakSapphs": "{{emoji}} **+1 Safiros** por recolectar 250 días seguidos!"
     },
     "forFun": {
         "saltLVL": "{{target}}' tiene un Nivel de Sal de **{{amount}}%** {{emoji}}",
@@ -115,7 +115,8 @@
         "enterVoiceBetterExperience": "Tienes que estar en un canal de voz para la experiencia completa.",
         "useThis": "Usa `{{prefix}}` como prefijo para esto.",
         "acceptDec": "Haz clic en {{icon}} para aceptar esto, solo puede aceptar 5 transacciones por día.",
-        "declinedTrans": "{{user}} no parece querer tus Rubines."
+        "declinedTrans": "{{user}} no parece querer tus Rubines.",
+        "ongoingTrade": "¡No puedes empezar un intercambio mientras otro aun está haciendose!"
     },
     "dict": {
         "coinHeads": "Cara",
@@ -254,7 +255,11 @@
         "prune": "Elimina mensajes de un usuario específico",
         "cage": "Tu dosis de Nicholas Cage, ¡Solo las mejores imágenes de Cage para tus necesidades de Cage!",
         "decontaminate": "Date a ti mismo o a un amigo una buena ducha de descontaminación",
-        "geiger": "Usa un contador dosímetro Geiger para verificar el potencial de cáncer en el canal"
+        "geiger": "Usa un contador dosímetro Geiger para verificar el potencial de cáncer en el canal",
+        "eggtrade": "¡Intercambia Huevos de Pascua repetidos con tus amigos!",
+        "craft": "¡Crea items con los que puedes hacer cosas geniales!",
+        "marriage": "Haz tu amor oficial, o simplemente muestrate como pareja con alguien mas. ¡En este super sistema nupcial capitalista!",
+        "lewd": "¡Recibe las mejores imágenes obscenas escogidas minuciosamente por nuestros Obscenos Seleccionadores del hogar de Pollux!"
     },
     "menu": {
         "cake": "Pastel",
@@ -286,7 +291,10 @@
         "tellmeMSG": " Mensaje muy corto o mensaje no encontrado.",
         "tellmeCHN": " ¡Canal no especificado!",
         "timer": "Ok, Voy a borrar el Mensaje de Bienvenida ¡después de {{timeMin}} segundos!",
-        "timerby": "De acuerdo, ¡Voy a borrar los Mensajes de Despedida después de {{timeMin}} segundos!"
+        "timerby": "De acuerdo, ¡Voy a borrar los Mensajes de Despedida después de {{timeMin}} segundos!",
+        "noTimer": "De acuerdo, ningún mensaje se eliminará.",
+        "outChan": "¡Bien! Los mensajes de despedida se postearán en **{{channel}}**",
+        "inChan": "¡Bien! Los mensajes de bienvenida se postearán en **{{channel}}**"
     },
     "reput": {
         "noSelf": "¡Hey yey pillín! ¡No te puedes rep a ti mismo!",
@@ -403,7 +411,11 @@
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games` Permite que el Rol **Juegos** se asigne a sí mismo.\n`{{prefix}}selfroles del Games` Quita el Rol **Juegos** de la lista.\n`{{prefix}}selfroles list` Muestra la lista y los comandos para cada rol autoasignable\n\n Estos son insensibles a las mayúsculas y minúsculas; también puedes usar ID del Rol.\n`{{prefix}}selfroles clear` Elimina **todos** los selfroles de la lista.",
         "prune": "`{{prefix}}prune X [@user | user ID]`\nPuede utilizar la ID del usuario si la mención no está disponible, como en `{{prefix}}prune 50 271394014358405121`, si no se especifica ningún usuario, se establece de forma predeterminada en los mensajes de Pollux.\n\n**Atención** X debe ser __ Mayor que 1__ y __ Menor que 101__.\nMatemáticas básicas, estoy segura de que puedes hacerlo.",
-        "decontaminate": "`{{prefix}}decontaminate [@usuario (opcional)]`"
+        "decontaminate": "`{{prefix}}decontaminate [@usuario (opcional)]`",
+        "eggtrade": "**Haciendo un Intercambio**\n`{{prefix}}trade [ID del huevo] @miembro`\nE.g.`{{prefix}}trade U2 @miembro` Intercambiará *Huevo Aquamarine Pulse* con *@Miembro*\n\n**Aceptando un Intercambio**\nPara aceptar una propuesta de Intercambio, tienes 30s para responder la oferta con \"accept\" + el ID de uno de tus huevos, solo se permiten intercambios mutuos.\n`accept SR1` Mandará *Huevo Dark Magician* como intercambio de *Huevo Aquamarine Pulse* enviado por el primer usuario.\n\n**Solo puedes intercambiar cada 2 horas, así que ten cuidado. __¡Intercambios fallidos consumirán tu cooldown!__**",
+        "lewd": "`{{prefix}}lewd`\n¡También puedes escoger de que selector querras ver las imágenes escogidas! Tan solo escribe su nombre despues del comando como `{{prefix}}lewd pollyanna` por ejemplo, para solo ver contenido escogido por **Pollyanna**.\n\n Nuestro equipo de seleccionadores actual es:\n {{squad}}",
+        "marry": "Casarse depende directamente de `{{prefix}}craft`, ya que necesitas un anillo antes de poder declararte.\n\nPara casarte con tu amado o amada, haz `{{prefix}}marry @usuario [ring]`. Hay 4 rangos de anillos de boda, cada uno hecho de diferentes gemas, para alardear de tu elegante matrimonio. En el futuro, anillos de mas alto rango proveerán a la pareja de mas Love Points que podrán usar juntos.\n\nEjemplo de uso: `{{prefix}}marry @alguien rubine` para declararte con un anillo de Rubine.\n\nRequiere Permisos de Embed, Manage Messages y Reaction.",
+        "craft": "`{{prefix}}craft [código del item]`\nPuedes ver el código del item y toda la información en http://pollux.fun/crafting.\n\nPara craftear un item necesitas poseer todos los materiales requeridos, algunos materiales necesitan ser crafteados para estar disponibles, esos no son autocrafteados cuando creas un item de alto rango."
     },
     "logs": {
         "success": "¡Hecho! He establecido {{channel}} como el Canal para {{CHNTYPE}}!",
@@ -758,7 +770,19 @@
         "thankKys": "¡Muchas gracias! Santa puede entregar regalos aquí **{{amount}}x** más rápido ahora debido a tu bondad~",
         "howmanyKys": "¡Ah gracias! ¿Cuántas llaves puedes darme?",
         "noFunds_bo": "Parece que no tienes tantas llaves.",
-        "hasAmount": "{{username}} ha recopilado {{amount}} Llaves de Cuerda"
+        "hasAmount": "{{username}} ha recopilado {{amount}} Llaves de Cuerda",
+        "egghunt": "***{{user}}** está buscando huevos en este canal...*",
+        "egghuntfail": "*Pero no pudo encontrar nada*",
+        "egghuntsuccess": "¡Genial! ¡Aquí hay un huevo! Vamos a ver...",
+        "egghuntsuccess2": "{{rarity_emoji}} ¡ {{user}} encontró un **Huevo {{rarity}}**!",
+        "egghuntsuccess3": "Tienes un total de **{{X}}** huevos contigo.\n**{{Y}}** de ellos son únicos.\n\nMas info en: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
+        "delaytrade": "¡Espera! Puedes intercambiar huevos de nuevo en {{remaining}}",
+        "wanttrade": "{{user}} quiere intercambiar **{{tradingEgg}}** contigo.",
+        "wanttrade2": "*Para aceptarlo, escribe `accept` seguido del ID del Huevo que mandarás de vuelta.*\n\nE.j. `accept C1` para dar un Huevo [**C1**] a cambio de este Huevo [**{{eggcode}}**]",
+        "eggtradetitle": "Intercambio de Huevos de Pascua",
+        "noegginvent": "Este huevo o no existe o no está en tu inventorio.",
+        "needegg": "¡Necesitas especificar un huevo para dar a cambio!",
+        "tradeok": "**¡Éxito!** El {{egg1}} de {{user1}} fue intercambiado por el {{egg2}} de {{user2}}. "
     },
     "langIntro": {
         "global": "Hablaré español a partir de ahora. Tal vez incluso sea educada.",
@@ -767,5 +791,12 @@
     "info": {
         "checkPin": "Verifica el mensaje adjunto para más información",
         "reactThis": "Reacciona a este mensaje para auto-recibir los roles"
+    },
+    "rarity_tiers": {
+        "C": "Común",
+        "U": "Poco común",
+        "R": "Raro",
+        "SR": "Super Raro",
+        "UR": "Ultra Raro"
     }
 }
