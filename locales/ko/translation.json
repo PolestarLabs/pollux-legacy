@@ -115,7 +115,8 @@
         "enterVoiceBetterExperience": "전체 경험을 위해서는 음성 채널에 있어야합니다.",
         "useThis": "접두사로`{{prefix}}` 를 사용하십시오.",
         "acceptDec": "이를 수락하려면 {{icon}} 을 클릭하십시오. 하루에 5 건의 거래 만 수락 할 수 있습니다.",
-        "declinedTrans": "{{user}} 님이 귀하의 루핀을 원하지 않는 것 같습니다."
+        "declinedTrans": "{{user}} 님이 귀하의 루핀을 원하지 않는 것 같습니다.",
+        "ongoingTrade": "You cannot start a trade while another one is going on!"
     },
     "dict": {
         "coinHeads": "heads",
@@ -254,7 +255,11 @@
         "prune": "특정 사용자의 메시지 삭제",
         "cage": "최고의 니콜라스 케이지 사진이 당신을 위해!",
         "decontaminate": "자신이나 친구에게 좋은 오염 제거 샤워",
-        "geiger": "가이거 카운터 선량계를 사용하여 채널에서 암의 가능성을 확인하십시오."
+        "geiger": "가이거 카운터 선량계를 사용하여 채널에서 암의 가능성을 확인하십시오.",
+        "eggtrade": "Trade repeated Easter Eggs with your friends!",
+        "craft": "Create items you can use to do awesome stuff with!",
+        "marriage": "Officialise your love, or just show off as acouple with someone else. On this very capitalist wedding system!",
+        "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!"
     },
     "menu": {
         "cake": "케이크",
@@ -286,7 +291,10 @@
         "tellmeMSG": "␣메시지가 너무 짧거나 메시지가 없습니다.",
         "tellmeCHN": "␣채널 지정되지 않았습니다!",
         "timer": "물론 {{timeMin}} 초 후에 환영 메시지를 삭제하겠습니다!",
-        "timerby": "물론, {{timeMin}} 초 후에 Bye Messages를 삭제할 것입니다!"
+        "timerby": "물론, {{timeMin}} 초 후에 Bye Messages를 삭제할 것입니다!",
+        "noTimer": "Ok, no messages will be deleted.",
+        "outChan": "Alright! Farewell messages will be posted at **{{channel}}**",
+        "inChan": "Alright! Welcome messages will be posted at **{{channel}}**"
     },
     "reput": {
         "noSelf": "아니, 거절한다!",
@@ -403,7 +411,11 @@
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{prefix}} selfroles [add | del | list] [Role| @role | Role ID]\n[\"Shorthand\"]`\n\n`{{prefix}}selfroles add Games` **Games** 역할은 스스로 할당 할 수 있습니다.\n{{{prefix}}selfroles del Games` **Games** 목록의 역할을 제거합니다..\n`{{prefix}}selfroles list` 각 자체 할당 가능 역할에 대한 목록 및 명령을 표시합니다.\n\n  대소 문자를 구별하여 정확하게 역할 이름을 입력하십시오. 아니면 단지 @mention 그것",
         "prune": "`{{prefix}}prune X [@user | user ID]`\n사용자 ID를 사용할 수 없다면 사용자 ID를 사용할 수 있습니다. `{{prefix}}prune 50 271394014358405121`, 사용자를 지정하지 않으면 기본적으로 Pollux의 메시지가 표시됩니다..\n\n**주의**  X 반드시 있어야합니다. __이상 1 과 ___보다 낮은101.\n나는 당신이 도움없이 수학을 할 수 있다고 확신합니다.",
-        "decontaminate": "`{{prefix}}decontaminate [@사용자 (선택 과목)]`"
+        "decontaminate": "`{{prefix}}decontaminate [@사용자 (선택 과목)]`",
+        "eggtrade": "**Making a Trade**\n`{{prefix}}trade [Egg ID] @someone`\nE.g.`{{prefix}}trade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
+        "lewd": "`{{prefix}}lewd`\nYou can also choose from which curator you will want to see the picks from! Just type their name after the command like `{{prefix}}lewd pollyanna` for example, to see only stuff curated by **Pollyanna**.\n\n Our current curator squad is:\n {{squad}}",
+        "marry": "Marriage relies directly on `{{prefix}}craft`, since you need a ring before you can propose.\n\nTo marry your loved one, do `{{prefix}}marry @user [ring]`. There are 4 tiers of wedding rings, each one made of a different gemstone, to show off how fancy your marriage is. In the future, higher rank rings will provide the couple more Love Points that they will be able to spend together.\n\nExample usage: `{{prefix}}marry @someone rubine` to propose with a Rubine ring.\n\nRequires Embed, Manage Messages and Reaction Permissions",
+        "craft": "`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item."
     },
     "logs": {
         "success": "끝난! {{CHNTYPE}}의 채널로 {{channel}}을 (를) 설정했습니다.",
@@ -758,7 +770,19 @@
         "thankKys": "고마워요! 산타는 여기 선물을 배달 할 수 있습니다  **{{amount}}x** 귀하의 친절로 인해 더 빨라졌습니다 ~",
         "howmanyKys": "아, 고마워! 네가 갖고있는 열쇠는 몇 개나있어?",
         "noFunds_bo": "네가 나를 위해 충분한 열쇠를 가지고 있다고 생각하지 않는다.",
-        "hasAmount": "{username}}이 권선 키 {{amount}}를 수집했습니다."
+        "hasAmount": "{username}}이 권선 키 {{amount}}를 수집했습니다.",
+        "egghunt": "***{{user}}** is looking around for eggs in this channel...*",
+        "egghuntfail": "*But couldn't find a single thing*",
+        "egghuntsuccess": "Great! There's an egg here! Let's see...",
+        "egghuntsuccess2": "{{rarity_emoji}} {{user}} found a **{{rarity}} Egg**!",
+        "egghuntsuccess3": "You have a total of **{{X}}** eggs with you.\n**{{Y}}** of them are unique.\n\nMore info at: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
+        "delaytrade": "Hold on! You can trade eggs again in {{remaining}}",
+        "wanttrade": "{{user}} wants to trade **{{tradingEgg}}** with you.",
+        "wanttrade2": "*To accept it, type `accept` followed by the ID of the Egg you're sending back.*\n\nE.g. `accept C1` to give a [**C1**] Egg in exchange for this [**{{eggcode}}**] Egg",
+        "eggtradetitle": "Easter Egg Trading",
+        "noegginvent": "This egg either doesn't exist or isn't in your inventory.",
+        "needegg": "You need to specify an egg to give in return!",
+        "tradeok": "**Success!** {{user1}}'s {{egg1}} was exchanged for {{user2}}'s {{egg2}}."
     },
     "langIntro": {
         "global": "나는 지금부터 한국어로 말할 것입니다. 이미 내 APM이 증가하고 있다고 느낄 수 있습니다.",
@@ -767,5 +791,12 @@
     "info": {
         "checkPin": "추가 정보는 첨부 된 메시지 확인",
         "reactThis": "역할을 자동 수신하려면이 메시지에 응답하십시오."
+    },
+    "rarity_tiers": {
+        "C": "Common",
+        "U": "Uncommon",
+        "R": "Rare",
+        "SR": "Super Rare",
+        "UR": "Ultra Rare"
     }
 }
