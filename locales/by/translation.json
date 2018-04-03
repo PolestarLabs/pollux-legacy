@@ -115,7 +115,8 @@
         "enterVoiceBetterExperience": "Вы павінны знаходзіцца ў галасавым канале для поўнага апускання.",
         "useThis": "Выкарыстоўвайце `{{prefix}}` як прэфікс для гэтага.",
         "acceptDec": "Націсніце на {{icon}} каб пацвердзіць, вы можаце атрымаць пераклад не больш 5 раз у дзень.",
-        "declinedTrans": "{{User}} не жадае вашых рубіны."
+        "declinedTrans": "{{User}} не жадае вашых рубіны.",
+        "ongoingTrade": "You cannot start a trade while another one is going on!"
     },
     "dict": {
         "coinHeads": "Арол",
@@ -254,7 +255,11 @@
         "prune": "Выдаляе паведамлення пэўнага карыстальніка",
         "cage": "Фатаграфіі Нікаласа Кейджа",
         "decontaminate": "Абліце сябе або свайго сябра святой 100% эксклюзіўнай абеззаражваецца вадой",
-        "geiger": "Выкарыстоўвайце дазіметр лічыльніка Гейгера каб убачыць працэнт рака на гэтым канале"
+        "geiger": "Выкарыстоўвайце дазіметр лічыльніка Гейгера каб убачыць працэнт рака на гэтым канале",
+        "eggtrade": "Trade repeated Easter Eggs with your friends!",
+        "craft": "Create items you can use to do awesome stuff with!",
+        "marriage": "Officialise your love, or just show off as acouple with someone else. On this very capitalist wedding system!",
+        "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!"
     },
     "menu": {
         "cake": "Торт",
@@ -286,7 +291,10 @@
         "tellmeMSG": "␣Паведамленне занадта кароткае ці не было знойдзена.",
         "tellmeCHN": "␣Канал не прызначылі!",
         "timer": "Вядома, я выдалю прывітальнае паведамленне праз {{timeMin}} секунд!",
-        "timerby": "Вядома, я выдалю развітальнае паведамленне праз {{timeMin}} секунд!"
+        "timerby": "Вядома, я выдалю развітальнае паведамленне праз {{timeMin}} секунд!",
+        "noTimer": "Ok, no messages will be deleted.",
+        "outChan": "Alright! Farewell messages will be posted at **{{channel}}**",
+        "inChan": "Alright! Welcome messages will be posted at **{{channel}}**"
     },
     "reput": {
         "noSelf": "Не, я не дазваляю вам даваць + да рэпутацыі самому сабе.",
@@ -403,7 +411,11 @@
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{Prefix}} selfroles [add | del | list] [Role | @role | Role ID]\n[\"Shorthand\"] `\n\n`{{Prefix}}selfroles add Games` Дазваляе ролі **Гульні** быць самоназначаемой.\n`{{Prefix}}selfroles rem Games` Выдаляе ролю **Гульні** з спісу.\n`{{Prefix}}selfroles list` Паказвае спіс і каманды для кожнай самоназначаемой ролі\n\n  Усе, апісанае вышэй, адчувальна да рэгістра. Таксама, вы можаце выкарыстоўваць ID Ролі.\n`{{Prefix}}selfroles clear` Выдаляе **ўсе** самоназначаемые ролі з спісу.",
         "prune": "{{Prefix}}prune X [@user | user ID] `\nВы можаце выкарыстоўваць ID карыстальніка, калі вы не можаце яго згадаць, напрыклад `{{prefix}}prune 50 271394014358405121`, калі карыстальнік не абраны, ён па змаўчанні выдаляе паведамлення Поллюкс.\n\n**Увага** X павінен быць __Больше, чым 1__ і __Меньше, чым 101__.\nПростая матэматыка, я думаю, што вы справіцеся.",
-        "decontaminate": "`{{prefix}}decontaminate [@карыстальнік (Апцыянальна)]`"
+        "decontaminate": "`{{prefix}}decontaminate [@карыстальнік (Апцыянальна)]`",
+        "eggtrade": "**Making a Trade**\n`{{prefix}}trade [Egg ID] @someone`\nE.g.`{{prefix}}trade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
+        "lewd": "`{{prefix}}lewd`\nYou can also choose from which curator you will want to see the picks from! Just type their name after the command like `{{prefix}}lewd pollyanna` for example, to see only stuff curated by **Pollyanna**.\n\n Our current curator squad is:\n {{squad}}",
+        "marry": "Marriage relies directly on `{{prefix}}craft`, since you need a ring before you can propose.\n\nTo marry your loved one, do `{{prefix}}marry @user [ring]`. There are 4 tiers of wedding rings, each one made of a different gemstone, to show off how fancy your marriage is. In the future, higher rank rings will provide the couple more Love Points that they will be able to spend together.\n\nExample usage: `{{prefix}}marry @someone rubine` to propose with a Rubine ring.\n\nRequires Embed, Manage Messages and Reaction Permissions",
+        "craft": "`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item."
     },
     "logs": {
         "success": "Зроблена! {{Channel}} ставіцца да {{CHNTYPE}}!",
@@ -758,7 +770,19 @@
         "thankKys": "Вялікі дзякуй! Санта зможа даставіць падарункі сюды **{{amount}}x** хутчэй з-за вашай дабрыні ~",
         "howmanyKys": "Ах, дзякуй! Колькі ў вас ёсць ключоў для мяне?",
         "noFunds_bo": "Здаецца, у вас няма столькі ключоў.",
-        "hasAmount": "{{Username}} сабраў {{amount}} Завадны Ключоў"
+        "hasAmount": "{{Username}} сабраў {{amount}} Завадны Ключоў",
+        "egghunt": "***{{user}}** is looking around for eggs in this channel...*",
+        "egghuntfail": "*But couldn't find a single thing*",
+        "egghuntsuccess": "Great! There's an egg here! Let's see...",
+        "egghuntsuccess2": "{{rarity_emoji}} {{user}} found a **{{rarity}} Egg**!",
+        "egghuntsuccess3": "You have a total of **{{X}}** eggs with you.\n**{{Y}}** of them are unique.\n\nMore info at: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
+        "delaytrade": "Hold on! You can trade eggs again in {{remaining}}",
+        "wanttrade": "{{user}} wants to trade **{{tradingEgg}}** with you.",
+        "wanttrade2": "*To accept it, type `accept` followed by the ID of the Egg you're sending back.*\n\nE.g. `accept C1` to give a [**C1**] Egg in exchange for this [**{{eggcode}}**] Egg",
+        "eggtradetitle": "Easter Egg Trading",
+        "noegginvent": "This egg either doesn't exist or isn't in your inventory.",
+        "needegg": "You need to specify an egg to give in return!",
+        "tradeok": "**Success!** {{user1}}'s {{egg1}} was exchanged for {{user2}}'s {{egg2}}."
     },
     "langIntro": {
         "global": "З гэтага моманту я буду есці бульбу, спаць на бульбе і думаць толькі пра бульбу.",
@@ -767,5 +791,12 @@
     "info": {
         "checkPin": "Праверце прымацаванае паведамленне для большай інфармацыі",
         "reactThis": "Адрэагуйце на гэтае паведамленне, каб аўтаматычна атрымаць ролі"
+    },
+    "rarity_tiers": {
+        "C": "Common",
+        "U": "Uncommon",
+        "R": "Rare",
+        "SR": "Super Rare",
+        "UR": "Ultra Rare"
     }
 }
