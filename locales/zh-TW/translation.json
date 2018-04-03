@@ -115,7 +115,8 @@
         "enterVoiceBetterExperience": "進入一個語音頻道來讓這個指令發揮全部功能",
         "useThis": "這個指令的前綴是`{{prefix}}`",
         "acceptDec": "點擊{{icon}}來接收，你一天最多只能接收5筆轉帳",
-        "declinedTrans": "看來{{user}}不想接受你的紅寶石"
+        "declinedTrans": "看來{{user}}不想接受你的紅寶石",
+        "ongoingTrade": "You cannot start a trade while another one is going on!"
     },
     "dict": {
         "coinHeads": "人頭那面",
@@ -254,7 +255,11 @@
         "prune": "刪除某特定用戶的訊息",
         "cage": "給你一張尼可拉斯·凱吉的圖片",
         "decontaminate": "幫你或你的朋友去除汙染源",
-        "geiger": "用蓋格計數器來測量這個聊天室的致癌程度"
+        "geiger": "用蓋格計數器來測量這個聊天室的致癌程度",
+        "eggtrade": "Trade repeated Easter Eggs with your friends!",
+        "craft": "Create items you can use to do awesome stuff with!",
+        "marriage": "Officialise your love, or just show off as acouple with someone else. On this very capitalist wedding system!",
+        "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!"
     },
     "menu": {
         "cake": "蛋糕",
@@ -286,7 +291,10 @@
         "tellmeMSG": "訊息太短或根本沒有訊息",
         "tellmeCHN": "沒有指定頻道！",
         "timer": "OK，我將在{{timeMin}}秒後刪除歡迎訊息",
-        "timerby": "好的，我將在{{timeMin}}秒後刪除再見訊息"
+        "timerby": "好的，我將在{{timeMin}}秒後刪除再見訊息",
+        "noTimer": "Ok, no messages will be deleted.",
+        "outChan": "Alright! Farewell messages will be posted at **{{channel}}**",
+        "inChan": "Alright! Welcome messages will be posted at **{{channel}}**"
     },
     "reput": {
         "noSelf": "想給自己聲望？你真的好棒棒",
@@ -403,7 +411,11 @@
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": " `{{prefix}}selfroles [add | del | list] [身分組| @身分組 | 身分組ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games`允許所有人自行加入**Games**身分組\n`{{prefix}}selfroles del Games`讓**Games**身分組不能再被自行加入\n`{{prefix}}selfroles list`列出所有可自行加入的身分組\n\n這些都有區別大小寫，你也可以輸入身分組ID\n`{{prefix}}selfroles clear`刪除**所有**可以自行加入的身分組",
         "prune": "`{{prefix}}prune X [@某人 | 或他的ID]`\n如果你標不到他，你可以用他的ID，例如；`{{prefix}}prune 50 271394014358405121`，如果沒有特別指定某人，將預設為清除pullox的訊息\n\n**注意** X必須__比1還大__且__比101還小__.\n小學數學，我相信你有學過",
-        "decontaminate": "`{{prefix}}decontaminate [@某某人(選擇性)]`"
+        "decontaminate": "`{{prefix}}decontaminate [@某某人(選擇性)]`",
+        "eggtrade": "**Making a Trade**\n`{{prefix}}trade [Egg ID] @someone`\nE.g.`{{prefix}}trade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
+        "lewd": "`{{prefix}}lewd`\nYou can also choose from which curator you will want to see the picks from! Just type their name after the command like `{{prefix}}lewd pollyanna` for example, to see only stuff curated by **Pollyanna**.\n\n Our current curator squad is:\n {{squad}}",
+        "marry": "Marriage relies directly on `{{prefix}}craft`, since you need a ring before you can propose.\n\nTo marry your loved one, do `{{prefix}}marry @user [ring]`. There are 4 tiers of wedding rings, each one made of a different gemstone, to show off how fancy your marriage is. In the future, higher rank rings will provide the couple more Love Points that they will be able to spend together.\n\nExample usage: `{{prefix}}marry @someone rubine` to propose with a Rubine ring.\n\nRequires Embed, Manage Messages and Reaction Permissions",
+        "craft": "`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item."
     },
     "logs": {
         "success": "完成！我已經把{{channel}}設定成{{CHNTYPE}}了！",
@@ -637,7 +649,7 @@
         "ultraRareDrop": "我真不敢相信！一個**超稀有**箱子掉落了！你有生之年可能不會再看到第二個了！",
         "lootDrop": {
             "1": "嘿！有個箱子在這個頻道出現了",
-            "2": "哇！一個箱子！快來撿喔！",
+            "2": "什麼?我484看到一個寶箱?",
             "3": "真棒，看來是一個箱子！",
             "4": "不好意思！請問有人注意到這個箱子嗎？",
             "5": "斯勾以～！看看我找到的箱子！"
@@ -758,7 +770,19 @@
         "thankKys": "太感謝了！聖誕老人現在會用**{{amount}}倍速**送禮物到這裡",
         "howmanyKys": "啊，謝啦！你打算給我多少發條？",
         "noFunds_bo": "看來你的發條不夠多",
-        "hasAmount": "{{username}}撿起了{{amount}}個發條"
+        "hasAmount": "{{username}}撿起了{{amount}}個發條",
+        "egghunt": "***{{user}}** is looking around for eggs in this channel...*",
+        "egghuntfail": "*But couldn't find a single thing*",
+        "egghuntsuccess": "Great! There's an egg here! Let's see...",
+        "egghuntsuccess2": "{{rarity_emoji}} {{user}} found a **{{rarity}} Egg**!",
+        "egghuntsuccess3": "You have a total of **{{X}}** eggs with you.\n**{{Y}}** of them are unique.\n\nMore info at: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
+        "delaytrade": "Hold on! You can trade eggs again in {{remaining}}",
+        "wanttrade": "{{user}} wants to trade **{{tradingEgg}}** with you.",
+        "wanttrade2": "*To accept it, type `accept` followed by the ID of the Egg you're sending back.*\n\nE.g. `accept C1` to give a [**C1**] Egg in exchange for this [**{{eggcode}}**] Egg",
+        "eggtradetitle": "Easter Egg Trading",
+        "noegginvent": "This egg either doesn't exist or isn't in your inventory.",
+        "needegg": "You need to specify an egg to give in return!",
+        "tradeok": "**Success!** {{user1}}'s {{egg1}} was exchanged for {{user2}}'s {{egg2}}."
     },
     "langIntro": {
         "global": "我現在會在這裡說中文(繁體)",
@@ -767,5 +791,12 @@
     "info": {
         "checkPin": "更多資訊請查看釘選訊息",
         "reactThis": "回應這則訊息以獲得身分組"
+    },
+    "rarity_tiers": {
+        "C": "Common",
+        "U": "Uncommon",
+        "R": "Rare",
+        "SR": "Super Rare",
+        "UR": "Ultra Rare"
     }
 }
