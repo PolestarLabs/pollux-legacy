@@ -115,7 +115,8 @@
         "enterVoiceBetterExperience": "Für alle Funktionen, müsst du mit einem Voice-Channel verbunden sein ",
         "useThis": "Verwenden Sie `{{Präfix}}` als Präfix dafür.",
         "acceptDec": "Klicken Sie auf {{icon}}, um diese zu akzeptieren. Sie können nur 5 Transaktionen pro tag akzeptieren.",
-        "declinedTrans": "{{user}} scheint deine rubines nicht zu wollen."
+        "declinedTrans": "{{user}} scheint deine rubines nicht zu wollen.",
+        "ongoingTrade": "You cannot start a trade while another one is going on!"
     },
     "dict": {
         "coinHeads": "Kopf",
@@ -254,7 +255,11 @@
         "prune": "Löscht eine Nachicht von einem Nutzer",
         "cage": "Käfig",
         "decontaminate": "Gib dirselbst oder einen Freund eine ordentliche Dekontaminationsdusche.",
-        "geiger": "Benutze einen Strahlungsmesserdosimeter um das cancer potential des Channels zu überprüfen."
+        "geiger": "Benutze einen Strahlungsmesserdosimeter um das cancer potential des Channels zu überprüfen.",
+        "eggtrade": "Trade repeated Easter Eggs with your friends!",
+        "craft": "Create items you can use to do awesome stuff with!",
+        "marriage": "Officialise your love, or just show off as acouple with someone else. On this very capitalist wedding system!",
+        "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!"
     },
     "menu": {
         "cake": "Kuchen",
@@ -286,7 +291,10 @@
         "tellmeMSG": "␣Nachicht zu kurz oder es ist keine da ",
         "tellmeCHN": "Channel nicht genau beschrieben.",
         "timer": "Natürlich, ich werde nun nach {{timeMin}} Sekunden die Willkommensnachrichten löschen.",
-        "timerby": "Okey, Ich werde Die Verabschiedungs Nachicht nach {{timeMin}} Sekunden Löschen!"
+        "timerby": "Okey, Ich werde Die Verabschiedungs Nachicht nach {{timeMin}} Sekunden Löschen!",
+        "noTimer": "Ok, no messages will be deleted.",
+        "outChan": "Alright! Farewell messages will be posted at **{{channel}}**",
+        "inChan": "Alright! Welcome messages will be posted at **{{channel}}**"
     },
     "reput": {
         "noSelf": "Hey Hey Süßer! Du kannst das nicht bei dir selbst ausführen ... ",
@@ -403,7 +411,11 @@
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{prefix}}selfroles [add | del | list] [Rolle| @rolle | Rollen ID] [\"Kurzhand\"]` \n\n`{{prefix}}selfroles add Games` Erlaubt die Selbstzuweisung der Rolle **Games** \n`{{prefix}}selfroles del Games` Verbietet die Selbstzuweisung der Rolle **Games**\n`{{prefix}}selfroles list` Zeigt eine Liste der Selbstzuweisbaren Rollen und die ensprechenden Befehle.\n\nGroß/Kleinschreibung muss beachtet werden, du kannst auch die Rollen ID benutzen. \n\n`{{prefix}}selfroles clear` Löscht **alle** Selbstzuweisbaren Rollen von der Liste.",
         "prune": "`{{prefix}}prune X [@Benutzer | Benutzer-ID]`\nDu kannst die Benutzer ID benutzen, falls Erwähnungen nicht möglich sind. z.B. bei `{{prefix}}prune 50 271394014358405121`. Wenn kein Nutzer spezifiziert wird, wählt Pollux standardmäßig alle Nachrichten aus.\n\n**Achtung** X muss _größer als 1_ und _kleiner als 101_ sein!!!\nIch denke, du wirst das schaffen xD",
-        "decontaminate": "`{{prefix}}decontaminate [@user (optional)]`"
+        "decontaminate": "`{{prefix}}decontaminate [@user (optional)]`",
+        "eggtrade": "**Making a Trade**\n`{{prefix}}trade [Egg ID] @someone`\nE.g.`{{prefix}}trade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
+        "lewd": "`{{prefix}}lewd`\nYou can also choose from which curator you will want to see the picks from! Just type their name after the command like `{{prefix}}lewd pollyanna` for example, to see only stuff curated by **Pollyanna**.\n\n Our current curator squad is:\n {{squad}}",
+        "marry": "Marriage relies directly on `{{prefix}}craft`, since you need a ring before you can propose.\n\nTo marry your loved one, do `{{prefix}}marry @user [ring]`. There are 4 tiers of wedding rings, each one made of a different gemstone, to show off how fancy your marriage is. In the future, higher rank rings will provide the couple more Love Points that they will be able to spend together.\n\nExample usage: `{{prefix}}marry @someone rubine` to propose with a Rubine ring.\n\nRequires Embed, Manage Messages and Reaction Permissions",
+        "craft": "`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item."
     },
     "logs": {
         "success": "Fertig! Ich habe {{channel}} als den Kanal für {{CHNTYPE}} gesetzt!",
@@ -758,7 +770,19 @@
         "thankKys": "Danke vielmals! Der Weihnachtsmann kann hier Geschenke abgeben **{{Menge}}x** jetzt schneller wegen deiner Freundlichkeit~",
         "howmanyKys": "Ah, Danke! Wie viele Schlüssel kannst du mir geben?",
         "noFunds_bo": "Es scheint, dass Sie nicht so viele Schlüssel haben.",
-        "hasAmount": "{{username}} hat {{betrag}} aufzugschlüssel gesammelt"
+        "hasAmount": "{{username}} hat {{betrag}} aufzugschlüssel gesammelt",
+        "egghunt": "***{{user}}** is looking around for eggs in this channel...*",
+        "egghuntfail": "*But couldn't find a single thing*",
+        "egghuntsuccess": "Great! There's an egg here! Let's see...",
+        "egghuntsuccess2": "{{rarity_emoji}} {{user}} found a **{{rarity}} Egg**!",
+        "egghuntsuccess3": "You have a total of **{{X}}** eggs with you.\n**{{Y}}** of them are unique.\n\nMore info at: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
+        "delaytrade": "Hold on! You can trade eggs again in {{remaining}}",
+        "wanttrade": "{{user}} wants to trade **{{tradingEgg}}** with you.",
+        "wanttrade2": "*To accept it, type `accept` followed by the ID of the Egg you're sending back.*\n\nE.g. `accept C1` to give a [**C1**] Egg in exchange for this [**{{eggcode}}**] Egg",
+        "eggtradetitle": "Easter Egg Trading",
+        "noegginvent": "This egg either doesn't exist or isn't in your inventory.",
+        "needegg": "You need to specify an egg to give in return!",
+        "tradeok": "**Success!** {{user1}}'s {{egg1}} was exchanged for {{user2}}'s {{egg2}}."
     },
     "langIntro": {
         "global": "Ab jetzt werde ich Deutsch sprechen. Vielleicht sogar höflich.",
@@ -767,5 +791,12 @@
     "info": {
         "checkPin": "Überprüfen Sie die angeheftete Nachricht auf weitere Informationen",
         "reactThis": "Reagieren Sie auf diese Nachricht, um die Rollen automatisch zu empfangen"
+    },
+    "rarity_tiers": {
+        "C": "Common",
+        "U": "Uncommon",
+        "R": "Rare",
+        "SR": "Super Rare",
+        "UR": "Ultra Rare"
     }
 }
