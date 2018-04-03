@@ -65,6 +65,7 @@
         "colorChange": "Your favorite color has been saved!"
     },
     "CMD": {
+      "ongoingTrade":"You cannot start a trade while another one is going on!",
         "denied": "You are not authorized to use this. This commands requires a Elevation Rank of {{rankNeed}}, your Rank is {{rankMe}}. Contact the Server owner or a Mod.",
         "incorrectUsage": "That's not how you use that Command. Try {{usage}}. E.g.: {{example}}",
         "disabledModule": ":no_entry_sign: Our master has declared {{module}} forbidden here. That's too bad.",
@@ -115,8 +116,7 @@
         "enterVoiceBetterExperience": "You have to be in a voice channel for the full experience.",
         "useThis": "Use `{{prefix}}` as prefix for this.",
         "acceptDec": "Click on {{icon}} to accept these, you can only accept 5 transactions a day.",
-        "declinedTrans": "{{user}} doesn't seem to want your rubines.",
-        "ongoingTrade": "You cannot start a trade while another one is going on!"
+        "declinedTrans": "{{user}} doesn't seem to want your rubines."
     },
     "dict": {
         "coinHeads": "heads",
@@ -156,6 +156,7 @@
         "myProf": "Hold up! Building my super duper Profilecard here..."
     },
     "help": {
+      "eggtrade":"Trade repeated Easter Eggs with your friends!",
         "checkYeDM": "Psst, I sent you the info through DM. Go take a look.",
         "availableComms": "Available Commands",
         "airwaifu": "Aeroplanatic Waifu Material",
@@ -256,10 +257,10 @@
         "cage": "Your dose of Nicholas cage, just the best Cage pics for your Cage needs!",
         "decontaminate": "Give yourself or a friend a good decontamination shower",
         "geiger": "Use a Geiger counter dosimeter to check for the potential of cancer in a channel",
-        "eggtrade": "Trade repeated Easter Eggs with your friends!",
         "craft": "Create items you can use to do awesome stuff with!",
         "marriage": "Officialise your love, or just show off as acouple with someone else. On this very capitalist wedding system!",
-        "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!"
+      "lewd":"Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!"
+
     },
     "menu": {
         "cake": "Cake",
@@ -322,6 +323,10 @@
     },
     "helpkey": "help",
     "usage": {
+      "eggtrade":"**Making a Trade**\n`{{prefix}}eggtrade [Egg ID] @someone`\nE.g.`{{prefix}}eggtrade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
+      "lewd":"`{{prefix}}lewd`\nYou can also choose from which curator you will want to see the picks from! Just type their name after the command like `{{prefix}}lewd pollyanna` for example, to see only stuff curated by **Pollyanna**.\n\n Our current curator squad is:\n {{squad}}",
+      "marry":"Marriage relies directly on `{{prefix}}craft`, since you need a ring before you can propose.\n\nTo marry your loved one, do `{{prefix}}marry @user [ring]`. There are 4 tiers of wedding rings, each one made of a different gemstone, to show off how fancy your marriage is. In the future, higher rank rings will provide the couple more Love Points that they will be able to spend together.\n\nExample usage: `{{prefix}}marry @someone rubine` to propose with a Rubine ring.\n\nRequires Embed, Manage Messages and Reaction Permissions",
+      "craft":"`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item.",
         "logs": "`{{prefix}}logs #channel`\n Set all logs at the chosen Channel.\n\n`{{prefix}}logs mod #channel`\n Set moderation logs (Bans, Kicks and Mutes) at the chosen Channel.\n\n`{{prefix}}logs atv #channel`\n Set Activity logs (Members in and out, nickname edits) at the chosen Channel.\n\n`{{prefix}}logs adv #channel`\n Set Advanced Logs (Deleted and edited messages, Channels created, Activation or Deactivation of modules) at the chosen Channel.\n\n`{{prefix}}logs mod #channel delete`\nLogs will no more be sent to this Channel",
         "ahegao": "Quite simple, just type `{{prefix}}ahegao` and you get an アヘ顔",
         "askingHelpForHelp": "You are messing with me, correct?",
@@ -411,11 +416,7 @@
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games` Allows the **Games** Role as self-assignable.\n`{{prefix}}selfroles del Games` Removes the role **Games** from the list.\n`{{prefix}}selfroles list` Shows the list and commands for each Self-Assignable Role\n\n These are Case insensitive, you can use Role ID too.\n`{{prefix}}selfroles clear` Deletes **all** selfroles from the list.",
         "prune": "`{{prefix}}prune X [@user | user ID]`\nYou can use the user's ID if mentioning is not available, as in `{{prefix}}prune 50 271394014358405121`, If no user is specified, it defaults to Pollux's messages.\n\n**Attention** X must be __Greater than 1__ and __Lower than 101__.\nBasic math, I'm sure you can do it.",
-        "decontaminate": "`{{prefix}}decontaminate [@user (optional)]`",
-        "eggtrade": "**Making a Trade**\n`{{prefix}}trade [Egg ID] @someone`\nE.g.`{{prefix}}trade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
-        "lewd": "`{{prefix}}lewd`\nYou can also choose from which curator you will want to see the picks from! Just type their name after the command like `{{prefix}}lewd pollyanna` for example, to see only stuff curated by **Pollyanna**.\n\n Our current curator squad is:\n {{squad}}",
-        "marry": "Marriage relies directly on `{{prefix}}craft`, since you need a ring before you can propose.\n\nTo marry your loved one, do `{{prefix}}marry @user [ring]`. There are 4 tiers of wedding rings, each one made of a different gemstone, to show off how fancy your marriage is. In the future, higher rank rings will provide the couple more Love Points that they will be able to spend together.\n\nExample usage: `{{prefix}}marry @someone rubine` to propose with a Rubine ring.\n\nRequires Embed, Manage Messages and Reaction Permissions",
-        "craft": "`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item."
+        "decontaminate": "`{{prefix}}decontaminate [@user (optional)]`"
     },
     "logs": {
         "success": "Done! I've set {{channel}} as the Channel for {{CHNTYPE}}!",
@@ -715,6 +716,20 @@
         "ex-succ": "Exchange Successful!"
     },
     "event": {
+        "egghunt":"***{{user}}** is looking around for eggs in this channel...*",
+        "egghuntfail":"*But couldn't find a single thing*",
+        "egghuntsuccess":"Great! There's an egg here! Let's see...",
+        "egghuntsuccess2":"{{rarity_emoji}} {{user}} found a **{{rarity}} Egg**!",
+        "egghuntsuccess3":"You have a total of **{{X}}** eggs with you.\n**{{Y}}** of them are unique.\n\nMore info at: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
+        "delaytrade": "Hold on! You can trade eggs again in {{remaining}}",
+        "wanttrade":"{{user}} wants to trade **{{tradingEgg}}** with you.",
+        "wanttrade2":"*To accept it, type `accept` followed by the ID of the Egg you're sending back.*\n\nE.g. `accept C1` to give a [**C1**] Egg in exchange for this [**{{eggcode}}**] Egg",
+      "eggtradetitle":"Easter Egg Trading",
+      "noegginvent":"This egg either doesn't exist or isn't in your inventory.",
+      "needegg":"You need to specify an egg to give in return!",
+      "tradeok":"**Success!** {{user1}}'s {{egg1}} was exchanged for {{user2}}'s {{egg2}}.",
+
+
         "next": "Available again in this Server at {{remain}}",
         "treat": "***Trick or Treat!***  You got **{{qtd}}** candies from this Server's stash!",
         "treatRefresh": "No no no! You already got your candies, shoo!\nYou can come back in **{{remaining}}**",
@@ -770,33 +785,21 @@
         "thankKys": "Thanks a lot! Santa may deliver presents here **{{amount}}x** faster now due to your kindness~",
         "howmanyKys": "Ah, thank you! How many keys do you have to give me?",
         "noFunds_bo": "It seems you don't have that many keys.",
-        "hasAmount": "{{username}} has collected {{amount}} Winding Keys",
-        "egghunt": "***{{user}}** is looking around for eggs in this channel...*",
-        "egghuntfail": "*But couldn't find a single thing*",
-        "egghuntsuccess": "Great! There's an egg here! Let's see...",
-        "egghuntsuccess2": "{{rarity_emoji}} {{user}} found a **{{rarity}} Egg**!",
-        "egghuntsuccess3": "You have a total of **{{X}}** eggs with you.\n**{{Y}}** of them are unique.\n\nMore info at: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
-        "delaytrade": "Hold on! You can trade eggs again in {{remaining}}",
-        "wanttrade": "{{user}} wants to trade **{{tradingEgg}}** with you.",
-        "wanttrade2": "*To accept it, type `accept` followed by the ID of the Egg you're sending back.*\n\nE.g. `accept C1` to give a [**C1**] Egg in exchange for this [**{{eggcode}}**] Egg",
-        "eggtradetitle": "Easter Egg Trading",
-        "noegginvent": "This egg either doesn't exist or isn't in your inventory.",
-        "needegg": "You need to specify an egg to give in return!",
-        "tradeok": "**Success!** {{user1}}'s {{egg1}} was exchanged for {{user2}}'s {{egg2}}."
+        "hasAmount": "{{username}} has collected {{amount}} Winding Keys"
     },
     "langIntro": {
         "global": "I'll speak English from now on. Maybe I'll even be polite.",
         "channel": "I'll speak english here, just for you."
     },
+    "rarity_tiers":{
+      "C": "Common",
+      "U": "Uncommon",
+      "R": "Rare",
+      "SR": "Super Rare",
+      "UR": "Ultra Rare"
+    },
     "info": {
         "checkPin": "Check the Pinned Message for more Info",
         "reactThis": "React to this message to auto-receive the roles"
-    },
-    "rarity_tiers": {
-        "C": "Common",
-        "U": "Uncommon",
-        "R": "Rare",
-        "SR": "Super Rare",
-        "UR": "Ultra Rare"
     }
 }
