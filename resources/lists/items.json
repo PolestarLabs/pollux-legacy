@@ -205,5 +205,149 @@
           "type": "box",
           "tradeable": true,
           "destroyable": false
+
+
+
+
+
+
+
+
+
+
+
+
+       },
+     "lootbox_C_event_2": {
+          "id": "lootbox_C_event_2",
+          "name": "Common Christmas Lootbox",
+          "rarity": "C",
+          "icon": "xmas_chest",
+          "emoji": "loot",
+          "altemoji": ":christmas_tree:",
+          "event": "christmas_2017",
+          "type": "box",
+          "tradeable": true,
+          "destroyable": false
+     },
+     "lootbox_U_event_2": {
+          "id": "lootbox_U_event_2",
+          "name": "Uncommon Christmas Lootbox",
+          "rarity": "U",
+          "icon": "xmas_chest",
+          "emoji": "loot",
+          "altemoji": ":christmas_tree:",
+          "event": "christmas_2017",
+          "type": "box",
+          "tradeable": true,
+          "destroyable": false
+     },
+     "lootbox_R_event_2": {
+          "id": "lootbox_R_event_2",
+          "name": "Rare Christmas Lootbox",
+          "rarity": "R",
+          "icon": "xmas_chest",
+          "emoji": "loot",
+          "altemoji": ":christmas_tree:",
+          "event": "christmas_2017",
+          "type": "box",
+          "tradeable": true,
+          "destroyable": false
+     },
+     "lootbox_SR_event_2": {
+          "id": "lootbox_SR_event_2",
+          "name": "Super Rare Christmas Lootbox",
+          "rarity": "SR",
+          "icon": "xmas_chest",
+          "emoji": "loot",
+          "altemoji": ":christmas_tree:",
+          "event": "christmas_2017",
+          "type": "box",
+          "tradeable": true,
+          "destroyable": false
+     },
+     "lootbox_UR_event_2": {
+          "id": "lootbox_UR_event_2",
+          "name": "Ultra Rare Christmas Lootbox",
+          "rarity": "UR",
+          "icon": "xmas_chest",
+          "emoji": "loot",
+          "altemoji": ":christmas_tree:",
+          "event": "christmas_2017",
+          "type": "box",
+          "tradeable": true,
+          "destroyable": false
+
+
+
+
+
+
+
+
+
+
+       },
+     "lootbox_C_event_3": {
+          "id": "lootbox_C_event_3",
+          "name": "Common Easter Lootbox",
+          "rarity": "C",
+          "icon": "chest",
+          "emoji": "loot",
+          "altemoji": ":rabbit:",
+          "event": "easter2018",
+          "type": "box",
+          "tradeable": true,
+          "destroyable": false
+     },
+     "lootbox_U_event_3": {
+          "id": "lootbox_U_event_3",
+          "name": "Uncommon Easter Lootbox",
+          "rarity": "U",
+          "icon": "chest",
+          "emoji": "loot",
+          "altemoji": ":rabbit:",
+          "event": "easter2018",
+          "type": "box",
+          "tradeable": true,
+          "destroyable": false
+     },
+     "lootbox_R_event_3": {
+          "id": "lootbox_R_event_3",
+          "name": "Rare Easter Lootbox",
+          "rarity": "R",
+          "icon": "chest",
+          "emoji": "loot",
+          "altemoji": ":rabbit:",
+          "event": "easter2018",
+          "type": "box",
+          "tradeable": true,
+          "destroyable": false
+     },
+     "lootbox_SR_event_3": {
+          "id": "lootbox_SR_event_3",
+          "name": "Super Rare Easter Lootbox",
+          "rarity": "SR",
+          "icon": "chest",
+          "emoji": "loot",
+          "altemoji": ":rabbit:",
+          "event": "easter2018",
+          "type": "box",
+          "tradeable": true,
+          "destroyable": false
+     },
+     "lootbox_UR_event_3": {
+          "id": "lootbox_UR_event_3",
+          "name": "Ultra Rare Easter Lootbox",
+          "rarity": "UR",
+          "icon": "chest",
+          "emoji": "loot",
+          "altemoji": ":rabbit:",
+          "event": "easter2018",
+          "type": "box",
+          "tradeable": true,
+          "destroyable": false
      }
+
+
 }

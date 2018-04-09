@@ -9,52 +9,37 @@ const userDB = gear.userDB
 const DB = gear.serverDB
 
 
-var init = function (message) {
-    var Server = message.guild;
-    var Channel = message.channel;
-    var Author = message.author;
+const init = async function (message) {
+
+  try{
+    const Server = message.guild;
+    const Channel = message.channel;
+    const Author = message.author;
     if (Author.bot) return;
-    var Member = Server.member(Author);
-    var Target = message.mentions.users.first() || Author;
-    var MSG = message.content;
-    var bot = message.botUser
-    var args = MSG.split(' ').slice(1)
-    var LANG = message.lang;
+    const Member = Server.member(Author);
+    const Target = message.mentions.users.first() || Author;
+    const MSG = message.content;
+    const bot = message.botUser
+    let mainf = MSG.split(/ +/).slice(1).join(' ');
+    let arg = mainf.split(' ').slice(1).join(' ');
+    let On      = gear.emoji("check")
+    let Off     = gear.emoji("xmark")
 
+    const LANG = message.lang;
 
+    let helpkey = mm("helpkey",{lngs:message.lang});
+    if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="help"){
+        return gear.usage(cmd,message,"mod");
+    };
 
-
-
-    let helpkey = mm("helpkey",{lngs:message.lang})
-if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="help"){
-    return gear.usage(cmd,message,"mod");
-}
-
-
-
-
-
-    var modPass = gear.hasPerms(Member,DB)
-
+    const modPass = gear.hasPerms(Member);
     if (!modPass) {
         return message.reply(mm('CMD.moderationNeeded', {
             lngs: LANG
         })).catch(console.error);
-    }
+    };
 
-    let defaultgreet = {
-                enabled: false,
-                text: "Welcome to the Server %username%!",
-                channel: {}
-            }
-if (!Server.dDATA.modules.GREET || Server.dDATA.modules.GREET===undefined){
-    gear.serverDB.set(Server.id,{$set:{"modules.GREET":defaultgreet}})
-}
-   var On      = gear.emoji("check")
-   var Off     = gear.emoji("xmark")
-
-var input="X"
-    var v = {
+    const v = {
         inON: On+mm('greet.helloON', {
             lngs: LANG
         }),
@@ -62,83 +47,82 @@ var input="X"
             lngs: LANG
         }),
         inTX: mm('greet.inTex', {
-            lngs: LANG,
-            intex: input
+            lngs: LANG
         }),
         inCX: mm('greet.inChan', {
-            lngs: LANG,
-            intex: input
+            lngs: LANG
         }),
         tellMsg: mm('greet.tellmeMSG', {
             lngs: LANG
         }),
         tellChn: mm('greet.tellmeCHN', {
             lngs: LANG
+        }),
+        noTimer: mm('greet.noTimer', {
+            lngs: LANG
         })
+    };
 
-    }
-
-
-    if (args.length == 2 && args[0] === "time") {
-
-        if (!isNaN(Number(args[1]))){
-            let num = parseInt(args[1])
-         gear.server.setDB(Server.id,{$set:{"modules.GREET.timer":num*1000}})
-            return message.reply(mm('greet.timer', {
+  async function setMsg(msg){
+    if (!msg) return message.channel.send(v.tellMsg);
+    if (msg.length < 2) return message.channel.send(v.tellMsg);
+    await gear.serverDB.set(Server.id,{$set:{'modules.GREET.text':msg}});
+    return message.channel.send(v.inTX);
+  };
+  async function setChan(message){
+    let setchan;
+    let chaname;
+    if(message.mentions.channels){
+      setchan = message.mentions.channels.first().id;
+      chaname = message.mentions.channels.first().name;
+    }else{
+      let namedec = message.content.split(/ +/).slice(2).join('-').toLowerCase();
+      setchan = (message.guild.channels.find(ch=>ch.name.toLowerCase() === namedec)||{id:false}).id;
+      chaname = (message.guild.channels.find(ch=>ch.name.toLowerCase() === namedec)||{id:false}).name;
+    };
+    if(!setchan){
+      return message.channel.send(v.tellChn)
+    };
+    await gear.serverDB.set(Server.id,{$set:{'modules.GREET.channel':setchan}});
+    return message.channel.send(mm('greet.outChan', {
             lngs: LANG,
-            timeMin: num
-        }))
-        }
-
+            channel: "#"+chaname,
+        }));
+  };
+  async function toggleBye(){
+    async function turn(state){
+      await gear.serverDB.set(Server.id,{$set:{'modules.GREET.enabled':state}});
+      if (state) return message.channel.send(v.inON);
+      else  return message.channel.send(v.inOFF);
     }
-
-
-
-    if (args.length >= 2
-
-
-
-
-
-
-
-        && args[0] === "msg") {
-        if (args.length == 2) {
-            return Channel.send(v.tellMsg);
-        }
-        let offset = MSG.indexOf("msg") + 3
-         gear.serverDB.set(Server.id,{$set:{"modules.GREET.text": MSG.substr(offset)}})
-         v.inTX = mm('greet.inTex', {
+    Server.dDATA.modules.GREET.enabled ? turn(false) : turn(true);
+  };
+  async function setTime(arg){
+    if (!isNaN(Number(arg))){
+      let time = Number(arg)*1000;
+      await gear.serverDB.set(Server.id,{$set:{'modules.GREET.timer':time}});
+      return message.channel.send(mm('greet.timerby', {
             lngs: LANG,
-            wtxt: MSG.substr(offset)
-        })
-        return Channel.send(v.inTX);
-    }
-    if (args.length >= 2 && args[0] === "channel") {
-        if (args.length == 2) {
-            return Channel.send(v.tellChn);
-        }
-        let offset = MSG.indexOf("channel") + 7
-        gear.serverDB.set(Server.id,{$set:{"modules.GREET.channel":message.mentions.channels.first().id}})
-        return Channel.send(v.inCX);
-    }
+            timeMin: arg,
+        }));
+    }else{
+      await gear.serverDB.set(Server.id,{$set:{'modules.GREET.timer':false}});
+      return message.channel.send(v.noTimer);
+    };
+  };
 
+  mainf = mainf.split(' ')[0];
 
+  if (mainf === 'msg' ) setMsg(arg);
+  if (mainf === 'timer' ) setTime(arg);
+  if (['chn','channel'].includes(mainf)) setChan(message);
+  if (!mainf||mainf===''||(mainf.length&&mainf.length===0)) toggleBye();
 
-    if (Server.dDATA.modules.GREET.enabled === true) {
-        gear.serverDB.set(Server.id,{$set:{"modules.GREET.enabled": false}})
-        gear.serverDB.set(Server.id,{$set:{"modules.GREET.channel": ""}})
-        return Channel.send(v.inOFF);
-
-    } else {
-        gear.serverDB.set(Server.id,{$set:{"modules.GREET.enabled": true}})
-        gear.serverDB.set(Server.id,{$set:{"modules.GREET.channel": ""}})
-        gear.serverDB.set(Server.id,{$set:{"modules.GREET.channel": message.channel.id}})
-        return Channel.send(v.inON);
-    }
-
+  }catch(e){console.log(e)}
 
 }
+
+
 module.exports = {
     pub: true,
     cmd: cmd,

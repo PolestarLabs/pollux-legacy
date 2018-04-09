@@ -13,10 +13,6 @@ var init = function (message,userDB,DB) {
     var MSG = message.content
     //-------MAGIC----------------
 
-
-
-
-
 //HELP TRIGGER
     let helpkey = mm("helpkey",{lngs:message.lang})
 if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="help"){
@@ -29,15 +25,9 @@ if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="h
       var filepath = paths.BUILD+"frenes/ross/"+files[rand]
 
     message.channel.send({files:[filepath]}).then(m=>{
-
-
       })
-
     })
   }
-
-
-
 
 
  module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: 'img'};

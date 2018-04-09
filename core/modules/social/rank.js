@@ -104,7 +104,7 @@ dbminiarray = dbminiarray.map(usr => {
 , ':medal: 9th'
 , ':medal: 10th'
 ]
-console.log(ranked)
+
 for (i=0;i<ranked.length&&i<10;i++){
       emb.addField(medals[i],ranked[i].name, true)
       emb.addField(':small_orange_diamond: Level '+ranked[i].level,'**'+ranked[i].exp + '** Exp', true)

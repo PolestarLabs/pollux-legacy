@@ -6,7 +6,7 @@ const gear = require('../core/gearbox.js'),
 
 module.exports = {
   run: async function run(bot, member) {
-    console.log("Member Remove")
+
     var Server = member.guild
 
     Server.dDATA = await gear.serverDB.findOne({
@@ -31,8 +31,8 @@ module.exports = {
       }
 
 
-      console.log("Server.dDATA.modules.FWELL.channel: ", Server.dDATA.modules.FWELL.channel)
-      console.log("Server.dDATA.modules.FWELL.enabled: ", Server.dDATA.modules.FWELL.enabled)
+      //console.log("Server.dDATA.modules.FWELL.channel: ", Server.dDATA.modules.FWELL.channel)
+     // console.log("Server.dDATA.modules.FWELL.enabled: ", Server.dDATA.modules.FWELL.enabled)
 
       if (Server.dDATA.modules.FWELL.channel && Server.dDATA.modules.FWELL.enabled == true) {
 

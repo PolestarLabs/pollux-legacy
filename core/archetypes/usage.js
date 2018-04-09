@@ -36,7 +36,8 @@ exports.run = function run(cmd, m, third) {
             lngs: m.lang
         }) + "**", mm("usage." + cmd, {
             lngs: m.lang,
-            prefix: m.prefix
+            prefix: m.prefix,
+            squad:"- PurpleCat\n - Shamisu\n - Pollyanna\n - Kurono\n - Yuki\n - Celeste"
         }), false)
 
         if (cmd == "exchange") {

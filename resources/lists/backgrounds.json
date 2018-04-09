@@ -1518,5 +1518,170 @@
           "buyable": "FALSE",
           "droppable": "FALSE",
           "event": "christmas_2017"
+     },
+     {
+          "name": "2ad5d116d6fd5bac6ed2956f57fe32d9",
+          "rarity": "R",
+          "buyable": "TRUE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+     {
+          "name": "278789a9d80b4ca6a9e2ce84cdd3a5a0",
+          "rarity": "R",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+     {
+          "name": "42be296cd2721eff8be936721c35984b",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+     {
+          "name": "28ec9ee1d6642e4f1209b951b5ab831c",
+          "rarity": "R",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+     {
+          "name": "67aaaf117f898886a372da95fde9543e",
+          "rarity": "UR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+
+
+
+       {
+          "name": "a3bf5264bbe722b0be59bf120dbb2d0e",
+          "rarity": "R",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+       {
+          "name": "2adb2694365d90692c8c94e4b8bab3b2",
+          "rarity": "R",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+
+       {
+          "name": "c1cbdbc6e4b73f1b757237bd3950819b",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+
+       {
+          "name": "38235d70004051885d3f8a34fa70d50c",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+
+
+       {
+          "name": "9323032838b8b9d0db7699be014d947a",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+
+
+       {
+          "name": "03c20c922eb215d9bc4fb9d9ce645d45",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+
+
+
+
+     {
+          "name": "8546b59396842f8a35de3ad717f3489d",
+          "rarity": "UR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+
+
+     {
+          "name": "0d87e6278951abe6c7306b734172d9f6",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+
+     {
+          "name": "9d128787fed6fbf70442be5cad36ed18",
+          "rarity": "SR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+     {
+          "name": "50e7e71535be8da55cc6eacc60a8c33c",
+          "rarity": "SR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+     {
+          "name": "e976e5c66d3645694a031797f3439bfd",
+          "rarity": "SR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+     {
+          "name": "0499378dc08e0a1972772d2a1d131da7",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+     {
+          "name": "554cdbc1e7fa181f303827649f190cf2",
+          "rarity": "UR",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+     {
+          "name": "17193fd023d764de07c2ebc93a31cec7",
+          "rarity": "C",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
+     },
+
+
+
+
+
+
+
+
+
+     {
+          "name": "9566c19ead431ccf3890f0d758d58085",
+          "rarity": "U",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "valentines"
      }
 ]

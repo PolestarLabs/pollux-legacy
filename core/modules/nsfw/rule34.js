@@ -7,6 +7,9 @@ const mm = locale.getT();
 const cmd = 'rule34';
 
 const init = async function (message, userDB, DB) {
+
+  return message.reply('Rule 34 search was disabled because it violates Discord ToS in some aspects. A new command will replace this one soon.');
+
   const Server = message.guild;
   const Channel = message.channel;
   const Author = message.author;

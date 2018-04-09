@@ -36,12 +36,14 @@ if(gear.autoHelper([mm("helpkey",P),'noargs'],{cmd,message,opt:'language'}))retu
           gear.channelDB.set(Channel.id, {
             $set:{'LANGUAGE':Y.iso}
           }).then(ok => {
+            P.lngs=[Y.iso]
             message.reply(Y.flag+" "+mm(`langIntro.channel`,P).replace("English",gear.capitalize(Y['name-e'])));
           }).catch(e => message.reply("Error"));
       }else{
           gear.serverDB.set(Server.id, {
             $set:{'modules.LANGUAGE':Y.iso}
           }).then(ok => {
+            P.lngs=[Y.iso]
             message.reply(Y.flag+" "+mm(`langIntro.global`,P).replace("English",gear.capitalize(Y['name-e'])));
           }).catch(e => message.reply("Error"));
       }

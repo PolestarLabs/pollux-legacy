@@ -6,7 +6,7 @@ const gear = require('../core/gearbox.js'),
 
 module.exports = {
   run: async function run(bot, member) {
-    console.log("Member Add")
+
     var Server = member.guild
 
     Server.dDATA = await gear.serverDB.findOne({
@@ -29,9 +29,23 @@ module.exports = {
 
       }
 
+        try {
 
+          if (Server.dDATA.modules.AUTOROLES) {
+
+            let AUTOS = Server.dDATA.modules.AUTOROLES
+            let addinrole = AUTOS.find(rl => rl[1] == 0);
+
+            if (addinrole) {
+              await member.addRole(addinrole[0]);
+            }
+          }
+        } catch (e) {
+          console.log(e)
+        }
 
       if (Server.dDATA.modules.GREET.channel && Server.dDATA.modules.GREET.enabled == true) {
+        try{
 
 
         let delTime = Server.dDATA.modules.GREET.timer;
@@ -63,7 +77,13 @@ module.exports = {
             }
           });
         } catch (e) {
+          console.log("Error on Wilk Routine - Guild Member Add")
           console.log(e)
+          console.log("Error on Wilk Routine - Guild Member Add")
+        }
+        }catch(e){
+          console.log("General Error on Guild Member Add")
+
         }
 
       }

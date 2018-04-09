@@ -6,6 +6,8 @@ const mm = locale.getT();
 
 const init= async function run(msg,target,chan) {
 
+  try{
+console.log('WILK SUBROUT IN')
     const canvas = new Canvas.createCanvas(800, 600);
     const ctx = canvas.getContext('2d');
 
@@ -13,9 +15,10 @@ const init= async function run(msg,target,chan) {
   try{
      chan = chan|| msg.channel
   }catch(e){
-    return;
+    return console.log(e);
   };
-  let avi = target.avatarURL||target.defaultAvatarURL;
+
+  let avi = (target.avatarURL||target.defaultAvatarURL).replace('gif','png');
   let frame = await gear.getCanvas(paths.BUILD+"poly_greet.png");
   let phot =  await gear.getCanvas(avi);
 
@@ -24,7 +27,7 @@ const init= async function run(msg,target,chan) {
   if(target.dDATA){
   ctx.fillStyle= target.dDATA.modules.favcolor || "#ff74ef"
   }
-
+console.log('WILK SUBROUT PAST DORO')
   ctx.fillRect(511,430,205,50);
   ctx.drawImage(frame,0,0)
   ctx.font = "900 30px Whitney, Sans"
@@ -70,12 +73,17 @@ const init= async function run(msg,target,chan) {
                 wid =  line3.width > 317 ? 317 : line3.width;
                 ctx.drawImage(line3.item,535-(wid/2),180,wid,h)
                 //await ctx.fillText("Hey everyone! Say hello to our new friend", 0, 12);
+
+  console.log('WILK SUBROUT PAST PHRASES')
+
   await chan.send({
                     files: [{
                         attachment: await canvas.toBuffer(),
                         name: "welcome.png"
                     }]
                 })
+  console.log('WILK SUBROUT PAST SEND')
+  }catch(e){console.log(e)}
   };
 
   module.exports = {

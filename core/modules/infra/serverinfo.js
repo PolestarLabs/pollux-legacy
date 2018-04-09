@@ -15,8 +15,9 @@ const init = async function (message,userDB,DB) {
   const LANG = message.lang;
 
   let G = Server;
+    G.dDATA=await gear.serverDB.findOne({id:G.id});
   if(args==='random'){
-    G.dData=await gear.serverDB.findOne({id:G.id});
+    G.dDATA=await gear.serverDB.findOne({id:G.id});
   };
 
   const emb =    new gear.Discord.RichEmbed();

@@ -41,36 +41,7 @@ async function performChecks(GLB,Author){
   }
 };
 
-function calculateDaily(Author,bot) {
-        let semibanned  = 5
-        let penalised   = 50
-        let regular     = 100
-        let aluminium   = 120
-        let iridium     = 150
-        let palladium   = 200
-        let uranium     = 300
-        let emblem;
 
-      let thisguy = bot.guilds.get("277391723322408960").member(Author)
-if(!thisguy)return {class:regular,emblem};
-      if (thisguy.roles.find("name", "Uranium")) {
-        emblem = "uranium"
-        return {class:uranium,emblem};
-      };
-      if (thisguy.roles.find("name", "Palladium")) {
-        emblem = "palladium"
-        return {class:palladium,emblem};
-      };
-      if (thisguy.roles.find("name", "Iridium")) {
-        emblem = "iridium"
-        return {class:iridium,emblem};
-      };
-      if (thisguy.roles.find("name", "Aluminium")) {
-        emblem = "aluminium"
-        return {class:aluminium,emblem};
-      };
-    return {class:regular,emblem};
-  };
 
 const init = async function (message) {
 
@@ -94,48 +65,71 @@ const init = async function (message) {
 
   let RUBINE = gear.emoji("rubine");
 
-  let s=calculateDaily(Author,bot);
+  let s=await gear.calculateDaily(Author,bot);
   let emblem  = s.emblem;
-  let myDaily = s.class;
+  let myDaily = ((s.class||15)-5)*10;
 
   let day = 72000000;
   //let day = 86400000;
-  let userEpoch   = Author.dDATA.modules.daily;
-  let streak      = Author.dDATA.modules.dyStreak;
+  let userEpoch   = Author.dDATA.modules.daily ||0;
+  let streak      = Author.dDATA.modules.dyStreak ||1;
+  let hardStreak      = Author.dDATA.modules.dyStreakHard || Author.dDATA.modules.dyStreak || 1;
   let globalEpoch = GLB.dailyEpoch;
 
   const embed = new gear.RichEmbed
   embed.setColor("#d83668")
+
   if (emblem) {
-    embed.attachFile(paths.BUILD + emblem + ".png")
-    embed.setThumbnail("attachment://" + emblem + ".png")
+    //embed.attachFile(paths.BUILD + emblem + ".png")
+    embed.setAuthor(emblem.toUpperCase()+"-boosted Daily!","http://pollux.fun/images/donate/" + emblem + "-small.png")
   }
 
-  if (!userEpoch || now-userEpoch >= day) {
 
-    if (((userEpoch - now) / 86400000) <= 2) {
-         await gear.userDB.set(Author.id, {$inc:{'modules.dyStreak':1}});
-        console.log("STREAK+1 ",streak)
+
+
+
+  if ((!userEpoch || now-userEpoch >= day)||message.author.id==="88120564400553984" ) {
+
+    if ((now-userEpoch) < 1.728e+8 ||message.author.id==="88120564400553984" ) {
+
+
+
+        await gear.userDB.set(Author.id, {$set:{'modules.dyStreakHard':hardStreak+1}});
+        await gear.userDB.set(Author.id, {$inc:{'modules.dyStreak':1}});
     } else {
-         await gear.userDB.set(Author.id, {$set:{'modules.dyStreak':0}});
-        console.log("STREAK=0 ",streak)
+        await gear.userDB.set(Author.id, {$set:{'modules.dyStreakHard':1}});
+        await gear.userDB.set(Author.id, {$set:{'modules.dyStreak':1}});
+      hardStreak = 1
+      streak = hardStreak%10 + 1
     }
-      await gear.userDB.set(Author.id, {$set:{'modules.daily':now}});
+
+
+  const Canvas = require("canvas");
+  const canvas = new Canvas.createCanvas(250, 250);
+  const ctx = canvas.getContext('2d');
+
+
+
+
+
+    await gear.userDB.set(Author.id, {$set:{'modules.daily':now}});
     await eko.receive(myDaily, Author, {type: 'dailies'});
+
     //CONFIRM DAILY
     let dailyGet = mm('$.dailyGet',P).replace("100", "**" + myDaily + "**")
 
-    embed.setDescription(".\n" + RUBINE + dailyGet);
+    embed.setDescription("\n" + RUBINE + dailyGet);
 
     let bar = "|▁▁▁▁▁▁▁▁▁▁|"
-
     for (i = 0; i < streak; i++) {
       bar = bar.replace("▁", "▇")
-    }
+    };
 
-    embed.setFooter("Streak " + streak + "/10" + bar)
+    //embed.setFooter("Streak " + streak + "/10" + "|| Hard Streak: "+hardStreak )
 
-    if (streak >= 10) {
+     let gemstone = await gear.getCanvas(paths.BUILD +"daily/rubin.png");
+    if ((hardStreak%10) == 0) {
+      gemstone = await gear.getCanvas(paths.BUILD +"daily/manyrub.png");
       let dailyStreak = mm('$.dailyStreak', P)
 
       await gear.userDB.set(Author.id, {$set:{'modules.dyStreak':0}});
@@ -146,9 +140,48 @@ const init = async function (message) {
       // gear.paramIncrement(Author, 'rubines', 500)
     }
 
-    message.reply({
-      embed
-    })
+    if ((hardStreak%3) == 0) {
+      gemstone = await gear.getCanvas(paths.BUILD +"daily/jadine.png");
+      let dailyStreak = mm('$.dailyStreakJades', P)
+      await gear.userDB.set(Author.id, {$inc:{'modules.exp':50}});
+      embed.description += "\n" + (gear.emoji('jade') + dailyStreak)
+      await gear.userDB.set(Author.id, {$inc:{'modules.jades':1000}});
+      // gear.paramIncrement(Author, 'rubines', 500)
+    }
+
+    if ((hardStreak%250) == 0) {
+      gemstone = await gear.getCanvas(paths.BUILD +"daily/ringsaph.png");
+      let dailyStreak = mm('$.dailyStreakSapphs', P)
+      await gear.userDB.set(Author.id, {$inc:{'modules.exp':50}});
+      embed.description += "\n" + (gear.emoji('sapphire') + dailyStreak)
+      await gear.userDB.set(Author.id, {$inc:{'modules.sapphires':1}});
+      // gear.paramIncrement(Author, 'rubines', 500)
+    }
+
+    embed.description += "\n\n" + "*Streak: **"+hardStreak+"***."
+    let ringof = await gear.getCanvas(paths.BUILD +"daily/"+ (hardStreak%10) + ".png");
+
+
+     ctx.drawImage(ringof,0,0,250,250);
+     ctx.drawImage(gemstone,0,0,250,250);
+
+  embed.attachFile({
+  attachment: await canvas.toBuffer(),
+  name: "attach.png"
+  })
+
+  let annex = "attachment://attach.png"
+
+    embed.setThumbnail(annex)
+
+      if (Author.dDATA.spdaily && Author.dDATA.spdaily.amt){
+     embed.addField(Author.dDATA.spdaily.title,"+"+Author.dDATA.spdaily.amt+gear.emoji('rubine'));
+    await gear.userDB.set(Author.id, {$inc:{'modules.rubines':Author.dDATA.spdaily.amt}});
+  }
+
+
+
+    message.reply({embed});
 
 
     //gear.paramIncrement(Author, 'rubines', 100)

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/pollux-transfer', { useMongoClient: true });
+mongoose.connect('mongodb://pollux:472899@localhost:27017/pollux-transfer', { useMongoClient: true });
 mongoose.Promise = global.Promise;
 const Promise = require("bluebird");
 Promise.promisifyAll(require("mongoose"));
@@ -9,12 +9,18 @@ const Schema = mongoose.Schema
 const Mixed = Schema.Types.Mixed;
 //SERVER
 const Server = new Schema({
+  meta:Mixed,
+  globalhandle:String,
         globalPrefix:{type:Boolean,default:true},
         respondDisabled:{type:Boolean,default:true},
         event:Mixed,
         eventReg:String,
         partner:{type:Boolean,default:false},
         partnerDetails:{
+          owner:String,
+          ownerID:String,
+          nsfw:Boolean,
+          disName:String,
           description:String,
           website:String,
           tags:String,
@@ -24,6 +30,8 @@ const Server = new Schema({
           region:String,
           picture:String,
           invite:String,
+          mini:String,
+          color:String
         },
         utilityChannels:Mixed,
         id: {type:String,required: true,index:{unique:true}},
@@ -179,7 +187,12 @@ const Server = new Schema({
 
 
 const Channel = new Schema({
+  meta:Mixed,
         name: String,
+  server:String,
+  guild:String,
+  slowmode: Boolean,
+slowmodeTimer:Number,
         LANGUAGE:String,
         id: {type:String,required: true,index:{unique:true}},
         modules: {
@@ -194,7 +207,10 @@ const Channel = new Schema({
 
 //USRS
 const User = new Schema({
+  meta:Mixed,
+  spdaily:Mixed,
         name: String,
+        personalhandle:String,
         tag:  String,
         eventGoodie:Number,
         cherries:Number,
@@ -202,7 +218,11 @@ const User = new Schema({
         eventDaily:Number,
         updated_at: { type: Date },
         id: {type:String,required: true,index:{unique:true}},
+        blacklisted:String,
+        married:Array,
+        eventThing:Mixed,
         modules: {
+            lovepoints:Number,
             PERMS: {type:Number,default:3},
 
             //LEVEL
@@ -230,6 +250,7 @@ const User = new Schema({
             coins:  {type:Number,default:0},
 
             dyStreak:  {type:Number,default:0},
+            dyStreakHard:  {type:Number,default:0},
             daily:  {type:Number,default:1486595162497},
 
                         flairTop: { type: String ,default:'default'},
@@ -363,6 +384,9 @@ const User = new Schema({
 
             }
         },
+          partner:Boolean,
+polluxmod:Boolean,
+donator:String,
         limits:Mixed
 
     },{ strict: false });
@@ -385,6 +409,35 @@ const Background = new Schema({
 },{ strict: false });
 
 
+const fanart = new Schema({
+        id:String,
+        src:String
+        ,title:String
+        ,description:String
+        ,date:Date
+        ,author:String
+        ,author_ID:String
+        ,publish:Boolean
+},{ strict: false });
+
+
+const Collectibles = Schema({
+  id: String,
+  name: String,
+  tags: String,
+  series: String,
+  type: String,
+  icon: String,
+  code: String,
+  rarity: String,
+  event: String,
+  droppable: Boolean,
+  buyable: Boolean,
+  howto:String,
+  category:String,
+  public:Boolean
+},{ strict: false });
+
 const Item = new Schema({
 name:         String,
 id:           {type:String,index:{unique:true}},
@@ -400,8 +453,16 @@ tradeable:    {type:Boolean,default:true},
 buyable:      {type:Boolean,default:true},
 destroyable:  {type:Boolean,default:true},
 usefile:      {type:String,default:'notusable'},
+code:         String,
 misc:         Mixed,
 series:       String,
+crafted:       Boolean,
+  materials: Array,
+  gemcraft: {
+    rubines: Number,
+    jades: Number,
+    sapphires :Number
+  }
 
 },{ strict: false });
 
@@ -410,5 +471,7 @@ module.exports={
   server  : mongoose.model('Server', Server, 'serverdb'),
   channel : mongoose.model('Channel', Channel, 'channeldb'),
   global  : mongoose.model('Global', Globals, 'globals'),
-  items  : mongoose.model('Item', Item, 'items')
+  items  : mongoose.model('Item', Item, 'items'),
+  fanart  : mongoose.model('fanart', fanart, 'fanart'),
+  collectibles  : mongoose.model('collectibles', Collectibles, 'collectibles')
 };

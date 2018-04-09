@@ -9,7 +9,8 @@ var cmd = 'airwaifu';
 var emb = new gear.Discord.RichEmbed();
 
 var init = function (message) {
-var Server = message.guild;
+
+  var Server = message.guild;
 var Channel = message.channel;
 var Author = message.author;
 var Target = message.mentions.users.first() || Author;
@@ -55,9 +56,10 @@ if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="h
 
                 await m.react('😠').catch();
 
-            }).catch(e=> {let a = (new Error); gear.errLog(e,__filename,a.stack.toString())})
+            }).catch(e=> {console.log(e)})
         }
     })
+
 
 
 };

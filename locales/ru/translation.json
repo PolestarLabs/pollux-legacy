@@ -2,7 +2,7 @@
     "$": {
         "insuFloor": "Вам не хватает Рубинов. Вам нужно **{{number}}** {{emoji}}",
         "insuBet": "Поставьте, хотя бы, {{number}} рубинов",
-        "noFunds": "Кажется, вы не можете позволить себе это, ваш баланс {{number}} Рубинов ",
+        "noFunds": "Кажется, вы не можете позволить себе это, ваш баланс {{number}} Рубинов",
         "coinVictory": "Вы выиграли! {{result}}, Вы получили **{{prize}}** Рубинов {{emoji}}",
         "coinDefeat": "О нет,{{result}}. Кажется,вы проиграли...",
         "dailyGet": "{{emoji}} Вы получили 100 ежедневных Рубинов!",
@@ -12,7 +12,7 @@
         "giveGoods": "{{author}} дал **{{donate}}** Рубинов **{{target}}** !",
         "hasAmount": "У {{target}} {{goods}} Рубинов.",
         "youAmount": "У вас {{goods}} Рубинов. {{comment}}",
-        "cash10": "Кажется, вы бедны. ",
+        "cash10": "Кажется, вы бедны.",
         "cash100": "Хм? У вас есть немножечко Рубинов.",
         "cash500": "А вы круты",
         "cash1000": "Я могла бы посчитать вас почти богатым. Почти.",
@@ -39,8 +39,8 @@
         "exchange": "Обмены",
         "crafts": "Крафт",
         "donation": "Донаты",
-        "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
-        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!"
+        "dailyStreakJades": "{{emoji}} Вы получили **+1000 Нефритов** за 3 дня подряд!",
+        "dailyStreakSapphs": "{{emoji}} Вы получили **+1 Сапфир** за 250 дней подряд!"
     },
     "forFun": {
         "saltLVL": "{{target}}' ведет себя как придурок на **{{amount}}%** {{emoji}}",
@@ -116,7 +116,7 @@
         "useThis": "Используйте `{{prefix}}` как префикс для этого.",
         "acceptDec": "Нажмите на {{icon}} чтобы подтвердить, вы можете получить перевод не больше 5 раз в день.",
         "declinedTrans": "{{user}} не хочет ваших рубинов.",
-        "ongoingTrade": "You cannot start a trade while another one is going on!"
+        "ongoingTrade": "Вы не можете обменяться, пока обмениваются другие!"
     },
     "dict": {
         "coinHeads": "Орел",
@@ -245,7 +245,7 @@
         "medal": "Показывает информацию о медали из Магазина Медалей",
         "blackjack": "Сыграйте в самый фантастический Блэкджек в дискорде в вашей жизни!\nПотратьте свои Рубины и станьте банкротом!",
         "alignment": "Показать диаграмму участников вашего сервера",
-        "exchange": "Обменять Рубины на другие валюты.",
+        "exchange": "Обменять Рубины на другую валюту.",
         "slots": "Сыграйте в слоты, вы можете не ставить, но, позвольте мне сказать, выплата просто **огромна**.",
         "avatar": "Оно показывает чей - то аватар, думаю, это все, чего вы хотели.",
         "candyrank": "Увидеть самых лучших собирателей конфеток в мире",
@@ -259,11 +259,11 @@
         "eggtrade": "Trade repeated Easter Eggs with your friends!",
         "craft": "Create items you can use to do awesome stuff with!",
         "marriage": "Officialise your love, or just show off as acouple with someone else. On this very capitalist wedding system!",
-        "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!"
+        "lewd": "Получите лучшие собранные вручную фотографии, тщательно отобранные нашими лучшими Lewd-кураторами Поллукса!"
     },
     "menu": {
-        "cake": "Торт",
-        "tart": "Тарт",
+        "cake": "Кекс",
+        "tart": "Пирог",
         "coffee": "Кофе",
         "donut": "Пончик",
         "donut2": "Пончище",
@@ -412,7 +412,7 @@
         "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] \n[\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games` Разрешает роли **Игры** быть самоназначаемой.\n`{{prefix}}selfroles rem Games` Удаляет роль **Игры** из списка.\n`{{prefix}}selfroles list` Показывает список и команды для каждой самоназначаемой роли\n\n Все, описанное выше, чувствительно к регистру. Также, вы можете использовать ID Роли.\n`{{prefix}}selfroles clear` Удаляет **все** самоназначаемые роли из списка.",
         "prune": "{{prefix}}prune X [@user | user ID]`\nВы можете использовать ID пользователя, если вы не можете его упомянуть, например `{{prefix}}prune 50 271394014358405121`, если пользователь не выбран, он по умолчанию удаляет сообщения Поллюкс.\n\n**Внимание** X должен быть __Больше, чем 1__ и __Меньше, чем 101__.\nПростая математика, я думаю, что вы справитесь.",
         "decontaminate": "`{{prefix}}decontaminate [@пользователь (Опционально)]`",
-        "eggtrade": "**Making a Trade**\n`{{prefix}}trade [Egg ID] @someone`\nE.g.`{{prefix}}trade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
+        "eggtrade": "**Начало сделки**\n`{{prefix}}trade [ID яйца] @someone`\nНапример, `{{prefix}}trade U2 @someone` Обменяться *Aquamarine Pulse Egg* с *@someone*\n\n**Осуществление сделки**\nЧтобы принять текущую сделку, у вас есть 30 секунд. Чтобы ответить на предложение - напишите *accept* + одного из ID ваших Яиц, разрешены только двусторонние сделки.\n`accept SR1` отправит *Dark Magician Egg* в обмен на *Aquamarine Pulse Egg*, отправленное первым пользователем.\n\n** Вы можете торговать только через каждые 2 часа, поэтому будьте осторожны! __Пропущенные сделки тоже будут засчитаны! __ **",
         "lewd": "`{{prefix}}lewd`\nYou can also choose from which curator you will want to see the picks from! Just type their name after the command like `{{prefix}}lewd pollyanna` for example, to see only stuff curated by **Pollyanna**.\n\n Our current curator squad is:\n {{squad}}",
         "marry": "Marriage relies directly on `{{prefix}}craft`, since you need a ring before you can propose.\n\nTo marry your loved one, do `{{prefix}}marry @user [ring]`. There are 4 tiers of wedding rings, each one made of a different gemstone, to show off how fancy your marriage is. In the future, higher rank rings will provide the couple more Love Points that they will be able to spend together.\n\nExample usage: `{{prefix}}marry @someone rubine` to propose with a Rubine ring.\n\nRequires Embed, Manage Messages and Reaction Permissions",
         "craft": "`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item."
@@ -771,18 +771,18 @@
         "howmanyKys": "Ах, спасибо! Сколько ключей вы хотите мне дать?",
         "noFunds_bo": "Кажется, у вас нет столько ключей.",
         "hasAmount": "{{username}} собрал {{amount}} Заводных Ключей",
-        "egghunt": "***{{user}}** is looking around for eggs in this channel...*",
-        "egghuntfail": "*But couldn't find a single thing*",
-        "egghuntsuccess": "Great! There's an egg here! Let's see...",
-        "egghuntsuccess2": "{{rarity_emoji}} {{user}} found a **{{rarity}} Egg**!",
-        "egghuntsuccess3": "You have a total of **{{X}}** eggs with you.\n**{{Y}}** of them are unique.\n\nMore info at: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
-        "delaytrade": "Hold on! You can trade eggs again in {{remaining}}",
-        "wanttrade": "{{user}} wants to trade **{{tradingEgg}}** with you.",
-        "wanttrade2": "*To accept it, type `accept` followed by the ID of the Egg you're sending back.*\n\nE.g. `accept C1` to give a [**C1**] Egg in exchange for this [**{{eggcode}}**] Egg",
-        "eggtradetitle": "Easter Egg Trading",
-        "noegginvent": "This egg either doesn't exist or isn't in your inventory.",
-        "needegg": "You need to specify an egg to give in return!",
-        "tradeok": "**Success!** {{user1}}'s {{egg1}} was exchanged for {{user2}}'s {{egg2}}."
+        "egghunt": "***{{user}}** осматривается в поисках яиц на этом канале...*",
+        "egghuntfail": "*Но не удалось найти ни одного*",
+        "egghuntsuccess": "Отлично! Вы нашли яйцо! Посмотрим..",
+        "egghuntsuccess2": "{{rarity_emoji}} {{user}} нашел **{{rarity}} Яйцо**!",
+        "egghuntsuccess3": "У Вас есть **{{X}}** яиц,\n**{{Y}}** из которых - уникальные.\n\nУзнать больше: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
+        "delaytrade": "Подождите! Вы сможете обмениваться яйцами через {{remaining}}",
+        "wanttrade": "{{user}} хочет обменяться **{{tradingEgg}}** с Вами.",
+        "wanttrade2": "*Чтобы принять его, введите `accept`, а затем ID яйца, которое вы даёте взамен.*\n\nНапример. `accept C1`, чтобы дать [**C1**] в обмен на [**{{eggcode}}**] яйцо.",
+        "eggtradetitle": "Обмен Пасхальными Яйцами",
+        "noegginvent": "Этого яйца не существует, либо у вас его нет",
+        "needegg": "Вы должны выбрать, что дать взамен",
+        "tradeok": "**Прекрасно!** {{user1}} обменял {{egg1}} на {{egg2}} {{user2}}'а."
     },
     "langIntro": {
         "global": "С этого момента я буду кататься на медведях, пить водку и играть на балалайке.",
@@ -793,10 +793,10 @@
         "reactThis": "Отреагируйте на это сообщение, чтобы автоматически получить роли"
     },
     "rarity_tiers": {
-        "C": "Common",
-        "U": "Uncommon",
-        "R": "Rare",
-        "SR": "Super Rare",
-        "UR": "Ultra Rare"
+        "C": "Обычное",
+        "U": "Необыкновенное\n",
+        "R": "Редкое",
+        "SR": "Очень Редкое",
+        "UR": "Невероятно Редкое"
     }
 }

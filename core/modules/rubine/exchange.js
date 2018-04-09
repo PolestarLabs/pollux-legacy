@@ -11,6 +11,9 @@ const coinbase = JSON.parse(fs.readFileSync("./resources/lists/discoin.json", "u
 
 const init = async function (message, userDB, DB) {
 
+
+
+
   const discoin = new Discoin(cfg.discoin);
 
   let args = message.content.split(/ +/).slice(1)

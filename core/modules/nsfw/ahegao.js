@@ -24,7 +24,7 @@ if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="h
 //------------
 
 
-    if(Server.dDATA.channels[Channel.id].modules.NSFW==false){
+    if(Channel.dDATA.modules.NSFW==false){
         message.reply(mm('forFun.nsfwNope',{lngs:LANG}));
         return;
     }

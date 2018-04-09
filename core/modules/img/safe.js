@@ -39,7 +39,7 @@ if (message.content.split(/ +/)[1]==helpkey || message.content.split(/ +/)[1]=="
                             .replace(/\s/g,"_")
                             .replace(/(_|)\+(_|)/g,"+")
                             .replace(/_-/g,"-")
-                            .replace(/([A-z]|[0-9])-/g,"$1+-")
+                            .replace(/([A-z]|[0-9]) -/g,"$1+-")
 
 
         !query ? query = "1girl+airplane+solo" : query = query;
@@ -68,5 +68,5 @@ if (message.content.split(/ +/)[1]==helpkey || message.content.split(/ +/)[1]=="
         })
     };
 
- module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: 'img'};
+ module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: 'img',exp:0};
 

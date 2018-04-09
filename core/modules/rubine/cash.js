@@ -13,7 +13,7 @@ const init = function (message,userDB,DB) {
 
 
   if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:this.cat}))return;
-
+gear.userDB.set(Target.id,{$set:{'modules.rubines':Math.round(Target.dDATA.modules.rubines)}})
 
     const vocab = {
         c1: mm("$.cash10", P),

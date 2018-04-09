@@ -2,6 +2,8 @@ const gear = require('../core/gearbox.js');
 
 exports.run=  async function run(bot, msg) {
 
+         if(!msg.author.bot) msg.channel.snipe = msg;
+
           let ddata = await gear.serverDB.findOne({id:msg.guild.id});
           if(msg.author.bot)return;
           if(ddata){

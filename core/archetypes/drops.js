@@ -86,11 +86,18 @@ const mm = locale.getT();
 
       if (event.content === "--forcedroploot" && event.author.id==="88120564400553984") droprate=777;
 
+    let iterate= eventChecks(serverDATA);
 
+      for (i=0;i<iterate;i++){
+        droprate = gear.randomize(1, 1000);
+        let dropevent = gear.randomize(1, 5);
+        if (dropevent >= 5)convertToEvent(i);
+      };
 
     if (droprate === 777) {
-
-      event.botUser.channels.get('382413370579484694').send("Lootbox Drop at **"+event.guild.name+"** | #"+event.channel.name+` after ${event.botUser.ivetal} messages`);
+      try{
+        event.botUser.channels.get('382413370579484694').send("Lootbox Drop at **"+event.guild.name+"** | #"+event.channel.name+` after ${event.botUser.ivetal} messages`);
+      }catch(e){}
       event.botUser.ivetal = 0;
 
 
@@ -128,17 +135,19 @@ const mm = locale.getT();
       };
       let itemPic = "chest.png"
 
-      function convertToEvent(){
-          cax[1] = cax[1].replace("O", "event_2")
-          cax[0] += "\n" + v.eventDrop
-          itemPic = "xmas_chest.png"
-        }
-      let iterate= eventChecks(serverDATA);
 
-      for (i=0;i<iterate;i++){
-        let dropevent = gear.randomize(1, 5);
-        if (dropevent >= 5)convertToEvent();
-      };
+
+      function convertToEvent(i){
+        try{
+
+          cax[1] = cax[1].replace("O", "event_3")
+          if(i&&i==0){cax[0] += "\n" + v.eventDrop}
+          itemPic = "xmas_chest.png"
+        }catch(e){}
+          if (!cax)cax= [v.dropLoot,"lootbox_C_O"] ;
+
+        }
+          if (!cax)cax= [v.dropLoot,"lootbox_C_O"] ;
 
           CHN.send(cax[0], {
               files: [paths.BUILD + itemPic]
@@ -164,9 +173,9 @@ const mm = locale.getT();
           let pickers = new gear.Discord.Collection;
           let responses = await CHN.awaitMessages(async msg2 => {
 
-            if (!pickers.has(msg2.author.id) && (msg2.content.toLowerCase().includes('pick'))) {
+            if (!msg2.author.bit && !pickers.has(msg2.author.id) && (msg2.content.toLowerCase().includes('pick'))) {
               pickers.set(msg2.author.id, msg2);
-              console.log(pickers.has(msg2.author.id))
+              //console.log(pickers.has(msg2.author.id))
               await disp.edit(disp.content + "\n" + msg2.author.username).then(neue => {
                 disp.content = neue.content;
                 return true;
@@ -199,7 +208,7 @@ const mm = locale.getT();
 
             let rnd = gear.randomize(0, ments.length - 1);
 
-            console.log("----------- PICK by" + drama[rnd])
+            //console.log("----------- PICK by" + drama[rnd])
             await pickers.deleteAll();
             await drop.delete().catch(e => {});
             await disp.delete().catch(e => {});
@@ -209,7 +218,7 @@ const mm = locale.getT();
                 setTimeout(async fn => {
                   drama[rnd] = ments[rnd]
                   await dra.edit(drama).then(async fin => {
-                    console.log(ids[rnd],it,"A A A")
+                    //console.log(ids[rnd],it,"A A A")
                      userDB.set(ids[rnd],{$push:{'modules.inventory':it}}).then(ok=>{
 
                     setTimeout(async fn => {

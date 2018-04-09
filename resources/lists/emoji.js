@@ -41,7 +41,10 @@ windky:"<:windky:386609737241853952> "
 ,barf1:'<:barf1:386933141140668418> '
 ,barf3:'<:barf3:386933141316829185> '
 
-
+ ,tradeable:'<:tradeable:404716198694223885> '
+  ,buyable:'<:buyable:404716199063191552> '
+  ,breakable:'<:breakable:404718003465224202> '
+  ,consumable:'<:consumable:404721077361704980> '
 
  ,'retweet':'<:Retweet:338764316792717322> '
  ,'api':'<:Api:338148353906966530> '
@@ -150,6 +153,9 @@ windky:"<:windky:386609737241853952> "
   ,amethist:'<:amethist:367128881766989824> '
   ,emerald:'<:emerald:367128893309583360> '
 
+
+  ,australis:"<:australis:391418503317422080> "
+  ,borealis:"<:borealis:391423329078345729> "
 
 ,ff:'<:ff:343511122931875871> '
 ,play:'<:play:343511123204767744> '

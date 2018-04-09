@@ -905,5 +905,155 @@
           "buyable": "TRUE",
           "droppable": "TRUE",
           "event": false
+     },
+     {
+          "name": "EarthBound Present Box",
+          "icon": "eb_present",
+          "rarity": "U",
+          "tags": "items",
+          "category": "games",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "Pixel Christmas Ring",
+          "icon": "pixelxmasring",
+          "rarity": "R",
+          "tags": "christmas event videogame",
+          "category": "symbols",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "Rudolph",
+          "icon": "rudolph",
+          "rarity": "C",
+          "tags": "event christmas animals",
+          "category": "icons",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "Santa's Sled",
+          "icon": "santacart",
+          "rarity": "C",
+          "tags": "",
+          "category": "event",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "Christmas Muffet",
+          "icon": "xmasmuffet",
+          "rarity": "SR",
+          "tags": "undertale",
+          "category": "games",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "Christmas Ball Green",
+          "icon": "xmasball_g",
+          "rarity": "C",
+          "tags": "items",
+          "category": "event",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "Discord Christmas Ring",
+          "icon": "xmasdiscord",
+          "rarity": "UR",
+          "tags": "discord",
+          "category": "event",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "Regular Xmas Ring",
+          "icon": "xmasring",
+          "rarity": "C",
+          "tags": "",
+          "category": "event",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "Christmas Sock",
+          "icon": "xmasock",
+          "rarity": "C",
+          "tags": "sock",
+          "category": "event",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "Christmas Tree",
+          "icon": "xmastree",
+          "rarity": "C",
+          "tags": "tree",
+          "category": "event",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "SB's Christmas Elf",
+          "icon": "xxelf",
+          "rarity": "U",
+          "tags": "elf",
+          "category": "event",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "SB's Gingerman Ninja",
+          "icon": "xxgingerninja",
+          "rarity": "U",
+          "tags": "",
+          "category": "event",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "SB's Nutcracker",
+          "icon": "xxnutcracker",
+          "rarity": "R",
+          "tags": "",
+          "category": "event",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "SB's Santa Claus",
+          "icon": "xxsanta",
+          "rarity": "UR",
+          "tags": "santa",
+          "category": "event",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
+     },
+     {
+          "name": "SB's Snowman",
+          "icon": "xxsnowman",
+          "rarity": "SR",
+          "tags": "",
+          "category": "event",
+          "buyable": "FALSE",
+          "droppable": "FALSE",
+          "event": "christmas_2017"
      }
 ]

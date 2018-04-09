@@ -1,234 +1,146 @@
 const fs = require("fs");
 const gear = require("../gearbox.js");
 
-const STAMPBASE = __dirname+"/../../resources/lists/stamps.json"
-const BGBASE = __dirname+"/../../resources/lists/backgrounds.json"
-const MEDALBASE = __dirname+"/../../resources/lists/medals.json"
+
 const COLORBASE = __dirname+"/../../resources/lists/colors.json"
 const FLAIRBASE = __dirname+"/../../resources/lists/flairs.json"
 
 const values ={C:1,U:2,R:3,SR:4,UR:5};
 
-class Lootbox {
-  constructor(rarity, size,event) {
-    this.rarity = rarity ||"C";
-    this.size = size || 3;
-    this.content = []
-    this.stakes = 0
-    this.event = event
-    this.eventide = false
-    this.prizes = {
-        medals: [],
-        bgs: [],
-        stamps:[],
-        rubines:[],
-        jades:[],
-        items:[],
-        colors:[]
-    }
+function getRandomRar(){
+    let rand=gear.randomize(0,100);
+    switch(true){
+      case rand > 95:
+        return "UR";
+      case rand > 85:
+        return "SR"
+      case rand > 70:
+        return "R"
+      case rand > 50:
+        return "U"
+      default:
+        return"C"
+               }
   };
 
-    reroll(){
-        this.stakes++
-        this.prizes = {
-        medals: [],
-        bgs: [],
-        stamps:[],
-        rubines:[],
-        jades:[],
-        items:[],
-        colors:[]
+function getRandomType(R){
+
+    let rand=gear.randomize(0,1000);
+    switch(true){
+
+      case rand == 1000 && R=="UR":
+        return "SAPPHIRE";
+      case rand > 850:
+        return "STICKER";
+      case rand > 750:
+        return "BG"
+      case rand > 650:
+        return "MEDAL"
+      case rand > 350:
+        return "RUBINES"
+      default:
+        return"JADES"
+               }
+  };
+
+async function getItem(R,E,T){
+
+  const STAMPBASE = await gear.collectibles.stickers();
+const BGBASE =    await gear.collectibles.bgs();
+const MEDALBASE = await gear.collectibles.medals();
+
+    R = R || getRandomRar();
+    T = T || getRandomType(R);
+    E = E || false;
+    let N;
+    let ID;
+    let EBM;
+    let power= values[R];
+
+    let amountdrop= [50,250,500,1000,2000,2500][values[R]];
+    let noise = gear.randomize(25,250);
+
+    function raffle(BS){
+      let l=BS.length;
+      let rand_raf = gear.randomize(0,l-1);
+      return BS[rand_raf];
     }
-        this.open()
 
+    if(T=="SAPPHIRE"){
+      ID = 1
+      EBM=T.replace+"_"+R
+      N= ID//"Sapphire Chunk"
+    }
+    if(T=="RUBINES"){
+      ID = amountdrop+noise
+      EBM=T.replace("S","")+"_"+R
+      N= ID//"Rubine Gems"
+    }
+    if(T=="JADES"){
+      ID = (amountdrop+500-noise)*7
+      EBM=T.replace("S","")+"_"+R
+      N= ID//"Jade Shards"
     }
 
-  // JADES  ================================
-    getJades(rarity) {
-        let rar= values[rarity]
-        let rr = gear.randomize(8,10)
-        this.prizes.jades.push([rarity,Math.floor(rar*(gear.randomize(80,100))*18/10)])
-    }
-
-
-  // STICKERS ================================
-      getStamps(rarity, e) {
-
-      let base = JSON.parse(fs.readFileSync(STAMPBASE))
-      let filter = base.filter(stk => stk.rarity === rarity && stk.droppable == "TRUE")
-      let prize = filter[gear.randomize(0, filter.length - 1)]
-
-      //----------------------
-      if (e && typeof e == 'string') {
-        let afilter = base.filter(stk => {
-          return stk.rarity === rarity &&  stk.event == e
-        })
-
-        if (afilter.length == 0) afilter = base.filter(stk => stk.event == e);
-        if (afilter.length == 0) afilter = filter;
-
-        let rdm=gear.randomize(0, afilter.length - 1)
-        prize = afilter[rdm]
-        rarity = afilter[rdm].rarity
+    let catalog;
+    if(T=="BG"){
+      catalog = BGBASE.filter(itm=>itm.rarity==R&&(itm.droppable===true||itm.droppable==true));
+      if(E){
+        catalog.concat(BGBASE.filter(itm=>itm.event==E&&itm.rarity==R&&(itm.droppable===true||itm.droppable==true)));
       }
-      //----------------------
-
-      this.prizes.stamps.push([rarity, prize])
+      let IT = raffle(catalog);
+      ID=IT.code;
+      N=IT.name;
+      EBM=T
     }
+    if(T=="STICKER"){
+      try{
 
-  // BACKGROUNDS ================================
-
-    getBG(rarity, e) {
-      let base = JSON.parse(fs.readFileSync(BGBASE))
-      let filter = base.filter(bg => bg.rarity === rarity && bg.droppable == "TRUE")
-      let prize = filter[gear.randomize(0, filter.length - 1)]
-
-      //----------------------
-      if (e && typeof e == 'string') {
-        let afilter = base.filter(bg => {
-          return bg.rarity === rarity &&  bg.event == e
-        })
-
-        if (afilter.length == 0) afilter = base.filter(bg => bg.event == e);
-        if (afilter.length == 0) afilter = filter;
-
-        let rdm=gear.randomize(0, afilter.length - 1)
-        prize = afilter[rdm]
-        rarity = afilter[rdm].rarity
+      catalog = STAMPBASE.filter(itm=>itm.rarity==R);
+      if(E){
+        catalog.concat(await STAMPBASE.filter(itm=>itm.rarity==R&& itm .event==E));
       }
-      //----------------------
-      this.prizes.bgs.push([rarity, prize])
-    }
-
-
-  // MEDALS ================================
-    getMedal(rarity,e) {
-
-        let base = JSON.parse(fs.readFileSync(MEDALBASE))
-        let filter = base.filter(med=>med.rarity===rarity && med.droppable=="TRUE" )
-        let prize = filter[gear.randomize(0, filter.length-1)]
-
-      //----------------------
-      if (e && typeof e == 'string') {
-
-        let afilter = base.filter(mdl => mdl.rarity === rarity && mdl.event == e)
-        if (afilter.length == 0) afilter = filter;
-
-        let rdm=gear.randomize(0, afilter.length - 1)
-        prize = afilter[rdm]
-        rarity = afilter[rdm].rarity
+      let IT = raffle(catalog);
+      ID=IT.id;
+      N=IT.name;
+      EBM="STAMP"
+      } catch(e){
+        console.log(e)
+        T="MEDAL"
       }
-      //----------------------
-
-        this.prizes.medals.push([rarity,prize])
     }
 
 
-  // RUBINES ================================
-    getRubines(rarity) {
-        let rar= values[rarity]
-        let rr = gear.randomize(80,100)
-        //console.log("RAR:  "+rar +" * "+rr)
-        this.prizes.rubines.push([rarity,Math.floor(rar*(rr)/4)])
+    if(T=="MEDAL"){
+      catalog = MEDALBASE.filter(itm=>itm.rarity==R&&(itm.droppable===true||itm.droppable==true));
+      if(E){
+        catalog.concat(MEDALBASE.filter(itm=>itm.event==E&&itm.rarity==R&&(itm.droppable===true||itm.droppable==true)));
+      }
+      let IT = raffle(catalog);
+      ID=IT.icon;
+      N=IT.name;
+      EBM=T
     }
 
-    rarityCheck() {
-        let a = Math.floor(Math.random() * (2500 - 1 + 1) + 1);
-        switch (true) {
-            case a <= 10:
-                return "UR"
-                break;
-            case a <= 120:
-                return "SR"
-                break;
-            case a <= 580:
-                return "R"
-                break;
-            case a <= 1350:
-                return "U"
-                break;
-            default:
-                return "C"
-                break;
-        }
+    let item = {
+      type: T,
+      name: N,
+      item: ID,
+      rarity: R||"C",
+      emblem:EBM
     }
+    console.log(item)
+    return item;
 
-    checkout(USER) {
-        let p = this.prizes
-        /*
-        for (i=0;i<p.medals.length;++i)gear.paramAdd(USER,"medalInventory",p.medals[i]);
-        for (i=0;i<p.stamps.length;++i)gear.paramAdd(USER,"mstampInventory",p.stamps[i]);
-        for (i=0;i<p.bgs.length;++i)gear.paramAdd(USER,"bgInventory",p.bgs[i]);
-        for (i=0;i<p.colors.length;++i)gear.paramAdd(USER,"colorInventory",p.colors[i]);
-        for (i=0;i<p.items.length;++i)gear.paramAdd(USER,"INVENTORY",p.items[i]);
-        for (i=0;i<p.jades.length;++i)gear.paramIncrement(USER,"rubines",p.rubines[i])
-        for (i=0;i<p.rubines.length;++i) gear.paramIncrement(USER,"jades",p.jades[i])
-    */
-    }
+  };
 
-        getPrize(finder, rarity, e) {
+async function Lootbox(rarity="C", size=3,event=false,type) {
 
-            if (e) {
-              let ff = gear.randomize(0, 8)
-              if (this.eventide) ff -= 10;
-              switch (true) {
-                case finder+ff >= 16:
-                  this.eventide = true
-                  return this.getMedal(rarity, e)
-                  break;
-                case finder+ff >= 11:
-                  this.eventide = true
-                  return this.getBG(rarity, e)
-                  break;
-                default:
-                  break;
-              }
-            }
-
-        switch (true) {
-
-            case finder <= 2:
-                return this.getRubines(rarity)
-                break;
-            case finder <= 4:
-                return this.getRubines(rarity)
-                break;
-            case finder <= 9:
-                return this.getJades(rarity)
-                break;
-            case finder <= 13:
-                return this.getMedal(rarity,e)
-                break;
-            case finder <= 16:
-                return this.getBG(rarity,e)
-                break;
-            //case finder <= 16:
-                //return this.getStamps(rarity)
-                //break;
-            default:
-                return this.getRubines(rarity)
-                break;
-        }
-    }
-
-        open(event) {
-
-          if(event && typeof event =='string'){
-            event = event.replace(/ +/g,"")
-          }
-        return new Promise(async resolve => {
-
-            let ff = gear.randomize(0, 17)
-            this.getPrize(ff, this.rarity,event)
-
-            for (i = 1; i < this.size; ++i) {
-            let f = gear.randomize(0, 17)
-                let r = this.rarityCheck()
-                await this.getPrize(f, r,event);
-            }
-            return resolve(this.prizes)
-        })
-    }
-}
+    return  [
+      await getItem(rarity,event),
+      await getItem(undefined,event),
+      await getItem(undefined,event)
+    ]
+  }
 
 module.exports={Lootbox}

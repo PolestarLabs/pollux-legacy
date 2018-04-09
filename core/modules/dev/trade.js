@@ -8,6 +8,16 @@ const cmd = 'trade';
 
 const init = async function (message, userDB, DB) {
 
+
+    banlist=['345030635917934592']
+if(message.author.looting)return;
+if(banlist.includes(message.author.id))return;
+
+
+  if(message.author.trading)return;
+    message.author.trading=true;
+  setTimeout(()=>message.author.trading=false,20000)
+
 const ITBASE = JSON.parse(fs.readFileSync("./resources/lists/items.json","utf8"))
 let ITEMS = []
 
@@ -82,15 +92,18 @@ for (i in ITBASE){
     if (!direct) {
        resp = await Channel.awaitMessages(mms =>
         mms.author.id === message.author.id &&
-        !isNaN(Number(mms.content)) &&
+        (!isNaN(Number(mms.content)) &&
         Number(mms.content) < tradeit.length &&
-        Number(mms.content) >= 0, {
+        Number(mms.content) >= 0||mms.content.toLowerCase().includes('trade')), {
           maxMatches: 1,
           time: 20e3
         }
       )
 
       if (resp.size == 0) return;
+
+if (resp.first().content.toLowerCase().includes("trade")) return message.channel.send(gear.emoji("nope"));
+
       index = Math.abs(Math.floor(Number(resp.first().content)))
       item = tradeit[index]
     }else{
@@ -102,7 +115,8 @@ for (i in ITBASE){
     const resp2 = await Channel.awaitMessages(mms=>
                           mms.author.id === message.author.id && (
                             mms.content=="ok"||
-                            mms.content=="c"
+                            mms.content=="c" ||
+                            mms.content.toLowerCase().includes('trade')
                             ),{
                             maxMatches: 1,
                             time: 15e3
@@ -110,6 +124,7 @@ for (i in ITBASE){
 
     if (resp2.size == 0) return message.reply("timeout");
     let response = resp2.first().content;
+if (response.toLowerCase().includes("trade")) return message.channel.send(gear.emoji("nope"));
 
     if (response=="ok"){
       inventory.splice(inventory.indexOf(item),1)
