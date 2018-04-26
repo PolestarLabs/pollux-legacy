@@ -42,6 +42,7 @@
         "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
         "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!"
     },
+
     "forFun": {
         "saltLVL": "{{target}}' Salt Level is **{{amount}}%** {{emoji}}",
         "booru404": "I'm sorry, But I couldn't find anything with those tags. You should check to make sure those are correct.",
@@ -469,9 +470,10 @@
         "instru": "Use either the **Reactions** below or respond with the corresponding **number** (**x** for unequip) or **keyword**.\n `ok`: Confirms | ` c`: Cancels | ` ]`: Next Page | ` [`: Previous Page"
     },
     "daily": {
-        "title": "Global Daily Bonus Reset",
-        "remain": "Time until next reset:",
-        "last": "Last reset time:"
+        "lastdly":"Last Daily:",
+        "next":"Next Daily:",
+        "streakcurr":"Current Streak:",
+        "expirestr":"Time until Streak Expires:"
     },
     "website": {
         "commands": "Commands",
