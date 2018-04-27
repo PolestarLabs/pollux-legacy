@@ -299,7 +299,7 @@
     "reput": {
         "noSelf": "¡Hey yey pillín! ¡No te puedes rep a ti mismo!",
         "noTarget": "Dime a quien +Rep, a menos que estes Respetando al vacío.",
-        "confirm": ":fleur_de_lis:  **{{who}}** amablemente a dado **+1Rep** a **{{target}}**. Que dulcee~",
+        "confirm": ":fleur_de_lis:  **{{who}}** amablemente ha dado **+1Rep** a **{{target}}**. Que dulcee~",
         "cooldown": "¡Alto ahí amigo! Puedes dar rep de nuevo en {{remaining}}. Se paciente."
     },
     "shop": {
@@ -470,7 +470,11 @@
     "daily": {
         "title": "Reinicio de Bonus Diario Global",
         "remain": "Tiempo hasta el próximo reinicio",
-        "last": "Última hora de reinicio"
+        "last": "Última hora de reinicio",
+        "lastdly": "Último diario:",
+        "next": "Próximo diario:",
+        "streakcurr": "Racha actual:",
+        "expirestr": "Tiempo hasta que expire la racha:"
     },
     "website": {
         "commands": "Comandos",
