@@ -259,7 +259,8 @@
         "eggtrade": "Troque Ovos de Páscoa repetidos com seus amigos!",
         "craft": "Crie itens que você pode usar para fazer coisas maneiras!",
         "marriage": "Oficialize seu amor (igual no Facebook), ou ostente seu mozão por aí com este sistema matrimonial altamente capitalista!",
-        "lewd": "Admire o *crème de la crème* daquele hentaizão, selecionado cuidadosamente pelos melhores Curadores de Sacanagem na Mansão da Pollux!"
+        "lewd": "Admire o *crème de la crème* daquele hentaizão, selecionado cuidadosamente pelos melhores Curadores de Sacanagem na Mansão da Pollux!",
+        "divorce": "Coloque um fim ao seu casamento infeliz..."
     },
     "menu": {
         "cake": "Bolo",
@@ -415,7 +416,8 @@
         "eggtrade": "**Fazendo uma troca**\n`{{prefix}}eggtrade [ID do Ovo] @alguém`\nEx.: `{{prefix}}eggtrade U2 @alguém` vai trocar o *Aquamarine Pulse Egg* com *@alguém*\n\n**Aceitando uma troca**\nPara aceitar uma troca recebida, você tem 30s para responder à oferta com *accept* + o ID de um de seus Ovos. Somente trocas equivalentes (um ovo por outro) são permitidas.\n`accept SR1` enviará o *Dark Magician Egg* em troca pelo *Aquamarine Pulse Egg* enviado pelo primeiro usuário.\n\n**Você só pode trocar a cada 2 horas, então tome cuidado! __Trocas perdidas ainda usam seu tempo de recarga!__**",
         "lewd": "`{{prefix}}lewd`\nVocê também pode escolher de qual curador quer ver as escolhas! Digite o seu nome após o comando, como `{{prefix}}lewd pollyanna` por exemplo, para ver só o material curado por **Pollyanna**.\n\nNosso esquadrão atual de curadoria é:\n {{squad}}",
         "marry": "O casamento depende diretamente de `{{prefix}}craft`, já que você precisa de uma aliança antes de pedir alguém em casamento (é claro, né?).\n\nPara se casar com sua alma gêmea, digite `{{prefix}}marry @usuário [aliança]`. Existem 4 níveis de alianças de casamento, cada uma feita de uma gema diferente, para você ostentar o quão chique é o seu casamento. No futuro, alianças de níveis maiores darão mais Pontos de Amor aos pombinhos, para que possam gastar juntinhos ❤.\n\nExemplo de uso: `{{prefix}}marry @alguém rubine` para pedir em casamento com uma aliança de Rubine.\n\nRequer permissões de Inserir Links, Gerenciar Mensagens e Reações.",
-        "craft": "`{{prefix}}craft [código do item]`\nVocê encontrará todas as informações sobre itens e seus códigos em http://pollux.fun/crafting.\n\nPara criar um item, você precisa de todos os materiais necessários. Alguns deles precisam ser criados de antemão, eles não são criados automaticamente ao tentar criar um item de nível maior."
+        "craft": "`{{prefix}}craft [código do item]`\nVocê encontrará todas as informações sobre itens e seus códigos em http://pollux.fun/crafting.\n\nPara criar um item, você precisa de todos os materiais necessários. Alguns deles precisam ser criados de antemão, eles não são criados automaticamente ao tentar criar um item de nível maior.",
+        "divorce": "`{{prefix}}divorce` para mostrar a todo mundo com quem você se casou — seja uma pessoa só ou um harém inteiro!\n`{{prefix}}divorce [@usuário | ID do Discord]` para divorciar de tal pessoa"
     },
     "logs": {
         "success": "Pronto, defini o Canal {{channel}} como o canal de {{CHNTYPE}}!",
@@ -773,7 +775,7 @@
         "current_eventforMasters": "Hey~ Você sabia que está rolando um **Evento Global de Halloween** ?\nNeste evento você pode conseguir algumas coisinhas maneiras e __exclusivas__ para seu `p!perfil`, é mole?\nSomente disponível durante este evento, que acontece até **5 de Novembro**.\nMais informação em <http://pollux.fun/events/haloween> (página em inglês)\n\nVocê, como um Dono de Servidor, se estiver interessado em participar do evento com sua comunidade, pode usar o comando `p!halloween`, então eu sei que você está dentro! Você receberá **cinco** Boxes de Evento, e mais **uma** por cada 100 membros em seu servidor, com limite de 15.\nAs Boxes podem ser usadas ​​como recompensas para eventos que você organizar, ou apenas para sortear entre seus membros.\nEu confio em você para não usá-los para vantagem própria, de qualquer forma, o uso de Event Lootbox será registrado apenas para proteger aqueles que querem jogar limpo~\n\nAlguns Servidores não são elegíveis para participar automaticamente do evento. Que são:\n - Servidores criados após uma determinada data;\n - Servidores em que me juntei depois de 1º de outubro;\n - Os servidores que a taxa de humanos x bots excedem 10%\n\n Se o seu servidor se encaixa em qualquer um desses, mas é um servidor legítimo que deseja participar, junte-se ao meu Servidor de Suporte e fale com o meu Desenvolvedor para obter ajuda e, eventualmente, seu servidor vai pra Whitelist.\n\nAqui estão algumas instruções rápidas para os comandos envolvidos neste evento:\n - `p! trickortreat`: Isso é as dailies, mas utilizável uma vez por dia em cada servidor participante em que estou. Colete balinhas e obtenha rankings, os usuários no topo ganham mimos no final do evento dia **5 de novembro**\n - `p!trade box @fulano` Use isso para premiar caixas para alguém.\n - `p!lootbox` Confira as boxes no seu inventário, as boxes de evento são abertas com` open EV`.\n\nQuaisquer dúvidas. Junte-se ao Servidor de Suporte e solta o verbo! (você pode encontrá-lo com `p!help`)\n\n**Feliz Halloween! ** :heart:",
         "thankKys": "Valeuzasso! A Mamãe Noel pode entregar presentes aqui **{{amount}}x** mais rápido graças à sua gentileza~",
         "howmanyKys": "Ah, obrigadinha! Quantas chaves você tem para me dar?",
-        "noFunds_bo": "It seems you don't have that many keys.",
+        "noFunds_bo": "Hmm, acho que você não tem tudo isso de chaves não...",
         "hasAmount": "{{username}} coletou {{amount}} Chaves Espirais",
         "egghunt": "***{{user}}** está procurando por ovos neste canal...*",
         "egghuntfail": "*... mas não encontrou necas de pitibiriba.*",
@@ -793,8 +795,8 @@
         "channel": "OK, neste canal vou falar só português!"
     },
     "info": {
-        "checkPin": "Check the Pinned Message for more Info",
-        "reactThis": "React to this message to auto-receive the roles"
+        "checkPin": "Confira a Mensagem Fixada para mais informações",
+        "reactThis": "Reaja a esta mensagem para receber automaticamente as funções"
     },
     "rarity_tiers": {
         "C": "Comum",
@@ -802,5 +804,14 @@
         "R": "Raro",
         "SR": "Super Raro",
         "UR": "Ultra Raro"
+    },
+    "divorce": {
+        "confirmdiag": "Você concorda em divorciar-se de {{user}}? O divórcio tem ônus judiciais no valor de %EMJ%**5000 Rubines** a ser debitado **de vocês dois**! E a Pontuação Mozão de vocês dois será cortada **pela metade**!",
+        "saidnope": "{{userB}} não aceita o divórcio. Você pode forçar pagando %EMJ%**10000 Rubines** para que eu ligue para um amigo advogado que vai resolver essa pinimba, mas **vocês dois vão perder toda a Pontuação Mozão**!",
+        "saidnothing": "{{userB}} não tá aqui pra dar pitaco. Você pode forçar esse divórcio unilateral pagando %EMJ%**15000 Rubines** para que eu ligue para um amigo advogado que vai resolver essa parada, mas **você vai perder toda a Pontuação Mozão**!",
+        "saidyep": "{{userB}} concordou em um divórcio amigável.",
+        "forced_rej": "Tá bom~ Eu chamei um advogado que vai cuidar de tudo. Seu casamento acabou!",
+        "info": "\"Até que a morte os separe\" já tá parecendo tempo demais? Você pode desfazer seu casamento a qualquer momento com o pagamento de alguns Rubines.\nIsso pode ocorrer amigavelmente se a outra parte concordar, ou pode chamar um advogado para resolver seu divórcio litigioso.\n\nO divórcio consome a Pontuação Mozão de ambas as partes, então confirme se é isso mesmo que vocês querem. O anel usado no casamento **será destruído**!",
+        "divorce_title": "Divórcio"
     }
 }
