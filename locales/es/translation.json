@@ -259,7 +259,8 @@
         "eggtrade": "¡Intercambia Huevos de Pascua repetidos con tus amigos!",
         "craft": "¡Crea items con los que puedes hacer cosas geniales!",
         "marriage": "Haz tu amor oficial, o simplemente muestrate como pareja con alguien mas. ¡En este super sistema nupcial capitalista!",
-        "lewd": "¡Recibe las mejores imágenes obscenas escogidas minuciosamente por nuestros Obscenos Seleccionadores del hogar de Pollux!"
+        "lewd": "¡Recibe las mejores imágenes obscenas escogidas minuciosamente por nuestros Obscenos Seleccionadores del hogar de Pollux!",
+        "divorce": "Pon fin a tu infeliz matrimonio."
     },
     "menu": {
         "cake": "Pastel",
@@ -415,7 +416,8 @@
         "eggtrade": "**Haciendo un Intercambio**\n`{{prefix}}trade [ID del huevo] @miembro`\nE.g.`{{prefix}}trade U2 @miembro` Intercambiará *Huevo Aquamarine Pulse* con *@Miembro*\n\n**Aceptando un Intercambio**\nPara aceptar una propuesta de Intercambio, tienes 30s para responder la oferta con \"accept\" + el ID de uno de tus huevos, solo se permiten intercambios mutuos.\n`accept SR1` Mandará *Huevo Dark Magician* como intercambio de *Huevo Aquamarine Pulse* enviado por el primer usuario.\n\n**Solo puedes intercambiar cada 2 horas, así que ten cuidado. __¡Intercambios fallidos consumirán tu cooldown!__**",
         "lewd": "`{{prefix}}lewd`\n¡También puedes escoger de que selector querras ver las imágenes escogidas! Tan solo escribe su nombre despues del comando como `{{prefix}}lewd pollyanna` por ejemplo, para solo ver contenido escogido por **Pollyanna**.\n\n Nuestro equipo de seleccionadores actual es:\n {{squad}}",
         "marry": "Casarse depende directamente de `{{prefix}}craft`, ya que necesitas un anillo antes de poder declararte.\n\nPara casarte con tu amado o amada, haz `{{prefix}}marry @usuario [ring]`. Hay 4 rangos de anillos de boda, cada uno hecho de diferentes gemas, para alardear de tu elegante matrimonio. En el futuro, anillos de mas alto rango proveerán a la pareja de mas Love Points que podrán usar juntos.\n\nEjemplo de uso: `{{prefix}}marry @alguien rubine` para declararte con un anillo de Rubine.\n\nRequiere Permisos de Embed, Manage Messages y Reaction.",
-        "craft": "`{{prefix}}craft [código del item]`\nPuedes ver el código del item y toda la información en http://pollux.fun/crafting.\n\nPara craftear un item necesitas poseer todos los materiales requeridos, algunos materiales necesitan ser crafteados para estar disponibles, esos no son autocrafteados cuando creas un item de alto rango."
+        "craft": "`{{prefix}}craft [código del item]`\nPuedes ver el código del item y toda la información en http://pollux.fun/crafting.\n\nPara craftear un item necesitas poseer todos los materiales requeridos, algunos materiales necesitan ser crafteados para estar disponibles, esos no son autocrafteados cuando creas un item de alto rango.",
+        "divorce": "`{{prefix}}divorce` Para mostrar a todo el mundo con quien te has casado, ya sea una persona o todo un harén!\n`{{prefix}}divorce [@usuario || Discord ID]` Para divorciarte de esa persona."
     },
     "logs": {
         "success": "¡Hecho! He establecido {{channel}} como el Canal para {{CHNTYPE}}!",
@@ -802,5 +804,14 @@
         "R": "Raro",
         "SR": "Super Raro",
         "UR": "Ultra Raro"
+    },
+    "divorce": {
+        "confirmdiag": "¿Estás de acuerdo con divorciarte de {{user}}? ¡**Ambos de vostros** tendréis que pagar %EMJ%**5000 Rubines** para el coste del divorcio! ¡Ambos PuntosDeAmor serán **divididos a la mitad**!",
+        "saidnope": "{{userB}} no se quiere divorciar. Puedes forzarlo pagando %EMJ%**10000 Rubines** para que pueda llamar un abogado para solucionarlo, ¡pero ambos de vosotros perderéis **todos vuestros PuntosDeAmor** !",
+        "saidnothing": "Parece que {{userB}} no responde. Si quieres puedes forzar el divorcio por tu cuenta pagando %EMJ%**15000 Rubines** para que pueda llamar un abogado para solucionarlo, ¡pero solo tu perderás **todos tus PuntosDeAmor** !",
+        "saidyep": "{{userB}} está de acuerdo con un divorcio amistoso.",
+        "forced_rej": "Muy bien. He llamado a un abogado para encargarse de la situación, ¡Ya no estáis casados!",
+        "info": "¿Infeliz con tu pareja? Puedes deshacer tu matrimonio en cualquier momento pagando algunos Rubines.\nPuedes hacerlo de manera amistosa donde ambos estáis de acuerdo, o llamar a un abogado para que se encargue de la situación.\n\nDivorciarse consumirá puntos de amor de ambas partes. Así que por favor, asegurate de que esto es lo que quieres. ¡El anillo usado en este matrimonio **será destruido**!",
+        "divorce_title": "Divorcio"
     }
 }
