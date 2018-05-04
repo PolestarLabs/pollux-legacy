@@ -259,7 +259,8 @@
         "eggtrade": "Trade repeated Easter Eggs with your friends!",
         "craft": "Create items you can use to do awesome stuff with!",
         "marriage": "Officialise your love, or just show off as acouple with someone else. On this very capitalist wedding system!",
-        "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!"
+        "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!",
+        "divorce": "Put an end to yout unhappy marriage"
     },
     "menu": {
         "cake": "Prajitura",
@@ -405,17 +406,18 @@
         "exchange": "`{{prefix}}exchange [Amount] [Destination Currency Code]` \ne.g `{{prefix}}exchange 28 DUT` Exchanges 28 Rubines into DueUtil Credits.",
         "slots": "`{{prefix}}slots [bet(optional)]",
         "avatar": "`{{prefix}}avatar [@someguy]`",
-        "daily": "`{{prefix}}daily` to get your daily bonus, streak 10 days in a row for a higher bonus1\n `{{prefix}}daily epoch` to check how much time until next global refresh.",
+        "daily": "`{{prefix}}daily` to get your daily bonus, streak 10 days in a row for a higher bonus1\n `{{prefix}}daily info` to more information about times and streak.",
         "trickortreat": "`{{prefix}}trickortreat` or `{{prefix}}trit`",
         "candy": "`{{prefix}}candy [@someguy]`",
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games` Allows the **Games** Role as self-assignable.\n`{{prefix}}selfroles del Games` Removes the role **Games** from the list.\n`{{prefix}}selfroles list` Shows the list and commands for each Self-Assignable Role\n\n These are Case insensitive, you can use Role ID too.\n`{{prefix}}selfroles clear` Deletes **all** selfroles from the list.",
         "prune": "`{{prefix}}prune X [@user | user ID]`\nYou can use the user's ID if mentioning is not available, as in `{{prefix}}prune 50 271394014358405121`, If no user is specified, it defaults to Pollux's messages.\n\n**Attention** X must be __Greater than 1__ and __Lower than 101__.\nBasic math, I'm sure you can do it.",
         "decontaminate": "`{{prefix}}decontaminate [@user (optional)]`",
-        "eggtrade": "**Making a Trade**\n`{{prefix}}trade [Egg ID] @someone`\nE.g.`{{prefix}}trade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
+        "eggtrade": "**Making a Trade**\n`{{prefix}}eggtrade [Egg ID] @someone`\nE.g.`{{prefix}}eggtrade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
         "lewd": "`{{prefix}}lewd`\nYou can also choose from which curator you will want to see the picks from! Just type their name after the command like `{{prefix}}lewd pollyanna` for example, to see only stuff curated by **Pollyanna**.\n\n Our current curator squad is:\n {{squad}}",
         "marry": "Marriage relies directly on `{{prefix}}craft`, since you need a ring before you can propose.\n\nTo marry your loved one, do `{{prefix}}marry @user [ring]`. There are 4 tiers of wedding rings, each one made of a different gemstone, to show off how fancy your marriage is. In the future, higher rank rings will provide the couple more Love Points that they will be able to spend together.\n\nExample usage: `{{prefix}}marry @someone rubine` to propose with a Rubine ring.\n\nRequires Embed, Manage Messages and Reaction Permissions",
-        "craft": "`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item."
+        "craft": "`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item.",
+        "divorce": "`{{prefix}}divorce` To show everyone you are married to. whether that is one person or a whole harem!\n`{{prefix}}divorce [@user || Discord ID]` To divorce that person"
     },
     "logs": {
         "success": "Terminat! Am setat {{channel}} ca canal pentru {{CHNTYPE}}!",
@@ -470,7 +472,11 @@
     "daily": {
         "title": "Bonusul Zilnica Globala Resetat",
         "remain": "Timp ramas pana la resetare:",
-        "last": "Ultima resetare:"
+        "last": "Ultima resetare:",
+        "lastdly": "Last Daily:",
+        "next": "Next Daily:",
+        "streakcurr": "Current Streak:",
+        "expirestr": "Time until Streak Expires:"
     },
     "website": {
         "commands": "Comenzi",
@@ -798,5 +804,14 @@
         "R": "Rare",
         "SR": "Super Rare",
         "UR": "Ultra Rare"
+    },
+    "divorce": {
+        "confirmdiag": "Do you agree in divorcing from {{user}}? A divorce fee of %EMJ%**5000 Rubines** will be charged from **both** of you! Both of your LovePoints will be **halved**!",
+        "saidnope": "{{userB}} doesn't want to divorce. You can force it by paying %EMJ%**10000 Rubines** so I can call in a lawyer to resolve this, but both of you will lose **all of your LovePoints** !",
+        "saidnothing": "{{userB}} doesn't seem to be around to say anything. You can still force a one-sided divorce by paying %EMJ%**15000 Rubines** so I can call in a lawyer to resolve this, but you will lose **all of your LovePoints** alone!",
+        "saidyep": "{{userB}} agreed in a friendly divorce.",
+        "forced_rej": "Alright. I called in a Lawyer to deal with the situation, you're no longer married!",
+        "info": "Unhappy with your loved one? You can undo your marriage anytime by paying some Rubines.\nYou can do this friendly if your counterpart agrees, or you can call-in a lawyer to get things done.\n\nDivorcing will consume love points from both parts. So please be sure that this is what you want. The ring used in this marriage **will be destroyed**!",
+        "divorce_title": "Divorce"
     }
 }
