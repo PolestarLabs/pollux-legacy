@@ -39,8 +39,8 @@
         "exchange": "Echanges",
         "crafts": "Crafting",
         "donation": "Dons",
-        "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
-        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!"
+        "dailyStreakJades": "{{emoji}} **+1000 jades** pour avoir collectionné 3 jours de suite!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Saphir** pour avoir collectionné 250 jours de suite!"
     },
     "forFun": {
         "saltLVL": "Le niveau de sel à {{target}} est de **{{amount}}%** {{emoji}} ",
@@ -110,7 +110,7 @@
         "not-a-NSFW-channel": "Eh oh! Rends ce salon NSFW d'abord, il y a des enfants par ici...",
         "timesOutIn": "Cela expirera dans {{s}} secondes",
         "inviteText": "Invite-moi sur ton serveur en cliquant [ICI]",
-        "selfroleunAdded": "Role **{{role}}** removed from Self-roles.",
+        "selfroleunAdded": "Role **{{role}}** enlevé des roles automatiques.",
         "noselfRoles": "Il n'y a pas de rôle auto-assignable sur ce serveur.",
         "enterVoiceBetterExperience": "Tu dois être dans un salon vocal pour vivre l'expérience complète.",
         "useThis": "Utilise `{{prefix}}` en tant que préfixe pour ceci",
@@ -255,11 +255,12 @@
         "prune": "Supprime les messages d'un utilisateur spécifique",
         "cage": "Ta petite dose de Nicholas Cage, les meilleures photos de Monsieur Cage pour combler tes besoins!",
         "decontaminate": "Offrez-vous, ou à l'un de vos amis une bonne douche de décontamination !",
-        "geiger": "Utilise un compteu Geiger pour vérifier le potentiel de cancer sur ce channel.",
+        "geiger": "Utilise un compteu Geiger pour vérifier le potentiel de cancer dans ce salon.",
         "eggtrade": "Trade repeated Easter Eggs with your friends!",
-        "craft": "Create items you can use to do awesome stuff with!",
+        "craft": "Créer des articles pour faire des tâches géniales!",
         "marriage": "Officialise your love, or just show off as acouple with someone else. On this very capitalist wedding system!",
-        "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!"
+        "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!",
+        "divorce": "Mets au fin ton marriage malheureux"
     },
     "menu": {
         "cake": "Cake",
@@ -292,8 +293,8 @@
         "tellmeCHN": "␣Salon non indiqué!",
         "timer": "Ok, je supprimerai les messages d'accueil après {{timeMin}} secondes! ",
         "timerby": "D'accord, je supprimerai les messages d'aurevoir après {{timeMin}} secondes!",
-        "noTimer": "Ok, no messages will be deleted.",
-        "outChan": "Alright! Farewell messages will be posted at **{{channel}}**",
+        "noTimer": "D'accord, aucun message sera suprimé.",
+        "outChan": "D'accord! Messages de départ seront ",
         "inChan": "Alright! Welcome messages will be posted at **{{channel}}**"
     },
     "reput": {
@@ -412,10 +413,11 @@
         "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Gros noob\"]` \n\n`{{prefix}}selfroles add Gros noob` Autorise le rôle **Gros Noob** à être auto-assignable.\n`{{prefix}}selfroles del Gros noob` Supprime le rôle **Gros Noob** de la liste.\n`{{prefix}}selfroles list` Montre la liste et les commandes de chaque rôle auto-assignable.\n\n Attention, le nom des rôles est sensible à la casse (respecter les majuscules, etc...).\n`{{prefix}}selfroles clear` Supprime **tous** les rôles auto-assignables de la liste.",
         "prune": "`{{prefix} prune X [@user | ID utilisateur] `\nVous pouvez utiliser l'ID de l'utilisateur si la mention n'est pas disponible, comme dans {{{prefix}}prune 50 271394014358405121`, si aucun utilisateur n'est spécifié, il utilise par défaut les messages de Pollux.\n\n**Attention** X doit être __Plus de 1__ et __Moins de 101__.\nMathématiques de base, je sais que vous pouvez le comprendre!",
         "decontaminate": "`{{prefix}}decontaminate [@utilisateur (optionnel)]`",
-        "eggtrade": "**Making a Trade**\n`{{prefix}}trade [Egg ID] @someone`\nE.g.`{{prefix}}trade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
+        "eggtrade": "**Making a Trade**\n`{{prefix}}eggtrade [Egg ID] @someone`\nE.g.`{{prefix}}eggtrade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
         "lewd": "`{{prefix}}lewd`\nYou can also choose from which curator you will want to see the picks from! Just type their name after the command like `{{prefix}}lewd pollyanna` for example, to see only stuff curated by **Pollyanna**.\n\n Our current curator squad is:\n {{squad}}",
         "marry": "Marriage relies directly on `{{prefix}}craft`, since you need a ring before you can propose.\n\nTo marry your loved one, do `{{prefix}}marry @user [ring]`. There are 4 tiers of wedding rings, each one made of a different gemstone, to show off how fancy your marriage is. In the future, higher rank rings will provide the couple more Love Points that they will be able to spend together.\n\nExample usage: `{{prefix}}marry @someone rubine` to propose with a Rubine ring.\n\nRequires Embed, Manage Messages and Reaction Permissions",
-        "craft": "`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item."
+        "craft": "`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item.",
+        "divorce": "`{{prefix}}divorce` Pour voir une liste de candidats; outrement, tes époux et épouse. \n`{{prefix}}divorce [@user || Discord ID]` Pour divorcer cette personne."
     },
     "logs": {
         "success": "Ca y est! J'ai désigné le salon {{channel}} comme salon pour {{CHNTYPE}}!",
@@ -470,7 +472,11 @@
     "daily": {
         "title": "Reset global du Daily Bonus",
         "remain": "Temps avant le prochain reset:",
-        "last": "Dernier reset:"
+        "last": "Dernier reset:",
+        "lastdly": "Dernier quotidien:",
+        "next": "Prochain quotidien:",
+        "streakcurr": "Série courante:",
+        "expirestr": "Temps à l'expiration:"
     },
     "website": {
         "commands": "Commandes",
@@ -720,7 +726,7 @@
         "treatRefresh": "Eh oh t'as déjà eu des bonbons! Ouste! Reviens dans **{{remaining}}**",
         "current_event": "Hey~ Tu savais qu'il y a un **événement d'Halloween** en ce moment? :jack_o_lantern:\nDans cet event tu peux avoir des items exclusifs pour décorer ton profil!\nCet événement est disponible jusqu'au **5 Novembre**!\nPlus d'infos sur: <http://pollux.fun/events/haloween> *(page en anglais)*\n*Contacte le gérant de ton serveur pour savoir si ce dernier participe à l'event*",
         "newAccOut": ":warning: Désolé, les comptes nouveaux ne peuvent pas participer. Joigne-moi dans un autre événement~",
-        "newServer": "New Servers cannot participate in this event. Contact the Developer or join the Support Server if you want to participate in the event with this Server.",
+        "newServer": "Serveurs nouveaux ne peuvent participer dans cet événement. Contactez le développeur ou joignez le serveur de support si vous voulez participer avec ce serveur.",
         "newJoin": "This Server cannot participate in this event because I've joined here after October 1st. Contact the Developer or join the Support Server if you want to participate in the event with this Server",
         "nextThis": "You can Trick or Treat here again at:",
         "candiesCheck": "You collected **{{amt}}** candies so far. Keep knocking at servers to get more!",
@@ -793,10 +799,19 @@
         "reactThis": "Réagissez à ce message pour recevoir automatiquement les rôles"
     },
     "rarity_tiers": {
-        "C": "Common",
+        "C": "Commun",
         "U": "Uncommon",
         "R": "Rare",
-        "SR": "Super Rare",
+        "SR": "Extra Rare",
         "UR": "Ultra Rare"
+    },
+    "divorce": {
+        "confirmdiag": "Acceptes-tu de divorcer {{user}}? Un frais de %EMJ%**5000 Rubines** serait chargé de **chaque personne**! Les points d'amour serait **chacun réduit par un moitié!**",
+        "saidnope": "{{userB}} ne veut pas divorcer. Tu peux le forcer par payer %EMJ%**10000 Rubines** pour que je puisse appeler un avocat pour résoudre ceci, mais vous deux irez perdre **tous vos Points d'Amour**!",
+        "saidnothing": "{{userB}} semble d'être absent pour dire quelque chose. Tu peux encore forcer un divorce toi-même en payant %EMJ% **15000 Rubines** pour que je puisse appeler un avocat pour résoudre ceci mais tu vas perdre **tous tes points d'amour** uniquement!",
+        "saidyep": "{{userB}} s'est accordé à un divorce paisible. ",
+        "forced_rej": "D'acc. J'ai appelé un avocat pour résoudre la situation, t'es plus marié avec eux!",
+        "info": "Malheureux avec ton être cher ou chère? Tu peux annuler ton marriage n'importe quand par payant des Rubines. \nTu peux le faire paisiblement si ton partenaire est d'accord, ou tu peux appeler un avocat pour terminer les affaires.\n\nDivorcer va aussi consommer les points d'amour, alors sois sur que c'est ce que tu veux. La bague utilisé dans ce marriage **va être détruite**!",
+        "divorce_title": "Divorce"
     }
 }
