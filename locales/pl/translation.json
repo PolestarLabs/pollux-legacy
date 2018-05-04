@@ -259,7 +259,8 @@
         "eggtrade": "Wymień powtarzające się pisanki ze swoimi przyjaciółmi!",
         "craft": "Twórz przedmioty, które możesz użyć do świetnych rzeczy!",
         "marriage": "Zoficjalizuj swoją miłość lub pokaż jak blisko z kimś jesteś. Za pomocą tego systemu ślubów!",
-        "lewd": "Zdobądź najlepsze, ręcznie, starannie wybrane sprośne zdjęcia przez naszych najlepszych kustoszy Lewd w Pollux!"
+        "lewd": "Zdobądź najlepsze, ręcznie, starannie wybrane sprośne zdjęcia przez naszych najlepszych kustoszy Lewd w Pollux!",
+        "divorce": "Zakończ swój nieszczęśliwy związek."
     },
     "menu": {
         "cake": "Ciasto",
@@ -415,7 +416,8 @@
         "eggtrade": "**Tworzenie wymiany**\n`{{prefix}}trade [Egg ID] @ktoś`\nNp. `{{prefix}}trade U2 @ktoś` wymieni *Akwamarynowe Pulsujące Jajko* z *@Kimś*\n\n**Akceptowanie wymiany**\nAby zaakceptować wymianę musisz w ciągu 30 sekund napisać *accept* + jedno ID twojego jajka, jedynie wymiany, które dają obopólną korzyść są dozwolone.\n`accept SR1` wyśle *Magiczne Jajko Ciemności* w zamiast za *Akwamarynowo Pulsujące Jajko* wysłane przez pierwszego użytkownika.\n\n**Wymieniać się możesz tylko raz na 2 godziny, więc nie zmarnuj tego! __Za nie odczytane wymiany również będziesz musiał czekać 2 godziny!__**",
         "lewd": "`{{prefix}}lewd`\nMożesz również wybrać od którego opiekuna chcesz zobaczyć obrazki! Wystarczy, że napiszesz jego imię po komendzie. Np. : `{{prefix}} lewd pollyanna` aby zobaczyć rzeczy, które ma w swojej kolekcji **Pollyanna**.\n\nNasza drużyna opiekunów:\n{{squad}}",
         "marry": "Małżeństwo polega bezpośrednio na `{{prefix}}craft`, więc musisz pierw zrobić pierścionek by się z kimś ożenić.\n\nAby ożenić kogoś kogo kochasz musisz wpisać `{{prefix}}marry @użytkownik [pierścionek]`. Są 4 poziomy pierścionków zaręczynowych i każdy typ jest z innej błyskotki, a wszystko po to byś mógł pokazać jaka wspaniała z was para. W przyszłości lepsze pierścionki będą dawać więcej punktów miłości, które będziecie mogli razem wydawać.\n\nNp.: `{{prefix}}mary @ktoś rubine` aby zaręczyć się z kimś korzystając z Rubinowego Pierścionka.\n\nWymaga permisji Zarządzanie serwerem i Dodaj Reakcję.",
-        "craft": "`{{prefix}}craft [numer itemu]`\nMożesz znaleźć wszystkie informacje na stronie: http://pollux.fun/crafting.\n\nAby stworzyć przedmiot musisz tylko posiadać wszystkie potrzebne materiały. Pamiętaj tylko, że niektóre z nich trzeba wcześniej stworzyć, ponieważ one same się nie stworzą."
+        "craft": "`{{prefix}}craft [numer itemu]`\nMożesz znaleźć wszystkie informacje na stronie: http://pollux.fun/crafting.\n\nAby stworzyć przedmiot musisz tylko posiadać wszystkie potrzebne materiały. Pamiętaj tylko, że niektóre z nich trzeba wcześniej stworzyć, ponieważ one same się nie stworzą.",
+        "divorce": "`{{prefix}}divorce` To show everyone you are married to. whether that is one person or a whole harem!\n`{{prefix}}divorce [@user || Discord ID]` To divorce that person"
     },
     "logs": {
         "success": "Gotowe! Ustawiłem {{channel}} jako kanał dla {{CHNTYPE}}!",
@@ -470,7 +472,11 @@
     "daily": {
         "title": "Globalny Reset Dziennego Bonusu",
         "remain": "Czas do następnego resetu:",
-        "last": "Czas ostatniego resetowania:"
+        "last": "Czas ostatniego resetowania:",
+        "lastdly": "Ostatni dzienny bonus:",
+        "next": "Następny dzienny bonus:",
+        "streakcurr": "Twoja passa dziennych bonusów:",
+        "expirestr": "Twoja passa wygaśnie za:"
     },
     "website": {
         "commands": "Polecenia",
@@ -798,5 +804,14 @@
         "R": "Rzadki",
         "SR": "Super Rzadki",
         "UR": "Ultra Rzadki"
+    },
+    "divorce": {
+        "confirmdiag": "Zgadasz się na rozwód z {{user}}? Opłata rozwodowa w wysokości %EMJ%**5000 Rubinów** zostanie pobrana od **was**! Punkty Miłości was obu zostaną **podzielone na pół**.",
+        "saidnope": "{{userB}} nie chce się rozwodzić. Możesz jednak wymusić rozwód. Jednak prawnicy nie rosną na drzewach i potrzebuję %EMJ% **10000 Rubinów**. Na dodatek wszyscy stracicie swoje **wszystkie Punkty Miłości**!",
+        "saidnothing": "\n",
+        "saidyep": "{{userB}} agreed in a friendly divorce.",
+        "forced_rej": "Alright. I called in a Lawyer to deal with the situation, you're no longer married!",
+        "info": "Unhappy with your loved one? You can undo your marriage anytime by paying some Rubines.\nYou can do this friendly if your counterpart agrees, or you can call-in a lawyer to get things done.\n\nDivorcing will consume love points from both parts. So please be sure that this is what you want. The ring used in this marriage **will be destroyed**!",
+        "divorce_title": "Rozwód"
     }
 }
