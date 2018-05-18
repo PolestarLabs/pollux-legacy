@@ -15,7 +15,7 @@ module.exports = {
   },
   linksBuster: function (msg, bot, data) {
 
-    if (msg.member.roles.has(data.modules.BUSTER.bypass.links) || msg.member.id == msg.guild.owner.ia) return;
+    if (msg.member && msg.member.roles.has(data.modules.BUSTER.bypass.links) || msg.member.id == msg.guild.owner.ia) return;
     let whitelist = data.modules.BUSTER.params.links || []
     let amt = (data.modules.BUSTER.params.links || 0).length;
     let cleanedMessage = msg.content.replace(/\s+/g, '');
@@ -37,32 +37,39 @@ module.exports = {
 
   invitesBuster: function (msg, bot, data) {
 
-    if (msg.member.roles.has(data.modules.BUSTER.bypass.invites) || msg.member.id == msg.guild.owner.id) return;
+    if (msg.member && (msg.member.roles.has(data.modules.BUSTER.bypass.invites) || msg.member.id == msg.guild.owner.id)) return;
     let whitelist = data.modules.BUSTER.params.invites || []
     let amt = (data.modules.BUSTER.params.invites || 0).length;
     let cleanedMessage = msg.content.replace(/\s+/g, '');
 
     if (cleanedMessage.includes('http') && cleanedMessage.includes('://')) {
-      let link = 'https://' + cleanedMessage.match(/(discord.gg\/)([A-z|0-9]*)/g)[0];
+      let link = 'https://' + (cleanedMessage.match(/(discord.gg\/)([A-z|0-9]*)/g)||[])[0];
       //console.log(link)
       rq(link, (err, data) => {
+        try{
+
         if (data.toJSON().request.uri.path.includes('invite')) {
           if (whitelist) {
             for (i = 0; i < amt; i++) {
               if (!cleanedMessage.includes(whitelist[i])||whitelist[0]=="") {
-                msg.delete().then(m => m.channel.send(gear.emoji('nope') + " No invites here")).catch()
+                if(!msg)return;
+                msg.delete().then(m => m.channel.send(gear.emoji('nope') + " No invites here")).catch(e=>{})
               }
             }
           } else {
-            msg.delete().then(m => m.channel.send(gear.emoji('nope') + " No invites here")).catch()
+            msg.delete().then(m => m.channel.send(gear.emoji('nope') + " No invites here")).catch(e=>{})
           }
+        }
+        }catch(e){
+          //catch
         }
       })
     }
   },
 
   wordsBuster: function (msg,bot,data) {
-    if (msg.member.roles.has(data.modules.BUSTER.bypass.words)||msg.member.id==msg.guild.owner.id)return;
+
+    if (msg.member&&msg.member.roles.has(data.modules.BUSTER.bypass.words)||msg.member.id==msg.guild.owner.id)return;
 
     let words = data.modules.BUSTER.params.words || []
     let amt   = (data.modules.BUSTER.params.words||0).length;
@@ -72,7 +79,7 @@ module.exports = {
 
     for (i=0;i<amt;i++){
       if(msg.content.includes(words[i])){
-        msg.delete().then(m=>m.channel.send(gear.emoji('nope')+" Don't say that here")).catch();
+        msg.delete().then(m=>m.channel.send(gear.emoji('nope')+" Don't say that here")).catch(e=>'die silently');
       }
     }
 
@@ -85,7 +92,8 @@ module.exports = {
 
 
   mentionBuster: function (msg,bot,data) {
-      if (msg.member.roles.has(data.modules.BUSTER.bypass.mentionSpam))return;
+
+      if (msg.member && msg.member.roles.has(data.modules.BUSTER.bypass.mentionSpam))return;
     //console.log("---------MENTION BUSTER---------------------")
       if(!msg.author.onWatch) msg.author.onWatch = {offenses:0};
       let BUSTER = msg.author.onWatch
