@@ -809,8 +809,8 @@
         "confirmdiag": "Zgadasz się na rozwód z {{user}}? Opłata rozwodowa w wysokości %EMJ%**5000 Rubinów** zostanie pobrana od **was**! Punkty Miłości was obu zostaną **podzielone na pół**.",
         "saidnope": "{{userB}} nie chce się rozwodzić. Możesz jednak wymusić rozwód. Jednak prawnicy nie rosną na drzewach i potrzebuję %EMJ% **10000 Rubinów**. Na dodatek wszyscy stracicie swoje **wszystkie Punkty Miłości**!",
         "saidnothing": "\n",
-        "saidyep": "{{userB}} agreed in a friendly divorce.",
-        "forced_rej": "Alright. I called in a Lawyer to deal with the situation, you're no longer married!",
+        "saidyep": "{{userB}} zgodził się na rozwód.",
+        "forced_rej": "Dobra. Wezwałam Prawnika, aby się tym zajął i... nie jesteście już małżeństwem!",
         "info": "Unhappy with your loved one? You can undo your marriage anytime by paying some Rubines.\nYou can do this friendly if your counterpart agrees, or you can call-in a lawyer to get things done.\n\nDivorcing will consume love points from both parts. So please be sure that this is what you want. The ring used in this marriage **will be destroyed**!",
         "divorce_title": "Rozwód"
     }
