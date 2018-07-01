@@ -3,7 +3,6 @@
 		"global": "I'll now speak English for this Server as the true cosmopolitan lady I am!",
 		"channel": "At this Channel I'll be speaking English for you~"
 	},
-
 	"$": {
 		"exchange": "Exchanges",
 		"crafts": "Crafting",
@@ -598,9 +597,7 @@
 			"even": "We broke even, in that case the house wins~ Your Rubines stay with me."
 		},
 		"slots": {
-
 			"takePrize": "Your prize for this is **%$%** %emj%",
-
 			"_minor": "better than nothing huh? ;)",
 			"_mid": "not bad at all!",
 			"_major": "so close!",
@@ -616,7 +613,6 @@
 			"zero_1": "Ah noooo! :( You couldn't get not even one Rubine back...",
 			"zero_2": "Oh that's too bad... nothing here.",
 			"zero_3": "Better luck next time, sweetie. I believe in you! ;)"
-
 		}
 	},
 	"loot": {
@@ -643,14 +639,12 @@
 		"reroll": "Reroll it",
 		"rerollRemain": "Rerolls remaining:",
 		"rerolled": "Let's try again, rerolling the box content...",
-
 		"addedRubines": "{{X}} Rubines added to your Balance",
 		"addedJades": "{{X}} Jades added to your Pouch",
 		"addedMedal": "**{{itm}}** Medal added to your Inventory",
 		"addedSticker": "**{{itm}}** Sticker added to your Inventory",
 		"addedBG": "Background `[code:{{itm}}]` added to your Inventory",
 		"duplicateExchange": "Duplicate {{tpe}} `{{itm}}` exchanged for {{X}} Rubines",
-
 		"noMoreRolls": "You've ran out of rerolls, you'll have to stick with this result.",
 		"notThisbox": "There's no such box to open, try `{{prefix}}lootbox` again and see tha options available~",
 		"noFunds": "You cannot afford a reroll kiddo, better luck next time."
@@ -691,11 +685,9 @@
 		"globalLimit": "Today's operations has been closed, thank you!",
 		"takedis": "Keep this code in case of ~shit happens~"
 	},
-
 	"event": {
 		"current_event": "Hey~ Did you know there is a global **Halloween Event** going on? :jack_o_lantern:\nIn this event you can get some cool and __exclusive__ pretty stuff for your `p!profile` card!\nAvailable only during this event, which will be running until **November 5th**\nMore info at <http://pollux.fun/events/haloween> *(page in english)*\n*Contact your Server Owner to check if this server is participating*",
 		"current_eventforMasters": "Hey~ Excuse me, did you know there is a global **Halloween Event** going on? :jack_o_lantern:\nIn this event people can get some cool and __exclusive__ pretty stuff for their`p!profile` cards!\nAvailable only during this event, which will be running until **November 5th**\nMore info at <http://pollux.fun/events/haloween> *(page in english)*\n\nYou, as a Server Owner, if interested in participating in the event with your community, can answer this message with an `halloween` so I know you're in! You will receive **five** Event Lootboxes, plus **one** for every 100 members on your server(s), capping at 15.\nThese can be used as rewards to any self-hosted events you may run, or just to raffle amongst your members.\nI trust you to not use these for self advantage, either way, Event Lootbox usage will be logged just in case to protect those who want to play fairly~\n\nSome Servers are not eligible for auto-joining the event. Which are:\n - Servers created after a certain date;\n - Servers in which I joined after October 1st;\n - Servers with bot x human users ratio exceeds 10%\n\n If your server fits in any of these, but it is a legit community server wanting to participate, join my Support Server and speak to my Developer for help, and eventually a Whitelisting of your server.\n\nHere are some quick instructions for the commands involved in this event:\n - `p!trickortreat` : This is like dailies, but usable once a day in every participating server i'm in. Collect candies and get ranked, the top ranked users will get goodies from myself at the end of the event in **November 5th, 3PM EDT**.\n - `p!trade box @someone` Use this to award boxes to someone.\n - `p!lootbox` Check the lootboxes in your inventory, Event Boxes are opened responding with `open EV`.\n\nAny further questions, bugs, or anything. Join the Support Server and spill it out (you can find it with `p!help`)\n\n**Stay Spooky and Happy Halloween!** :heart:",
-
 		"next": "Available again at this Server at {{remain}}",
 		"treat": "***Trick or Treat!***  You got **{{qtd}}** candies from this Server's stash!",
 		"treatRefresh": "No no no! You already got your candies, shoo!\nYou can come back in **{{remaining}}**",
@@ -711,5 +703,4 @@
 		"candyprize": "The best ranked users will get some nice rewards at the end of the event!",
 		"yourpos": "Your position in the rank is:"
 	}
-
 }
