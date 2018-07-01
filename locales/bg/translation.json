@@ -39,8 +39,8 @@
         "exchange": "Борси",
         "crafts": "Крафт",
         "donation": "Дарения",
-        "dailyStreakJades": "{{emoji}} **+1000 Нефрити**, защото сте събирали 3 дни единг, след друг!",
-        "dailyStreakSapphs": "{{emoji}} **+1 Сапфир** защото сте събирали 250 дни единг, след друг!"
+        "dailyStreakJades": "{{emoji}} **+1000 Нефрити**, защото сте събирали 3 дни един, след друг!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Сапфир** защото сте събирали 250 дни един, след друг!"
     },
     "forFun": {
         "saltLVL": "{{target}}' се държи като глупак **{{amount}}%** {{emoji}}",
@@ -108,7 +108,7 @@
         "noReason": "Причината не е посочена",
         "insuperms": "Вие, нямате разрешението да използвате тази команда!",
         "not-a-NSFW-channel": "Задай каналът за пълонолетни! Има деца в този сървър!",
-        "timesOutIn": "Времето изтича в {{s}} секунди",
+        "timesOutIn": "Времето изтича след {{s}} секунди",
         "inviteText": "Поканете ме на сървъра си, като кликнете върху [HERE]",
         "selfroleunAdded": "Ролята: **{{role}}** е премахната от ролите, които сами по себе си приписват.",
         "noselfRoles": "Сървърът няма самостоятелни роли",
@@ -116,7 +116,7 @@
         "useThis": "Използвайте `{{prefix}}` като префикс за това.",
         "acceptDec": "Кликнете върху {{icon}}, за да потвърдите, че можете да получите трансфера не повече от 5 пъти на ден.",
         "declinedTrans": "{{user}} не иска вашите рубини.",
-        "ongoingTrade": "You cannot start a trade while another one is going on!"
+        "ongoingTrade": "Не можеш да търгуваш, докато други потребители търгуват!"
     },
     "dict": {
         "coinHeads": "ези",
@@ -189,7 +189,7 @@
         "betflip": "Поставете пари {{good}} на монета",
         "supserv": "Сървър за поддръжка",
         "commlist": "Лист с командите",
-        "inviteme": "Покани ме в товят сървър~",
+        "inviteme": "Покани ме в твоят сървър",
         "polHelp": "Pollux, помощ",
         "helpText": "Това са основите, които ще ми помогнат да ви ползвам! Също така ви изпратих съобщение в лични съобщения, в случай че случайно го загубите.",
         "commUsage": "Как се използва:",
@@ -251,16 +251,16 @@
         "candyrank": "Виж най-добрие събирачи на бонбони в света",
         "candy": "Виж колко бонбона сте събрали ти и твойте приятели през това събитие",
         "trickortreat": "Събирате бонбони от другите сървъри, това може да се напарви веднъж на всеки 24 часа.",
-        "selfroles": "Добавете, изтрийте или разгледайте списъка със самонаемащи роли.",
+        "selfroles": "Добавя, премава или преглежда списъка със самоопределени роли",
         "prune": "Изтрива съобщенията на конкретен члена",
         "cage": "Снимки на Никълъс Кейдж",
         "decontaminate": "Даваш на себеси или на твой приятел дезинфекциращ душ",
         "geiger": "Използвай индикатора за радиация за да видиш потенциалът на рак в този канал",
         "eggtrade": "Trade repeated Easter Eggs with your friends!",
-        "craft": "Create items you can use to do awesome stuff with!",
-        "marriage": "Officialise your love, or just show off as acouple with someone else. On this very capitalist wedding system!",
-        "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!",
-        "divorce": "Put an end to yout unhappy marriage"
+        "craft": "Създай предмети, с които можеш да правиш страхотни неща!",
+        "marriage": "Направи официална твойта връзка или венчасай някой друг.",
+        "lewd": "Вземи най-яките lewd снимки, ибирай внимателно ^^, от нашия Lewd Curartos",
+        "divorce": "Сложи край на нещастната ви връзка."
     },
     "menu": {
         "cake": "Торта",
@@ -293,15 +293,15 @@
         "tellmeCHN": "Каналът не е зададен!",
         "timer": "Разбира се, ще изтрия съобщението за добре дошли след {{timeMin}} секунди!",
         "timerby": "Разбира се, ще изтрия съобщението за сбогом след {{timeMin}} секунди!",
-        "noTimer": "Ok, no messages will be deleted.",
-        "outChan": "Alright! Farewell messages will be posted at **{{channel}}**",
-        "inChan": "Alright! Welcome messages will be posted at **{{channel}}**"
+        "noTimer": "Добре, съобщенията няма да бъдат изтрити",
+        "outChan": "Разбрах! Изпращането на потребителите ще бъде в **{{channel}}**",
+        "inChan": "Разбрах! Ще приветствам потребителите в **{{channel}}**"
     },
     "reput": {
         "noSelf": "Хей ти умник такъв! Какво току що каза!",
         "noTarget": "Кажи ми на кой искаш да дадеш +1Rep точка за репотация. Освен ако не правиш известна прахосмукачка.",
         "confirm": ":fleur_de_lis:  **{{who}}** бе щедър и даде **+1Rep** на **{{target}}**. Колко сладко~",
-        "cooldown": "Задръш пич! можеж да дадеш още една репотативна точка {{remaining}}. Бъди тъпрелв."
+        "cooldown": "Mожеж да дадеш още една репотативна точка {{remaining}}. Бъди търпелив/а."
     },
     "shop": {
         "whatShop": "Кой магазин?",
@@ -415,9 +415,9 @@
         "decontaminate": "`{{prefix}}decontaminate [@член (не е задължително)]`",
         "eggtrade": "**Making a Trade**\n`{{prefix}}eggtrade [Egg ID] @someone`\nE.g.`{{prefix}}eggtrade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
         "lewd": "`{{prefix}}lewd`\nYou can also choose from which curator you will want to see the picks from! Just type their name after the command like `{{prefix}}lewd pollyanna` for example, to see only stuff curated by **Pollyanna**.\n\n Our current curator squad is:\n {{squad}}",
-        "marry": "Marriage relies directly on `{{prefix}}craft`, since you need a ring before you can propose.\n\nTo marry your loved one, do `{{prefix}}marry @user [ring]`. There are 4 tiers of wedding rings, each one made of a different gemstone, to show off how fancy your marriage is. In the future, higher rank rings will provide the couple more Love Points that they will be able to spend together.\n\nExample usage: `{{prefix}}marry @someone rubine` to propose with a Rubine ring.\n\nRequires Embed, Manage Messages and Reaction Permissions",
-        "craft": "`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item.",
-        "divorce": "`{{prefix}}divorce` To show everyone you are married to. whether that is one person or a whole harem!\n`{{prefix}}divorce [@user || Discord ID]` To divorce that person"
+        "marry": "Годежа се дължи на  `{{prefix}}craft`, защото трябва да направиш пръстен преди да предложиш.\n\nЗа да се омъжиш за любовта на живота ти, напишете `{{prefix}}marry @user [пръстен]`. Има четири типа годежни пръстени, всеки един е направен от различен скъпоценен камък, за да покаже колко \"модерна\" е твоята сватба. В бъдеще всеки ранг на пръстена ще донася повече любовни точки, които могат да бъдат похарчени.\n\nНапример: `{{prefix}}marry @someone rubine` за да предложиш с рубинен пръстен. (Рубина трябва да е изписан на английски език!)\n\nИзисква вграждане, управление на съобщения и разрешения за реакция",
+        "craft": " `{{prefix}}craft [код на предмета]`\nМожеш да намериш кодовете и цялата информация на http://pollux.fun/crafting.\n\nЗа да направиш този предмет, трябва да притежаваш всичките необходими материали. Високите рангове не могат да бъдат в автоматично производство!",
+        "divorce": "`{{prefix}}divorce` За да покаже с кого или с кои имаш брак. Няма значение дали е един човек или цял харем\n`{{prefix}}divorce [@user || Discord ID]` За да се разведете"
     },
     "logs": {
         "success": "Готово е! Този {{channel}} се отнася за {{CHNTYPE}}!",
@@ -473,10 +473,10 @@
         "title": "Global Daily Bonus Reset",
         "remain": "Време до следващо нулиране:",
         "last": "Последно време за нулиране:",
-        "lastdly": "Last Daily:",
-        "next": "Next Daily:",
-        "streakcurr": "Current Streak:",
-        "expirestr": "Time until Streak Expires:"
+        "lastdly": "Миналият ежедневен",
+        "next": "Следващият ежедневен",
+        "streakcurr": "Текущ страйк:",
+        "expirestr": "Времето до следващият ти страйк."
     },
     "website": {
         "commands": "Команди",
@@ -488,8 +488,8 @@
         "dash": "Табло",
         "login": "Вход",
         "logout": "Изход",
-        "bgshop": "Магазин за тапети",
-        "mdshop": "Магазин за медали",
+        "bgshop": "Магазин за тапети/фонове",
+        "mdshop": "Магазин на медали",
         "itshop": "Магазин за елементи",
         "rank": "Класации",
         "rarity": "Рядкост",
@@ -590,7 +590,7 @@
     },
     "modules": {
         "nsfw": "За пълнолетни",
-        "mod": "Модератор",
+        "mod": "Модерация",
         "$": "Икономика",
         "game": "Игра",
         "rubine": "Рубин",
@@ -774,8 +774,8 @@
         "configInfo": "Tell your members to use these roles to get notifications about the event and/or to be notified about their preferred elf spawning.\n**DO __NOT__ EDIT POLLUX PERMS ON THE EVENT CHANNEL!** The developer cannot recover lost event data if that ever occurs.",
         "current_eventforMasters": "---",
         "thankKys": "Thanks a lot! Santa may deliver presents here **{{amount}}x** faster now due to your kindness~",
-        "howmanyKys": "Ah, thank you! How many keys do you have to give me?",
-        "noFunds_bo": "It seems you don't have that many keys.",
+        "howmanyKys": "Ааа, разбрах. Колко ключа трябва да ми даваш?",
+        "noFunds_bo": "Изглежда, че нямаш толкова много ключове",
         "hasAmount": "{{username}} събра {{amount}} Winding Keys",
         "egghunt": "***{{user}}** is looking around for eggs in this channel...*",
         "egghuntfail": "*But couldn't find a single thing*",
@@ -799,19 +799,19 @@
         "reactThis": "Отговорете на това съобщение, за да получите автоматично ролите"
     },
     "rarity_tiers": {
-        "C": "Common",
-        "U": "Uncommon",
-        "R": "Rare",
-        "SR": "Super Rare",
-        "UR": "Ultra Rare"
+        "C": "Често срещан",
+        "U": "Рядко срещан",
+        "R": "Рядък",
+        "SR": "Супер рядък",
+        "UR": "Ултра рядък"
     },
     "divorce": {
-        "confirmdiag": "Do you agree in divorcing from {{user}}? A divorce fee of %EMJ%**5000 Rubines** will be charged from **both** of you! Both of your LovePoints will be **halved**!",
-        "saidnope": "{{userB}} doesn't want to divorce. You can force it by paying %EMJ%**10000 Rubines** so I can call in a lawyer to resolve this, but both of you will lose **all of your LovePoints** !",
-        "saidnothing": "{{userB}} doesn't seem to be around to say anything. You can still force a one-sided divorce by paying %EMJ%**15000 Rubines** so I can call in a lawyer to resolve this, but you will lose **all of your LovePoints** alone!",
-        "saidyep": "{{userB}} agreed in a friendly divorce.",
-        "forced_rej": "Alright. I called in a Lawyer to deal with the situation, you're no longer married!",
-        "info": "Unhappy with your loved one? You can undo your marriage anytime by paying some Rubines.\nYou can do this friendly if your counterpart agrees, or you can call-in a lawyer to get things done.\n\nDivorcing will consume love points from both parts. So please be sure that this is what you want. The ring used in this marriage **will be destroyed**!",
-        "divorce_title": "Divorce"
+        "confirmdiag": "Съгласен ли си да се разведеш с {{user}}? Данъците за развода са 5000 Рубина, които ще бъдат взети от вас двамата и вашите любовни точки ще бъдат разделени на половина.",
+        "saidnope": "{{userB}} не иска развод. Можеш да наложиш този развод, като платиш **10000 Рубини** за да се свържа с адвокат, но ще загубите и двама всичките си **любовни точки***!",
+        "saidnothing": "{{userB}}, изглежда че не е наоколо. Имаш опцията да наложиш развода сам, като платиш **15000 Rubines** за да мога да се свържа с адвокат да се справи с проблема, но ще загубиш всичките ти **любовни точки** сам!",
+        "saidyep": "{{userB}} се сългаси на приятелски равод.",
+        "forced_rej": "Добре. Свързах се с един адвокат, който ще се справи със ситуацията. Поздравления вие сте официално разведени :confetti_ball: !",
+        "info": "Не си щастлив с твоята любов? Можеш да прекратиш брака ви по всяко време с Рубини.\nМожеш да го направиш по лесният начин, като попиташ половинката ти или да извикаш адвокат да ти свърши работата.\n\nРазвода ще вземе от любовните ви точки и на двамата. Затова моля помислете, преди да направите прибързани мерки.",
+        "divorce_title": "Развод"
     }
 }
