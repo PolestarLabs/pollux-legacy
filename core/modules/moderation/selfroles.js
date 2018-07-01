@@ -22,13 +22,15 @@ function getRole(sub,message){
       return role;
     };
 
-function add(sub,svData,m){
+async function add(sub,svData,m){
+  try{
+
     if((svData.modules.SELFROLES||[]).length==25)
         return m.channel.send(Off+mm('CMD.autoroleLimit', {lngs: m.lang})).catch();
     let key;
     if(sub.includes('"')){
      let A=sub.match(/(".*?"|[^"]+)(?=\s|\s*$)/g);
-      console.log(A)
+
       sub = A[0];
       key = A[1].replace(/"/g,"");
     };
@@ -46,14 +48,19 @@ function add(sub,svData,m){
        if(role && selfies.map(x=>x[0]).includes(role.id)){
         return m.channel.send(Off+ mm('CMD.roleAlreadyHere', {lngs:m.lang}));
       }
-     };
-    gear.serverDB.findOneAndUpdate({id:svData.id},{$push:{'modules.SELFROLES':[role.id,key]}})
+    console.log("HAGFASHFSA")
+      await gear.serverDB.findOneAndUpdate({id:svData.id},{$push:{'modules.SELFROLES':[role.id,key]}});
+     }else{
+      gear.serverDB.findOneAndUpdate({id:svData.id},{$push:{'modules.SELFROLES':[role.id,key]}})
           .then(ok=>{
-     // console.log(ok)
+      console.log(ok)
       svData.modules.SELFROLES = ok.modules.SELFROLES;
     return m.channel.send(On+mm('CMD.roleAdded', {lngs: m.lang,role: role.name})).catch();
     });
-
+     }
+  }catch(e){
+    console.log(e)
+  }
 };
 function del(sub,svData,m){
     let role = getRole(sub,m);
@@ -98,6 +105,7 @@ function list(svData,m){
 };
 
 const init = function (message) {
+  try{
     const Server = message.guild;
     const Channel = message.channel;
     const Member = message.member;
@@ -123,6 +131,9 @@ const init = function (message) {
       return message.reply(mm('CMD.rolesCleared', {lngs: LANG}));
     })
     gear.autoHelper('force',{cmd,message,opt:this.cat});
+}catch(e){
+  console.log(e)
+}
 }
 
 module.exports = {

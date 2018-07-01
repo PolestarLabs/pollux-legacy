@@ -7,7 +7,7 @@ const deployer = require('./preprocessor.js')
 
 exports.run = async function commandFire(message, payload) {
 
-
+//console.log("COMMAND--FIRE")
 
    let bot = message.botUser;
    let Database_bot =await userDB.findOne({id:bot.user.id});
@@ -36,7 +36,7 @@ exports.run = async function commandFire(message, payload) {
       }
     };
     let mm = multilang.getT();
-  console.log(deployer.checkUse(DTMN, {chanData,servData}, message))
+  //console.log(deployer.checkUse(DTMN, {chanData,servData}, message))
     switch (deployer.checkUse(DTMN, {chanData,servData}, message)) {
         case "NONSFW":
         message.reply(mm('CMD.not-a-NSFW-channel', {
@@ -45,10 +45,12 @@ exports.run = async function commandFire(message, payload) {
 
             break;
         case "DISABLED":
-            message.reply(mm('CMD.disabledModule', {
-                lngs: message.lang,
-                module: message.content.substr(message.prefix.length).split(' ')[0]
-            }))
+            if(servData.disaReply){
+              message.reply(mm('CMD.disabledModule', {
+                  lngs: message.lang,
+                  module: message.content.substr(message.prefix.length).split(' ')[0]
+              }))
+            }
             break;
         case "NO ELEVATION":
             message.reply(mm('CMD.insuperms', {

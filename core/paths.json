@@ -7,6 +7,8 @@
     , "MEDALS": "./resources/imgres/medals/"
     , "LISTS": "./resources/lists/"
     , "BUILD": "./resources/imgres/build/"
+    , "LEWD": "./resources/imgres/lewd/"
+    , "EVENT": "./resources/imgres/event/"
     , "PROFILE": "resources/imgres/build/profile/"
     , "SKINS": "resources/imgres/build/profile/skins/"
     , "FONTS": "./resources/fonts/"

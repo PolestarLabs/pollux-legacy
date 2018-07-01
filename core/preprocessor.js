@@ -6,10 +6,17 @@ module.exports = {
     determine: function determine(msg) {
         let query = msg.content.substr(msg.prefix.length).split(' ')[0];
 
-        let imgreactions = JSON.parse(fs.readFileSync("./core/imgreactions.json", 'utf8'));
+        let imgreactions = require("./imgreactions.js").out;
+
         if(imgreactions[query]){
+          let rea
+          if(imgreactions[query].constructor == Array){
+            rea = imgreactions[query][gear.randomize(0,imgreactions[query].length-1)];
+          }else{
+            rea = imgreactions[query]
+          }
             return {
-                reaction: imgreactions[query],
+                reaction: rea,
                 path: null,
                 module: "img",
                 cat: "instant"
@@ -61,7 +68,7 @@ module.exports = {
 
         try {
             let commandFile = require(DTMN.path);
-          console.log(DB.chanData.modules.DISABLED.includes(commandFile.cmd))
+          //console.log(DB.chanData.modules.DISABLED.includes(commandFile.cmd))
             switch (true) {
               case !msg.channel.nsfw && commandFile.cat.toLowerCase() == "nsfw" :
                     return "NONSFW";
@@ -91,8 +98,8 @@ module.exports = {
             let command = require(file)
 
             try{
-
-            let exp = command.exp || 5;
+            let rand=gear.randomize(0,6)
+            let exp = (command.exp || 4)-rand;
             await gear.userDB.set(message.author.id,{$inc:{'modules.exp':exp}});
             }catch(e){
               console.log(e)
@@ -101,10 +108,13 @@ module.exports = {
             let cooldown = command.cool || 2000;
                if(message.author.id==cfg.owner){
                  cooldown=0
+               }else if(message.author.id=="363941008573988864"){
+                 cooldown=8000;
+                  await gear.userDB.set(message.author.id,{$inc:{'modules.exp':-1}});
                }
             let now = Date.now();
             if (message.author.cd_timer && (now - message.author.cd_timer)<cooldown){
-              return message.reply(":hourglass_flowing_sand: Cooldown: `"+Math.abs((message.author.cd_timer+cooldown)-now )+"ms`")
+              return message.reply(":hourglass_flowing_sand: Cooldown: `"+Math.abs((message.author.cd_timer+cooldown)-now )+"ms`").then(m=>m.delete(Math.abs((message.author.cd_timer+cooldown)-now )))
             }
 
             message.author.cd_timer = Date.now();
@@ -118,7 +128,7 @@ module.exports = {
             (await DB.findOne({id:message.guild.id})).modules.statistics.commandsUsed[command.cmd]++
             */
 
-
+            if(['296919157608284161','263738120594259968'].includes(message.author.id))return;
 
             let commandname = message.content.split(/ +/)[0]
 
@@ -128,11 +138,18 @@ module.exports = {
             message.target.dDATA=final_payload.targData;
             message.guild.dDATA=final_payload.servData;
             message.channel.dDATA=final_payload.chanData;
+          try{
 
-            command.init(message, gear.userDB, gear.DB);
+            command.init(message, gear.userDB, gear.DB)
+          }catch(e){
+            console.log(e)
+          }
+
+          if(message.author.id!=='88120564400553984'){
 
             console.log(" \x1b[45;1;37m"+"  --== " + commandname.toUpperCase() + " ==--   " + " || "+message.guild.name+" || "+message.author.tag+"\x1b[0m")
-            console.log(" \x1b[37;1;91m |"+message.content+"| \x1b[0m")
+            console.log(" \x1b[37;1;91m |"+message.content+"| \x1b[0m "+(new Date()))
+             }
         } catch (e) {
             console.log(e);
         }

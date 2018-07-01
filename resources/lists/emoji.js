@@ -29,12 +29,22 @@ module.exports = {
     xmark: "<:xmark:314349398824058880> ",
     empty: "<:empty:314349398723264512> ",
         yep:    "<:yep:339398829050953728> ",
-        nope:    "<:nope:339398829088571402> "
+        nope:    "<:nope:339398829088571402> ",
 
+windky:"<:windky:386609737241853952> "
 
+,bare3:'<:bare3:386933141119696908> '
+,barfx:'<:barfx:386933141283274753> '
+,bare2:'<:bare2:386933141455110155> '
+,barf2:'<:barf2:386933141140668419> '
+,bare1:'<:bare1:386933141123891201> '
+,barf1:'<:barf1:386933141140668418> '
+,barf3:'<:barf3:386933141316829185> '
 
-
-
+ ,tradeable:'<:tradeable:404716198694223885> '
+  ,buyable:'<:buyable:404716199063191552> '
+  ,breakable:'<:breakable:404718003465224202> '
+  ,consumable:'<:consumable:404721077361704980> '
 
  ,'retweet':'<:Retweet:338764316792717322> '
  ,'api':'<:Api:338148353906966530> '
@@ -144,6 +154,9 @@ module.exports = {
   ,emerald:'<:emerald:367128893309583360> '
 
 
+  ,australis:"<:australis:391418503317422080> "
+  ,borealis:"<:borealis:391423329078345729> "
+
 ,ff:'<:ff:343511122931875871> '
 ,play:'<:play:343511123204767744> '
 ,pause:'<:pause:343511123217219584> '
@@ -186,7 +199,13 @@ module.exports = {
 ,d10:'<:d10:343590879526649858> '
 ,d8:'<:d8:343590880239681536> '
 ,stop:'<:stop:343664908489064457> '
-
+,Userlocation:"<:Userlocation:338762651423473668> "
+,HighImportance:"<:HighImportance:338764315773632513> "
+,LowImportance:"<:LowImportance:338764315978891266> "
+  ,kommunism:"<:kommunism:381950417329848322> "
+  ,banne:"<:banne:381950509558267904> "
+  ,banhammer:"<:banne:381950509558267904> "
+  ,hash:"<:hash:381968420486250497> "
 
   ,marksman:'<:Marksman:377365020176285707> '
   ,mage:'<:Mage:377365019505065985> '

@@ -11,6 +11,9 @@ const coinbase = JSON.parse(fs.readFileSync("./resources/lists/discoin.json", "u
 
 const init = async function (message, userDB, DB) {
 
+
+
+
   const discoin = new Discoin(cfg.discoin);
 
   let args = message.content.split(/ +/).slice(1)
@@ -67,6 +70,7 @@ const init = async function (message, userDB, DB) {
     if (r.status == "approved") {
 
       await eko.pay(Number(amt), message.author.id, {type: 'exchange'});
+      await gear.audit(message.author.id,amt,"discoin_exchange","RBN");
 
       let embed = new gear.Discord.RichEmbed
       embed.setColor("#f43fa0")
@@ -123,6 +127,7 @@ const init = async function (message, userDB, DB) {
 
 module.exports = {
   pub: true,
+   botperms: ["EMBED_LINKS"],
   cmd: "exchange",
   perms: 3,
   init: init,

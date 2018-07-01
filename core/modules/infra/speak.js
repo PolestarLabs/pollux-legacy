@@ -15,7 +15,7 @@ const init = function (message,userDB,DB) {
 
   const P = {lngs:message.lang};
 
-if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:'language'}))return;
+if(gear.autoHelper([mm("helpkey",P),'noargs'],{cmd,message,opt:'language'}))return;
 
   const noperms     =   mm('CMD.moderationNeeded',P)
   const noPermsMe   =   mm('CMD.unperm',P)
@@ -36,12 +36,14 @@ if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:'language'}))return;
           gear.channelDB.set(Channel.id, {
             $set:{'LANGUAGE':Y.iso}
           }).then(ok => {
+            P.lngs=[Y.iso]
             message.reply(Y.flag+" "+mm(`langIntro.channel`,P).replace("English",gear.capitalize(Y['name-e'])));
           }).catch(e => message.reply("Error"));
       }else{
           gear.serverDB.set(Server.id, {
             $set:{'modules.LANGUAGE':Y.iso}
           }).then(ok => {
+            P.lngs=[Y.iso]
             message.reply(Y.flag+" "+mm(`langIntro.global`,P).replace("English",gear.capitalize(Y['name-e'])));
           }).catch(e => message.reply("Error"));
       }

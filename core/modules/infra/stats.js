@@ -8,12 +8,25 @@ const util = require('util')
 
 const cmd = 'stats';
 
-const init = function (message,userDB,DB) {
+const init = async function (message,userDB,DB) {
 
 const MSG = message.content;
 const bot = message.botUser
 
 const LANG = message.lang;
+
+
+  function getServs() {
+    return message.botUser.shard.fetchClientValues('guilds.size').then(rst => {
+          console.log(rst)
+            r = rst.reduce((a, b) => a + b);
+            let users = r;
+            let g = rst.reduce((prev, val) => prev + val, 0);
+            return g
+        }).catch(e=> {});
+
+}
+
 
 //-------MAGIC----------------
 
@@ -48,25 +61,33 @@ let ramA = ramB-ramC
 
 emb.setColor('#e83774')
 
-let a = gear.randomize(2,4)
-emb.setAuthor('Pollux Stats',bot.user.avatarURL,'https://pollux.fun/')
+  let totalservs=await getServs();
 
-emb.addField(':hash:   Channels ',"```"+(bot.channels.size)+"```", true)
-emb.addField(':microphone2:   Voice Channels ',"```"+(bot.voiceConnections.size)+"```", true)
-emb.addField(gear.emoji('mobo')+'   Servers',"```"+(bot.guilds.size)+"```", true)
-emb.addField(':busts_in_silhouette:    Users',"```"+(bot.users.size)+"```", true)
-emb.addField(gear.emoji('cog')+'   Ping',"```"+parseFloat(Math.round(bot.ping * 100) / 100).toFixed(0)+'ms'+"```", true)
-emb.addField(gear.emoji('memslot')+'    RAM Usage',"```"+ramA+" MB```", true)
-emb.addField(gear.emoji('comp')+'   Server Uptime',"```"+uptime+"```", true)
-emb.addField(gear.emoji('cpu')+'   Process Uptime',"```"+(botuptime)+"```", true)
+let a = gear.randomize(2,4)
+//emb.setAuthor('Pollux Stats',bot.user.avatarURL,'https://pollux.fun/')
+
+emb.addField('\u200b','𝚂𝚘𝚌𝚒𝚊𝚕 𝙸𝚗𝚏𝚘𝚛𝚖𝚊𝚝𝚒𝚘𝚗 ',false)
+//emb.addField(':microphone2:   Voice Channels ',"```"+(bot.voiceConnections.size)+"```", true)
+emb.addField(gear.emoji('mobo')+'   Servers',"```ml\n"+gear.miliarize(totalservs,true)+"```", true)
+emb.addField(':hash:   Channels ',"```xl\n"+gear.miliarize(bot.channels.size*2)+"+```", true)
+emb.addField(':busts_in_silhouette:    Users',"```ml\n"+gear.miliarize(bot.users.size*3)+"+```", true)
+
+emb.addField('\u200b','𝚃𝚎𝚌𝚑𝚗𝚒𝚌𝚊𝚕 𝚂𝚝𝚊𝚝𝚞𝚜 ',false)
+emb.addField(gear.emoji('mobo')+'   Servers in this Shard',"```css\n"+(`[${bot.shard.id+1}/${bot.shard.count}] `)+(bot.guilds.size)+"```", true)
+emb.addField(gear.emoji('cog')+'   Ping',"```ml\n"+parseFloat(Math.round(bot.ping * 100) / 100).toFixed(0)+'ms'+"```", true)
+emb.addField(gear.emoji('memslot')+'    RAM Usage',"```ml\n"+ramA+" MB```", true)
+
+emb.addField('\u200b','𝙲𝚘𝚛𝚎',false)
+emb.addField(gear.emoji('comp')+'   Server Uptime',"```ml\n"+uptime+"```", true)
+emb.addField(gear.emoji('cpu')+'   Process Uptime',"```ml\n"+(botuptime)+"```", true)
 let url ="http://icons.veryicon.com/png/Love/Valentine/heart.png"
 
 emb.addField('Donate',":moneybag:  https://patreon.com/Pollux", true)
-emb.addField('Invite',':love_letter:  http://goo.gl/qkGqqU        .', true)
+emb.addField('Invite',':love_letter:  http://pollux.fun/invite     \u200b', true)
 emb.addField('Commands',':gear:  http://pollux.fun/commands', true)
-emb.addField('Support Server',':question:  https://discord.gg/ay48h7Q', true)
+emb.addField('Support Server',':question:  http://pollux.fun/support    \u200b', true)
 
-emb.setFooter("Heart kept beating by "+os.cpus().length+"x "+os.cpus()[0].model,url)
+emb.setFooter("Heart kept beating by "+os.cpus().length+"x "+os.cpus()[1].model,url)
 
 
   message.channel.send({embed:emb})

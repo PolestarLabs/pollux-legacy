@@ -31,10 +31,11 @@ exports.run =async function run(bot) {
     })
 
 
-
   if (bot.shard) {
     console.log('Shard' + (1 + bot.shard.id) + '/' + bot.shard.count + " [ONLINE]")
   }
+
+
 
 }
 

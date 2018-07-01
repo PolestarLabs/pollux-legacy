@@ -38,7 +38,9 @@
         "noBet": "To hraješ jen tak pro srandu? okay~",
         "exchange": "Výměny",
         "crafts": "Craftění",
-        "donation": "Dary"
+        "donation": "Dary",
+        "dailyStreakJades": "{{emoji}} **+1000 jadeitů** za sbírání 3 dny v kuse!",
+        "dailyStreakSapphs": "{{emoji}} **+1 safír** za sbírání 250 dní v kuse!"
     },
     "forFun": {
         "saltLVL": "Level naštvanosti {{target}} je **{{amount}}%** {{emoji}}.",
@@ -48,7 +50,14 @@
         "nsfwNofunds": "Nemáš žádný Rubíny na to aby sis mohl koupit nezbedné věci. Dej mi **5** Rubínů a pak můžeme mluvit. Získej Rubíny pomocí `{{prefix}}daily`.",
         "nsfwCheckout": "5 {{emoji}} bylo odepsáno z tvých financí.",
         "airwaifu": ":airplane: Tahle Aerowaifu byla pečlivě spravována jen pro tebe.",
-        "leadUnap": "Pokud se tu nevidíš, napiš `{{prefix}}profile` a zjisti svůj level. Možná jsi jen špatnej."
+        "leadUnap": "Pokud se tu nevidíš, napiš `{{prefix}}profile` a zjisti svůj level. Možná jsi jen špatnej.",
+        "position": "Tvoje pozice v tomhle žebříčku je",
+        "usethisfor": "Napiš |p!rank {{scope}}| pro {{srr}}",
+        "transmittedVc": "Přenáším do tvého hlasového kanálu!",
+        "decon": "{{user}} se dekontaminuje.",
+        "decon2": "{{user}} dekontaminuje {{user2}}.",
+        "cancer": "{{user}} měří level rakoviny tohoto chatu.",
+        "geiger": ":radioactive: Podle Geigerova detektoru je potenciál rakoviny chatu **{{percentage}}%** (**{{radiation}}μSv/h**)"
     },
     "misc": {
         "memberSince": "{{target}} je členem od: {{joinedstamp}}",
@@ -84,7 +93,7 @@
         "roleAdded": "Sakra jo! Role byla přidána, všechno na místě~! :heart:",
         "roleAlreadyHere": "Hej, mistře, tahle role už tu je!",
         "nosuchrole": "Um, tuhle roli nemůžu najít, napiš její jméno správně! Velký a malý písmena a tak.",
-        "incinerate": "Právě jsem zapálila {{amt}} zprávy! Pokud se ti to nelíbí, příště jich zapálím {{amtB}}.",
+        "incinerate": "Právě jsem zapálila {{amt}} zpráv! Pokud se ti to nelíbí, příště jich zapálím {{amtB}}.",
         "roleadCom": "Yo! Teď je **{{user}}** ve skupině **{{group}}**! VÍTEJ NA PALUBĚ!",
         "rolermCom": "No, **{{user}}** už není součástí skupiny **{{group}}**! Zajímalo by mě proč.",
         "kbanNone": "Řekni mi komu mám do zadku zarazit tohle kladivo, než ho tam zarazím tobě!",
@@ -99,7 +108,15 @@
         "noReason": "Důvod není uveden",
         "insuperms": "Nemáš práva na použití tohoto příkazu!",
         "not-a-NSFW-channel": "Nejdřív nastav tenhle kanál jako NSFW. Jsou tady děti.",
-        "timesOutIn": "Časový limit vyprší za {{s}} sekund"
+        "timesOutIn": "Časový limit vyprší za {{s}} sekund",
+        "inviteText": "Pozvi mě na tvůj server kliknutím [ZDE]",
+        "selfroleunAdded": "Role **{{role}}** byla vymazána ze samopřiřaditelných rolí.",
+        "noselfRoles": "Na tomto serveru nejsou žádné samopřiřaditelné role.",
+        "enterVoiceBetterExperience": "Připoj se do hlasového kanálu abys získal nejvíc co můžeš z tohodle příkazu~",
+        "useThis": "Použij `{{prefix}}` jako prefix.",
+        "acceptDec": "Klikni na {{icon}} pro přijetí, můžeš ovšem přijmout jen 5 transakcí za den.",
+        "declinedTrans": "Vypadá to, že {{user}} nechce tvoje rubíny.",
+        "ongoingTrade": "You cannot start a trade while another one is going on!"
     },
     "dict": {
         "coinHeads": "orel",
@@ -124,7 +141,8 @@
         "usage": "Použití:",
         "module": "Modul",
         "inst": "Instrukce",
-        "bet": "Sázka"
+        "bet": "Sázka",
+        "vacuum": "vakuum"
     },
     "profile": {
         "persotexUpdate": "Yooo. Všechno připraveno! Tvůj osobní text je teď:\n{{pstext}}\nAbys viděl tuhle krásnou větu na tvý ~~ne tak krásný~~ profilový kartě, použij `{{prefix}}profile`. Teehee~"
@@ -232,7 +250,17 @@
         "avatar": "Ten jeden příkaz kterej ukáže něčí avatar kterej jste tak ku*va moc požadovali!",
         "candyrank": "Ukáže nejlepší sběrače sladkostí kolem světa",
         "candy": "Ukáže kolik sladkostí jsi ty nebo někdo nasbíral za tenhle event",
-        "trickortreat": "Zaťuká na server a poprosí o sladkosti, tohle může být uděláno jen jednou za den na server."
+        "trickortreat": "Zaťuká na server a poprosí o sladkosti, tohle může být uděláno jen jednou za den na server.",
+        "selfroles": "Přidej, odeber nebo ukaž samopřiřaditelné role",
+        "prune": "Vymaže zprávy od daného uživatele",
+        "cage": "klec",
+        "decontaminate": "Dej sobě nebo kamarádovi dobrou dekontaminační sprchu",
+        "geiger": "Použij Geigerův detektor aby jsi se mrknul, zda je v kanálu potenciální rakovina",
+        "eggtrade": "Trade repeated Easter Eggs with your friends!",
+        "craft": "Create items you can use to do awesome stuff with!",
+        "marriage": "Officialise your love, or just show off as acouple with someone else. On this very capitalist wedding system!",
+        "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!",
+        "divorce": "Put an end to yout unhappy marriage"
     },
     "menu": {
         "cake": "Dort",
@@ -264,7 +292,10 @@
         "tellmeMSG": "Zpráva je moc krátká, nebo vůbec není.",
         "tellmeCHN": "Není specifikován kanál!",
         "timer": "Dobře, budu mazat vítací zprávy po {{timeMin}} sekundách!",
-        "timerby": "Jo, budu mazat loučící zprávy po {{timeMin}} sekundách!"
+        "timerby": "Jo, budu mazat loučící zprávy po {{timeMin}} sekundách!",
+        "noTimer": "Ok, no messages will be deleted.",
+        "outChan": "Alright! Farewell messages will be posted at **{{channel}}**",
+        "inChan": "Alright! Welcome messages will be posted at **{{channel}}**"
     },
     "reput": {
         "noSelf": "Hej, chytrolíne! Nemůžeš si dát rep!",
@@ -284,7 +315,11 @@
         "confirmed": "Získání medaile potvrzeno!",
         "cancelled": "Změnil jsi názor? Tak jsem nákup zrušila.",
         "timeout": "Moc nad tím přemýšlíš! Vrať se až budeš vědět co chceš.",
-        "alreadyPosess": "Už máš tuhle medaili!"
+        "alreadyPosess": "Už máš tuhle medaili!",
+        "cancelGeneric": "To je všechno? Dobře, uvidíme se později~",
+        "alreadyPosessBg": "Tohle pozadí už máš!",
+        "alreadyPosessItem": "Tento předmět již vlastníš!",
+        "alreadyPosessSticker": "Tuto samolepku již vlastníš!"
     },
     "helpkey": "pomoc",
     "usage": {
@@ -374,7 +409,15 @@
         "daily": "Napiš `{{prefix}}daily` pro získání svýho denního bonusu, sbírej 10 dní v řadě pro větší bonus\n`{{prefix}}daily epoch} pro vypsání času do dalšího globálního resetu časovače.",
         "trickortreat": "`{{prefix}}trickortreat` nebo `{{prefix}}trit`",
         "candy": "`{{prefix}}candy [@někdo]`",
-        "candyrank": "`{{prefix}}candyrank`"
+        "candyrank": "`{{prefix}}candyrank`",
+        "selfroles": "`{{prefix}}selfroles [add | del | list] [Role | @role | Role ID] [\"Shorthand\"]`\n\n`{{prefix}}selfroles add Hry` Přidá roli **Hry** do samopřiřaditelných rolí.\n`{{prefix}}selfroles del Hry` Vymaže roli **Hry** ze samopřiřaditelných rolí.\n`{{prefix}}selfroles list` Ukáže seznam a příkazy pro každou samopřiřaditelnou roli.",
+        "prune": "`{{prefix}}prune X [@uživatel | ID uživatele]`\nMůžeš použít ID uživatele pokud zmiňování není k dispozici, třeba `{{prefix}}prune 50 271394014358405121`, pokud není žádný uživatel zmíněn, použijou se zprávy od Pollux.\n\n**Varování** X musí být __větší než 1__ a __menší než 101__.\nZákladní matematika, to prostě musíš napsat správně..",
+        "decontaminate": "`{{prefix}}decontaminate [@uživatel (dobrovolné)]`",
+        "eggtrade": "**Making a Trade**\n`{{prefix}}eggtrade [Egg ID] @someone`\nE.g.`{{prefix}}eggtrade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
+        "lewd": "`{{prefix}}lewd`\nYou can also choose from which curator you will want to see the picks from! Just type their name after the command like `{{prefix}}lewd pollyanna` for example, to see only stuff curated by **Pollyanna**.\n\n Our current curator squad is:\n {{squad}}",
+        "marry": "Marriage relies directly on `{{prefix}}craft`, since you need a ring before you can propose.\n\nTo marry your loved one, do `{{prefix}}marry @user [ring]`. There are 4 tiers of wedding rings, each one made of a different gemstone, to show off how fancy your marriage is. In the future, higher rank rings will provide the couple more Love Points that they will be able to spend together.\n\nExample usage: `{{prefix}}marry @someone rubine` to propose with a Rubine ring.\n\nRequires Embed, Manage Messages and Reaction Permissions",
+        "craft": "`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item.",
+        "divorce": "`{{prefix}}divorce` To show everyone you are married to. whether that is one person or a whole harem!\n`{{prefix}}divorce [@user || Discord ID]` To divorce that person"
     },
     "logs": {
         "success": "Hotovo! Nastavila jsem {{channel}} jako kanál pro {{CHNTYPE}}!",
@@ -429,7 +472,11 @@
     "daily": {
         "title": "Globální reset denních bonusů",
         "remain": "Čas do dalšího resetu:",
-        "last": "Poslední čas resetu:"
+        "last": "Poslední čas resetu:",
+        "lastdly": "Poslední denní bonus:",
+        "next": "Další denní bonus:",
+        "streakcurr": "Sekvence denních bonusů:",
+        "expirestr": "Čas než skončí sekvence denních bonusů:"
     },
     "website": {
         "commands": "Příkazy",
@@ -449,7 +496,7 @@
         "overview": "Přehled",
         "rubines": "Rubíny",
         "jades": "Jadeity",
-        "currDySt": "Počet denních bonusů po sobě",
+        "currDySt": "Sekvence denních bonusů",
         "lastDy": "Poslední denní bonus",
         "backgrounds": "Pozadí",
         "medals": "Medaile",
@@ -655,7 +702,8 @@
         "upnext": "Další v playlistu"
     },
     "eastereggs": {
-        "konodioda": "Myslel sis že to byla Pollux, **ale jsem to JÁ, DIO**!"
+        "konodioda": "Myslel sis že to byla Pollux, **ale jsem to JÁ, DIO**!",
+        "vacuum": "**{{user}}** dal **+1Rep** vakuu. Zatím bylo do prázdnoty hozeno {{amount}} repů."
     },
     "discoin": {
         "desc": "Tvoje transakce je zpracovávána, přijde ti odpověď od %BOT% hned jak bude potvrzená!",
@@ -677,7 +725,6 @@
         "treat": "***Koleda!*** Dostal jsi **{{qtd}}** sladkostí ze špajzu serveru!",
         "treatRefresh": "Nee! Svoje sladkosti už sis vybral!\nMůžeš přijít zpátky za **{{remaining}}**",
         "current_event": "Hele~ Věděl jsi že zrovna probíhá **Halloween Event**? :jack_o_lantern:\nV tomhle eventu můžeš dostat nějaký pěkný a __exkluzivní__ věci pro tvou `p!profile` kartu!\nDostupný jen v průběhu tohodle eventu, kterej bude probíhat do **5. listopadu**\nVíc info na <http://pollux.fun/events/halloween> *(stránka je v angličtině, kontaktuj electricas#8005 pro víc info)*\n*Abys zjistil jestli se server zůčastní eventu, napiš majiteli serveru*",
-        "current_eventforMasters": "Hele~ Věděl jsi že zrovna probíhá **Halloween Event**? :jack_o_lantern:\nV tomhle eventu můžeš dostat nějaký pěkný a __exkluzivní__ věci pro tvou `p!profile` kartu!\nDostupný jen v průběhu tohodle eventu, kterej bude probíhat do **5. listopadu**\nVíc info na <http://pollux.fun/events/halloween> *(stránka je v angličtině, kontaktuj electricas#8005 pro víc info)*\n\nPokud se chceš jako majitel serveru s tvou komunitou zůčastnit eventu, můžeš odpovědět na tuhle zprávy napsáním `halloween` abych věděla že do toho jdeš! Dostaneš **pět** Event Lootboxů, plus **jeden** za každých 100 členů na tvým serveru/serverech, končící na 15. Ty můžou být použity jako ceny pro jakýkoliv eventy který chceš pořádat, nebo je prostě můžeš rozdat mezi tvou komunitu.\nVěřím ti, že je nepoužiješ jako výhodu pro sebe, tak či tak se budou radši dělat záznamy používání Event Lootboxů, aby se hrálo fér~\n\nNěkterý servery nejsou pro zůčastnění automaticky oprávněný. To jsou:\n- Servery vytvořený po daným datu;\n- Servery do kterých jsem se připojila po 1. říjnu;\n- Servery s poměrem botů ku lidem přes 10%\n\nPokud tvůj server do některých z těhle pravidel zapadá, ale je to poctivý komunitní server který chce event pořádat, připoj se na můj server podpory a zeptej se mého vývojáře o pomoc, popřípadě electricas#8005 (český helper), a eventuálně tvůj server přidáme do seznamu povolených.\n\nTady je trochu instrukcí pro příkazy pro tento event:\n- `p!trickortreat` Je to jako daily odměny, ale jsou použitelný jednou za den v jakýmkoliv serveru jsem. Sbírej sladkosti, buď hodnocen a top hodnocení členové ode mě dostanou nějaký věcičky na konci eventu **5. října, 21:00 CEST**.\n- `p!trade box @někdo` Tímhle někomu dej lootboxy jako odměny.\n- `p!lootbox` Ukáže ti lootboxy v tvém inventáři, Event Lootboxy otevřeš odpovědí `open EV`.\n\nPro jakýkoliv další otázky, nahlášení bugů, prostě cokoliv se připoj na můj server podpory a vyval to na nás (můžeš ho najít v `p!help`)\n\n**Zůstaňte spooky a Veselý Halloween!** :heart:",
         "newAccOut": ":warning: Promiň, nový účty se nemůžou zůčastnit. Ale můžeš se připojit v dalším eventu!~",
         "newServer": "Nový servery se v tomhle eventu nemůžou zůčastnit. Kontaktuj mého vývojáře nebo se připoj na můj server podpory pokud se chceš zůčastnit eventu s tímhle serverem",
         "newJoin": "Tenhle server se nemůže v eventu zůčastnit protože jsem se sem připojila po 1. říjnu. Kontaktuj mého vývojáře nebo se připoj na můj server podpory pokud se chceš zůčastnit eventu s tímhle serverem",
@@ -688,6 +735,83 @@
         "candies": "**{{amt}}** Sladkosti",
         "candytop": "Ty nejlepší sběrači sladkostí jsou:",
         "candyprize": "Ty nejlíp hodnocený členové dostanou na konci eventu celkem pěkný ceny!",
-        "yourpos": "Tvoje pozice je:"
+        "yourpos": "Tvoje pozice je:",
+        "give": "Dát klíče",
+        "droprates": "Míra dropu event boxů pro tento server byla zvětšena **{{amount}}x**",
+        "bori_receive": "Borealis získala **{{herKeys}} klíčů** %EMJ% z tohoto serveru",
+        "absentElf": "Vypadá to, že tu {{elfie}} není. Zkus to později.",
+        "shopUpdate": "{{role2}} {{role1}}:\nObchodnice má na skladě **nové předměty**!",
+        "noFunds_key": "Hmmm... vypadá to že nemáš dostatek klíčů",
+        "windky_PLURAL": "Natahovací klíče",
+        "windky_SINGULAR": "Natahovací klíč",
+        "austra_buy": "Je tohle ten předmět který chceš? Za **{{price}}** natahovacích klíčů může být tvůj! Deal?",
+        "austra_checkout": "**Hotovo!** Bylo potěšením s tebou obchodovat~!",
+        "austra_noFunds": "Promiň, ale mrháme tu naším časem. Nemáš na to dostatek klíčů. Ale přesto ti to můžu dát, když mi dáš **{{rubAmount}}** rubínů.",
+        "austra_ultimatePoverty": "...který očividně taky nemáš. ",
+        "austra_exg": "Můžu vyměnit moje klíče za férovou částku tvých rubínů, ale o hodně víc se zajímám o klíče. Použij tyhle příkazy pro obchodování se mnou.",
+        "help_elf": "Zkontroluje jestli nejsou kolem elfky",
+        "help_info": "Obecné info o eventu",
+        "help_austra": "Menu interakcí obchodnice",
+        "help_borea": "Menu interakcí sběratelky",
+        "australis_bio": "Australis je elfka vánočního slunovratu, u Santy na jižních montážních linkách. Protože je Santa nekontroluje, dělá cokoliv aby se dostala ke ztraceným natahovacím klíčům, dokonce tajně bere produkty a přeprodává je za mnohem nižší cenu.",
+        "borealis_bio": "Borealis je mladá elfka na poloviční úvazek ze Santových hlavních montážních linek na severním pólu. Byla dobrovolnice na hledání ztracených natahovacích klíčů. Je jednou ze Santových oblíbených učňů, kvůli tomu její nápady bere celkem vážně.",
+        "au_function": "Australis obchoduje s předměty z obchodu za natahovací klíče, stupeň rarity závisí na tom, kolik má klíčů.",
+        "bo_function": "Borealis sbírá natahovací klíče a vrací je Santovi, míra dropu event boxů je výrazně zvětšena v závislosti na tom, kolik má klíčů.",
+        "elfAppears": "{{notify_roles}}:\nJedna ze Santových elfek se objevila na tomto serveru!\n**{{aust_or_borea}}** tu bude na {{amount}} hodin. Použij `{{prefix}}{{elf}}` pro rozhovor s ní.",
+        "automessage": "**PolluXmas | Info o globálním eventu**\nTento kanál bude použit pro zveřejňování aktualizací o eventu pro tento server.\n\nAktualizace zahrnují:\n  - *Objevování Santových elfek*\n  - *Nové itemy u elfí obchodnice*\n  - *Aktualizace o míře dropů od elfí sběratelky*\n\nPro tento event budou tři utilitní role, nastav si je pokud chceš být upozorňován.\n{{genericRole}} - pro **všechny** aktualizace.\n{{austri}} - pro aktualizace **obchodnice**.\n{{bori}} - pro aktualizace **sběratelky**.",
+        "theTrader": "Australis - Obchodnice",
+        "theCollector": "Borealis - Sběratelka",
+        "traderElfText": "Potřebuju natahovací klíče které se ztratily ze Santovy továrny, neviděli jste nějaký?\n**Můžu je vyměnit za celkem fajn věci!**",
+        "collectorElfText": "Sbírám ztracené natahovací klíče po serverech, neviděli jste nějaký?\n**S těma klíčema budem moci přinést dárky rychleji na tvůj server!**",
+        "theseElf": "Tyto elfky jsou zrovna na tomto serveru:",
+        "thisElf": "Toto je elfka která je zrovna na tomto serveru:",
+        "noElf": "Zrovna na serveru nejsou žádné elfky:",
+        "configIntro": "PolluXmas event byl nakonfigurován na tvém serveru! Klidně si s nima dělej co chceš a přejmenuj si ty role a kanály, pokud je smažeš, budeš muset znovu spustit autoconfig. **Všechen postup eventu bude ztracen pokud to uděláš.**",
+        "evChan": "Event kanál",
+        "gNot": "Obecná event role",
+        "tNot": "Role oznámení obchodnice",
+        "cNot": "Role oznámení sběratelky",
+        "configInfo": "Řekni svým členům aby použili tyhle role pro získávání oznámení o eventu a/nebo byli oznámeni o zjevení jejich preferované elfky.\n**__NE__UPRAVUJ PRÁVA POLLUX NA EVENT CHANNELU!** Vývojář pak nemůže obnovit ztracená data eventu pokud se to kdy stane.",
+        "current_eventforMasters": "---",
+        "thankKys": "Díky moc! Santa sem může přívézt dárky **{{amount}}x** rychleji díky tvojí laskavosti~",
+        "howmanyKys": "Ah, děkuju! Kolik klíčů bys mi mohl dát?",
+        "noFunds_bo": "Vypadá to že nemáš tolik klíčů.",
+        "hasAmount": "{{username}} nasbíral {{amount}} natahovacích klíčů",
+        "egghunt": "***{{user}}** is looking around for eggs in this channel...*",
+        "egghuntfail": "*But couldn't find a single thing*",
+        "egghuntsuccess": "Great! There's an egg here! Let's see...",
+        "egghuntsuccess2": "{{rarity_emoji}} {{user}} found a **{{rarity}} Egg**!",
+        "egghuntsuccess3": "You have a total of **{{X}}** eggs with you.\n**{{Y}}** of them are unique.\n\nMore info at: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
+        "delaytrade": "Hold on! You can trade eggs again in {{remaining}}",
+        "wanttrade": "{{user}} wants to trade **{{tradingEgg}}** with you.",
+        "wanttrade2": "*To accept it, type `accept` followed by the ID of the Egg you're sending back.*\n\nE.g. `accept C1` to give a [**C1**] Egg in exchange for this [**{{eggcode}}**] Egg",
+        "eggtradetitle": "Easter Egg Trading",
+        "noegginvent": "This egg either doesn't exist or isn't in your inventory.",
+        "needegg": "You need to specify an egg to give in return!",
+        "tradeok": "**Success!** {{user1}}'s {{egg1}} was exchanged for {{user2}}'s {{egg2}}."
+    },
+    "langIntro": {
+        "global": "Teď budu v tomhle serveru mluvit česky!",
+        "channel": "V tomhle kanále pro tebe budu mluvit česky.. a taky tak na tebe nadávat... to byl vtip, promiň~"
+    },
+    "info": {
+        "checkPin": "Pro více info se mrkni na připnuté zprávy",
+        "reactThis": "Pro automatické získání rolí reaguj na tuto zprávu"
+    },
+    "rarity_tiers": {
+        "C": "Common",
+        "U": "Uncommon",
+        "R": "Rare",
+        "SR": "Super Rare",
+        "UR": "Ultra Rare"
+    },
+    "divorce": {
+        "confirmdiag": "Do you agree in divorcing from {{user}}? A divorce fee of %EMJ%**5000 Rubines** will be charged from **both** of you! Both of your LovePoints will be **halved**!",
+        "saidnope": "{{userB}} doesn't want to divorce. You can force it by paying %EMJ%**10000 Rubines** so I can call in a lawyer to resolve this, but both of you will lose **all of your LovePoints** !",
+        "saidnothing": "{{userB}} doesn't seem to be around to say anything. You can still force a one-sided divorce by paying %EMJ%**15000 Rubines** so I can call in a lawyer to resolve this, but you will lose **all of your LovePoints** alone!",
+        "saidyep": "{{userB}} agreed in a friendly divorce.",
+        "forced_rej": "Alright. I called in a Lawyer to deal with the situation, you're no longer married!",
+        "info": "Unhappy with your loved one? You can undo your marriage anytime by paying some Rubines.\nYou can do this friendly if your counterpart agrees, or you can call-in a lawyer to get things done.\n\nDivorcing will consume love points from both parts. So please be sure that this is what you want. The ring used in this marriage **will be destroyed**!",
+        "divorce_title": "Divorce"
     }
 }

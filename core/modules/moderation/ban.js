@@ -7,6 +7,8 @@ const cmd = 'ban';
 
 const init = async function (message) {
 
+  try{
+
     const Server = message.guild;
     const Channel = message.channel;
     const Author = message.author;
@@ -51,10 +53,9 @@ if(gear.autoHelper(['noargs'],{cmd,message,opt:this.cat}));
 
     if (!Server.member(bot.user).hasPermission("BAN_MEMBERS")) return message.reply(noPermsMe).catch();
 
-    if (!banMember.bannable) return message.reply(noPermsMe).catch();
+    if (!banMember.bannable) return message.reply("This Member cannot be banned").catch();
 
-    let img = Target.defaultAvatarURL.substr(0, Target.defaultAvatarURL.length - 10);
-    if (Target.avatarURL) img = Target.avatarURL.substr(0, Target.avatarURL.length - 10);
+    let img = Target.defaultAvatarURL
 
  banMember.ban(5).then(ban=>{
       message.channel.send(didban);
@@ -93,5 +94,8 @@ chanpoint.send({embed:emb}).catch(e=> {let a = (new Error); gear.errLog(e,__file
    message.reply(gear.emoji('nope'));
  })
     message.delete(1000).catch();
+}catch(e){
+  console.log(e)
+}
 }
  module.exports = {pub:true,cmd: "ban", perms: 2, init: init, cat: 'mod'}

@@ -17,7 +17,7 @@ const init = function (message, userDB, DB) {
 let helpkey = mm("helpkey", P)
 if (message.content.split(/ +/)[1] == helpkey || message.content.split(/ +/)[1] == "?" || message.content.split(/ +/)[1] == "help") {
 let embed = new gear.Discord.RichEmbed
-emb.setDescription(mm('usage.askingHelpForHelp',P))
+embed.setDescription(mm('usage.askingHelpForHelp',P))
 return message.channel.send({embed});
 };
 

@@ -4,8 +4,10 @@ const paths = require("../../paths.json");
 const locale = require('../../../utils/multilang_b');
 const mm = locale.getT();
 
-const init= async function run(msg,userDB,DB,target,chan) {
+const init= async function run(msg,target,chan) {
 
+  try{
+console.log('WILK SUBROUT IN')
     const canvas = new Canvas.createCanvas(800, 600);
     const ctx = canvas.getContext('2d');
 
@@ -13,18 +15,19 @@ const init= async function run(msg,userDB,DB,target,chan) {
   try{
      chan = chan|| msg.channel
   }catch(e){
-    return;
+    return console.log(e);
   };
 
-  let frame = await gear.getCanvas(paths.BUILD+"poly_greet.png")
-  let phot =  await gear.getCanvas((target.avatarURL||target.defaultAvatarURL))
+  let avi = (target.avatarURL||target.defaultAvatarURL).replace('gif','png');
+  let frame = await gear.getCanvas(paths.BUILD+"poly_greet.png");
+  let phot =  await gear.getCanvas(avi);
 
   ctx.drawImage(phot,367,340,134,134)
   ctx.fillStyle= "#ff74ef"
   if(target.dDATA){
   ctx.fillStyle= target.dDATA.modules.favcolor || "#ff74ef"
   }
-
+console.log('WILK SUBROUT PAST DORO')
   ctx.fillRect(511,430,205,50);
   ctx.drawImage(frame,0,0)
   ctx.font = "900 30px Whitney, Sans"
@@ -38,7 +41,8 @@ const init= async function run(msg,userDB,DB,target,chan) {
   ctx.fillStyle = "#272727";
 
   const P={lngs:msg.lang}
-  const phrases=[
+  /*
+  const phrasesx=[
      mm('imgGreets.1',P)
     ,mm('imgGreets.2',P)
     ,mm('imgGreets.3',P)
@@ -46,8 +50,8 @@ const init= async function run(msg,userDB,DB,target,chan) {
     ,mm('imgGreets.5',P)
     ,mm('imgGreets.6',P)
   ]
-
-  let phrases_hardcode = [
+*/
+  let phrases = [
                 "Hey everyone,|say hello to|our new friend!"
                 ,"Hey guys,|someone just arrived|let's greet them!"
                 ,"Oh, who's there?,|welcome to the Server.|Make yourself at home!"
@@ -69,12 +73,17 @@ const init= async function run(msg,userDB,DB,target,chan) {
                 wid =  line3.width > 317 ? 317 : line3.width;
                 ctx.drawImage(line3.item,535-(wid/2),180,wid,h)
                 //await ctx.fillText("Hey everyone! Say hello to our new friend", 0, 12);
+
+  console.log('WILK SUBROUT PAST PHRASES')
+
   await chan.send({
                     files: [{
                         attachment: await canvas.toBuffer(),
                         name: "welcome.png"
                     }]
                 })
+  console.log('WILK SUBROUT PAST SEND')
+  }catch(e){console.log(e)}
   };
 
   module.exports = {

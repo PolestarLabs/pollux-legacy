@@ -74,13 +74,13 @@
     ,"pl":"playlist"
 
 
-    ,"lewd":"rule34"
-    ,"sacanage":"rule34"
-    ,"putaria":"rule34"
-    ,"hentai":"rule34"
+    ,"lewd":"lewd"
+    ,"sacanage":"lewd"
+    ,"putaria":"lewd"
+    ,"hentai":"lewd"
     ,"あへがお":"ahegao"
-    ,"へんたい":"rule34"
-    ,"変体":"rule34"
+    ,"へんたい":"lewd"
+    ,"変体":"lewd"
 
 
     ,"safebooru":"safe"
@@ -280,6 +280,10 @@
   ,"câmbio":"exchange"
   ,"exg":"exchange"
 
+  ,"yt":"youtube"
+  ,"video":"youtube"
+  ,"teucano":"youtube"
+
   ,"trit":"trickortreat"
   ,"docesoutravessuras":"trickortreat"
 
@@ -291,4 +295,9 @@
   ,"doce":"candy"
   ,"$cy":"candy"
 
+  ,"wtt":"weather"
+  ,"tempo":"weather"
+
+  ,"trt":"tarot"
+  ,"tarô":"tarot"
 }

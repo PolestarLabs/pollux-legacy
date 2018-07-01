@@ -36,7 +36,7 @@ const DB = gear.serverDB
   await eko.normalize(Target.id)
   if(!Target.dDATA)Target.dDATA = await userDB.findOne({id:Target.id});
   let  balc = Target.dDATA.modules.audits||eko.auditTemplate
-  console.log(balc);
+  //console.log(balc);
 let  $R = Target.dDATA.modules.rubines   || 0
 let  $J = Target.dDATA.modules.jades     || 0
 let  $S = Target.dDATA.modules.sapphires || 0
@@ -49,8 +49,8 @@ emb.setDescription(`
 
 ${gear.emoji('rubine') + gear.miliarize($R,true)} Rubines  |  ${gear.emoji('jade') + gear.miliarize($J,true)} Jades  |  ${gear.emoji('sapphire') + gear.miliarize($S,true)} Sapphires
 
-**Audit:**
 `)
+//**Audit:**
 
     let unit=['rubines','jades','sapphires']
     let fa=[gear.emoji('rubine')+"**Rubines** |",gear.emoji('jade')+"**Jades** |",gear.emoji('sapphire')+"**Sapphires** |"]
@@ -117,19 +117,19 @@ let SB=  `
 `
 
 
-  emb.addField(fa[0]+gas,A,true)
-  emb.addField(fa[1]+gas,jA,true)
-  emb.addField(fa[2]+gas,SA,true)
-  emb.addField(fa[0]+gan,B,true)
+//  emb.addField(fa[0]+gas,A,true)
+//  emb.addField(fa[1]+gas,jA,true)
+//  emb.addField(fa[2]+gas,SA,true)
+//  emb.addField(fa[0]+gan,B,true)
 
-  emb.addField(fa[1]+gan,jB,true)
+//  emb.addField(fa[1]+gan,jB,true)
 
-  emb.addField(fa[2]+gan,SB,true)
+  //emb.addField(fa[2]+gan,SB,true)
 
   let C = `
 ${fa[0]} ${balc[unit[0]].expenses.shop ||0}\t\t   ${fa[1]} ${balc[unit[1]].expenses.shop ||0}\t\t   ${fa[2]} ${balc[unit[2]].expenses.shop ||0}
 `
-  emb.addField('Market Expenses',C,true)
+ // emb.addField('Market Expenses',C,true)
 
 
 
@@ -145,6 +145,7 @@ ${fa[0]} ${balc[unit[0]].expenses.shop ||0}\t\t   ${fa[1]} ${balc[unit[1]].expen
 }
  module.exports = {
     pub:true,
+    botperms: ["EMBED_LINKS"],
     cmd: cmd,
     perms: 3,
     init: init,

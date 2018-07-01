@@ -1,14 +1,20 @@
 {
   "languages": [
     ":flag_ca: `en` English",
-    ":flag_de: `cz` Čeština",
     ":flag_br: `pt-br` Português Brasileiro",
-    ":flag_es: `es` Español",
+    ":flag_cz: `cz` Čeština",
+    ":flag_ru: `ru` Pусский",
+    ":flag_fr: `fr` Français",
     ":flag_tw: `zh-t` 繁體中文",
-    ":flag_de: `de` Deutsch (70%)",
-    ":flag_ro: **soon** `ro` Română (35%)",
-    ":flag_hu: **soon** `hu` Magyar (20%)",
-    ":flag_pt: ~~`pt-eu` Português Europeu (20%)~~",
-    ":flag_ru: ~~`ru` Pусский (MACHINE)~~"
+    ":flag_es: `es` Español",
+    ":flag_kr: `ko` 한국어",
+    ":flag_ua: `ua` Yкраїнська",
+    ":flag_bg: `bg` български",
+    ":flag_by: `by` беларуская",
+    ":flag_pl: `pl` Polski",
+    ":flag_de: `de` Deutsch ",
+    ":flag_ro: `ro` Română",
+    ":flag_hu: `hu` Magyar",
+    ":flag_pt: ~~`pt-eu` Português Europeu (DROPPED)~~"
     ]
 }

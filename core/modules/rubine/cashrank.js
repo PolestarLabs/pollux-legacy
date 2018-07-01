@@ -30,7 +30,8 @@ const init = async function (message, userDB, DB) {
 
   let dbminiarray
       if (['server','sv','guild','local',Server.name].includes(args.toLowerCase())) {
-      dbminiarray = await userDB.find().sort({'modules.rubines': -1}).limit(50);
+        message.channel.send('Server Rubines Rank is being refactored, results here may be inaccurate')
+      dbminiarray = await userDB.find().sort({'modules.rubines': -1,}).limit(100);
     }else{
       dbminiarray = await userDB.find().sort({'modules.rubines': -1}).limit(11);
 
@@ -41,7 +42,7 @@ const init = async function (message, userDB, DB) {
 
   dbminiarray.forEach(i => {
 
-    if (i.name !== 'Pollux' && i.name !== undefined){
+    if (i.name !== 'Pollux' && i.name !== undefined && i.id!='363941008573988864'){
       let rankItem = {};
       rankItem.id = i.id;
       rankItem.name = i.name;
@@ -53,7 +54,7 @@ const init = async function (message, userDB, DB) {
   arraySort(ranked, 'rubines', {
     reverse: true
   })
-  console.log(ranked)
+//  console.log(ranked)
   let ids=ranked.map(x=>x.id)
    if (['server','sv','guild','local',Server.name].includes(args.toLowerCase())) {
   emb.title = mm('website.svLead',P)
@@ -106,4 +107,4 @@ if(ids.indexOf(Author.id)+1>5){
     }))
   });
 }
- module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: '$'};
+ module.exports = {pub:true,cmd: cmd, perms: 3, init: init, botperms: ["EMBED_LINKS"], cat: '$'};

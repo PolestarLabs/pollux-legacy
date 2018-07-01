@@ -148,26 +148,12 @@ async function audit(amount,user_paying,target,unit,type){
   console.log(userdata.modules.audits[curr].expenses[type])
   console.log("--------------------------")
 
-  try{
-    userdata.modules.audits[curr].expenses[type] += amount
-  }catch(e){
-    userdata.modules.audits[curr] = {}
-    userdata.modules.audits[curr].expenses = {}
-    userdata.modules.audits[curr].expenses[type] = amount
-  }
-  try{
-    receiverdata.modules.audits[curr].earnings[type] += amount
-  }catch(e){
-    receiverdata.modules.audits[curr] = {}
-    receiverdata.modules.audits[curr].earnings = {}
-    receiverdata.modules.audits[curr].earnings[type] = amount
-  }
-
-  let recv_inject = receiverdata.modules.audits
-  let user_inject = receiverdata.modules.audits
-
-    await uDB.findOneAndUpdate({id:user_paying},{$set:{'modules.audits':user_inject}});
-    await uDB.findOneAndUpdate({id:target},{$set:{'modules.audits':recv_inject}});
+    await uDB.findOneAndUpdate({id:user_paying},{
+      $inc:{['modules.audits.'+curr+'.expenses.'+type]:-amount},
+    });
+    await uDB.findOneAndUpdate({id:target},{
+      $inc:{['modules.audits.'+curr+'.earnings.'+type]:amount},
+    });
 
   async function checkDB(UUU) {
     uDB.findOne({id:UUU}).then(async AUDITS=>{
@@ -185,7 +171,7 @@ async function audit(amount,user_paying,target,unit,type){
 };
 
 const normalize =  function normalize(U) {
-  console.log(U)
+  //console.log(U)
   return uDB.findOne({id:U}).then(async USRDATA=>{
       if(!USRDATA)return;
 
@@ -225,7 +211,7 @@ const normalize =  function normalize(U) {
   }
 
 const checkFunds = async function checkFunds(amount,user,unit){
-
+console.log(unit)
   if(user=="271394014358405121")return true;
   if(!unit)unit='main';
    amount = Number(amount)

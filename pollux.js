@@ -45,7 +45,7 @@ getDirs('./locales/', (list) => {
     i18next.use(i18n_backend).init({
         backend: backendOptions,
         lng: 'en',
-      fallbackLng:"en",
+      fallbackLng:"dev",
         preload: list,
         load: 'all'
     }, (err, t) => {
@@ -78,14 +78,15 @@ fs.readdir("./eventHandlers/", (err, files) => {
     let eventor = require(`./eventHandlers/${file}`);
     let eventide = file.split(".")[0];
     POLLUX.on(eventide, (...args) => eventor.run(POLLUX, ...args));
+    delete require.cache[require.resolve(`./eventHandlers/${file}`)]
   });
 });
 
 POLLUX.on('reconnecting',()=>{
   POLLUX.user.setStatus('dnd');
   POLLUX.user.setGame('Reconnecting...');
-  POLLUX.destroy();
-  process.exit(0)
+  //POLLUX.destroy();
+  //process.exit(0)
 })
 
 
@@ -94,6 +95,7 @@ POLLUX.on('reconnecting',()=>{
 //=======================================/*/
 
 process.on('unhandledRejection', function(reason, p){
+  if (!process.mdebug)return;
     airbrake.notify(reason,ok=>{
       console.log('Airbrake Notified');
       let embed = new RichEmbed();

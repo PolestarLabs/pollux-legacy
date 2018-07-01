@@ -1,21 +1,40 @@
 const gear = require("../gearbox.js");
 const paths = require("../paths.json");
-const locale = require('../../utils/multilang_b');
-const mm = locale.getT();
 
 const channelDB = gear.channelDB,
       userDB    = gear.userDB,
       DB        = gear.serverDB;
 
+
+
+function eventChecks(svDATA){
+
+  if (!svDATA.event) return 1;
+  if (!svDATA.event.enabled) return 1;
+  if (!svDATA.event.channel) return 1;
+  if (!svDATA.event.iterations) return 1;
+
+  let I = Math.round(svDATA.event.iterations)
+
+  return I;
+
+}
+
+
+
 module.exports = {
   lootbox: async function loot(event) {
 
+
+
+const locale = require('../../utils/multilang_b');
+const mm = locale.getT();
     let date = new Date();
      if (event.content !== "--forcedroploot" && event.author.id!=="88120564400553984") {
      if (date.getSeconds() === 0)return;
      if (date.getSeconds() % 5 === 0)return;
-     if (date.getSeconds() % 3 === 0)return;
-     if (date.getSeconds() % 8 === 0)return;
+
+
      };
 
     if (event.guild.lootie) return console.log("lootie is ON");
@@ -27,7 +46,9 @@ module.exports = {
     const CHN = msg.channel;
     const L = msg.lang
 
-    if ((await channelDB.findOne({id:SVR.id})).modules.DROPS == false) return;
+    let serverDATA= await gear.serverDB.findOne({id:SVR.id});
+
+    if ((await channelDB.findOne({id:CHN.id})).modules.DROPS == false) return;
 
     let prerf = (await DB.findOne({id:msg.guild.id})).modules.PREFIX || "+";
     const P = {
@@ -57,106 +78,77 @@ module.exports = {
     async function dropLoot(event) {
       return new Promise(async resolve => {
 
-      let droprate = gear.randomize(1, 4258)
+      let droprate = gear.randomize(1, 1000);
+
+
+      event.botUser.ivetal = event.botUser.ivetal || 0
+        event.botUser.ivetal++
 
       if (event.content === "--forcedroploot" && event.author.id==="88120564400553984") droprate=777;
+
+    let iterate= eventChecks(serverDATA);
+
+      for (i=0;i<iterate;i++){
+        droprate = gear.randomize(1, 1000);
+        let dropevent = gear.randomize(1, 5);
+        if (dropevent >= 5)convertToEvent(i);
+      };
+
     if (droprate === 777) {
-     // gear.tweetPic("A lootbox dropped somewhere. More specifically at \""+event.guild.name+"\" Server! Who's going to pick?",'./resources/imgres/build/chest.png')
+      try{
+        event.botUser.channels.get('382413370579484694').send("Lootbox Drop at **"+event.guild.name+"** | #"+event.channel.name+` after ${event.botUser.ivetal} messages`);
+      }catch(e){}
+      event.botUser.ivetal = 0;
 
-          console.log(`
 
-===============================================
-|]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]|
-|                                             |
-|        ######    ######     ####    ######  |
-|       ##   ##   ##   ##   ##  ##   ##   ##  |
-|      ##    ##  ##   ##  ##    ##  ##   ##   |
-|     ##    ##  ##  ##   ##    ##  ##  ###    |
-|    ##    ##  #####    ##    ##  #####       |
-|   ##   ##   ##   ##   ##  ##   ##           |MMMMM/MMdoomMMMd:sMMMMMMMMMMNmdhhys+dMMMMMMMMMMMMMMMM
-|  ######    ##    ##   ####    ##            |MMMMydMMMMNyoyNMMhsNMMMMMMMMMmMMMMMM+mMMMMMMMMMMMMMMM
-|                                             |MMMN+MMMMMMMMmyydMMmmMMMMMMMMMdNMMMMm+MMMMMMMMMMMMMMM
-|]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]|MMMydMMMMMMMMMMNmyhmmdMMMMMMMMMhMMMMModMMMMMMMMMMMMMM
-===============================================MMNoMMMMMMMMMMMMMMMNddyNMMMMMMMNhMMMMhsMMMMMMMMMMMMMM
-|                                              MMomMMMMMMMMMMMMMMMMMMNhhMMMMMMMmdMMMm+MMMMMMMMMMMMMM
-|  SERVER: ${event.guild.name}
-|                                              N:syddmNNMMMMMMMMMMMdMMMMNyhMMMMMNyMMMM+mMMMMMMMMMMMM
-===============================================ymNmmddhyyhddmmMMMMNommMMMMooNMMMMoyMMMm/MMMMMMMMMMMM
-sooo:oooooos+dMMMNMMMMMMMMMMMMMMMMMMMmhMMMMMMMyNMMMMMMMMMMMMMMMMMMMmNMMMMMM+oMMMMy´+mMModMMMMMMMMMMM
-MMMhmMMMMMdsmMNNMMMMMMMMMMMMMMMMMMMdsdNMMMMMNymMMMMMMMMMMMMMMMMMMMMMMMMMMMMNsmMMMh  -hMm+MMMMMMMMMMM
-MMdhMMMMMhyNNdmMMMMMMMMMMMMMMMMMMds/yNMMMMMNomMMMNNNMNNNNNMMMMMMMMMMMMMMMMMMmhMMMm´  ´+N+mMMMMMMMMMM
-MNoMMMMMhsNddMMMMMMMMMMMMMMMMMNhydssNMMMMMmodNd/sdmNMNNMNNMMMMMMMMdNMMMMMNdsmsdNMMo.   ./oMMMMMMMMMM
-MysdMMMdsmhNMMMMMMMMMMMMMMMMmhydMysNMMMMMdydNmyhMMMMMMMMMMMMMNNmy+´ohys//--hmdyhmm/+.    -MMMMMMMMMM
-hs+NMMm+ydMMMMMMMMMMMMMMMNmshmMMh+NMMMMNhdMMMdNMMMMMMMMMNNNmmhs:´  ´.´´    ´.--s-+h//´   ´NMMMMMMMMM
-NoNMMM/omMMMMMMMMMMMMMMNhydNMMMhsNMMMMdymMMMMMMMMMMMMmdmNmho-´ ´.-::::--..--´  o+mMd-:´  ´MMMMMMMMMN
-/dMMMhsNMMMMMMMMMMMMNd+/sdmNMMdsMMMMNyhMMMMMMMMMMMMMMdNmo-´ .:oydmNNMMMNNmds  .sMMMdm.-. ´MMMMMMmhos
-.NMMhhMMMMMMMMMMMMmhyo:hdhhdhyyMMMNddNMMMMMMMMMMMMMMNmo:.-+++yhhhhhsohNMMMM+´:dyNMMdMd´-/´MMNdoshdyd
-/MMhdMMMMMMMMMMNdyhNmmMMMMMMdyMMNhyNMMmNNMMMMMMMMMMmy+-+hN++NdddddhdNs:mMm+´-yNoNMmNMMo´+´do-´ dMMyN
-/NddMMMMMMMMMNy-yMMMMNNNNNMyyMNdhdMMMMddmMMMMMMMMNdo+smMMM-Nhmy//hdyhd+oo:./sdNsMNdMMMm´o´´    NMMoM
-+sdMMMMMMMMmhss:MMMmdyydmmshNhdNMNdNMMMMMMMMMMMMMd+sNMMMMm:yyoy++yoymy+/o+yydmNsNhMMMMM-/-    ´MMdsM
-dsMMMMMMMmdhNM+dMMNNMMMMNymhhNMMMMMmmMMMMMMMMMMMMhNMMMMmdy/:+/:.´-.:ys/ssysyddsshMMMMMM:´/    .MN+NM
-+NMMMMMmmmdMMN/MNMMMhNNdsyhNMMMMMMMMNdMMMMMMMMMMMMMMMNdyddddmNddd:  ´ ´´´    .-hMMMMMMM..:    -N/mMM
-dMMMMMdmmNMMMy/oyys+.´.´´-::::+shmNMMMmMMMMNMNNNNMMNmdNmdydmdhdddo´´          ´sMMMMMMd :´    /:.MMM
-MMMMMhdmMMMNN/:      ´´´-://./.-o++oddNmNNNmhdmmdddhdddhhhhhhyhdyys/-´´.´ ´     -dMMMM/´/     + .MMM
-MMMMsoso::.-+    +y/omm+dsodsh//ysdddddhddhhddmddhhhdhhdmddhhyyyhhhdyss+/:+/     ´hMMN´-´    -- .MMM
-MMMydMMMNmy+   ´´/s/sNmo--.:+hdmmddddhhyhyyhdmmddddddmmNmNmNmdmmNNmmmmmys++oo´    ´sM/ /     +  /MMM
-MMhdMMMMMh-  ´:s+-o:.:+sy+hmddddddhdhhdhddhmNddmNMmNMMNMMMMMMMyooyyysyydNMMNso-     /:./    -: -NMMM
-MdhMMMNd+    o´-Nho+ooyhhdhhhhhdmdhhdhdmNNyNMNNMMMMMMMMMMMMMMMMMmhhhdddddddddo/:     -+´   ´o´-NMMMd
-NyMMmhhNs   :. ´yddhdhdmdhhhddmhhhhssdMMMMhNMMMMMMMMMMMMMMMMMMMMMMMMMMMNNy/ohdh::     ./-  :::mNmdy+
-smdhdNMM+   ´.  /dmdssosooooo/-´´´´´./MMNmNmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmdd-/+     ´-/´-/NNNMMMy
-/hNMMMMM+   ´s  ´dy´          ´´.:-.+NMMMNNddMMMMMMMMMMMMMMMMMMMMMMMMMhNNMMMMNy.-´        : :MMMMMmM
-NMMMMMMMN.   :-  +´   .:-´´´´´´´´-+dMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMmdmMMMMd::+          -´hMMMmmMM
-MMMMMMMMM+    :´ .    --´´ ´.:+sdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmNMMMMMNMMMMs´´o´          ´hMMMdmMMM
-MMMMMMMNhm:   ´:-.    - ohdmNMMMMMMMMMMMMMMMMMMMMMMMMNmdddNss+:´sMMMMMMMMN+´ -.          ´-MMNhmMMMM
-MMMMMMdhNMy    -:    :´:MMMMMMMMMMMMMMMMMMMMMMNNMNMmmmNmy+d´.. ´dMMMMMMMm/   /          .syMmhNMMMMM
-MMMMNdmMMMd   ´/.   -- yMMMMMMMMMMMMMMmyhhy+/sdmNNNmhy+-´ syhh.:MMMMMMMho.  ´-         .yymymMMMMNNm
-MMmhhdhyyhy   .´   ´/  .yMMMMMMMMMMMMMNy-    -:+oo+/-´´´´:hNdd/mMMMMMMy:´   :         .shhsNMMMmmmNM
-dyoshddddy- -/     -/  ´:+mMmhNNMMMMMMMMNo´ :hdmmmdddyy/sddmdh+MMMMMNy´     :        ´odhhMMNmdmMMMM
-dNMMMMMMMMm :.      +.  ys/odhmMMMMMMMMMMMd/+dNNNmmmNdhhmdddh+dMMMNh:´    ´/´    ´.-odNmMMmhdNMMMMMM
-MMMMNMMMMMM+-´      ´/. ´sNh+ohNMMMMMMMMMMMMdysyhhddmmmNmdhyohMMNh-     ´--.  ´:ohmMMmdMmyhNMMMMMMMM
-MMMMydMMMMMN/        ..´  /mMd/:/hmNMMMMMMMMMMMNmhysyhyssoodNMMh:       /- ./ymMMMMMmdd+yMMMMMMMMMMM
-MMMMNMMMMMMMm-         -.  .yNN:.../+sdmMMMMMMMMdMNmmdddNMMMMN+´        ./yNMMMMMMMhy+/dMMMMMMMMMMMM
-MMMMMMMMMMMMMd´        ´o.   /ydNs.´+hhssydNMMMMdMhMMMMMMMMMN:       ´:yNMMMMMMMMMh/:+MMMMMMMMMNMMMM
-MMMMMMMMMMMMMMy         ´+.   ´yMmyodNMMMy-hhhmMdNyNMMMMMMMM+      ´:yMMMMMMMMMMMdsm-mMMMMMMMMNdNNMM
-MMMMMMMMMMMMMMM-          /.   ´h-/o-:hNMMmMMN//shmMMMMMMMm+     ´/yNMMMMMMMMMMMmyMN/MMMMMMMMMomhMMM
-MMMMMMMMNNmNMMMs           /´   -y     -dmdMdo/   ./oyhhs+o+    ´ydNMMMMMMMMMMMNyMMNNMMMMMMMMMhhMMMM
-MMmdmmdsohhyyMMN.          ´:    y´  +syy/sdms:´ ´      :dN.   .mdNMMMMMMMMMMMN+NMNdMMMMMMMMMMMMMMMM
-MdNMMMMdMMMMoMMMs           :    /:  :NMhhdddmddod+´ -+yMd-    hMdMMMMMMMMMMMMs:MMhdMMMMMMMMMMMMMMMM
-MdMMMMMMMMMhdMMMN.          ´:   -o   --+NMMd+hddMMd+NMMysh-  ´NmNMMMMMMMMMMMd´:MMsdMMMMMMMMMMMMMMMM
-MdNMMMMMMmhmMMMMMs           +   -o      -hdmNNy-MMMMss+yMM+  .MhNMMMMMMMMMMM- .Mm+mMMMMMMMMMMMMMMMM
-
-`);
       let options = [
         [v.ultraRareDrop,"lootbox_UR_O"] , //10
         [v.suprareDrop,"lootbox_SR_O"],    //98
         [v.rareDrop,"lootbox_R_O"],        //765
+        [v.dropLoot,"lootbox_U_O"]         //4321
         [v.dropLoot,"lootbox_C_O"]         //4321
       ];
       let cax;
-      let rand = gear.randomize(0, 10)
+      let rand = gear.randomize(0, 20)
       switch (rand) {
-        case 10:
+        case 20:
           cax = options[0]
           break;
-        case 9:
-        case 8:
+        case 19:
+        case 18:
           cax = options[1]
           break;
-        case 7:
-        case 6:
-        case 5:
+        case 17:
+        case 16:
+        case 15:
           cax = options[2]
           break;
-        default:
+        case 14:
+        case 13:
+        case 11:
+        case 10:
           cax = options[3]
+          break;
+        default:
+          cax = options[4]
           break;
       };
       let itemPic = "chest.png"
-      if (gear.randomize(0, 3) == 3) {
-        cax[1].replace("O", "event_1")
-        cax[0] += "\n" + v.eventDrop
-        itemPic = "halloween_chest.png"
-      };
+
+
+
+      function convertToEvent(i){
+        try{
+
+          cax[1] = cax[1].replace("O", "event_3")
+          if(i&&i==0){cax[0] += "\n" + v.eventDrop}
+          itemPic = "xmas_chest.png"
+        }catch(e){}
+          if (!cax)cax= [v.dropLoot,"lootbox_C_O"] ;
+
+        }
+          if (!cax)cax= [v.dropLoot,"lootbox_C_O"] ;
+
           CHN.send(cax[0], {
               files: [paths.BUILD + itemPic]
             })
@@ -166,7 +158,7 @@ MdNMMMMMMmhmMMMMMs           +   -o      -hdmNNy-MMMMss+yMM+  .MhNMMMMMMMMMMM- .
               CHN.send(cax[0])
                 .then(dropMsg => event.channel.send(v.disputing)
                   .then(dispMsg => processDropChest(dropMsg, dispMsg, cax[1])))
-                .catch(err => gear.hook.send("**DROP REFUSES** \n" + err.error))
+                .catch(err => console.log(err))
             })
           }
         })
@@ -181,9 +173,9 @@ MdNMMMMMMmhmMMMMMs           +   -o      -hdmNNy-MMMMss+yMM+  .MhNMMMMMMMMMMM- .
           let pickers = new gear.Discord.Collection;
           let responses = await CHN.awaitMessages(async msg2 => {
 
-            if (!pickers.has(msg2.author.id) && (msg2.content.toLowerCase().includes('pick'))) {
+            if (!msg2.author.bit && !pickers.has(msg2.author.id) && (msg2.content.toLowerCase().includes('pick'))) {
               pickers.set(msg2.author.id, msg2);
-              console.log(pickers.has(msg2.author.id))
+              //console.log(pickers.has(msg2.author.id))
               await disp.edit(disp.content + "\n" + msg2.author.username).then(neue => {
                 disp.content = neue.content;
                 return true;
@@ -191,7 +183,7 @@ MdNMMMMMMmhmMMMMMs           +   -o      -hdmNNy-MMMMss+yMM+  .MhNMMMMMMMMMMM- .
             } else {
               return false
             }
-          }, {time: 35000});
+          }, {time: 30000});
 
           if (pickers.size === 0) {
               drop.delete()
@@ -216,7 +208,7 @@ MdNMMMMMMmhmMMMMMs           +   -o      -hdmNNy-MMMMss+yMM+  .MhNMMMMMMMMMMM- .
 
             let rnd = gear.randomize(0, ments.length - 1);
 
-            console.log("----------- PICK by" + Picker.username)
+            //console.log("----------- PICK by" + drama[rnd])
             await pickers.deleteAll();
             await drop.delete().catch(e => {});
             await disp.delete().catch(e => {});
@@ -226,11 +218,14 @@ MdNMMMMMMmhmMMMMMs           +   -o      -hdmNNy-MMMMss+yMM+  .MhNMMMMMMMMMMM- .
                 setTimeout(async fn => {
                   drama[rnd] = ments[rnd]
                   await dra.edit(drama).then(async fin => {
-                    await userDB.set(ids[rnd],{$push:{'inventory':it}});
+                    //console.log(ids[rnd],it,"A A A")
+                     userDB.set(ids[rnd],{$push:{'modules.inventory':it}}).then(ok=>{
+
                     setTimeout(async fn => {
                       event.guild.lootie = false
                       fin.delete().catch(e => {event.guild.lootie = false})
                     }, 5000);
+                     });
                   });
                 }, 5000)
               });

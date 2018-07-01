@@ -13,7 +13,7 @@ const init = function (message,userDB,DB) {
 
 
   if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:this.cat}))return;
-
+gear.userDB.set(Target.id,{$set:{'modules.rubines':Math.round(Target.dDATA.modules.rubines)}})
 
     const vocab = {
         c1: mm("$.cash10", P),
@@ -58,7 +58,7 @@ function whoHas(who){
                 fam = vocab.c7
                 break;
         }
-        return message.reply(vocab.youHave + fam);
+        return message.channel.send(vocab.youHave + fam);
     };
     return message.channel.send(vocab.heHas);
 };
@@ -67,6 +67,7 @@ function whoHas(who){
     pub:true,
     cmd: cmd,
     perms: 3,
+    botperms: ["SEND_MESSAGES"],
     init: init,
     cat: '$'
 };

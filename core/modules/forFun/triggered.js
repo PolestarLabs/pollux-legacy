@@ -6,6 +6,19 @@ const Canvas = require("canvas");
 
 const init = async function run(msg, userDB, DB) {
 
+
+  const Server = msg.guild
+        let now = new Date().getTime();
+
+
+            await gear.serverDB.set(Server.id, {$set:{'modules.putometro_last': now}});
+
+  let mx = Math.round((now-Server.dDATA.modules.putometro_last) / 1000 / 60 / 60 / 60 / 24 )||0;
+await gear.serverDB.set(Server.id, {$set:{'modules.putometro_max': mx}});
+
+
+
+
   const canvas = new Canvas.createCanvas(250, 250);
   const ctx = canvas.getContext('2d');
 
