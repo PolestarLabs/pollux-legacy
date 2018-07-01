@@ -52,7 +52,7 @@
         "airwaifu": ":airplane: Cette Aerowaifu a été spécialement choisie pour toi.",
         "leadUnap": "Si tu ne te vois pas affiché ici, écris `{{prefix}}profile` pour voir ton level. Peut être que t'es juste naze.",
         "position": "Your position in this ranking is",
-        "usethisfor": "Type |p!rank {{scope}}| for {{srr}}",
+        "usethisfor": "Tape |p!rank {{scope}}| pour {{srr}}",
         "transmittedVc": "Transmis à ton salon auditoire!",
         "decon": "{{user}} sé décontamine !",
         "decon2": "{{user}} décontamine {{user2}} !",
@@ -258,7 +258,7 @@
         "geiger": "Utilise un compteu Geiger pour vérifier le potentiel de cancer dans ce salon.",
         "eggtrade": "Trade repeated Easter Eggs with your friends!",
         "craft": "Créer des articles pour faire des tâches géniales!",
-        "marriage": "Officialise your love, or just show off as acouple with someone else. On this very capitalist wedding system!",
+        "marriage": "Officialise ton amour, ou étale comme couple avec quelqu'un d'autre. Tout avec ce système de mariage capitaliste!",
         "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!",
         "divorce": "Mets au fin ton marriage malheureux"
     },
@@ -295,7 +295,7 @@
         "timerby": "D'accord, je supprimerai les messages d'aurevoir après {{timeMin}} secondes!",
         "noTimer": "D'accord, aucun message sera suprimé.",
         "outChan": "D'accord! Messages de départ seront ",
-        "inChan": "Alright! Welcome messages will be posted at **{{channel}}**"
+        "inChan": "D'acc! Messages de bienvenue seront plantés dans **{{channel}}**"
     },
     "reput": {
         "noSelf": "Hey hey gros malin! Tu peux pas te rep tout seul!",
@@ -811,7 +811,7 @@
         "saidnothing": "{{userB}} semble d'être absent pour dire quelque chose. Tu peux encore forcer un divorce toi-même en payant %EMJ% **15000 Rubines** pour que je puisse appeler un avocat pour résoudre ceci mais tu vas perdre **tous tes points d'amour** uniquement!",
         "saidyep": "{{userB}} s'est accordé à un divorce paisible. ",
         "forced_rej": "D'acc. J'ai appelé un avocat pour résoudre la situation, t'es plus marié avec eux!",
-        "info": "Malheureux avec ton être cher ou chère? Tu peux annuler ton marriage n'importe quand par payant des Rubines. \nTu peux le faire paisiblement si ton partenaire est d'accord, ou tu peux appeler un avocat pour terminer les affaires.\n\nDivorcer va aussi consommer les points d'amour, alors sois sur que c'est ce que tu veux. La bague utilisé dans ce marriage **va être détruite**!",
+        "info": "Malheureux avec ton être cher ou chère? Tu peux annuler ton marriage n'importe quand par payer des Rubines. \nTu peux le faire paisiblement si ton partenaire est d'accord, ou tu peux appeler un avocat pour terminer les affaires.\n\nDivorcer va aussi consommer les points d'amour, alors sois sur que c'est ce que tu veux. La bague utilisé dans ce marriage **va être détruite**!",
         "divorce_title": "Divorce"
     }
 }

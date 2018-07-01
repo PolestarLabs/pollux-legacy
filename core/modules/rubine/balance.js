@@ -145,6 +145,7 @@ ${fa[0]} ${balc[unit[0]].expenses.shop ||0}\t\t   ${fa[1]} ${balc[unit[1]].expen
 }
  module.exports = {
     pub:true,
+    botperms: ["EMBED_LINKS"],
     cmd: cmd,
     perms: 3,
     init: init,

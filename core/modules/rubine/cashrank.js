@@ -107,4 +107,4 @@ if(ids.indexOf(Author.id)+1>5){
     }))
   });
 }
- module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: '$'};
+ module.exports = {pub:true,cmd: cmd, perms: 3, init: init, botperms: ["EMBED_LINKS"], cat: '$'};

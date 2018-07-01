@@ -661,7 +661,7 @@
             "5": "¡Increible! ¡Mirad lo que he encontrado!"
         },
         "lootPick": " ¡Todos tienen **__20 Seconds__** para disputarserlo! Escribe `{{prefix}}pick` ¡por la oportunidad de conseguirlo!",
-        "goesTo": "¡Se acabó el tiempo! Veamos quien se queda con este Botín.\n**Este Botín sera sorteado entre:**",
+        "goesTo": "¡Se acabó el tiempo! Veamos quien se queda con este Botín.\n**Este Botín será sorteado entre:**",
         "congrats": "¡Felicidades! Este cofre ha sido añadido a tu inventario. Puedes abrirlo usando el comando `{{prefix}}lootbox`.",
         "opening": "{{user}} abrió su Botín...",
         "contains": "Este Botín contiene...",

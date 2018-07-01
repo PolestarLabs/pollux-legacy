@@ -473,10 +473,10 @@
         "title": "Globální reset denních bonusů",
         "remain": "Čas do dalšího resetu:",
         "last": "Poslední čas resetu:",
-        "lastdly": "Last Daily:",
-        "next": "Next Daily:",
-        "streakcurr": "Current Streak:",
-        "expirestr": "Time until Streak Expires:"
+        "lastdly": "Poslední denní bonus:",
+        "next": "Další denní bonus:",
+        "streakcurr": "Sekvence denních bonusů:",
+        "expirestr": "Čas než skončí sekvence denních bonusů:"
     },
     "website": {
         "commands": "Příkazy",
@@ -496,7 +496,7 @@
         "overview": "Přehled",
         "rubines": "Rubíny",
         "jades": "Jadeity",
-        "currDySt": "Počet denních bonusů po sobě",
+        "currDySt": "Sekvence denních bonusů",
         "lastDy": "Poslední denní bonus",
         "backgrounds": "Pozadí",
         "medals": "Medaile",

@@ -67,6 +67,7 @@ function whoHas(who){
     pub:true,
     cmd: cmd,
     perms: 3,
+    botperms: ["SEND_MESSAGES"],
     init: init,
     cat: '$'
 };

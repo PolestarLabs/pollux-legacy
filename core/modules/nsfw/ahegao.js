@@ -37,6 +37,6 @@ if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="h
 
 };
 
- module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: 'nsfw'};
+ module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: 'nsfw', botperms: ["ATTACH_FILES","EMBED_LINKS"],};
 
 
