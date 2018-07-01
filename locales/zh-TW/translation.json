@@ -116,7 +116,7 @@
         "useThis": "這個指令的前綴是`{{prefix}}`",
         "acceptDec": "點擊{{icon}}來接收，你一天最多只能接收5筆轉帳",
         "declinedTrans": "看來{{user}}不想接受你的紅寶石",
-        "ongoingTrade": "You cannot start a trade while another one is going on!"
+        "ongoingTrade": ""
     },
     "dict": {
         "coinHeads": "人頭那面",
@@ -256,11 +256,11 @@
         "cage": "給你一張尼可拉斯·凱吉的圖片",
         "decontaminate": "幫你或你的朋友去除汙染源",
         "geiger": "用蓋格計數器來測量這個聊天室的致癌程度",
-        "eggtrade": "Trade repeated Easter Eggs with your friends!",
-        "craft": "Create items you can use to do awesome stuff with!",
-        "marriage": "Officialise your love, or just show off as acouple with someone else. On this very capitalist wedding system!",
-        "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!",
-        "divorce": "Put an end to yout unhappy marriage"
+        "eggtrade": "",
+        "craft": "",
+        "marriage": "",
+        "lewd": "",
+        "divorce": ""
     },
     "menu": {
         "cake": "蛋糕",
@@ -271,8 +271,8 @@
         "eggplant": "茄子",
         "custard": "布丁",
         "goaway": "畢竟我還有其他工作要做，在您決定的時候我先去做其他事情，等您決定好在叫我",
-        "chargeA": "I've charged {{total}}",
-        "chargeB": "from your account. I'll be back in a moment with your order."
+        "chargeA": "",
+        "chargeB": ""
     },
     "nuke": {
         "confirm": ":radioactive: **__這將會重置所有本地伺服設定，包含：__**\n```\n -指令前綴\n -管理員身分組\n -已啟用/禁用的模組及指令\n -紅寶石掉落將被設置為關閉\n -升等訊息將被設定為開啟\n -自訂回應將被清除\n -記錄頻道\n```\n -這次的核彈將會被記錄在我的支援伺服器中。讓所有人知道你搞砸了多少東西。\n -你將不能在48小時內再度核炸這個伺服，如果你濫用這個指令，我將會禁用這個伺服的核彈指令。是否濫用這個指令取決於我的判斷\n\n\n **你真的要我發射核彈嗎？** \n 是的話輸入**ok**，要取消的話輸入**c**",
@@ -293,9 +293,9 @@
         "tellmeCHN": "沒有指定頻道！",
         "timer": "OK，我將在{{timeMin}}秒後刪除歡迎訊息",
         "timerby": "好的，我將在{{timeMin}}秒後刪除再見訊息",
-        "noTimer": "Ok, no messages will be deleted.",
-        "outChan": "Alright! Farewell messages will be posted at **{{channel}}**",
-        "inChan": "Alright! Welcome messages will be posted at **{{channel}}**"
+        "noTimer": "",
+        "outChan": "",
+        "inChan": ""
     },
     "reput": {
         "noSelf": "想給自己聲望？你真的好棒棒",
@@ -413,11 +413,11 @@
         "selfroles": " `{{prefix}}selfroles [add | del | list] [身分組| @身分組 | 身分組ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games`允許所有人自行加入**Games**身分組\n`{{prefix}}selfroles del Games`讓**Games**身分組不能再被自行加入\n`{{prefix}}selfroles list`列出所有可自行加入的身分組\n\n這些都有區別大小寫，你也可以輸入身分組ID\n`{{prefix}}selfroles clear`刪除**所有**可以自行加入的身分組",
         "prune": "`{{prefix}}prune X [@某人 | 或他的ID]`\n如果你標不到他，你可以用他的ID，例如；`{{prefix}}prune 50 271394014358405121`，如果沒有特別指定某人，將預設為清除pullox的訊息\n\n**注意** X必須__比1還大__且__比101還小__.\n小學數學，我相信你有學過",
         "decontaminate": "`{{prefix}}decontaminate [@某某人(選擇性)]`",
-        "eggtrade": "**Making a Trade**\n`{{prefix}}eggtrade [Egg ID] @someone`\nE.g.`{{prefix}}eggtrade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
-        "lewd": "`{{prefix}}lewd`\nYou can also choose from which curator you will want to see the picks from! Just type their name after the command like `{{prefix}}lewd pollyanna` for example, to see only stuff curated by **Pollyanna**.\n\n Our current curator squad is:\n {{squad}}",
-        "marry": "Marriage relies directly on `{{prefix}}craft`, since you need a ring before you can propose.\n\nTo marry your loved one, do `{{prefix}}marry @user [ring]`. There are 4 tiers of wedding rings, each one made of a different gemstone, to show off how fancy your marriage is. In the future, higher rank rings will provide the couple more Love Points that they will be able to spend together.\n\nExample usage: `{{prefix}}marry @someone rubine` to propose with a Rubine ring.\n\nRequires Embed, Manage Messages and Reaction Permissions",
-        "craft": "`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item.",
-        "divorce": "`{{prefix}}divorce` To show everyone you are married to. whether that is one person or a whole harem!\n`{{prefix}}divorce [@user || Discord ID]` To divorce that person"
+        "eggtrade": "",
+        "lewd": "",
+        "marry": "",
+        "craft": "",
+        "divorce": ""
     },
     "logs": {
         "success": "完成！我已經把{{channel}}設定成{{CHNTYPE}}了！",
@@ -473,10 +473,10 @@
         "title": "全球每日獎勵重置",
         "remain": "距離下次重置還有：",
         "last": "上次重置時間：",
-        "lastdly": "Last Daily:",
-        "next": "Next Daily:",
-        "streakcurr": "Current Streak:",
-        "expirestr": "Time until Streak Expires:"
+        "lastdly": "",
+        "next": "",
+        "streakcurr": "",
+        "expirestr": ""
     },
     "website": {
         "commands": "指令",
@@ -777,18 +777,18 @@
         "howmanyKys": "啊，謝啦！你打算給我多少發條？",
         "noFunds_bo": "看來你的發條不夠多",
         "hasAmount": "{{username}}撿起了{{amount}}個發條",
-        "egghunt": "***{{user}}** is looking around for eggs in this channel...*",
-        "egghuntfail": "*But couldn't find a single thing*",
-        "egghuntsuccess": "Great! There's an egg here! Let's see...",
-        "egghuntsuccess2": "{{rarity_emoji}} {{user}} found a **{{rarity}} Egg**!",
-        "egghuntsuccess3": "You have a total of **{{X}}** eggs with you.\n**{{Y}}** of them are unique.\n\nMore info at: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
-        "delaytrade": "Hold on! You can trade eggs again in {{remaining}}",
-        "wanttrade": "{{user}} wants to trade **{{tradingEgg}}** with you.",
-        "wanttrade2": "*To accept it, type `accept` followed by the ID of the Egg you're sending back.*\n\nE.g. `accept C1` to give a [**C1**] Egg in exchange for this [**{{eggcode}}**] Egg",
-        "eggtradetitle": "Easter Egg Trading",
-        "noegginvent": "This egg either doesn't exist or isn't in your inventory.",
-        "needegg": "You need to specify an egg to give in return!",
-        "tradeok": "**Success!** {{user1}}'s {{egg1}} was exchanged for {{user2}}'s {{egg2}}."
+        "egghunt": "",
+        "egghuntfail": "",
+        "egghuntsuccess": "",
+        "egghuntsuccess2": "",
+        "egghuntsuccess3": "",
+        "delaytrade": "",
+        "wanttrade": "",
+        "wanttrade2": "",
+        "eggtradetitle": "",
+        "noegginvent": "",
+        "needegg": "",
+        "tradeok": ""
     },
     "langIntro": {
         "global": "我現在會在這裡說中文(繁體)",
@@ -799,19 +799,19 @@
         "reactThis": "回應這則訊息以獲得身分組"
     },
     "rarity_tiers": {
-        "C": "Common",
-        "U": "Uncommon",
-        "R": "Rare",
-        "SR": "Super Rare",
-        "UR": "Ultra Rare"
+        "C": "",
+        "U": "",
+        "R": "",
+        "SR": "",
+        "UR": ""
     },
     "divorce": {
-        "confirmdiag": "Do you agree in divorcing from {{user}}? A divorce fee of %EMJ%**5000 Rubines** will be charged from **both** of you! Both of your LovePoints will be **halved**!",
-        "saidnope": "{{userB}} doesn't want to divorce. You can force it by paying %EMJ%**10000 Rubines** so I can call in a lawyer to resolve this, but both of you will lose **all of your LovePoints** !",
-        "saidnothing": "{{userB}} doesn't seem to be around to say anything. You can still force a one-sided divorce by paying %EMJ%**15000 Rubines** so I can call in a lawyer to resolve this, but you will lose **all of your LovePoints** alone!",
-        "saidyep": "{{userB}} agreed in a friendly divorce.",
-        "forced_rej": "Alright. I called in a Lawyer to deal with the situation, you're no longer married!",
-        "info": "Unhappy with your loved one? You can undo your marriage anytime by paying some Rubines.\nYou can do this friendly if your counterpart agrees, or you can call-in a lawyer to get things done.\n\nDivorcing will consume love points from both parts. So please be sure that this is what you want. The ring used in this marriage **will be destroyed**!",
-        "divorce_title": "Divorce"
+        "confirmdiag": "",
+        "saidnope": "",
+        "saidnothing": "",
+        "saidyep": "",
+        "forced_rej": "",
+        "info": "",
+        "divorce_title": ""
     }
 }
