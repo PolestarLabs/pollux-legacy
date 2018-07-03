@@ -619,7 +619,7 @@
             "ongoing": "You should really finish a game before trying to start another.",
             "newgame": "Blackjack huh? You should already know the rules, so let's get started.",
             "result": "Result:",
-            "bust": "Bust",
+            "bust": "5",
             "youwin": "Congratulations! You won, this time.",
             "youlose": "Oh? I've won, to bad for you.",
             "hit": "Respond with `hit` to draw one more card,",
