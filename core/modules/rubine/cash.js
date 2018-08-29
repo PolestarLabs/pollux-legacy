@@ -54,7 +54,7 @@ function whoHas(who){
             case (r < 19999):
                 fam = vocab.c6
                 break;
-            case (r > 20000):
+            case (r >= 20000):
                 fam = vocab.c7
                 break;
         }
