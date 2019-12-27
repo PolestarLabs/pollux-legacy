@@ -1,5 +1,5 @@
 const gear = require('../../gearbox.js');
-const init = function (message) {
+const init = async function (message) {
 
 let arg = message.content.split(/ +/).slice(1).join(' ');
 
@@ -8,6 +8,7 @@ let stuff = [
 'a pen',
 'a shoe',
 'a used Tissue Paper',
+'girls sandals',
 'a Pop Tart',
 '1GB of RAM',
 'a pan',
@@ -62,7 +63,6 @@ let stuff = [
 'the Frostmourne',
 'a hammar and a sickle',
 'drum sticks',
-'girls sandals',
 'his portable DVD player',
 'neko paws',
 'a magic wand',
@@ -88,15 +88,22 @@ let stuff = [
   let rand = gear.randomize(0, stuff.length - 1);
   let thing =stuff[rand] // message.author.id === "169551262981816321" ? : 'a wet trout'
   let m;
+  let victim = message.guild.member(await gear.getTarget(message));
   if (message.mentions.members.size !== 0) {
-    m = `**${MEMBER}** slaps **${message.mentions.members.first().displayName}** around a bit with ${thing}.`
+    m = `**${MEMBER}** slaps **${victim.displayName}** around a bit with ${thing}.`
   } else if(arg) {
     m = `**${MEMBER}** slaps **${arg}** around a bit with ${thing}.`
   } else{
     m = `**${MEMBER}** slaps around a bit with ${thing}.`
   }
 
+  if(rand == 3 && victim.id =='459261674998988811' ){
+  message.channel.send(m,{files:['https://cdn.discordapp.com/attachments/481551001057492994/498583862407069697/unknown.png']})
+     
+     }else{
   message.channel.send(m)
+       
+     }
 
 };
 module.exports = {

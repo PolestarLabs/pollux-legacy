@@ -1,5 +1,5 @@
 var gear = require("../../gearbox.js");
-var cmd = 'say';
+var cmd = 'pasquale';
 var locale = require('../../../utils/multilang_b');
 var mm = locale.getT();
 

@@ -130,7 +130,7 @@ async function add(svData,msg,TG){
     }
     let chan = msg.mentions.channels.first();
 
-    if(chan.guild.owner.id != msg.guild.owner.id){
+    if(chan.guild.ownerID != msg.guild.ownerID){
       return msg.channel.send(v.serverOwnerMismatch);
     }
   }
@@ -139,7 +139,7 @@ async function add(svData,msg,TG){
   payload.channel = chan.id;
   
   if(svData.utilityChannels.voting[TG]){
-    msg.channel.send(v.overwriteAlert).then(m=>m.delete(10000))
+    msg.channel.send(v.overwriteAlert).then(m=>m.delete({timeout:10000}))
   }
   
   if(!edit || edit=='type'){

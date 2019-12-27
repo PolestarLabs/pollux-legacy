@@ -1,10 +1,10 @@
 const gear = require("../../gearbox.js");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'speak';
 
-const init = function (message,userDB,DB) {
+const init = async function (message,userDB,DB) {
 
   const Server = message.guild;
   const Channel = message.channel;
@@ -16,10 +16,10 @@ const init = function (message,userDB,DB) {
   const P = {lngs:message.lang};
 
 if(gear.autoHelper([mm("helpkey",P),'noargs'],{cmd,message,opt:'language'}))return;
-
+let SERVERDATA = await gear.serverDB.findOne({id:message.guild.id},{"modules.LOCALRANKx":0});
   const noperms     =   mm('CMD.moderationNeeded',P)
   const noPermsMe   =   mm('CMD.unperm',P)
-  if (!gear.hasPerms(Member,DB))return message.reply(noperms).catch();
+  if (!gear.hasPerms(Member,SERVERDATA))return message.reply(noperms).catch();
 
   delete require.cache[require.resolve('../../../utils/i18n.json')];
   const i18n = require('../../../utils/i18n.json');
@@ -44,7 +44,7 @@ if(gear.autoHelper([mm("helpkey",P),'noargs'],{cmd,message,opt:'language'}))retu
             $set:{'modules.LANGUAGE':Y.iso}
           }).then(ok => {
             P.lngs=[Y.iso]
-            message.reply(Y.flag+" "+mm(`langIntro.global`,P).replace("English",gear.capitalize(Y['name-e'])));
+            message.reply(Y.flag+" "+mm(`bot_strings:langIntro.global`,P) );
           }).catch(e => message.reply("Error"));
       }
     }else{
@@ -53,11 +53,10 @@ if(gear.autoHelper([mm("helpkey",P),'noargs'],{cmd,message,opt:'language'}))retu
           gear.channelDB.set(Channel.id, {
             $set:{'LANGUAGE':undefined}
           }).then(ok => {
-            let localLY = (Server.dDATA.modules.LANGUAGE||'en')
+            let localLY = (SERVERDATA.modules.LANGUAGE||'en')
             let globalLang = i18n.find(x=>x.iso==localLY);
-            console.log(globalLang)
             message.reply(globalLang.flag+" "+mm(`langIntro.channel`,P));
-          }).catch(e => {console.log(e);message.reply("Error")});
+          }).catch(e => {console.error(e);message.reply("Error")});
           break;
           }
       }

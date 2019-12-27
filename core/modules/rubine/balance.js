@@ -4,18 +4,18 @@ const fs = require("fs");
 const paths = require("../../paths.json");
 const cmd = 'balance';
 
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const init = async function (message) {
 const userDB = gear.userDB
 const DB = gear.serverDB
     const Server = message.guild;
     const Channel = message.channel;
-    const Target = message.mentions.users.first() || message.mentions.users.first() ||message.author;
+    const Target = (await gear.getTarget(message))||message.author;
     const MSG = message.content;
     const bot = message.botUser
-    const emb = new gear.Discord.RichEmbed();
+    const emb = new gear.RichEmbed();
 
     let P={lngs:message.lang}
     if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:this.cat}))return;
@@ -34,12 +34,12 @@ const DB = gear.serverDB
     const nope = mm('CMD.noDM',P);
 
   await eko.normalize(Target.id)
-  if(!Target.dDATA)Target.dDATA = await userDB.findOne({id:Target.id});
-  let  balc = Target.dDATA.modules.audits||eko.auditTemplate
-  //console.log(balc);
-let  $R = Target.dDATA.modules.rubines   || 0
-let  $J = Target.dDATA.modules.jades     || 0
-let  $S = Target.dDATA.modules.sapphires || 0
+  TARGERDATA= await userDB.findOne({id:Target.id}).lean().exec();
+  let  balc = TARGERDATA.modules.audits||eko.auditTemplate
+  
+let  $R = TARGERDATA.modules.rubines   || 0
+let  $J = TARGERDATA.modules.jades     || 0
+let  $S = TARGERDATA.modules.sapphires || 0
 
 
 emb.setColor('#ffd156')
@@ -48,10 +48,10 @@ emb.setDescription(`
 **${Server.member(Target).displayName}**
 
 ${gear.emoji('rubine') + gear.miliarize($R,true)} Rubines  |  ${gear.emoji('jade') + gear.miliarize($J,true)} Jades  |  ${gear.emoji('sapphire') + gear.miliarize($S,true)} Sapphires
-
+<:event_token:597979017844621322> ${gear.miliarize((TARGERDATA.eventGoodie||0),true)} Event Tokens
 `)
 //**Audit:**
-
+ 
     let unit=['rubines','jades','sapphires']
     let fa=[gear.emoji('rubine')+"**Rubines** |",gear.emoji('jade')+"**Jades** |",gear.emoji('sapphire')+"**Sapphires** |"]
 
@@ -133,7 +133,7 @@ ${fa[0]} ${balc[unit[0]].expenses.shop ||0}\t\t   ${fa[1]} ${balc[unit[1]].expen
 
 
 
-    let im = Target.avatarURL||Target.defaultAvatarURL
+    let im = Target.displayAvatarURL({format:'png'})|Target.displayAvatarURL
   // emb.setThumbnail(im)
   message.channel.send({embed:emb})
 

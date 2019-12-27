@@ -1,7 +1,7 @@
 const gear = require("../../gearbox.js");
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'selfroles';
 
@@ -44,22 +44,24 @@ async function add(sub,svData,m){
     if(!key)key=role.name;
 
       let selfies = svData.modules.SELFROLES||[];
+
+    
      if(selfies.length>0){
        if(role && selfies.map(x=>x[0]).includes(role.id)){
         return m.channel.send(Off+ mm('CMD.roleAlreadyHere', {lngs:m.lang}));
       }
-    console.log("HAGFASHFSA")
-      await gear.serverDB.findOneAndUpdate({id:svData.id},{$push:{'modules.SELFROLES':[role.id,key]}});
+
+      await gear.serverDB.update({id:svData.id},{$push:{'modules.SELFROLES':[role.id,key]}});
      }else{
-      gear.serverDB.findOneAndUpdate({id:svData.id},{$push:{'modules.SELFROLES':[role.id,key]}})
+      gear.serverDB.update({id:svData.id},{$push:{'modules.SELFROLES':[role.id,key]}})
           .then(ok=>{
-      console.log(ok)
+
       svData.modules.SELFROLES = ok.modules.SELFROLES;
     return m.channel.send(On+mm('CMD.roleAdded', {lngs: m.lang,role: role.name})).catch();
     });
      }
   }catch(e){
-    console.log(e)
+    console.error(e)
   }
 };
 function del(sub,svData,m){
@@ -72,9 +74,9 @@ function del(sub,svData,m){
       return m.channel.send(Off+ mm('CMD.nosuchrole', {lngs:m.lang}));
     };
     selfies.splice(selfies.map(x=>x[0]).indexOf(role.id),1);
-    gear.serverDB.findOneAndUpdate({id:m.guild.id},{$set:{'modules.SELFROLES':selfies}})
+    gear.serverDB.update({id:m.guild.id},{$set:{'modules.SELFROLES':selfies}})
           .then(ok=>{
-      svData.modules.SELFROLES = ok.modules.SELFROLES;
+      svData.modules.SELFROLES = selfies;
     return m.channel.send(On+ mm('CMD.selfroleunAdded', {lngs: m.lang,role: role.name})).catch();
     });
 };
@@ -89,7 +91,7 @@ function list(svData,m){
   let columnB_cont="\u0305\n";
   if (selfList>0){
     for(i=0;i<selfList;i++){
-       columnA_cont += ":small_orange_diamond: "+m.guild.roles.get(list[i][0])+"\n";
+       columnA_cont += ":small_orange_diamond: <@&"+list[i][0]+">\n";
        columnB_cont += ":small_blue_diamond: `"+m.prefix+"roleme "+list[i][1]+"`\n";
     }
     embed.setDescription('Remove: `' + m.prefix + 'roleme out`')
@@ -100,11 +102,15 @@ function list(svData,m){
   }
     embed.title = mm('dict.autoRolesforThis', {lngs: m.lang})
     embed.setColor('#4ab25a')
-    embed.setAuthor(m.guild.name, m.guild.iconURL)
+    embed.setAuthor(m.guild.name, m.guild.iconURL({format:'png'}))
     m.channel.send({embed})
 };
 
-const init = function (message) {
+const init = async function (message) {
+  
+  
+  const SERVERDATA = await gear.serverDB.findOne({id:message.guild.id},{"modules.LOCALRANKx":0});
+  
   try{
     const Server = message.guild;
     const Channel = message.channel;
@@ -119,20 +125,26 @@ const init = function (message) {
     if(gear.autoHelper([mm("helpkey",P),'noargs',''],{cmd,message,opt:this.cat}))return;
       if(args.length<2||args[1].includes("<"))return gear.autoHelper('force',{cmd,message,opt:this.cat});
 
-
+    
+   let sfs = (await gear.serverDB.findOne({id:Server.id})).modules.SELFROLES||[];    
+    sfs = sfs.filter(rl=>message.guild.roles.has(rl[0]));
+    await gear.serverDB.updateOne({id:Server.id},{$set:{'modules.SELFROLES':sfs}});
+    
+    
+    
     const noPermsMe = mm('CMD.unperm', P);
     let sub = args.split(/ +/).slice(1).join(' ')
 
-    if (args.startsWith('list'))  return list(Server.dDATA,message);
+    if (args.startsWith('list'))  return list(SERVERDATA,message);
         if (!gear.hasPerms(Member))return message.reply(mm('CMD.moderationNeeded',P));
-    if (args.startsWith('add'))   return add(sub,Server.dDATA,message);
-    if (args.startsWith('del'))   return del(sub,Server.dDATA,message);
+    if (args.startsWith('add'))   return add(sub,SERVERDATA,message);
+    if (args.startsWith('del'))   return del(sub,SERVERDATA,message);
     if (args.startsWith('clear')) return gear.serverDB.set(Server.id,{$set:{'modules.SELFROLES':[]}}).then(ok=>{
       return message.reply(mm('CMD.rolesCleared', {lngs: LANG}));
     })
     gear.autoHelper('force',{cmd,message,opt:this.cat});
 }catch(e){
-  console.log(e)
+  console.error(e)
 }
 }
 

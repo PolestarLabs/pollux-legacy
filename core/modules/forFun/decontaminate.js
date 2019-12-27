@@ -3,8 +3,8 @@ const Canvas = require("canvas");
 
 const gear = require("../../gearbox.js");
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'decontaminate';
 
@@ -12,8 +12,8 @@ const init = async function (message) {
 
 try{
 
-  let Target = message.mentions.members.first() || message.member;
-  let avi = (Target.user.avatarURL || Target.user.defaultAvatarURL).replace('gif', 'png');
+  let Target =  message.guild.member(await gear.getTarget(message));
+  let avi = (Target.user.displayAvatarURL({format:'png'})|| Target.user.displayAvatarURL).replace('gif', 'png');
 
   const canvas = new Canvas.createCanvas(700, 300);
   const tmpCtx = canvas.getContext('2d');
@@ -86,7 +86,7 @@ try{
     })
   }
 }catch(e){
-  console.log(e)
+  console.error(e)
 }
 
 }

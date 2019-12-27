@@ -3,7 +3,7 @@ module.exports = {
     games: [
         ["p!help for commands",3]
         ,["p!stats for bot info",0]
-        ,["p!invite Invite me to yout server!",1]
+        ,["p!invite Invite me to your server!",1]
         ,["Check the most beautiful profile ever with p!profile",3]
         ,["Setup your Profile at www.pollux.fun/dashboard",2]
         ,["See commands at www.pollux.fun/commands",1]

@@ -28,7 +28,7 @@ if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="h
       let rand = gear.randomize(0,files.length-1);
       var filepath = paths.BUILD+"frenes/menes_suekos/"+files[rand]
 
-      let emb = new gear.Discord.RichEmbed
+      let emb = new gear.RichEmbed
       emb.setDescription("© Século 2017 | 🇸🇪 Menes Suenkos ")
       emb.setColor("#1a167e")
     message.channel.send({embed:emb,files:[filepath]}).then(m=>{

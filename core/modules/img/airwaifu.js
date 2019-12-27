@@ -6,7 +6,7 @@ var locale = require('../../../utils/multilang_b');
 var mm = locale.getT();
 
 var cmd = 'airwaifu';
-var emb = new gear.Discord.RichEmbed();
+var emb = new gear.RichEmbed();
 
 var init = function (message) {
 
@@ -31,7 +31,7 @@ if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="h
 //------------
 }catch(e){gear.hook.send(e.error)}
     let query = 'airplane+-comic+-animated'
-    //console.log("AIRWAIFU INVOKED by " + Author + "-------------\n")
+    
 
     getter.getRandom(query, (url) => {
 
@@ -39,7 +39,7 @@ if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="h
             message.reply("Não achei nada com essas tags :(")
         } else {
             //message.reply('http:' + url)
-            emb.setImage(url)
+            emb.setImage(url.replace('http:h','h')) 
 
 
 
@@ -56,7 +56,7 @@ if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="h
 
                 await m.react('😠').catch();
 
-            }).catch(e=> {console.log(e)})
+            }).catch(e=> {console.error(e)})
         }
     })
 
@@ -64,6 +64,6 @@ if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="h
 
 };
 
- module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: 'img'};
+ module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: 'anime'};
 
 

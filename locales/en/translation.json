@@ -7,7 +7,7 @@
         "coinDefeat": "Oh my, {{result}}. Seems you lost...",
         "dailyGet": "{{emoji}} You've received 100 Rubines as your daily bonus!",
         "dailyNope": "{{emoji}} Hmm? Seems you already claimed your Rubines, you can get more in: **{{remaining}}**",
-        "dailyStreak": "{{emoji}} **+500 Rubines** for 10 days of Dailies in a row!",
+        "dailyStreak": "{{emoji}} **+500 Rubines** for collecting 10 days in a row!",
         "noFundsGeneric": "Not enough Rubines",
         "giveGoods": "{{author}} has given **{{donate}}** Rubines to **{{target}}** !",
         "hasAmount": "{{target}} has {{goods}} Rubines.",
@@ -39,8 +39,8 @@
         "exchange": "Exchanges",
         "crafts": "Crafting",
         "donation": "Donations",
-        "dailyStreakJades": "{{emoji}} **+1000 Jades** for 3 days of Dailies in a row!",
-        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for 250 days of Dailies in a row!"
+        "dailyStreakJades": "{{emoji}} **+1000 Jades** for collecting 3 days in a row!",
+        "dailyStreakSapphs": "{{emoji}} **+1 Sapphire** for collecting 250 days in a row!"
     },
     "forFun": {
         "saltLVL": "{{target}}' Salt Level is **{{amount}}%** {{emoji}}",
@@ -181,7 +181,7 @@
         "invite": "Invite me to your server~",
         "disableNuisance": "Disable Annoying responses:\n Goodies/Rubines: ${message.prefix}disable DROPS \n  Level Up: ${message.prefix}disable LVUP",
         "cashrank": "**GLOBAL** {{good}} Ranks. Alternatively `{{prefix}}{{good}}`",
-        "daily": "Free {{good}}s everyday",
+        "daily": "Free Rubines everyday",
         "help": "You probably know what this does",
         "rule34": "Get Lewd Stuff",
         "safe": "Cute pics from Safebooru",
@@ -213,7 +213,7 @@
         "menu": "[DISCONTINUED] A Cafe Menu",
         "puto": "[BROKEN] Putômetro",
         "saltlevel": "See how salty you or your friends are right now",
-        "ship": "Ship two of your friends, maybe they can arrange a wedding",
+        "ship": "Ship two of your friends, may be they can arrange a wedding",
         "triggered": "Express your disgust",
         "menesueco": "[BRAZILIAN VERSION-EXCLUSIVE] E se ele corresse?",
         "rotation": "Free Character Rotation for League of Legends, Heroes of the Storm, and Smite",
@@ -256,9 +256,9 @@
         "cage": "Your dose of Nicholas cage, just the best Cage pics for your Cage needs!",
         "decontaminate": "Give yourself or a friend a good decontamination shower",
         "geiger": "Use a Geiger counter dosimeter to check for the potential of cancer in a channel",
-        "eggtrade": "Trade duplicate Easter Eggs with your friends!",
+        "eggtrade": "Trade repeated Easter Eggs with your friends!",
         "craft": "Create items you can use to do awesome stuff with!",
-        "marriage": "Make your love official, or just show off as a couple.",
+        "marriage": "Officialise your love, or just show off as acouple with someone else. On this very capitalist wedding system!",
         "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!",
         "divorce": "Put an end to your unhappy marriage"
     },
@@ -295,7 +295,7 @@
         "timerby": "Sure, I will now delete Bye Messages after {{timeMin}} seconds!",
         "noTimer": "Ok, no messages will be deleted.",
         "outChan": "Alright! Farewell messages will be posted at **{{channel}}**",
-        "inChan": "Alright! Welcome messages will be posted at **{{channel}}** "
+        "inChan": "Alright! Welcome messages will be posted at **{{channel}}**"
     },
     "reput": {
         "noSelf": "No, I refuse to let you rep yourself.",
@@ -356,8 +356,8 @@
         "speakAvailable": "Available languages are:",
         "autorole": "`{{prefix}}autorole [add | rem | list] [Role| @role]` \n\n`{{prefix}}autorole add Games` Allows the **Games** Role as self-assignable.\n`{{prefix}}autorole rem Games` Removes the role **Games** da lista.\n`{{prefix}}autorole list` Shows the list and commands for each Self-Assignable Role\n\n Type the Role name exactly as registered, case sensitive. Or just @mention it",
         "background": "`{{prefix}}background [Imagecode]`\n\n :warning: **IMPORTANT:** \n*Imagecode* __are not links__, are codes obtained from http://www.pollux.fun/bgshop. \n\nExample: `{{prefix}}background IlyEEDBj0GLLlFl8n6boPLSkADNuBwke`",
-        "bye": "`{{prefix}}bye [msg|timer] [mensagem|segundos]` \n\n`{{prefix}}bye msg Goodbye %user% !`\n Changes the message to \"Goodbye @User !\"\n\n`{{prefix}}bye timer 10`\n Set a time in seconds for auto deletion, 0 for keep it forever.\n\n`{{prefix}}bye`\nWithout any parameters, this command will toggle on and off the emittion of messages.\n\n**Wildcards**:\n`%user%` Mentions the user.\n`%username%` Outputs the user's name, without mention.",
-        "welcome": "`{{prefix}}welcome [msg|timer] [mensagem|segundos]` \n\n`{{prefix}}welcome  msg Welcome %user% !`\n Changes the message to \"Welcome @User !\"\n\n`{{prefix}}welcome timer 10`\n Set a time in seconds for auto deletion, 0 for keep it forever.\n\n`{{prefix}}welcome `\nWithout any parameters, this command will toggle on and off Welcome messages.\n\n**Wildcards**:\n`%user%` Mentions the user.\n`%username%` Outputs the user's name, without mention.",
+        "bye": "`{{prefix}}bye [msg|timer|chn] [message|seconds|channel]` \n\n`{{prefix}}bye msg Goodbye %user% !`\n Changes the message to \"Goodbye @User !\"\n\n`{{prefix}}bye timer 10`\n Set a time in seconds for auto deletion, 0 for keep it forever.\n\n`{{prefix}}bye`\nWithout any parameters, this command will toggle on and off the emittion of messages.\n\n**Wildcards**:\n`%user%` Mentions the user.\n`%username%` Outputs the user's name, without mention.",
+        "welcome": "`{{prefix}}welcome [msg|timer|chn] [message|seconds|channel]` \n\n`{{prefix}}welcome  msg Welcome %user% !`\n Changes the message to \"Welcome @User !\"\n\n`{{prefix}}welcome timer 10`\n Set a time in seconds for auto deletion, 0 for keep it forever.\n\n`{{prefix}}welcome `\nWithout any parameters, this command will toggle on and off Welcome messages.\n\n**Wildcards**:\n`%user%` Mentions the user.\n`%username%` Outputs the user's name, without mention.",
         "chinese": "`{{prefix}}chinese [text]`",
         "clear": "`{{prefix}}clear X`\n**Attention** X must be __Greater than 1__ and __Lower than 101__.\nI'm sure you can do the math without help.",
         "color": "`{{prefix}}color #FF0000`",
@@ -406,14 +406,14 @@
         "exchange": "`{{prefix}}exchange [Amount] [Destination Currency Code]` \ne.g `{{prefix}}exchange 28 DUT` Exchanges 28 Rubines into DueUtil Credits.",
         "slots": "`{{prefix}}slots [bet(optional)]",
         "avatar": "`{{prefix}}avatar [@someguy]`",
-        "daily": "`{{prefix}}daily` to get your daily bonus, streak 10 days in a row for a higher bonus1\n `{{prefix}}daily epoch` to check how much time until next global refresh.",
+        "daily": "`{{prefix}}daily` to get your daily bonus, streak 10 days in a row for a higher bonus1\n `{{prefix}}daily info` to more information about times and streak.",
         "trickortreat": "`{{prefix}}trickortreat` or `{{prefix}}trit`",
         "candy": "`{{prefix}}candy [@someguy]`",
         "candyrank": "`{{prefix}}candyrank`",
         "selfroles": "`{{prefix}}selfroles [add | del | list] [Role| @role | Role ID] [\"Shorthand\"]` \n\n`{{prefix}}selfroles add Games` Allows the **Games** Role as self-assignable.\n`{{prefix}}selfroles del Games` Removes the role **Games** from the list.\n`{{prefix}}selfroles list` Shows the list and commands for each Self-Assignable Role\n\n These are Case insensitive, you can use Role ID too.\n`{{prefix}}selfroles clear` Deletes **all** selfroles from the list.",
         "prune": "`{{prefix}}prune X [@user | user ID]`\nYou can use the user's ID if mentioning is not available, as in `{{prefix}}prune 50 271394014358405121`, If no user is specified, it defaults to Pollux's messages.\n\n**Attention** X must be __Greater than 1__ and __Lower than 101__.\nBasic math, I'm sure you can do it.",
         "decontaminate": "`{{prefix}}decontaminate [@user (optional)]`",
-        "eggtrade": "**Making a Trade**\n`{{prefix}}trade [Egg ID] @someone`\nE.g.`{{prefix}}trade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
+        "eggtrade": "**Making a Trade**\n`{{prefix}}eggtrade [Egg ID] @someone`\nE.g.`{{prefix}}eggtrade U2 @someone` Will trade the *Aquamarine Pulse Egg* with *@Someone*\n\n**Accepting a Trade**\nTo accept an incoming trade, you have 30s to respond the offer with *accept* + one of your Eggs' ID, only two-way trades are allowed.\n`accept SR1` Will send *Dark Magician Egg* in exchange for the *Aquamarine Pulse Egg* sent by the first user.\n\n**You can only trade every 2 hours, so be careful. __Missed trades will use up your cooldown!__**",
         "lewd": "`{{prefix}}lewd`\nYou can also choose from which curator you will want to see the picks from! Just type their name after the command like `{{prefix}}lewd pollyanna` for example, to see only stuff curated by **Pollyanna**.\n\n Our current curator squad is:\n {{squad}}",
         "marry": "Marriage relies directly on `{{prefix}}craft`, since you need a ring before you can propose.\n\nTo marry your loved one, do `{{prefix}}marry @user [ring]`. There are 4 tiers of wedding rings, each one made of a different gemstone, to show off how fancy your marriage is. In the future, higher rank rings will provide the couple more Love Points that they will be able to spend together.\n\nExample usage: `{{prefix}}marry @someone rubine` to propose with a Rubine ring.\n\nRequires Embed, Manage Messages and Reaction Permissions",
         "craft": "`{{prefix}}craft [item code]`\n You can find the item code and all information at http://pollux.fun/crafting.\n\nTo craft an item you need to own all required materials, some materials need to be crafted in order to be available, those are not autocrafted when doing a higher tier item.",
@@ -621,7 +621,7 @@
             "result": "Result:",
             "bust": "Bust",
             "youwin": "Congratulations! You won, this time.",
-            "youlose": "Oh? I've won, too bad for you.",
+            "youlose": "Oh? I've won, to bad for you.",
             "hit": "Respond with `hit` to draw one more card,",
             "stand": "Stand",
             "split": "`split` to Split your hand,",
@@ -703,7 +703,7 @@
     },
     "eastereggs": {
         "konodioda": "You thought that it was Pollux, **but it was ME, DIO**!",
-        "vacuum": "**{{user}}** has given **+1 Rep** to the Vacuum. {{amount}} reps have been thrown into the void so far."
+        "vacuum": "**{{user}}** has given **+1 Rep** to the Vacuum. {{amount}} reps has been thrown into the void so far."
     },
     "discoin": {
         "desc": "Your Rubines are being sent, a response from %BOT% will come as soon as it arrives.",
@@ -781,12 +781,12 @@
         "egghuntfail": "*But couldn't find a single thing*",
         "egghuntsuccess": "Great! There's an egg here! Let's see...",
         "egghuntsuccess2": "{{rarity_emoji}} {{user}} found a **{{rarity}} Egg**!",
-        "egghuntsuccess3": "You have a total of **{{X}}** eggs with you.\n**{{Y}}** of them are unique.\n\nMore info at: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
-        "delaytrade": "Hold on! You can trade eggs again in {{remaining}} ",
+        "egghuntsuccess3": "You have a total of **{{X}}** eggs with you.\n**{{Y}}** of them are unique.\n\nMore info at: [Pollux Easter Event 2019](https://pollux.fun/events/easter19)",
+        "delaytrade": "Hold on! You can trade eggs again in {{remaining}}",
         "wanttrade": "{{user}} wants to trade **{{tradingEgg}}** with you.",
         "wanttrade2": "*To accept it, type `accept` followed by the ID of the Egg you're sending back.*\n\nE.g. `accept C1` to give a [**C1**] Egg in exchange for this [**{{eggcode}}**] Egg",
         "eggtradetitle": "Easter Egg Trading",
-        "noegginvent": "This egg either doesn't exist or isn't in your inventory",
+        "noegginvent": "This egg either doesn't exist or isn't in your inventory.",
         "needegg": "You need to specify an egg to give in return!",
         "tradeok": "**Success!** {{user1}}'s {{egg1}} was exchanged for {{user2}}'s {{egg2}}."
     },
@@ -806,12 +806,12 @@
         "UR": "Ultra Rare"
     },
     "divorce": {
-        "confirmdiag": "Do you agree in getting a divorce from {{user}}? A fee of %EMJ% **5000 Rubines** will be charged from **both** of you. Both of your LovePoints will be **halved** as well!",
-        "saidnope": "{{userB}} doesn't want a divorce. You can force it by paying %EMJ%**10000 Rubines** so I can call in a lawyer to resolve this, but both of you will lose **all of your LovePoints** !",
-        "saidnothing": "{{userB}} doesn't seem to be around to say anything. You can still force a one-sided divorce by paying %EMJ%**15000 Rubines** so I can call in a lawyer to resolve this, but you will lose **all of your LovePoints**!",
-        "saidyep": "{{userB}} has agreed to a friendly divorce.",
+        "confirmdiag": "Do you agree in divorcing from {{user}}? A divorce fee of %EMJ%**5000 Rubines** will be charged from **both** of you! Both of your LovePoints will be **halved**!",
+        "saidnope": "{{userB}} doesn't want to divorce. You can force it by paying %EMJ%**10000 Rubines** so I can call in a lawyer to resolve this, but both of you will lose **all of your LovePoints** !",
+        "saidnothing": "{{userB}} doesn't seem to be around to say anything. You can still force a one-sided divorce by paying %EMJ%**15000 Rubines** so I can call in a lawyer to resolve this, but you will lose **all of your LovePoints** alone!",
+        "saidyep": "{{userB}} agreed in a friendly divorce.",
         "forced_rej": "Alright. I called in a Lawyer to deal with the situation, you're no longer married!",
-        "info": "Unhappy with your loved one? You can undo your marriage at anytime by paying some Rubines.\nYou can do this mutually if your counterpart agrees, or you can call in a lawyer to get things done.\n\nDivorcing will consume love points from both parts. So please be sure that this is what you want. The ring used in this marriage **will be destroyed**!",
+        "info": "Unhappy with your loved one? You can undo your marriage anytime by paying some Rubines.\nYou can do this friendly if your counterpart agrees, or you can call-in a lawyer to get things done.\n\nDivorcing will consume love points from both parts. So please be sure that this is what you want. The ring used in this marriage **will be destroyed**!",
         "divorce_title": "Divorce"
     }
 }

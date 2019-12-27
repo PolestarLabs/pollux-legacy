@@ -1,7 +1,7 @@
 const gear = require("../../gearbox.js");
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'disable';
 
@@ -20,6 +20,7 @@ const init = async function (message) {
   const MSG = message.content;
 
   const args = MSG.split(' ').slice(1)
+  if(args[0] == 'enable' ||args[0] == 'disable') return;
   const LANG = message.lang;
 
   const P = {lngs: LANG}
@@ -42,7 +43,10 @@ const init = async function (message) {
     message.reply(mm('CMD.chooseAmod', P));
     return;
   }
-  if (!gear.hasPerms(Member)) {
+
+  SDATA = await gear.serverDB.findOne({id:message.guild.id});
+
+  if (!gear.hasPerms(Member,SDATA)) {
     return message.reply(mm('CMD.moderationNeeded', P)).catch(console.error);
   }
 
@@ -96,9 +100,12 @@ const init = async function (message) {
 
   if (sc == 'S') {
     let mod;
-    Server.channels.forEach(e => {
+    Server.channels.forEach(async e => {
       try {
-        if (module in Channel.dDATA.modules) {
+       
+        CDATA = await gear.channelDB.findOne({id:e.id});
+
+        if (module in CDATA.modules) {
           mod = true
           gear.channelDB.set(e.id, {
             $set: {
@@ -114,12 +121,14 @@ const init = async function (message) {
           });
         }
       } catch (e) {
-        console.log(e)
+        console.error(e)
       }
     })
     mod ? message.reply(disaMS) : message.reply(disaCS);
   } else {
-    if (module in Channel.dDATA.modules) {
+
+    CDATA = await gear.channelDB.findOne({id:message.channel.id});
+    if (module in CDATA.modules) {
       gear.channelDB.set(message.channel.id, {
         $set: {
           [module]: false
@@ -134,15 +143,14 @@ const init = async function (message) {
 
 
   function imComm(msg, scope) {
-    console.log('immcomm')
+
     try {
       let command = msg.content.substr(msg.prefix.length).split(/ +/)[1];
       // let commandFile = require(`./${command}.js`);
       if (scope == 'S') {
         Server.channels.forEach(e => {
 
-          if (!Server.dDATA.channels[e.id]) {
-            console.log("nochan:  " + e.name)
+          if (!SDATA.channels[e.id]) {
           }
         })
 
@@ -156,7 +164,7 @@ const init = async function (message) {
         message.reply(disaCC)
       }
     } catch (err) {
-      console.log((err.stack).red)
+      console.err((err.stack).red)
     }
   }
 

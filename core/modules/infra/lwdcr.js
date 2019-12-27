@@ -27,7 +27,7 @@ const init = async function (message) {
     });
 
   } catch (e) {
-    console.log(e)
+    console.error(e)
   }
 
 

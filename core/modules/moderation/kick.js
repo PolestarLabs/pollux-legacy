@@ -1,17 +1,18 @@
 const gear = require("../../gearbox.js");
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'kick';
 
 const init = async function (message) {
 
     const Server = message.guild;
+  await  Server.members.fetch();
     const Channel = message.channel;
     const Author = message.author;
     const Member =message.member;
-    const Target = message.mentions.members.first() || Member;
+    const Target = Server.member(await gear.getTarget(message));
     const MSG = message.content;
     const bot = message.botUser
     const args = MSG.split(/ +/).slice(1).join(' ');
@@ -37,14 +38,14 @@ if(gear.autoHelper(['noargs'],{cmd,message,opt:this.cat}));
     const didkik      =   mm('CMD.didkik', {lngs:LANG, target:Target.user.tag,reason:reason})
 
    reason=reason?reason:noReason;
-
-    const modPass = await gear.hasPerms(Member,gear.serverDB);
+let ServerDATA = await gear.serverDB.findOne({id:Server.id},{"modules.LOCALRANKx":0});
+  
+    const modPass = await gear.hasPerms(Member,ServerDATA);
 
     if (!modPass)return message.reply(mm('CMD.moderationNeeded',P)).catch(e=>console.warn);
     if (message.mentions.users.size === 0)return message.reply(whokik).catch();
 
     let kickMember = Target;
-    let kik = Target.user
     if (!kickMember)return message.reply(nope);
     if (!Server.member(bot.user).hasPermission("KICK_MEMBERS"))return message.reply(noPermsMe).catch();
 
@@ -53,6 +54,6 @@ if(gear.autoHelper(['noargs'],{cmd,message,opt:this.cat}));
  }).catch(e=>{
    message.reply(gear.emoji('nope'));
  })
-    message.delete(1000).catch();
+    message.delete({timeout:1000}).catch();
 }
- module.exports = {pub:true,cmd: cmd, perms: 2, init: init, cat: 'mod'};
+ module.exports = {pub:true,cmd: cmd, perms: 2, init: init, cat: 'mod', botperms: ["KICK_MEMBERS"]};

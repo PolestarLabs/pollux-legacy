@@ -21,7 +21,7 @@ module.exports = {
           channel: channel,
           logtype: "delChan"
         })
-
+        Server = null
       }
     }
   }

@@ -35,12 +35,6 @@ const currencies={
   }
 }
 
-//try{
-//EKO.insert(currencies.main).catch(e=>{})
-//EKO.insert(currencies.side).catch(e=>{})
-//EKO.insert(currencies.premium).catch(e=>{})
-//}catch(e){console.log("INSERTO")}
-
 const pay = function pay(am,us,op){
  return transaction(am,us,op);
 }
@@ -104,7 +98,7 @@ function transaction(amount,user_paying,options){
 
     audit(amount, uid, target, unit, type);
     if (!checkAuthent(uid, target)) {
-      //console.log("NOAUTH");
+      
       //return resolve(false);
     }
 
@@ -116,8 +110,8 @@ function checkout(amount,target,payer,unit,type){
   return new Promise(async resolve=>{
 
     let curr = currencies[unit].id
-    console.log("ENTER CHECKOUT")
-    console.log("===========================")
+    
+    
     await gear.userDB.findOneAndUpdate({id:payer},{$inc:{['modules.'+curr]:-amount}});
     await gear.userDB.findOneAndUpdate({id:target},{$inc:{['modules.'+curr]:amount}});
     return resolve(true);
@@ -136,17 +130,12 @@ function checkAuthent(pay,receive){
 }
 
 async function audit(amount,user_paying,target,unit,type){
+  return;
     await checkDB(user_paying);
     await checkDB(target);
   let userdata=await uDB.findOne({id:user_paying});
   let receiverdata=await uDB.findOne({id:target});
     let curr = currencies[unit].id
-
-  console.log("Ekonomist Audit ----------")
-  console.log("AMT: ",amount,"Paid by: ",user_paying,"\nTo: ",target,"\n$: ",curr,type)
-  console.log(userdata.modules.audits[curr].earnings[type])
-  console.log(userdata.modules.audits[curr].expenses[type])
-  console.log("--------------------------")
 
     await uDB.findOneAndUpdate({id:user_paying},{
       $inc:{['modules.audits.'+curr+'.expenses.'+type]:-amount},
@@ -171,7 +160,7 @@ async function audit(amount,user_paying,target,unit,type){
 };
 
 const normalize =  function normalize(U) {
-  //console.log(U)
+  
   return uDB.findOne({id:U}).then(async USRDATA=>{
       if(!USRDATA)return;
 
@@ -179,39 +168,13 @@ const normalize =  function normalize(U) {
   uDB.findOne({id:U}).then(async USRDATA=>{
 
   let unit=['rubines','jades','sapphires']
-  for (let i=0;i<3;i++){
 
-  if (!USRDATA.modules.audits[unit[i]]) {
-   let audits = {
-      expenses: {
-        trades:0
-        ,shop:0
-        ,drops:0
-        ,exchange:0
-        ,lewd:0
-        ,gambling:0
-        ,crafts:0
-      },
-      earnings: {
-        trades:0
-        ,shop:0
-        ,drops:0
-        ,exchange:0
-        ,lewd:0
-        ,gambling:0
-        ,crafts:0
-        ,dailies:0
-      }
-    }
-    await uDB.findOneAndUpdate({id:U},{$set:{['modules.audits.'+unit[i]]:audits}});
-  }
-}
   })
   })
   }
 
 const checkFunds = async function checkFunds(amount,user,unit){
-console.log(unit)
+
   if(user=="271394014358405121")return true;
   if(!unit)unit='main';
    amount = Number(amount)

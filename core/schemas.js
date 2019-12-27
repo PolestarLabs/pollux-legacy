@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb:// /pollux-transfer', { 
+mongoose.connect('mongodb://pollux:472899@31.220.55.84:27051/pollux-transfer', { 
  useNewUrlParser: true,
     reconnectTries: 5,  
     reconnectInterval: 1000,
     keepAlive: 1, 
   connectTimeoutMS: 10000,
-});
-
+}); 
+  
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
@@ -469,6 +469,8 @@ usefile:      {type:String,default:'notusable'},
 code:         String,
 misc:         Mixed,
 series:       String,
+display:       Boolean,
+new:       Boolean,
 filter:       String,
 crafted:       Boolean,
 color:String,
@@ -492,9 +494,17 @@ const aRANK = new mongoose.Schema({
    lastUpdated: Date 
 });
 
+const assorted = new mongoose.Schema({
+   user: {type:String, index:{unique:false}},
+   server: {type:String, index:{unique:false}},
+   data: Mixed,
+   type: String
+});
+
 
 
 module.exports={
+  assorted : mongoose.model('Assorted', assorted, 'assorted'),
   localranks : mongoose.model('Localranks', aRANK, 'localranks'),
   audit    : mongoose.model('Audit', Audit, 'transactions'),
   user    : mongoose.model('User', User, 'userdb'),

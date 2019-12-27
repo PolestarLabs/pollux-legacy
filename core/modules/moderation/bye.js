@@ -31,8 +31,9 @@ const init = async function (message) {
     if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="help"){
         return gear.usage(cmd,message,"mod");
     };
+    SERVERDATA = await gear.serverDB.findOne({id:message.guild.id});
 
-    const modPass = gear.hasPerms(Member);
+    const modPass = gear.hasPerms(Member,SVDATA);
     if (!modPass) {
         return message.reply(mm('CMD.moderationNeeded', {
             lngs: LANG
@@ -95,7 +96,7 @@ const init = async function (message) {
       if (state) return message.channel.send(v.inON);
       else  return message.channel.send(v.inOFF);
     }
-    Server.dDATA.modules.FWELL.enabled ? turn(false) : turn(true);
+    SVDATA.modules.FWELL.enabled ? turn(false) : turn(true);
   };
   async function setTime(arg){
     if (!isNaN(Number(arg))){
@@ -118,7 +119,7 @@ const init = async function (message) {
   if (['chn','channel'].includes(mainf)) setChan(message);
   if (!mainf||mainf===''||(mainf.length&&mainf.length===0)) toggleBye();
 
-  }catch(e){console.log(e)}
+  }catch(e){console.error(e)}
 
 }
 

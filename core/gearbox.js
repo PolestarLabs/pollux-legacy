@@ -1,38 +1,175 @@
 
 
 const Discord = require('discord.js')
-
+const md5 = require('md5')
 const fs=require('fs');
-const paths = require("./paths.json");
+const paths = require("./paths.json");  
 
 const Promise = require("bluebird");
 
-const Canvas = require("canvas");
+const Canvas = require("canvas"); 
 const Pixly = require("pixel-util");
 const wrap = require('canvas-text-wrapper').CanvasTextWrapper;
 
-const {collectibles,userDB,serverDB,channelDB,globalDB,items,fanart} = require('./database_ops.js');
+const {localranks,fishes,assorted,buyables,cosmetics,userDB,serverDB,channelDB,globalDB,items,fanart,audits,collectibles} = require('./database_ops.js');
 const DB = serverDB;
 
 const cfg = require('../config.json');
 const errHook = new Discord.WebhookClient('376036137443000320', cfg.errHook);
+const auxHook   = new Discord.WebhookClient('499934758642384906', "7O_oUUI8oy-JOc2kpb0qWh-ESf1CCM2trOphzXuP2D_YFc4PrCvjLhS2h6vmp8aKa5Ay");
+const dropHook  = new Discord.WebhookClient('502015226288406537', "pgzghhJe5QRJXhdIgM4pRm-13zY3seCGfhSC17J_rNs45R17HSL6z-trpYbEPjbj7ay6");
+const auditHook = new Discord.WebhookClient('560373869890764830', "_iPlyl1zrULP4fus8vB1aNz10YzLRxHeJbyPSDpi_Il4zWkTq6o0jwTCWQzr85RVr05_");
 const colorname= require('name-this-color');
+
+var MersenneTwister = require('mersenne-twister');
+var generator = new MersenneTwister();
+
+// Generates a random number on [0,1) real interval (same interval as Math.random)
+
+ 
 
 
 module.exports={
   colorname,
-  collectibles,
+  auditHook,
+  assorted,
+  dropHook,
+  cosmetics,
   DB:serverDB, //legacy
   serverDB,
-  userDB,
+  userDB,collectibles,
   channelDB,
   globalDB,
   Discord,
-  errHook,
+  errHook,localranks,
+  auxHook,
   items,
+  md5,
   fanart,
-  RichEmbed:Discord.RichEmbed,
+  yep: {
+      r: ":yep:339398829050953728",
+      i: "339398829050953728"
+    },
 
+    nope: {
+      r: ":nope:339398829088571402",
+      i: "339398829088571402"
+    },
+    audits,
+  buyables,
+  paths,
+  getRandomRarity: function(type="unshuffle"){
+    
+    let shuffled = this.shuffle(["UR","SR","SR","R","R","R","R","U","U","U","U","U","U","U","U","C","C","C","C","C","C","C","C","C","C","C","C","C",
+    "UR","SR","SR","R","R","R","R","U","U","U","U","U","U","C","C","C","C","C","C","C","C","C","C"]);
+    let result;
+    if (type == "shuffle"){
+      result =  (shuffled[this.randomize(0,shuffled.length-1)]);
+    }
+  let rand = this.randomize(0,1000);
+    result = "C";
+    if(rand<=700) result = "U";
+    if(rand<=450) result = "R";
+    if(rand<=250) result = "SR";
+    if(rand<=100) result = "UR";
+    //40 20 15 10 5
+    
+    if (type == "debug"){
+      result =  { shuffld : (shuffled[this.randomize(0,shuffled.length-1)]), enum: result, rand,array:JSON.stringify(shuffled)};
+    }
+    return result;
+    
+  },
+  getShardCodename: function (bot,SHARD=Number(process.env.SHARD)+1){
+   return ["Almond"
+,"Biscuit"
+,"Cookie"
+,"Daifuku"
+,"Eclair"
+,"Flan"
+,"Gummybear"
+,"Hazelnut"
+,"Ice Cream"
+,"Jelly"
+,"Kuzumochi"
+,"Lemondrop"
+,"Melonpan"
+,"Namagashi"
+,"Okoshi"
+,"Pancake"
+,"Quesadilla"
+,"Raspberry"
+,"Sugarplum"
+,"Truffle"
+,"Upside-down Cake"
+,"Vanilla"
+,"Waffle"
+,"Xanax"
+,"Yogurt"
+,"Zucchini"
+,"Acorn"
+,"Brownie"
+,"Custard"
+,"Donut"
+,"Ether"
+,"Fudge"
+,"Ganache"
+,"Honeycomb"
+,"Iridium"
+,"Joule"
+,"Kebab"
+,"Lolipop"
+,"Marshmallow"
+,"Nescau"
+,"Oreo"
+,"Pudding"
+          ][(bot.shard||SHARD-1||{id:false}).id || SHARD-1]
+  },
+  cfg,
+   cleanup: async function cleanup(messages){
+    for(i=0;i<messages.length;i++){
+      messages[i].delete().catch(e=>"die silent")
+    }
+  },
+  demotiv : require("../resources/lists/demotiv.json"),
+  RichEmbed:Discord.MessageEmbed,
+  
+  getTarget: async function getTarget(msg,x){
+    x = x || {}
+    
+    x.point = x.point ||0
+    x.noself = x.noself ||false
+    
+    
+    let bot = msg.botUser
+    let usr;
+    if (msg.mentions.users.size > 0) {
+      usr = msg.mentions.users.first().id;
+    } else {
+      let argpos = msg.content.split(/ +/).slice(1 + (x.point || 0)).join(' ').toLowerCase();
+      
+      if (argpos.length == 0) usr = msg.author.id;
+      usr = (msg.guild.members.find(um => {
+        if (um.id.includes(argpos)) return true;
+        if (um.displayName && um.displayName.toLowerCase().includes(argpos)) return true;
+        if (um.username && um.username.toLowerCase().includes(argpos)) return true;
+        if (um.user && um.user.tag.toLowerCase().includes(argpos)) return true;
+        else return false;
+      }) || {
+        id: false
+      }).id;
+            if (argpos.length == 0 && !x.noself) usr = msg.author.id;
+    }
+    
+    let res = usr ? await bot.users.fetch(usr) : false;
+    if (!res && !x.noself) return msg.author;
+    else return res;
+    return res;
+  },
+  
+  
+  
+  
   invertColor: function invertColor(hex, bw) {
     if (hex.indexOf('#') === 0) {
         hex = hex.slice(1);
@@ -47,8 +184,7 @@ module.exports={
     var r = parseInt(hex.slice(0, 2), 16),
         g = parseInt(hex.slice(2, 4), 16),
         b = parseInt(hex.slice(4, 6), 16);
-    if (bw) {
-        // http://stackoverflow.com/a/3943023/112731
+    if (bw) {       
         return (r * 0.299 + g * 0.587 + b * 0.114) > 186
             ? '#000000'
             : '#FFFFFF';
@@ -62,7 +198,7 @@ module.exports={
 },
 
   getTier: async function getTier(Author,bot,m) {
-    return (await userDB.findOne({id:Author.id})).donator;
+    return (await userDB.findOne({id:Author.id},{donator:1}).lean().exec()).donator;
 
     /*return m.botUser.shard.broadcastEval('try{this.guilds.get("277391723322408960").member("'+Author.id+'").roles.map(r=>{return {"id":r.id,"name":r.name}})}catch(e){}')
   .then(hisroles=> {
@@ -85,46 +221,137 @@ if(!hisroles)return false;
     return emblem;
 })*/
   },
- calculateDaily:function calculateDaily(Author,bot) {
-        let semibanned  = 1
-        let penalised   = 5
-        let regular     = 15
-        let aluminium   = 20
-        let iridium     = 30
-        let palladium   = 40
-        let uranium     = 50
-        let emblem;
-
-      return bot.shard.broadcastEval('try{this.guilds.get("277391723322408960").member("'+Author.id+'").roles.map(r=>{return {"id":r.id,"name":r.name}})}catch(e){}')
-  .then(hisroles=> {
+    getTagge: async function getTagge(Author,bot,m) {
+    return bot.guilds.fetch('277391723322408960')
+  .then(MEMB=> {
+      
+      let hisroles = MEMB.roles.map(r=>{return {"id":r.id,"name":r.name}})
+      
 hisroles=hisroles.find(x=>x)
         let emblem;
 if(!hisroles)return false;
-if (!hisroles.find(f=>f.name== "VERIFIED ✅")) return {class:regular,emblem};
-
-      if (hisroles.find(f=>f.name== "Uranium")) {
-        emblem = "uranium"
-        return {class:uranium,emblem};
+      if (hisroles.find(f=>f.id== "278985261231243266")) {
+        return "moderatorplus";
       };
-
-      if (hisroles.find(f=>f.name== "Palladium")) {
-        emblem = "palladium"
-        return {class:palladium,emblem};
+      if (hisroles.find(f=>f.id== "340531837606821899")) {
+        return "moderatorplus";
       };
-      if (hisroles.find(f=>f.name== "Iridium")) {
-        emblem = "iridium"
-         return {class:iridium,emblem};
+      if (hisroles.find(f=>f.id== "278985289605578752")) {
+        return "moderator";
       };
-      if (hisroles.find(f=>f.name== "Aluminium")) {
-        emblem = "aluminium"
-        return {class:aluminium,emblem};
+      if (hisroles.find(f=>f.id== "345213323991842817")) {
+        return "partner";
       };
-    return {class:regular,emblem};
+      if (hisroles.find(f=>f.id== "397091492356685824")) {
+        return "ambassador";
+      };
+      if (hisroles.find(f=>f.id== "278985519894102019")) {
+        return "translator";
+      };
+      if (hisroles.find(f=>f.id== "278985326381498370")) {
+        return "assistant";
+      };
 })
+  },
+  
+    
+    mmrand: function mmrand(string, fun,params){
+        let rand = this.randomize(0,fun(string,{returnObjects:true}).length -1);
+        return fun(string+"."+rand,params);
+    },
+    
+  audit: async function audit(ID,amt,type,currency,transaction,to){
+    
+    if (amt == 0) return;
+    
+    to = to || "271394014358405121"
+    type = type || "other"
+    currency = currency || "RBN"
+    transaction = transaction || "-"
+    amt = Math.abs(Number(amt))
+    
+    let now = Date.now()
+    let payload={
+       from: to,
+      transactionId: currency+md5(now+"_"+ID),
+      timestamp: now,
+      currency,type,amt,to:ID,transaction
+    }      
+    let embed = new this.RichEmbed
+    embed.setTitle((transaction=="+"?'📥':'📤')+" New Transaction")
+    embed.description = "`"+payload.transactionId+"`"
+    embed.setColor(currency=='RBN'?'#cc2222':currency=='JDE'?'#33CcAa':currency=='SPH'?'#2255cc':'#eeeeaA')
+    embed.addField('Author',`<@${ID}>` , true)
+    embed.addField('Amount',transaction+amt , true)
+    embed.addField('Currency',currency , true)
+    embed.addField('Transaction Type',"`"+type+"`" , true)
+    embed.addField(transaction=="+"?'From':'To',`<@${to}>` , true)
+    embed.setTimestamp(now)
+    embed.setFooter(ID)
+    auditHook.send(embed)
+    if(type==='give') auditHook.send(" :arrow_up: :arrow_up: :arrow_up: :arrow_up:");
+
+/*
+    auditHook.send("```js\n"+JSON.stringify(payload,null,2)+"```\n"+`
+    ${ID} **${amt} ${currency}** >>\`${type}\`>> ${to}
+    `);*/
+    //await userDB.set(ID,{$push:{'audits':payload}});
+      await audits.new(payload);
+    
+    if(to=="271394014358405121") {
+      //await userDB.set("271394014358405121",{$push:{'audits':contrapayload}});
+      
+    } 
+    
+    return true;
+  },
+  
+ calculateDaily:function calculateDaily(Author,bot) {
+        let semibanned  = 1
+        let penalised   = 5
+
+let regular =   15 +1
+let plastic =   16+1
+let aluminium =  20 +1
+let iron =  25+1
+let carbon =  25+1
+let lithium =   30+1
+let iridium =   30+1
+let palladium =   40+1
+let zircon =  50+1
+let uranium =   80+1
+let astatine =  100+1
+
+ 
+
+
+
+
+        let emblem;
+
+
+           
+
+           
+           if(!Author.dDATA.donator) return {class:regular,emblem};
+           if(Author.dDATA.donator == "plastic") return {class:plastic,emblem:"plastic"};
+           if(Author.dDATA.donator == "aluminium") return {class:aluminium,emblem:"aluminium"};
+           if(Author.dDATA.donator == "iron") return {class:iron,emblem:"iron"};
+           if(Author.dDATA.donator == "carbon") return {class:carbon,emblem:"carbon"};
+           if(Author.dDATA.donator == "lithium") return {class:lithium,emblem:"lithium"};
+           if(Author.dDATA.donator == "iridium") return {class:iridium,emblem:"iridium"};
+           if(Author.dDATA.donator == "palladium") return {class:palladium,emblem:"palladium"};
+           if(Author.dDATA.donator == "zircon") return {class:zircon,emblem:"zircon"};
+           if(Author.dDATA.donator == "uranium") return {class:uranium,emblem:"uranium"};
+           if(Author.dDATA.donator == "astatine") return {class:astatine,emblem:"astatine"};
+            else return {class:regular,emblem};
+           
+
   },
 
   manageLimits: async function manageLimits(param,limit,TDATA,message){
     if(TDATA.limits && TDATA.limits[param] > limit){
+      if(param == "blackjack") return true;
       return message.channel.send('**'+TDATA.name+' is ratelimited, try again tomorrow**')
     }else{
       if(!TDATA.limits || !TDATA.limits[param]){
@@ -132,6 +359,7 @@ if (!hisroles.find(f=>f.name== "VERIFIED ✅")) return {class:regular,emblem};
         await userDB.set(TDATA.id,{$set:{['limits.'+param]:1}});
       }
         await userDB.set(TDATA.id,{$inc:{['limits.'+param]:1}});
+        return false;
     }
   } ,
 
@@ -201,7 +429,13 @@ gamechange : function gamechange(gamein = false) {
     },
 
   randomize: function randomize(min, max) {
-      return Math.floor(Math.random() * (max - min + 1) + min);
+    let RAND = generator.random();
+        RAND = generator.random();
+        if(!max){
+          max = min;
+          min = 0;
+        }
+      return Math.floor(RAND * (max - min + 1) + min);
   },
 
   emoji: function emoji(emo,technical) {
@@ -217,6 +451,7 @@ gamechange : function gamechange(gamein = false) {
 
   //Get IMG from Channel MSGs
   getImg: async function getImg(message,nopool) {
+    if((message.args[0]||"").startsWith("http")) return message.args[0]
     if (message.attachments.first()) return message.attachments.first().url;
     let sevmesgs = message.channel.messages;
 
@@ -240,11 +475,16 @@ gamechange : function gamechange(gamein = false) {
   //-------------------------------------------------------------[CANVAS FUNCTIONS]
   //Readfile >> Canvas
   getCanvas: async function getCanvas(path) {
-    let img = await new Canvas.Image;
+    let img = new Canvas.Image;
     img.src = await Pixly.createBuffer(path).then(buff => {
       return buff;
     });
     return img;
+  },
+    getBuffer: async function getBuffer(path) {
+    return Pixly.createBuffer(path).then(buff => {
+      return buff;
+    });
   },
 
   //> Canvas Text Block
@@ -274,7 +514,7 @@ gamechange : function gamechange(gamein = false) {
    },
 
   //> Canvas Text Tag
-   tag: async function tag(base, text, font, color) {
+   tag: function tag(base, text, font, color) {
 
             font = font || '14px Product,Sans'
             color = color || '#b4b4b4'
@@ -289,7 +529,7 @@ gamechange : function gamechange(gamein = false) {
                 //c.filter = 'best';
                 c.font = font;
                 c.fillStyle = color;
-                await c.fillText(text, 0, H);
+                c.fillText(text, 0, H);
             return {item:item,height:h+H,width:w};// <-- same as above
         },
   //-------------------------------------------------------------[CANVAS END]
@@ -306,9 +546,15 @@ gamechange : function gamechange(gamein = false) {
       });
     },
 
+ 
+    yield: function gear_yield(){
+      return new Promise(resolve => setImmediate(resolve) );
+    },
+
     miliarize: function miliarize(numstring,strict){
+      try{
         if (typeof numstring == "number"){
-            numstring = numstring.toString();
+            numstring = numstring.toString() || "0";
         };
         if(numstring.length < 4)return numstring;
         //-- -- -- -- --
@@ -345,6 +591,9 @@ gamechange : function gamechange(gamein = false) {
                 return stash[0]+"Bi";
              }
          return stashe;
+    }catch(err){
+      return "---"
+    }
     },
 
 
@@ -372,7 +621,7 @@ gamechange : function gamechange(gamein = false) {
       let E = args.event;
       let S = args.server;
 
-      serverDB.findOne({id:S.id}).then(DBDATA=>{
+      serverDB.findOne({id:S.id},{"modules.LOCALRANKx":0}).then(DBDATA=>{
           if(!DBDATA)return;
           if (DBDATA.logs[L][E]===false)return;
           delete require.cache[require.resolve("./modules/dev/log.js")];
@@ -382,7 +631,7 @@ gamechange : function gamechange(gamein = false) {
         console.log("===========LOG ERROR==============");
         console.log(S);
         console.log('----------');
-        console.log(e);
+        console.error(e);
         console.log("==================================");
         //serverDB.findOneAndUpdate({id:sv.id},{$set:{logs:def.logItems}}) <== fuck
         });
@@ -391,7 +640,7 @@ gamechange : function gamechange(gamein = false) {
   //==============[LEGACY (Pollux v3/v4 "RubyRuby/Meido" Cogs)]=============//
 
     sendLog_legacy: function sendLog_legacy(eve,logtype,sv,DB,extra,alt,arg,nise){
-      console.warn("Deprecation warning: This is a Legacy Function")
+      //console.warn("Deprecation warning: This is a Legacy Function")
       try{
         DB.findOne({id:sv.id}).then(DBDATA=>{
           if(!DBDATA)return;
@@ -403,7 +652,7 @@ gamechange : function gamechange(gamein = false) {
 
         console.log("=============ERROR================")
         console.log(sv)
-        console.log(e)
+        console.error(e)
         console.log("==================================")
 
         DB.findOneAndUpdate({id:sv.id},{$set:{logs:def.logItems}})
@@ -418,7 +667,7 @@ gamechange : function gamechange(gamein = false) {
 
     },
     checkGoods: function checkGoods(amount, invoker) {
-      console.warn("Deprecation warning: This is a Legacy Function")
+      //console.warn("Deprecation warning: This is a Legacy Function")
       try{
 
         if (invoker.dDATA.modules.rubines >= amount) {
@@ -427,24 +676,30 @@ gamechange : function gamechange(gamein = false) {
             return false;
         }
       }catch(e){
-        console.log("problem with dDATA on invoker")
-         userDB.findOne({id:invoker.id}).then(DDTA=>{
+        console.log("problem with dDATA on invoker",e)
+         userDB.findOne({id:invoker.id}).lean().exec().then(DDTA=>{
            if(DDTA.modules.rubines >= amount) return true;
             else return false
       });
       }
     },
-    hasPerms:   function hasPerms(Member) {
-        console.warn("Deprecation warning: This is a Legacy Function")
+    hasPerms:   function hasPerms(Member,SVDATA) {
+  
+      
+        //console.warn("Deprecation warning: This is a Legacy Function")
         if(Member.id =="88120564400553984" ) return true;
         let Server = Member.guild
-        let modPass;
-        if(Server.dDATA.modules.MODROLE){
-            modPass = Member.roles.has(Server.dDATA.modules.MODROLE);
+        let modPass = false;
+      
+        if(SVDATA.modules && SVDATA.modules.MODROLE){
+            modPass = Member.roles.has(SVDATA.modules.MODROLE);
         }
-        if (Server.owner.id === Member.id || Member.hasPermission("ADMINISTRATOR")) {
+
+        
+        if (Server.ownerID === Member.id || Member.hasPermission("ADMINISTRATOR")) {
             modPass = true;
         };
+
         if (Member.hasPermission("MANAGE_GUILD")) {
             modPass = true;
         };
@@ -472,22 +727,22 @@ gamechange : function gamechange(gamein = false) {
 
         serverDB.findOne({
           id: Server.id
-        }).then(SDATA=>{
+        },{"modules.LOCALRANKx":0}).then(SDATA=>{
           if (SDATA.modules.MODROLE) {
-            if (Server.member(tgt).roles.has(Server.dDATA.modules.MODROLE)) {
+            if (Server.member(tgt).roles.has(SDATA.modules.MODROLE)) {
               return 2;
             }
           }
         });
       } catch (e) {
-        console.log(e)
+        console.error(e)
       };
     },
 
 
   //===============[LEGACY (Pollux Zero/1.0 "Arturia/Falk" Cogs)]==============//
       getFlair: function getFlair(origin, target) {
-        console.warn("Deprecation warning: This is a Legacy Function");
+        //console.warn("Deprecation warning: This is a Legacy Function");
         try {
 
             let modRole = origin.guild.roles.find("name", "MOD");
@@ -507,7 +762,7 @@ gamechange : function gamechange(gamein = false) {
             }
         } catch (err) {
 
-            if (target.id == origin.guild.owner.id) return "ADM";
+            if (target.id == origin.guild.ownerID) return "ADM";
             if (origin.guild.member(target).hasPermission("ADMINISTRATOR")) return "ADM";
             if (origin.guild.member(target).hasPermission("MANAGE_GUILD")) return "MOD";
             if (origin.guild.member(target).hasPermission("KICK_MEMBERS")) return "MOD";
@@ -516,7 +771,7 @@ gamechange : function gamechange(gamein = false) {
         }
     },
       glassify: function glassify(img, call, msg = false) {
-          console.warn("Deprecation warning: This is a Legacy Function");
+          //console.warn("Deprecation warning: This is a Legacy Function");
             Jimp.read(img).then(function (user) {
 
                 Jimp.read(paths.BUILD + "glass.png").then(function (glass) {
@@ -537,7 +792,7 @@ gamechange : function gamechange(gamein = false) {
             });
         },
       shuffle:  function shuffle(array) {
-        console.warn("Deprecation warning: This is a Legacy Function")
+        //console.warn("Deprecation warning: This is a Legacy Function")
         var currentIndex = array.length,
             temporaryValue, randomIndex;
         while (0 !== currentIndex) {
@@ -554,4 +809,4 @@ gamechange : function gamechange(gamein = false) {
 }
 
 }
-console.log("Gearbox OK!")
+

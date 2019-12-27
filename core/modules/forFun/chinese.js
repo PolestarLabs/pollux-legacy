@@ -46,6 +46,7 @@ if (message.content.substr(message.prefix.length + cmd.length)<=2){
 };
 
 module.exports = {
+    pub: true,
     cmd: cmd,
     perms: 5,
     init: init,

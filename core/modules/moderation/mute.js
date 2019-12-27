@@ -1,22 +1,24 @@
 const gear = require("../../gearbox.js");
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
-const cmd = 'roleadd';
+const cmd = 'mute';
 
-const init = function (message, userDB, DB) {
+const init = async function (message, userDB, DB) {
     var Server = message.guild;
+  await  Server.members.fetch();
     var Channel = message.channel;
     var Author = message.author;
     if (Author.bot) return;
     var Member = Server.member(Author);
-    var Target = message.mentions.users.first() || Author;
+    var Target =await gear.getTarget(message);
     var MSG = message.content;
     var bot = message.botUser
     var args = MSG.split(/ +/).slice(1)
 
-
+return message.reply("Mute Has been disabled");
+  
     var LANG = message.lang;
 
   const P = {lngs:message.lang};
@@ -24,8 +26,10 @@ if(gear.autoHelper([mm("helpkey",P),'noargs',''],{cmd,message,opt:this.cat}))ret
   if(args.length<1)return gear.autoHelper('force',{cmd,message,opt:this.cat});
 
 
+  let ServerDATA = await gear.serverDB.findOne({id:Server.id},{"modules.LOCALRANKx":0});
+  
     try {
-        var modPass = gear.hasPerms(Member)
+        var modPass = await gear.hasPerms(Member,ServerDATA);
 
         if (!modPass) {
             return message.reply(mm('CMD.moderationNeeded', {
@@ -59,10 +63,10 @@ if(gear.autoHelper([mm("helpkey",P),'noargs',''],{cmd,message,opt:this.cat}))ret
             mult=60000;
             break;
         }
+        
+        args[2]=+number*mult/60000;
 
-        args[2]=number*mult/60000;
-
-        if (args[2] != undefined && !isNaN(args[2])) {
+        if (args[2] != undefined && !isNaN(args[2]) && Number(args[2]) != 0) {
 
             var time = Number(args[2])
             var timeTx = args[2] + " minutes."
@@ -94,34 +98,29 @@ if(gear.autoHelper([mm("helpkey",P),'noargs',''],{cmd,message,opt:this.cat}))ret
 
         // Create a new role with data
         var muteRole = Server.dDATA.modules.MUTEROLE;
-        if (muteRole == undefined && !Server.roles.exists("name", "POLLUX-MUTE")) {
-
-            Server.createRole({
+        if (!muteRole && !Server.roles.has(muteRole) && !Server.roles.find(x=>x.name=== "POLLUX-MUTE"||x.name.includes( "POLLUX-MUTE")))  {
+            Server.roles.create({
                     name: 'POLLUX-MUTE',
                     color: '000000',
-
                 })
-                .then(role => {
-                    console.log(`Created role ${role}`)
-
-
+                .then(async role => {
+                    message.channel.send(`No Mute Role Setup, Creating ${role}`)
+              
                     commitMute(role)
 
-                    Target.addRole(role)
-               makeitMute(Target,role,time)
-
+                    Target.roles.add(role)
+                    makeitMute(Target,role,time)
                     roleout(time, role)
                     logThis(time,timeTx)
+                    await gear.serverDB.set(Server.id,{$set:{'modules.MUTEROLE':role.id}});
                     return message.channel.send(`**${Target.displayName}** was MUTED for ${timeTx}`)
-
                 }).catch(console.error)
 
 
-
-        } else if (Server.roles.exists("name", "POLLUX-MUTE")) {
-            let role = Server.roles.find("name", "POLLUX-MUTE")
-            Target.addRole(role)
-           makeitMute(Target,role,time)
+        } else if (Server.roles.find(x=>x.name=== "POLLUX-MUTE"||x.name.includes( "POLLUX-MUTE"))) {
+            let role = Server.roles.find(x=>x.name=== "POLLUX-MUTE"||x.name.includes( "POLLUX-MUTE"))
+            Target.roles.add(role)
+            makeitMute(Target,role,time)
             commitMute(role)
             roleout(time, role)
             logThis(time,timeTx)
@@ -129,9 +128,8 @@ if(gear.autoHelper([mm("helpkey",P),'noargs',''],{cmd,message,opt:this.cat}))ret
 
         } else if (Server.roles.has(muteRole)) {
             commitMute(muteRole)
-            Target.addRole(Server.roles.get(muteRole))
-           makeitMute(Target,muteRole,time)
-
+            Target.roles.add(Server.roles.get(muteRole))
+            makeitMute(Target,muteRole,time)
             roleout(time, muteRole)
             logThis(time,timeTx)
             return message.channel.send(`**${Target.displayName}** was MUTED for ${timeTx}`)
@@ -142,9 +140,8 @@ if(gear.autoHelper([mm("helpkey",P),'noargs',''],{cmd,message,opt:this.cat}))ret
         function roleout(tm, role) {
             if (tm == undefined) return false;
             return setTimeout(f => {
-                Target.removeRole(role)
+                Target.roles.remove(role)
             }, tm*60000)
-
         }
 
 
@@ -163,14 +160,14 @@ if(gear.autoHelper([mm("helpkey",P),'noargs',''],{cmd,message,opt:this.cat}))ret
             if (Server.dDATA.splitLogs && modchan && Server.channels.has(modchan)) {
                 chanpoint = Server.channels.get(modchan)
             }
-          //console.log(chanpoint.name)
-
+          
+ 
             if (chanpoint) {
 
 
                 var id = Target.user.id
                 var mess = message
-                var emb = new gear.Discord.RichEmbed;
+                var emb = new gear.RichEmbed;
 
                 emb.setThumbnail(Target.user.avatarURL)
                 emb.setTitle(":mute: " + MUTED);
@@ -187,7 +184,7 @@ if(gear.autoHelper([mm("helpkey",P),'noargs',''],{cmd,message,opt:this.cat}))ret
                 chanpoint.send({embed:emb}).catch(e=> {let a = (new Error); gear.errLog(e,__filename,a.stack.toString())})
 
 
-                var RevokeEmb = new gear.Discord.RichEmbed;
+                var RevokeEmb = new gear.RichEmbed;
 
                 RevokeEmb.setThumbnail(Target.user.avatarURL)
                 RevokeEmb.setTitle(":mute: " + UNMUTE);
@@ -222,9 +219,15 @@ if(gear.autoHelper([mm("helpkey",P),'noargs',''],{cmd,message,opt:this.cat}))ret
 
 function commitMute(role) {
   Server.channels.forEach(chn => {
-    chn.overwritePermissions(role, {
-      'SEND_MESSAGES': false
-    }).catch()
+    chn.overwritePermissions({
+      permissionOverwrites:[
+        {
+          id:role,
+      deny:['SEND_MESSAGES','SPEAK']
+    }
+      ],
+       reason: 'MUTED BY '+message.author.tag
+    }).catch(e=>{})
   })
 }
 
@@ -232,7 +235,7 @@ function commitMute(role) {
 
 
     } catch (e) {
-       console.log(e)
+       console.error(e)
     }
 }
 
@@ -241,5 +244,5 @@ module.exports = {
     cmd: cmd,
     perms: 3,
     init: init,
-    cat: 'mod'
+    cat: 'mod', botperms: ["MANAGE_CHANNELS","MANAGE_ROLES"]
 };

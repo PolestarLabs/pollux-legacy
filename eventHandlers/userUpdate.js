@@ -1,30 +1,26 @@
-const gear = require('../core/gearbox.js'),
-  DB = gear.serverDB,
-  channelDB = gear.channelDB,
-  userDB = gear.userDB,
-  async = require('async');
+
 
 module.exports = {
   run: async function run(bot, oldUser, newUser) {
 
+const {serverDB,channelDB,userDB} = require('../core/gearbox.js'),
+  async = require('async');
+
     bot.guilds.forEach(async Server => {
       if (Server.members.has(newUser.id)) {
 
-        Server.dDATA = await gear.serverDB.findOne({
+        SDATA = await serverDB.findOne({
           id: Server.id
-        });
+        },{"modules.LOCALRANKx":0}).lean().exec();
 
+        if (SDATA) {
+          if (SDATA.logging == true) {
 
-        if (Server.dDATA) {
-
-          if (Server.dDATA.logging == true) {
-
-            delete require.cache[require.resolve('../core/modules/dev/logs_infra.js')]
             let log = require('../core/modules/dev/logs_infra.js')
 
 
-            const av_A = oldUser.avatarURL;
-            const av_B = newUser.avatarURL;
+            const av_A = oldUser.displayAvatarURL({format:'png'});
+            const av_B = newUser.displayAvatarURL({format:'png'});
             if (av_A != av_B) {
 
               log.init({
@@ -36,11 +32,15 @@ module.exports = {
                 logtype: "usrPhoto",
                 av_A,
                 av_B
-              })
+              });
+              Server = null;
+      
             }
           }
         }
       }
+              Server=null;
+             
     })
   }
 }

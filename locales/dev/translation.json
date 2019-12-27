@@ -260,7 +260,7 @@
         "craft": "Create items you can use to do awesome stuff with!",
         "marriage": "Officialise your love, or just show off as acouple with someone else. On this very capitalist wedding system!",
         "lewd": "Get the best hand-picked lewd pictures carefully selected by our best Lewd Curators at Pollux's place!",
-        "divorce": "Put an end to yout unhappy marriage"
+        "divorce": "Put an end to your unhappy marriage"
     },
     "menu": {
         "cake": "Cake",
@@ -781,7 +781,7 @@
         "egghuntfail": "*But couldn't find a single thing*",
         "egghuntsuccess": "Great! There's an egg here! Let's see...",
         "egghuntsuccess2": "{{rarity_emoji}} {{user}} found a **{{rarity}} Egg**!",
-        "egghuntsuccess3": "You have a total of **{{X}}** eggs with you.\n**{{Y}}** of them are unique.\n\nMore info at: [Pollux Easter Event 2018](https://pollux.fun/events/easter2018)",
+        "egghuntsuccess3": "You have a total of **{{X}}** eggs with you.\n**{{Y}}** of them are unique.\n\nMore info at: [Pollux Easter Event 2019](https://pollux.fun/events/easter19)",
         "delaytrade": "Hold on! You can trade eggs again in {{remaining}}",
         "wanttrade": "{{user}} wants to trade **{{tradingEgg}}** with you.",
         "wanttrade2": "*To accept it, type `accept` followed by the ID of the Egg you're sending back.*\n\nE.g. `accept C1` to give a [**C1**] Egg in exchange for this [**{{eggcode}}**] Egg",

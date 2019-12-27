@@ -1,7 +1,7 @@
 const gear = require("../../gearbox.js");
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'modrole';
 
@@ -23,7 +23,9 @@ const P = {lngs:message.lang};
 if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:this.cat}))return;
 if(gear.autoHelper(['noargs'],{cmd,message,opt:this.cat})) return message.reply(mm('CMD.noRolesGiven',{lngs:LANG,role:args}));
 //------------
-const modPass = gear.hasPerms(Member,DB);
+
+SDATA = await gear.serverDB.findOne({id:message.guild.id});
+const modPass = gear.hasPerms(Member,SDATA);
 if (!modPass)return message.reply(mm('CMD.moderationNeeded',P)).catch(e=>console.warn);
 
 const rolenotfound = mm('CMD.nosuchrole', P);
@@ -43,7 +45,7 @@ a = message.mentions.roles.first()
 if(!a){
 return message.reply(rolenotfound)
 }
-message.delete(8000).catch();
+message.delete({timeout:8000}).catch();
 
 
 await gear.serverDB.set(Server.id,{$set:{'modules.MODROLE':a.id}});

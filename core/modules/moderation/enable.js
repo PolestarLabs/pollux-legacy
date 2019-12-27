@@ -1,7 +1,7 @@
 const gear = require("../../gearbox.js");
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'enable';
 
@@ -42,13 +42,19 @@ const init = async function (message) {
     message.reply(mm('CMD.chooseAmod', P));
     return;
   }
-  if (!gear.hasPerms(Member)) {
+ 
+  SDATA = await gear.serverDB.findOne({id:message.guild.id});
+  if (!gear.hasPerms(Member,SDATA)) {
     return message.reply(mm('CMD.moderationNeeded', P)).catch(console.error);
   }
 
   function pp(o, p) {
     return o[p];
   }
+
+
+  if(args[0] == 'enable' ||args[0] == 'disable') return;
+
 
   const module = args[0].toUpperCase()
   let scope;
@@ -96,9 +102,11 @@ const init = async function (message) {
 
   if (sc == 'S') {
     let mod;
-    Server.channels.forEach(e => {
+    Server.channels.forEach(async e => {
       try {
-        if (module in Channel.dDATA.modules) {
+        
+        CDATA = await gear.serverDB.findOne({id:e.id});
+        if (module in CDATA.modules) {
           mod = true
           gear.channelDB.set(e.id, {
             $set: {
@@ -114,12 +122,13 @@ const init = async function (message) {
           });
         }
       } catch (e) {
-        console.log(e)
+        console.error(e)
       }
     })
     mod ? message.reply(enaMS) : message.reply(enaCS);
   } else {
-    if (module in Channel.dDATA.modules) {
+    CDATA = await gear.channelDB.findOne({id:message.channel.id});
+    if (module in CDATA.modules) {
       gear.channelDB.set(message.channel.id, {
         $set: {
           [module]: true
@@ -133,16 +142,17 @@ const init = async function (message) {
   }
 
 
+  SDATA = await gear.serverDB.findOne({id:message.guild.id});
   function imComm(msg, scope) {
-    console.log('immcomm')
+
     try {
       let command = msg.content.substr(msg.prefix.length).split(/ +/)[1];
       // let commandFile = require(`./${command}.js`);
       if (scope == 'S') {
         Server.channels.forEach(e => {
 
-          if (!Server.dDATA.channels[e.id]) {
-            console.log("nochan:  " + e.name)
+          if (!SDATA.channels[e.id]) {
+
           }
         })
 
@@ -156,7 +166,7 @@ const init = async function (message) {
         message.reply(enaCC)
       }
     } catch (err) {
-      console.log((err.stack).red)
+      console.error((err.stack).red)
     }
   }
 

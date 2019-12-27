@@ -1,6 +1,6 @@
 const gear = require('../../gearbox.js');
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'consumable'
 
@@ -11,8 +11,6 @@ const init = async function(message,params){
 let inventory = message.author.dDATA.modules.inventory;
 let items = (await gear.items.find({id:{$in: inventory}})).filter(itm=>itm.type=='consumable');
 function iqnt(item){
-  console.log(item)
-  console.log(message.author.dDATA.modules.inventory)
   return message.author.dDATA.modules.inventory.filter(it=>it==item).length;
 
 }
@@ -50,7 +48,7 @@ ${gear.emoji('tradeable')} **Tradeable** : *This item can be traded with other u
 
 
   }catch(e){
-    console.log(e)
+    console.error(e)
   }
 }
 

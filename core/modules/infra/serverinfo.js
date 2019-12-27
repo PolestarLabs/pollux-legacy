@@ -1,7 +1,7 @@
 const gear = require("../../gearbox.js");
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'svinfo';
 
@@ -15,12 +15,12 @@ const init = async function (message,userDB,DB) {
   const LANG = message.lang;
 
   let G = Server;
-    G.dDATA=await gear.serverDB.findOne({id:G.id});
+    Gededaia=await gear.serverDB.findOne({id:G.id});
   if(args==='random'){
-    G.dDATA=await gear.serverDB.findOne({id:G.id});
+    Gededaia=await gear.serverDB.findOne({id:G.id});
   };
 
-  const emb =    new gear.Discord.RichEmbed();
+  const emb =    new gear.RichEmbed();
 
   const rubine  = gear.emoji("rubine")
   const On      = gear.emoji("yep")
@@ -29,10 +29,10 @@ const init = async function (message,userDB,DB) {
   const cog     = gear.emoji("cog")
 
   emb.setColor('#e83774')
-  emb.setAuthor(Server.name,Server.iconURL,'')
+  emb.setAuthor(Server.name,Server.iconURL({format:'png'}),'')
   emb.setFooter("Server created at")
   emb.setTimestamp(Server.createdAt)
-  emb.setThumbnail(Server.iconURL)
+  emb.setThumbnail(Server.iconURL({format:'png'}))
 
   const flagz={
      en:    ':flag_ca:',
@@ -55,23 +55,23 @@ const init = async function (message,userDB,DB) {
   const online = (Server.members.size)-OM
 
   let modrole;
-  if (G.dDATA.modules.MODROLE != undefined) {modrole = G.roles.get(G.dDATA.modules.MODROLE)||"NONE";}else{modrole = "NONE";}
+  if (Gededaia.modules.MODROLE != undefined) {modrole = G.roles.get(Gededaia.modules.MODROLE)||"NONE";}else{modrole = "NONE";}
 
-  const autoroles = (G.dDATA.modules.SELFROLES||[]).length
-  const lang = G.dDATA.modules.LANGUAGE
-  const greet = G.dDATA.modules.GREET
-  const bye = G.dDATA.modules.FWELL
-  let mods = G.dDATA.modules.DISABLED
+  const autoroles = (Gededaia.modules.SELFROLES||[]).length
+  const lang = Gededaia.modules.LANGUAGE
+  const greet = Gededaia.modules.GREET
+  const bye = Gededaia.modules.FWELL
+  let mods = Gededaia.modules.DISABLED
   mods = mods.splice(mods.indexOf("cog"),1);
 
   const c = et(message.channel.nsfw)
-  const a = et(G.dDATA.modules.LVUP)
-  const b = et(G.dDATA.modules.DROPS)
+  const a = et(Gededaia.modules.LVUP) 
+  const b = et(Gededaia.modules.DROPS)
 
   emb.addBlankField()
   emb.addField(" :tophat: Owner", Server.owner.user , true)
 
-  emb.addField(" :coffee: Main Channel",Server.defaultChannel||Server.channels.first(), true)
+  emb.addField(" :coffee: Main Channel",Server.channels.first(), true)
   emb.addField(" :scales: Moderation Role", modrole , true)
   emb.addField(" :busts_in_silhouette: Members",online +"/"+ Server.members.size, true)
   emb.addBlankField()
@@ -135,7 +135,7 @@ ${rubine}${b} Rubine Drops
   }
 
   function getflagLang() {
-    let R = G.dDATA.modules.LANGUAGE
+    let R = Gededaia.modules.LANGUAGE
     return flagz[R]
   };
 

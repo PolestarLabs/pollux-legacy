@@ -3,8 +3,8 @@ const Canvas = require("canvas");
 
 const gear = require("../../gearbox.js");
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'geiger';
 
@@ -68,14 +68,25 @@ const init = async function (message) {
     if(warn){
       await ctx.drawImage(warn_p, 0,0);
     }
-
+    
   ctx2.rotate(Math.PI / 180*(-60+pointer));
   ctx2.translate(-58, -58);
   await ctx2.drawImage(needle_p, 0, 0, 116,116);
 
   await ctx.drawImage(needle, 84, 77, 116,116);
 
+if(gear.randomize(1,10)==10){
+   message.channel.cancer-=10000
+}
+   
+    
+    
+   setTimeout(function(){
+     
+   message.channel.cancer=0;
+   },30000)
 
+    
   let tagA = await gear.tag(ctx, 888888, "34px 'digital-7'", "#59652d");
   let tagB = await gear.tag(ctx, num, "34px 'digital-7'", "#111114");
 
@@ -101,7 +112,7 @@ const init = async function (message) {
     await message.channel.send(mm('forFun.geiger',P));
 
 }catch(e){
-  console.log(e)
+  console.error(e)
 }
 }
 

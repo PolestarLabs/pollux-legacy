@@ -1,24 +1,24 @@
 const Canvas = require("canvas");
 const gear = require('../../gearbox.js')
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const init= async function run(msg,target,chan) {
 
   try{
-console.log('WILK SUBROUT IN')
-    const canvas = new Canvas.createCanvas(800, 600);
+
+     const canvas = new Canvas.createCanvas(800, 600);
     const ctx = canvas.getContext('2d');
 
      target = target||msg.author
   try{
      chan = chan|| msg.channel
   }catch(e){
-    return console.log(e);
+    return console.error(e);
   };
 
-  let avi = (target.avatarURL||target.defaultAvatarURL).replace('gif','png');
+  let avi = ( target.displayAvatarURL({format:'png'})).replace(/(gif|webp)/g,'png');
   let frame = await gear.getCanvas(paths.BUILD+"poly_greet.png");
   let phot =  await gear.getCanvas(avi);
 
@@ -27,17 +27,16 @@ console.log('WILK SUBROUT IN')
   if(target.dDATA){
   ctx.fillStyle= target.dDATA.modules.favcolor || "#ff74ef"
   }
-console.log('WILK SUBROUT PAST DORO')
-  ctx.fillRect(511,430,205,50);
+
+   ctx.fillRect(511,430,205,50);
   ctx.drawImage(frame,0,0)
   ctx.font = "900 30px Whitney, Sans"
-
   let name =  await gear.tag(ctx,target.tag,ctx.font,"#b2b2b2");
   let weid =  name.width > 185 ? 185 : name.width;
 
   ctx.drawImage(name.item,516,382,weid,name.height)
 
-  ctx.font = "900 38px Wurper Comics, Sans"
+  ctx.font = "900 38px 'Wurper Comics', Sans"
   ctx.fillStyle = "#272727";
 
   const P={lngs:msg.lang}
@@ -74,20 +73,20 @@ console.log('WILK SUBROUT PAST DORO')
                 ctx.drawImage(line3.item,535-(wid/2),180,wid,h)
                 //await ctx.fillText("Hey everyone! Say hello to our new friend", 0, 12);
 
-  console.log('WILK SUBROUT PAST PHRASES')
-
+  
+ 
   await chan.send({
                     files: [{
                         attachment: await canvas.toBuffer(),
                         name: "welcome.png"
                     }]
                 })
-  console.log('WILK SUBROUT PAST SEND')
-  }catch(e){console.log(e)}
+  
+   }catch(e){console.error(e)}
   };
 
   module.exports = {
-     pub:true,
+     pub:false,
      cmd: "greet image",
      perms: 3,
      init: init,

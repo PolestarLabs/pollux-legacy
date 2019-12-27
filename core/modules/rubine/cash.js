@@ -1,19 +1,19 @@
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 const gear = require("../../gearbox.js")
 const cmd = 'cash';
 
-const init = function (message,userDB,DB) {
+const init = async function (message,userDB,DB) {
     const Author = message.author;
-    const Target = message.target;
     const MTarget = message.mentions.members.first() || message.member;
+    const Target = gear.getTarget(message) || MTarget;
     const MSG = message.content;
     const LANG = message.lang;
     const P={lngs:LANG}
 
-
+TGDATA = await gear.userDB.findOne({id:MTarget.id}).lean().exec()
   if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:this.cat}))return;
-gear.userDB.set(Target.id,{$set:{'modules.rubines':Math.round(Target.dDATA.modules.rubines)}})
+gear.userDB.set(Target.id,{$set:{'modules.rubines':Math.round(TGDATA.modules.rubines)}})
 
     const vocab = {
         c1: mm("$.cash10", P),
@@ -27,13 +27,13 @@ gear.userDB.set(Target.id,{$set:{'modules.rubines':Math.round(Target.dDATA.modul
         youHave: whoHas('you'),
     }
 function whoHas(who){
-  return gear.emoji("rubine")+`**${MTarget.displayName}**`+mm("$."+who+"Amount", {
+  return gear.emoji("rubine")+`**${MTarget.displayName}** `+mm("$."+who+"Amount", {
             lngs: LANG,
-            goods: "**"+gear.miliarize(Target.dDATA.modules.rubines,"strict")+"**"
+            goods: "**"+gear.miliarize(TGDATA.modules.rubines,"strict")+"**"
         })
 };
     if (message.mentions.users.size === 0) {
-        let r = Target.dDATA.modules.rubines
+        let r = TGDATA.modules.rubines
         let fam = ''
         switch (true) {
             case (r < 500):

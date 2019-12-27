@@ -1,3 +1,4 @@
+'use strict';
 const gear=require('./gearbox.js');
 const multilang = require('../utils/multilang_b');
 const DB = gear.serverDB;
@@ -5,21 +6,28 @@ const userDB = gear.userDB;
 const channelDB = gear.channelDB;
 const deployer = require('./preprocessor.js')
 
-exports.run = async function commandFire(message, payload) {
+exports.run = async function commandFire(message, payload, databaseless) {
 
-//console.log("COMMAND--FIRE")
-
+try{
    let bot = message.botUser;
-   let Database_bot =await userDB.findOne({id:bot.user.id});
-   let servData = payload.servData;
-   let userData = payload.userData;
-   let chanData = payload.chanData;
-   let targData = payload.targData;
+   let Database_bot = userDB.findOne({id:bot.user.id}).lean().exec();
 
-    bot.dDATA = Database_bot;
 
-    let forbiddens = chanData.modules.DISABLED;
+   
+    if(!databaseless){
+      bot.dDATA = await Database_bot;
+    }
 
+    if(!message.channel.DISABLED) message.channel.DISABLED = (await gear.channelDB.findOne({id:message.channel.id})).modules.DISABLED;
+    if(!message.guild.DISABLED)   message.guild.DISABLED = (await gear.serverDB.findOne({id:message.guild.id})).modules.DISABLED;
+
+    setImmediate(async ()=>{
+        message.channel.DISABLED = (await gear.channelDB.findOne({id:message.channel.id})).modules.DISABLED;
+        message.guild.DISABLED = (await gear.serverDB.findOne({id:message.guild.id})).modules.DISABLED;
+    });
+
+
+    let forbiddens =  message.channel.DISABLED//.concat(message.guild.DISABLED)
 
     let DTMN = deployer.determine(message)
     let MDLE = deployer.checkModule(DTMN);
@@ -27,25 +35,28 @@ exports.run = async function commandFire(message, payload) {
     if (!DTMN) return;
     if (DTMN.reaction) {
         if (forbiddens.includes(MDLE)) return;
-        if (deployer.checkUse(DTMN, {chanData,servData}, message)!==true) return;
+        if (deployer.checkUse(DTMN, forbiddens, message)!==true) return;
         return message.channel.send({files: [DTMN.reaction]});
     };
     if(forbiddens){
       if (forbiddens.includes(MDLE)) {
+        message.react(":nope:339398829088571402")
         return message.reply("forbidden")
       }
     };
     let mm = multilang.getT();
-  //console.log(deployer.checkUse(DTMN, {chanData,servData}, message))
-    switch (deployer.checkUse(DTMN, {chanData,servData}, message)) {
+  
+    switch (deployer.checkUse(DTMN, forbiddens, message)) {
         case "NONSFW":
+        message.react(":nope:339398829088571402")
         message.reply(mm('CMD.not-a-NSFW-channel', {
                 lngs: message.lang
             }))
 
             break;
         case "DISABLED":
-            if(servData.disaReply){
+            message.react(":nope:339398829088571402").catch(e=>null);
+            if(message.guild.disaReply){
               message.reply(mm('CMD.disabledModule', {
                   lngs: message.lang,
                   module: message.content.substr(message.prefix.length).split(' ')[0]
@@ -55,18 +66,19 @@ exports.run = async function commandFire(message, payload) {
         case "NO ELEVATION":
             message.reply(mm('CMD.insuperms', {
                 lngs: message.lang,
-                prefix: message.prefix
+                prefix: message.prefixox
             }))
             break;
         default:
-            let final_payload={
-              Database_bot,
-              servData,
-              userData,
-              chanData,
-              targData
-            };
-            deployer.run(DTMN.path, message,final_payload); //aqui nóis vai!
+            setImmediate(()=>{
+              deployer.run(DTMN.path, message,databaseless); //aqui nóis vai!
+
+              
+            });
             break;
     }
+  }catch(e){
+    console.error(e)
+  }
+
 }

@@ -1,6 +1,6 @@
 const gear = require('../../gearbox.js');
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'key'
 
@@ -8,12 +8,11 @@ const init = async function(message,params){
   try{
 
 
-let inventory = message.author.dDATA.modules.inventory;
+let inventory =(await gear.userDB.findOne({id:message.author.id},{"modules.inventory":1}).lean().exec()).modules.inventory;
 let items = (await gear.items.find({id:{$in: inventory}})).filter(itm=>itm.type=='key');
-function iqnt(item){
-  console.log(item)
-  console.log(message.author.dDATA.modules.inventory)
-  return message.author.dDATA.modules.inventory.filter(it=>it==item).length;
+async function iqnt(item){
+
+  return (await gear.userDB.findOne({id:message.author.id},{"modules.inventory":1}) ).modules.inventory.filter(it=>it==item).length;
 
 }
 
@@ -28,15 +27,22 @@ function iqnt(item){
   let breaker = items[i].destroyable? gear.emoji('breakable'): ''
   let trader = items[i].tradeable? gear.emoji('tradeable'): ''
 
-    let itmquant = iqnt(items[i].id);
+    let itmquant = await iqnt(items[i].id);
    embed.addField(items[i].emoji+" "+items[i].name+" **`x"+itmquant+"`**",buyer+breaker+trader+gear.emoji(items[i].rarity))
   }
-
+if (items.length>0) embed.setThumbnail("https://pollux.fun/build/invent/key_on.png");
+else {
+ let demotivational = gear.demotiv
+    let rand = gear.randomize(1,demotivational.length)
+    
+  embed.setThumbnail("https://pollux.fun/build/invent/key_off.png");
+  embed.description += "\n\n*"+demotivational[rand-1]+"*"
+}
  message.channel.send(embed)
 
 
   }catch(e){
-    console.log(e)
+    console.error(e)
   }
 }
 

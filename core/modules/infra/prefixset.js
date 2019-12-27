@@ -1,8 +1,8 @@
 const fs = require("fs");
 const gear = require("../../gearbox.js");
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'prefixSet';
 
@@ -24,17 +24,19 @@ const args = message.content.split(/ +/).slice(1)[0]
 }
 //------------
 
-    const modPass = await gear.hasPerms(message.member,gear.serverDB);
+    const modPass = await gear.hasPerms(message.member,(await gear.serverDB.findOne({id:message.guild.id})));
     if (!modPass)return message.reply(mm('CMD.moderationNeeded',P)).catch(e=>console.warn);
 
     gear.serverDB.set(Server.id, {$set:{'modules.PREFIX':args}});
-
+    //await setPrefList();
     message.reply(mm('CMD.prefixChng', P));
 }
 
  module.exports = {
     cmd: cmd,
-    perms: 2,
+    perms: 3, 
     init: init,
-    cat: 'mod'
+    public: true,
+    cat: 'infra'
+   
 };

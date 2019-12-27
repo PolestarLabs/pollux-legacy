@@ -2,8 +2,8 @@ const arraySort = require('array-sort')
 const fs = require("fs");
 const gear = require('../../gearbox.js')
 
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'rank';
 
@@ -17,14 +17,14 @@ const LANG = message.lang;
 
 //-------MAGIC----------------
 
- emb =    new gear.Discord.RichEmbed();
+ emb =    new gear.RichEmbed();
     emb.title = "Server Leaderboards"
     emb.description = "Servers sort by Member Count: No Servers with bot count > 15%"
 
  //emb.setThumbnail("https://raw.githubusercontent.com/LucasFlicky/polluxbot/master/avis/6.png")
      if (args === "sv"|| args =="server"||args=="guild"||args=="s") {
                     emb.title = "Server Leaderboards"
- //emb.setThumbnail(Server.iconURL)
+ //emb.setThumbnail(Server.iconURL({format:'png'}))
      }
      var rankItem = []
         var ranked = []
@@ -53,7 +53,7 @@ if(psent >= 15) return;
             reverse: true
         })
     emb.setColor('#da5bae')
-    emb.setAuthor('Pollux',bot.user.avatarURL,'http://pollux.fun')
+    emb.setAuthor('Pollux',bot.user.displayAvatarURL(),'http://pollux.fun')
 
  emb.setFooter("Mean Server Size: "+(aiter/ iter ).toFixed(2)+" || Nonbots: "+(baiter/ iter ).toFixed(2))
 
@@ -63,11 +63,9 @@ var medals = [':first_place: 1st',
 ':medal: 4th',
 ':medal: 5th'
 ]
-console.log("WALRUS")
+
 for (i=0;i<ranked.length;i++){
     if (i < 5){
-         console.log(ranked[i])
-         console.log(medals[i])
       emb.addField(medals[i],"```"+ranked[i].name+"``` \n  ID - "+ranked[i].id, false)
       emb.addField('Region :'+ranked[i].level,'**'+ranked[i].exp + '** Members', true)
        var parsent =  (ranked[i].bots / ranked[i].exp)*100

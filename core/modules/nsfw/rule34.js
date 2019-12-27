@@ -1,8 +1,8 @@
 const gear = require("../../gearbox.js");
 const getter = require("booru-getter");
 const eko = require("../../archetypes/ekonomist.js")
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'rule34';
 
@@ -82,7 +82,7 @@ const init = async function (message, userDB, DB) {
       //message.channel.send()
       //message.reply("http:" + url);
       var msg_ax = "**Query:** " +query + "\nby " + Author //
-      var emb = new gear.Discord.RichEmbed();
+      var emb = new gear.RichEmbed();
       emb.setColor('#b41212')
       emb.setTitle(':underage: RULE 34')
                emb.setDescription("**Query:** "+query.replace(/_/g," ").replace(/\+/g," | ")+"\nAsked by "+Author)

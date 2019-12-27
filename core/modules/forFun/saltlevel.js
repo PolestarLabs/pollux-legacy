@@ -1,12 +1,12 @@
 const gear = require("../../gearbox.js");
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'saltlevel';
 
-const init = function (message, userDB, DB) {
-  let Target = message.mentions.users.first()||message.author
+const init = async function (message, userDB, DB) {
+  let Target = await gear.getTarget(message);
 let MSG=message.content
     var args = MSG.split(/ +/).slice(1)
     var LANG = message.lang;
@@ -50,7 +50,7 @@ let MSG=message.content
 }
 
 module.exports = {
-    pub: false,
+    pub: true,
     cmd: cmd,
     perms: 3,
     init: init,

@@ -1,14 +1,14 @@
 const gear = require("../../gearbox.js");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 const cmd = 'prune';
 
-const init = function (message, userDB, DB) {
+const init = async function (message, userDB, DB) {
 
 
   const Channel = message.channel;
   const Author = message.author;
-  const Target = message.mentions.users.first();
+  const Target = await gear.getTarget(message);
   const MSG = message.content;
   const bot = message.botUser
   const args = MSG.split(/ +/).slice(1)[0]
@@ -50,7 +50,8 @@ const init = function (message, userDB, DB) {
   }
 
 
-  const modPass = gear.hasPerms(message.member, DB)
+  SDATA = await gear.serverDB.findOne({id:message.guild.id});
+  const modPass = gear.hasPerms(message.member, SDATA)
 
   if (!modPass) {
     return message.reply(mm('CMD.moderationNeeded', P)).catch(console.error);
@@ -60,19 +61,20 @@ const init = function (message, userDB, DB) {
     id: targ
   } || Author).id
 
-  console.log(TargetId)
+
 
 
     const user = message.mentions.users.first();
     const amount = parseInt(args);
     if (!amount) return message.reply(gear.emoji('nope')+' How many to delete?');
     if (!amount && !TargetId) return message.reply(gear.emoji('nope')+' I need someone and how many messages to delete!');
-    message.channel.fetchMessages({ before: message.id ,limit: amount }).then((messages) => {
+    message.channel.messages.fetch({ before: message.id ,limit: amount }).then((messages) => {
       if (TargetId) {
         const filterBy = TargetId ? TargetId : bot.user.id;
         messages = messages.filter(m => m.author.id === filterBy).array().slice(0, amount);
       }
-      message.channel.bulkDelete(messages).then(m=>message.delete()).catch(error => console.log(error.stack));
+      message.channel.bulkDelete(messages,true).then(m=>message.delete()).catch(error =>'die silently' );
+      
     });
 
 

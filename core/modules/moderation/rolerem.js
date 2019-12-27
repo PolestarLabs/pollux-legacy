@@ -1,7 +1,7 @@
 const gear = require("../../gearbox.js");
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'rolerem';
 
@@ -9,7 +9,7 @@ const init = function (message) {
         const Server = message.guild;
         const Channel = message.channel;
         const Member = message.member;
-        const Target = message.mentions.members.first() || Member;
+       const Target = Server.member(await gear.getTarget(message));
         const MSG = message.content;
         const bot = message.botUser;
         const args = MSG.split(/ +/).slice(1)
@@ -60,8 +60,8 @@ if(args.length<2||args[1].includes("<"))return gear.autoHelper('force',{cmd,mess
                 });
                // message.reply(role)
                 if (a == undefined) return message.reply(superRoleNope);
-                memb.removeRole(a).then(a => message.channel.send(rolerem_confirm)).then(e => {
-                  e.delete(120000);
+                memb.roles.remove(a).then(a => message.channel.send(rolerem_confirm)).then(e => {
+                  e.delete({timeout:120000});
                   message.delete().catch();
                 }).catch(e => message.channel.send(noPermsMe))
             }
@@ -73,5 +73,5 @@ if(args.length<2||args[1].includes("<"))return gear.autoHelper('force',{cmd,mess
           cmd: cmd,
           perms: 3,
           init: init,
-          cat: 'mod'
+          cat: 'mod', botperms: ["MANAGE_ROLES"]
         };

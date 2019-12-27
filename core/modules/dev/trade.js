@@ -1,29 +1,41 @@
 const fs = require("fs");
 const gear = require('../../gearbox.js')
+const {userDB} = require('../../gearbox.js')
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'trade';
 
-const init = async function (message, userDB, DB) {
+const init = async function (message) {
 
 
+    
+  if([ "wardrobe" ,"costume"].includes(message.args[0])){
+    let nmsg = message
+    nmsg.content=nmsg.content.replace("costume","trade")
+    nmsg.content=nmsg.content.replace("wardrobe","trade")
+    nmsg.args[0] = "trade"
+    return require("../!event/wardrobe.js").init(nmsg)
+  }
+  
+  
+  
+  
     banlist=['345030635917934592']
 if(message.author.looting)return;
 if(banlist.includes(message.author.id))return;
 
 
-  if(message.author.trading)return;
+  if(message.author.trading) {
+    setTimeout(()=>message.author.trading=false,50000);
+    return message.reply("Trade Cooldown ongoing (50s)");
+  } 
     message.author.trading=true;
-  setTimeout(()=>message.author.trading=false,20000)
+  
 
-const ITBASE = JSON.parse(fs.readFileSync("./resources/lists/items.json","utf8"))
-let ITEMS = []
+const ITEMS = await gear.items.find({type:'box'});
 
-for (i in ITBASE){
-  ITEMS.push(ITBASE[i])
-}
      const yep =  gear.emoji("yep")
      const nop =  gear.emoji("nope")
      const Channel = message.channel;
@@ -36,31 +48,30 @@ for (i in ITBASE){
     let meny;
 
     const args = MSG.split(/ +/).slice(1)
-    const inventory = Author.dDATA.modules.inventory
+    const inventory = (await gear.userDB.findOne({id:Author.id},{"modules.inventory":1}).lean().exec()).modules.inventory;
 
     if (args.length== 2){
-       console.log(2)
+
       if (typeof args[0] == 'string'){
-        console.log("0 string")
+
         let itAmt = ITEMS.filter(itm=>inventory.includes(itm.id) && itm.type==args[0])
         if (itAmt.length == 0) return message.reply(gear.emoji("nope"));
         if (itAmt.length == 1) {
-           let inv_names = itAmt.map(i=>i.name);
            let invids = itAmt.map(i=>i.id);
-           hover(invids,true);
+           sendBox(invids,true);
         };
         if (itAmt.length >= 2) {
-           let inv_names = itAmt.map(i=>i.name)
            let invids = itAmt.map(i=>i.id)
            let opts =""
-           for (i=0;i<inv_names.length;i++){
-              opts+=`
-[${i}] :: ${inv_names[i]}`
+           for (i=0;i<itAmt.length;i++){
+
+             opts+=`
+${( itAmt[i].tradeable===true?">-":"> ")}[${i}][${itAmt[i].name}]`
            }
-            meny = await message.reply("```ml\n"+opts+"```").then(m=>hover(invids,false))
+            meny = await message.reply("```md\n"+opts+"```").then(m=>sendBox(invids,false,m))
         }
       }
-    }
+    };
 
     if (args.length== 3){
       if (typeof args[0] == 'number' && typeof args[1] == 'string'){
@@ -72,7 +83,7 @@ for (i in ITBASE){
       } // 1 item for X (SELL)
 
       //if (typeof args[0] == 'string' && typeof args[1] == 'string') // items for items?
-    }
+    };
 
     /*
     1 - (QTD)
@@ -87,7 +98,8 @@ for (i in ITBASE){
     <  accept
     */
 
-  async function hover(tradeit,direct){
+  async function sendBox(tradeit,direct,me){
+    
     let index,item,resp;
     if (!direct) {
        resp = await Channel.awaitMessages(mms =>
@@ -95,11 +107,12 @@ for (i in ITBASE){
         (!isNaN(Number(mms.content)) &&
         Number(mms.content) < tradeit.length &&
         Number(mms.content) >= 0||mms.content.toLowerCase().includes('trade')), {
-          maxMatches: 1,
-          time: 20e3
+          max: 1,
+          time: 5000
         }
       )
-
+ me.delete({timeout:12500}).catch(e=>"die silent");
+ message.delete({timeout:2500}).catch(e=>"die silent");
       if (resp.size == 0) return;
 
 if (resp.first().content.toLowerCase().includes("trade")) return message.channel.send(gear.emoji("nope"));
@@ -109,7 +122,9 @@ if (resp.first().content.toLowerCase().includes("trade")) return message.channel
     }else{
       item = tradeit[0]
     }
-    let m1 = await message.reply(gear.emoji(ITBASE[item].emoji)+" **"+ITBASE[item].name+"**");
+    let selectedBox = ITEMS.find(x=>x.id==item);
+    if(!selectedBox.tradeable) return message.reply("This box cannot be traded!");
+    let m1 = await message.reply(gear.emoji(selectedBox.emoji)+" **"+selectedBox.name+"**");
     let m2 = await message.channel.send("`ok`"+yep+" || `c`"+nop);
 
     const resp2 = await Channel.awaitMessages(mms=>
@@ -118,8 +133,8 @@ if (resp.first().content.toLowerCase().includes("trade")) return message.channel
                             mms.content=="c" ||
                             mms.content.toLowerCase().includes('trade')
                             ),{
-                            maxMatches: 1,
-                            time: 15e3
+                            max: 1,
+                            time: 5e3
                           });
 
     if (resp2.size == 0) return message.reply("timeout");
@@ -128,8 +143,9 @@ if (response.toLowerCase().includes("trade")) return message.channel.send(gear.e
 
     if (response=="ok"){
       inventory.splice(inventory.indexOf(item),1)
-      userDB.set(Author.id,{$set:{'modules.inventory':inventory}});
-      userDB.set(Target.id,{$push:{'modules.inventory':item}});
+      await userDB.set(Author.id,{$set:{'modules.inventory':inventory}});
+      await gear.audit(Author.id,1,"trade["+item+"]",item,">",Target.id);
+      await userDB.set(Target.id,{$push:{'modules.inventory':item}});
 try{
 
       resp2.first().delete().catch(e=>"die silent")
@@ -141,8 +157,14 @@ try{
 }catch(e){
 
 }
-
-      message.reply(yep).then(m=>m.delete(6000));
+      let boxItem = gear.emoji(selectedBox.rarity)+selectedBox.altEmoji+"**"+selectedBox.name+"**";
+      let aftereport = mm('responses.trade.boxent',`${Author.tag} sent a ${boxItem} to <@${Target.id}>`,
+                      {
+        author: Author.tag,
+        lngs:message.lang,
+        box: boxItem
+                      });
+      message.channel.send(yep+aftereport).then(m=>m.delete({timeout:6000}));
 
     }else{
       message.reply(nop);
@@ -152,6 +174,7 @@ try{
       m1.delete().catch(e=>"die silent")
       m2.delete().catch(e=>"die silent")
       meny.delete().catch(e=>"die silent")
+     
     };
   }
 }

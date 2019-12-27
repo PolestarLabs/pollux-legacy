@@ -13,8 +13,6 @@ var init = function (message,userDB,DB) {
     //-------MAGIC----------------
 
 
-console.log('ok')
-
 
 //HELP TRIGGER
     let helpkey = mm("helpkey",{lngs:message.lang})
@@ -35,10 +33,10 @@ try{
           setTimeout(c=>{Channel.send("CU").then(m=>{setTimeout(c=>{Channel.send("DE").then(m=>{setTimeout(c=>{Channel.send("APITO").then(m=>{})},1200)})},1200)})},1200)
       }
 
-    }).catch(e=>console.log(e))
+    }).catch(e=>console.warn(e))
   })
 
-}catch(err){console.log(err)}
+}catch(err){}
 
 
 };

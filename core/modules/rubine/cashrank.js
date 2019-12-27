@@ -2,11 +2,11 @@ const arraySort = require('array-sort')
 const fs = require("fs");
 const gear = require('../../gearbox.js')
 const paths = require('../../paths.json')
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 const cmd = 'cashrank';
 
-const init = async function (message, userDB, DB) {
+const init = async function (message) {
 
   const Server  = message.guild;
   const Channel = message.channel;
@@ -22,7 +22,7 @@ const init = async function (message, userDB, DB) {
 
   let GOODMOJI = gear.emoji("rubine")
   let GOOD = 'Rubine'
-  let emb = new gear.Discord.RichEmbed();
+  let emb = new gear.RichEmbed();
 
   let ranked = []
 
@@ -30,10 +30,11 @@ const init = async function (message, userDB, DB) {
 
   let dbminiarray
       if (['server','sv','guild','local',Server.name].includes(args.toLowerCase())) {
-        message.channel.send('Server Rubines Rank is being refactored, results here may be inaccurate')
-      dbminiarray = await userDB.find().sort({'modules.rubines': -1,}).limit(100);
+        
+      let userArray = Server.members.map(x=>x.id);   
+      dbminiarray = await gear.userDB.find({id:{$in:userArray,$not:{$in:['271394014358405121','88120564400553984']}},blacklisted:{$exists:false}}).sort({'modules.rubines': -1,}).limit(10).lean().exec();
     }else{
-      dbminiarray = await userDB.find().sort({'modules.rubines': -1}).limit(11);
+      dbminiarray = await gear.userDB.find({id:{$not:{$in:['271394014358405121','88120564400553984']}},blacklisted:{$exists:false}}).sort({'modules.rubines': -1}).limit(10).lean().exec();
 
     };
 
@@ -42,7 +43,7 @@ const init = async function (message, userDB, DB) {
 
   dbminiarray.forEach(i => {
 
-    if (i.name !== 'Pollux' && i.name !== undefined && i.id!='363941008573988864'){
+    if (i.name !== 'Pollux' && i.name !== undefined && i.id!='200044537270370313'){
       let rankItem = {};
       rankItem.id = i.id;
       rankItem.name = i.name;
@@ -54,7 +55,7 @@ const init = async function (message, userDB, DB) {
   arraySort(ranked, 'rubines', {
     reverse: true
   })
-//  console.log(ranked)
+
   let ids=ranked.map(x=>x.id)
    if (['server','sv','guild','local',Server.name].includes(args.toLowerCase())) {
   emb.title = mm('website.svLead',P)
@@ -67,7 +68,7 @@ const init = async function (message, userDB, DB) {
      P.srr = mm('website.svLead',P)
   emb.setFooter(mm('forFun.usethisfor',P).replace('rank ','cashrank '));
     }
-  emb.setAuthor('Pollux ', bot.user.avatarURL, 'http://pollux.fun/leaderboards');
+  emb.setAuthor('Pollux ', bot.user.displayAvatarURL({format:'png'}), 'http://pollux.fun/leaderboards');
 
   var medals = [':first_place: 1st',
 ':second_place: 2nd',
@@ -81,12 +82,12 @@ const init = async function (message, userDB, DB) {
 , ':medal: 10th'
 ]
 
-console.log(ranked)
+
 for (i=0;i<10;i++){
   if(ranked[i]){
 
       emb.addField(medals[i], ranked[i].name, true)
-      emb.addField(GOOD + 's', ranked[i].rubines + "" + GOODMOJI, true)
+      emb.addField(GOOD + 's', gear.miliarize(ranked[i].rubines) + "" + GOODMOJI, true)
   }
 }
 

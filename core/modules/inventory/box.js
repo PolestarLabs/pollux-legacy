@@ -1,1 +1,1 @@
-exports.init=function(m){return require('../dev/lootbox.js').init(m)}
+module.exports=  require('../cosmetics/lootbox.js')

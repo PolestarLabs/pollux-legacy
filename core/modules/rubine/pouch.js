@@ -2,10 +2,8 @@ const fs = require("fs");
 const gear = require('../../gearbox.js')
 const paths = require("../../paths.json");
 const Canvas = require("canvas");
-const opentype = require("opentype.js");
-const drawText = require("node-canvas-text").default;
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 
 
@@ -17,7 +15,7 @@ const init= async function run(msg,userDB,DB) {
     const ctx = canvas.getContext('2d');
 
     let pouch = await gear.getCanvas(paths.BUILD+"pouch.png")
-    let avi = await gear.getCanvas(msg.author.avatarURL||msg.author.defaultAvatarURL)
+    let avi = await gear.getCanvas(msg.author.displayAvatarURL({format:'png'}))
                 ctx.font = "900 15px Whitney"
                 ctx.fillStyle = "#222";
 
@@ -44,5 +42,5 @@ const init= async function run(msg,userDB,DB) {
      cmd: "pouch",
      perms: 3,
      init: init,
-     cat: 'money'
+     cat: '$'
  };

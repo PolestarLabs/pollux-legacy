@@ -13,11 +13,13 @@ const init = async function run(msg, userDB, DB) {
 
             await gear.serverDB.set(Server.id, {$set:{'modules.putometro_last': now}});
 
-  let mx = Math.round((now-Server.dDATA.modules.putometro_last) / 1000 / 60 / 60 / 60 / 24 )||0;
+  let mx = Math.round((now-(await gear.serverDB.findOne({id:msg.guild.id})).modules.putometro_last) / 1000 / 60 / 60 / 60 / 24 )||0;
 await gear.serverDB.set(Server.id, {$set:{'modules.putometro_max': mx}});
 
 
-
+  
+  
+msg.channel.startTyping()
 
   const canvas = new Canvas.createCanvas(250, 250);
   const ctx = canvas.getContext('2d');
@@ -44,22 +46,27 @@ await gear.serverDB.set(Server.id, {$set:{'modules.putometro_max': mx}});
     msg.channel.send({
       files: [{
         attachment: xD,
-        name: "200%putaralhaço.gif"
+        name: "200percentputaralhasso.gif"
                     }]
-    }).then(m => {})
+    }).then(m => {
+      msg.channel.stopTyping()
+    })
   });
-
-  let Target = msg.mentions.users.first() || msg.author
-
+  
+  let intensity = msg.content.split(/ +/)[1];
+  let targo = msg.content.split(/ +/)[0];
+  let MAX_DISPLACE = intensity||15
+  msg2 = msg
+  msg2.content = targo
+  let Target = await gear.getTarget(msg2);
   let x = await gear.getCanvas(paths.BUILD + 'trigger.png');
-  let avit = Target.avatarURL || Target.defaultAvatarURL
-  avit= avit.replace('gif','png')
+  let avit = Target.displayAvatarURL({format:'png'})|| Target.displayAvatarURL;
+  avit= avit.replace(/(gif|webp)/g,'png');
   let y = await gear.getCanvas(avit);
-  for (let iter = 0; iter < 60; iter++) {
+  for (let iter = 0; iter < 15; iter++) {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    let d = gear.randomize(10, 80)
+    let d = gear.randomize(10, MAX_DISPLACE);
 
     ctx.save();
     let disp_X = gear.randomize(0, d);
@@ -72,7 +79,7 @@ await gear.serverDB.set(Server.id, {$set:{'modules.putometro_max': mx}});
     ctx.drawImage(x, (-d / 2) + disp_X, 0, 250, 250);
     ctx.globalAlpha = 1;
 
-    await gif.addFrame(ctx.getImageData(0, 0, 250, 250).data);
+     gif.addFrame(ctx.getImageData(0, 0, 250, 250).data);
   }
   gif.finish();
 
@@ -83,6 +90,7 @@ module.exports = {
   pub: true,
   cmd: "triggered",
   perms: 3,
+  botperms: ["ATTACH_FILES"],
   init: init,
   cat: 'forFun'
 };

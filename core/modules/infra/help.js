@@ -1,8 +1,8 @@
 const gear = require("../../gearbox.js");
 const fs = require("fs");
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'help';
 
@@ -16,7 +16,7 @@ const init = function (message, userDB, DB) {
 
 let helpkey = mm("helpkey", P)
 if (message.content.split(/ +/)[1] == helpkey || message.content.split(/ +/)[1] == "?" || message.content.split(/ +/)[1] == "help") {
-let embed = new gear.Discord.RichEmbed
+let embed = new gear.RichEmbed
 embed.setDescription(mm('usage.askingHelpForHelp',P))
 return message.channel.send({embed});
 };
@@ -28,12 +28,11 @@ ${mm('help.disableNuisance', P)}
 
 ${mm('help.invite', P )}: http://goo.gl/qkGqqU
 
-${mm('help.joinSupp', P)}: https://discord.gg/ay48h7Q
+${mm('help.joinSupp', P)}: https://discord.gg/rEBCccS
 `;
 
   message.author.send(txt3.replace(/\$\{message\.prefix\}/g, message.prefix)).catch(e => {'Fail Silently'})
 
-  console.log("HELP INVOKED")
 
   let helpol    = mm('help.polHelp',  P),
       heldesc   = mm('help.helpText', P),
@@ -43,10 +42,10 @@ ${mm('help.joinSupp', P)}: https://discord.gg/ay48h7Q
       useful    = mm('help.useful',   P);
 
   let commlink = "http://www.pollux.fun/commands";
-  let suplink = "https://discord.gg/ay48h7Q";
+  let suplink = "https://discord.gg/rEBCccS";
   let invitelink = "http://goo.gl/qkGqqU";
 
-  const embed = new gear.Discord.RichEmbed();
+  const embed = new gear.RichEmbed();
 
   embed.setTitle(helpol)
   embed.setColor("#eb4190")

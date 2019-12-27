@@ -1,3 +1,6 @@
+project_identifier: pollux
+api_key: 0a2af1cc5b8a8c8e5fd8802c77c888fe
+base_path: .
 files:
-  - source: /locales/dev/
-    translation: /locales/%two_letters_code%/%original_file_name%
+  - source: /locales/dev/*
+    translation: /locales/%locale%/%original_file_name%

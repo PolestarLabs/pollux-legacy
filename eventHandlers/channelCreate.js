@@ -1,16 +1,16 @@
+
+module.exports = {
+  run: async function run(bot,channel) {
 const gear = require('../core/gearbox.js'),
   DB = gear.serverDB,
   channelDB = gear.channelDB,
   userDB = gear.userDB,
   async = require('async');
-
-module.exports = {
-  run: async function run(bot,channel) {
     if (!channel.guild)return;
-    var Server = channel.guild
+    let Server = channel.guild
 
-    Server.dDATA = await gear.serverDB.findOne({id: Server.id});
-    gear.channelDB.new(channel)
+    Server.dDATA = await gear.serverDB.findOne({id: Server.id},{'modules.LOCALRANKx':0});
+    gear.channelDB.new(channel);
 
     if (Server.dDATA) {
       if (Server.dDATA.logging) {
@@ -23,7 +23,8 @@ module.exports = {
           server: Server,
           channel: channel,
           logtype: "newChan"
-        })
+        });
+        Server = null;
 
       }
     }

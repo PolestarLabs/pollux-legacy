@@ -3,7 +3,7 @@ const gear = require("../../gearbox.js");
 
 const init = function (message,userDB,DB) {
 
-let emb = new gear.Discord.RichEmbed
+let emb = new gear.RichEmbed
  gear.channelDB.findOne({id:message.channel.id}).then(chaninfo=>{
 
  function icona(x){
@@ -14,7 +14,7 @@ let emb = new gear.Discord.RichEmbed
   emb.addField("Level Up",icona(chaninfo.modules.LVUP),true)
   emb.addField("Drops",icona(chaninfo.modules.DROPS),true)
   emb.addField("Disabled Commands","```"+chaninfo.modules.DISABLED+"```")
-  emb.setFooter(message.guild.name,message.guild.iconURL)
+  emb.setFooter(message.guild.name,message.guild.iconURL({format:'png'}))
 
 message.channel.send({embed:emb})
 

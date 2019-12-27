@@ -1,7 +1,7 @@
 const cmd = 'invite';
 const gear = require("../../gearbox.js");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const init = function (message,userDB,DB) {
 

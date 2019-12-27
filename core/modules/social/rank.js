@@ -1,11 +1,12 @@
 const arraySort = require('array-sort')
 const fs = require("fs");
 const gear = require('../../gearbox.js')
+const {DB,userDB} = require('../../gearbox.js')
 const paths = require('../../paths.json')
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
-const cmd = 'cashrank';
-const init = async function (message, userDB, DB) {
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
+const cmd = 'rank';
+const init = async function (message) {
 
   const Server  = message.guild;
   const Channel = message.channel;
@@ -13,7 +14,7 @@ const init = async function (message, userDB, DB) {
   const MSG     = message.content;
   const bot     = message.botUser;
   const args    = MSG.split(/ +/).slice(1)[0]||"";
-  const LANG    = message.lang;
+  const LANG    = message.lang; 
 
     let P={lngs:LANG,prefix:message.prefix}
     if(gear.autoHelper([mm("helpkey",P)],{cmd,message,opt:this.cat}))return;
@@ -21,22 +22,18 @@ const init = async function (message, userDB, DB) {
 
   let GOODMOJI = gear.emoji("rubine")
   let GOOD = 'Rubine'
-  let emb = new gear.Discord.RichEmbed();
+  let emb = new gear.RichEmbed();
 
   let ranked = []
-
+  const ServerDATA = await gear.serverDB.findOne({id:Server.id},{'modules.LOCALRANKx':0});
   let dbminiarray
   Channel.startTyping();
       if (['server','sv','guild','local',Server.name].includes(args.toLowerCase())) {
-          dbminiarray = Object.keys(Server.dDATA.modules.LOCALRANK).map(ky=>{
-            let OBJ = Server.dDATA.modules.LOCALRANK[ky]
-            //Server.dDATA.modules.LOCALRANK[ky].id = ky
-            OBJ.id=ky
-            return OBJ
-          })
+          dbminiarray = await gear.localranks.find({server:Server.id}).sort({'exp': -1}).limit(10);
+        
       }else{
 
-          dbminiarray = await userDB.find({id:{$not:{$in:['271394014358405121','88120564400553984']}}}).sort({'modules.exp': -1}).limit(10);
+          dbminiarray = await userDB.find({id:{$not:{$in:['271394014358405121','88120564400553984']}},blacklisted:{$exists:false}}).sort({'modules.exp': -1}).limit(10).lean().exec();
       }
 
 
@@ -44,11 +41,12 @@ dbminiarray = dbminiarray.map(usr => {
   try{
 
   let a = {
-    id: usr.id,
-    name: bot.users.get(usr.id).tag,
+    id: usr.user||usr.id,
+    name: bot.users.get(usr.user||usr.id).username,
     exp: usr.exp||usr.modules.exp,
     level: usr.level||(usr.modules||{level:0}).level,
   };
+    
   return a;
   }catch(e){
 
@@ -62,20 +60,22 @@ dbminiarray = dbminiarray.map(usr => {
   if(i){
 
 
-    if (i.name !== 'Pollux' && i.name !== undefined){
+    //if (i.name !== 'Pollux' && i.name !== undefined){
       let rankItem = {};
       rankItem.id = i.id;
       rankItem.name = i.name;
       rankItem.exp = i.exp || 0;
       rankItem.level = i.level;
       ranked.push(rankItem);
-    }
+  //  }
   }
 
   });
   arraySort(ranked, 'exp', {
     reverse: true
   })
+  
+ 
 
   let ids=ranked.map(x=>x.id)
    if (['server','sv','guild','local',Server.name].includes(args.toLowerCase())) {
@@ -89,8 +89,8 @@ dbminiarray = dbminiarray.map(usr => {
      P.srr = mm('website.svLead',P)
   emb.setFooter(mm('forFun.usethisfor',P));
     }
-  emb.setAuthor('Pollux ', bot.user.avatarURL, 'http://pollux.fun/leaderboards');
-  emb.attachFile(paths.BUILD +"rank.png")
+  emb.setAuthor('Pollux ', bot.user.displayAvatarURL({format:'png'}), 'http://pollux.fun/leaderboards');
+  emb.attachFiles(paths.BUILD +"rank.png")
   emb.setThumbnail("attachment://rank.png")
 
   var medals = [':first_place: 1st',
@@ -126,4 +126,5 @@ if(ids.indexOf(Author.id)+1>5){
     }))
   });
 }
- module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: 'misc'};
+ module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: 'social'};
+

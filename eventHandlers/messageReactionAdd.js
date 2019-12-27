@@ -1,11 +1,12 @@
 const gear = require('../core/gearbox.js');
 exports.run=  async function run(bot, react,user) {
+  return;
   if (user.bot) return;
 
   let msg= react.message
   let S = msg.guild
 
-  let ddata = await gear.serverDB.findOne({id:msg.guild.id});
+  let ddata = await gear.serverDB.findOne({id:msg.guild.id},{"modules.LOCALRANKx":0}).lean().exec();
 
   if(!ddata.event          ||
      !ddata.event.enabled  ||
@@ -31,11 +32,11 @@ exports.run=  async function run(bot, react,user) {
   if(role){
      let M = S.member(user)
 
-    M.addRole(role)
+    M.roles.add(role)
     let embed=new gear.RichEmbed;
     embed.setColor(role.hexColor)
     embed.setDescription(gear.emoji('yep')+react.emoji+" Added role "+role+" to **"+user.tag+"**")
-    msg.channel.send({embed}).then(m=>m.delete(5000))
+    msg.channel.send({embed}).then(m=>m.delete({timeout:5000}))
 
   }else{
 

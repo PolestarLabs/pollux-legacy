@@ -29,7 +29,7 @@
     {"iso" : "BW", "country" : "Botswana"},
     {"iso" : "BV", "country" : "Bouvet Island"},
     {"iso" : "BR", "country" : "Brazil"},
-    {"iso" : "IO", "country" : "British Indian Ocean Territory"},
+   
     {"iso" : "BN", "country" : "Brunei Darussalam"},
     {"iso" : "BG", "country" : "Bulgaria"},
     {"iso" : "BF", "country" : "Burkina Faso"},
@@ -237,5 +237,6 @@
     {"iso" : "EH", "country" : "Western Sahara"},
     {"iso" : "YE", "country" : "Yemen"},
     {"iso" : "ZM", "country" : "Zambia"},
-    {"iso" : "ZW", "country" : "Zimbabwe"}
+    {"iso" : "ZW", "country" : "Zimbabwe"},
+   {"iso" : "IO", "country" : "British Indian Ocean Territory"}
 ]

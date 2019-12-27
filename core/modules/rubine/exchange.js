@@ -2,8 +2,8 @@ const Discoin = require("../../archetypes/discoin.js");
 const cfg = require("../../../config.json")
 const gear = require("../../gearbox.js")
 const fs = require("fs")
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 const eko = require("../../archetypes/ekonomist.js")
 
 const cmd = "exchange"
@@ -72,7 +72,7 @@ const init = async function (message, userDB, DB) {
       await eko.pay(Number(amt), message.author.id, {type: 'exchange'});
       await gear.audit(message.author.id,amt,"discoin_exchange","RBN");
 
-      let embed = new gear.Discord.RichEmbed
+      let embed = new gear.RichEmbed
       embed.setColor("#f43fa0")
       //embed.setThumbnail("https://image.freepik.com/free-vector/street-atm-teller-machine-with-current-operation_3446-141.jpg")
       embed.setDescription(v.desc.replace("%BOT%", coinInfo.bot))
@@ -82,7 +82,7 @@ const init = async function (message, userDB, DB) {
       embed.addField(outtake, `${coinInfo.icon} **${r.resultAmount}**`, true)
       embed.addField(v.remainder, `${r.limitNow} ${$}`, false)
       embed.addField(v.receiptCode, "```" + `${r.receipt}` + "```\n" + v.takedis, false)
-      embed.setFooter(message.author.tag, message.author.avatarURL || message.author.defaultAvatarURL)
+      embed.setFooter(message.author.tag, message.author.displayAvatarURL({format:'png'}))
       let ts = new Date
       embed.setTimestamp(ts)
       message.channel.send("processing...")

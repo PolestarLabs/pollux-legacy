@@ -7,20 +7,27 @@
     ,"site-flag":"GB"
   },{
     "code": ["es"],
-    "iso": "es",
+    "iso": "es-ES",
     "name": "español",
     "name-e": "spanish",
     "flag": ":flag_es:"
     ,"site-flag":"ES"
+  },{ 
+    "code": ["cr","cree"],
+    "iso": "cr",
+    "name": "CREE",
+    "name-e": "CREE",
+    "flag": ":cowboy:"
+    ,"site-flag":"CR"
   },{
     "code": ["cz","cs"],
-    "iso": "cz",
+    "iso": "cs",
     "name": "čeština",
     "name-e": "czech",
     "flag": ":flag_cz:"
     ,"site-flag":"CZ"
   },{
-    "code": ["pt","pt-br"],
+    "code": ["pt","pt-br","caralho"],
     "iso": "pt-BR",
     "name": "português brasileiro",
     "name-e": "Brazilian Portuguese",
@@ -119,5 +126,20 @@
     "name-e": "Japanese",
     "flag": ":flag_jp:"
     ,"site-flag":"JP"
+  },{
+    "code": ["tr","tur"],
+    "iso": "tr",
+    "name": "Türkçe",
+    "name-e": "Turkish",
+    "flag": ":flag_tr:"
+    ,"site-flag":"TR" 
+  
+  },{ 
+    "code": ["id","ind"],
+    "iso": "id",
+    "name": "Bahasa Indonesia",
+    "name-e": "indonesian",
+    "flag": ":flag_id:"
+    ,"site-flag":"ID"
   }
 ]

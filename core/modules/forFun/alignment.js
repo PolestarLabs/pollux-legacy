@@ -3,8 +3,8 @@ const gear = require('../../gearbox.js')
 const paths = require("../../paths.json");
 const Pixly = require("pixel-util");
 const Canvas = require("canvas");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 
 
@@ -53,7 +53,7 @@ try{
 
     let mainlist_filter = Date.now()
 
-    if (guys_main_list.size == 7) guys_main_list.set(bot.id, bot);
+    if (guys_main_list.size == 8) guys_main_list.set(bot.id, bot);
 
     let guys_side_list = msg.guild.members.filter(mem => {
 
@@ -83,7 +83,7 @@ try{
 
     let ARR = final_list.map(x => {
 
-      return [x.displayName, x.user.avatarURL]
+      return [x.displayName, x.user.displayAvatarURL({format:'png',size:128})]
     })
 
     let array_map = Date.now()
@@ -127,11 +127,13 @@ try{
 
 
       let pic = await gear.getCanvas(ARR[y + i][1]);
+
       let name = ARR[i][0]
       let d = 204 * y
       let xx = 180 * row
-      ctx.drawImage(pic, 38 + d, 71 + xx, 116, 116)
-      ovly.drawImage(tag.item, 12 + d + 80 - c, 200 + xx, wid, tag.height)
+      await ctx.drawImage(pic, 38 + d, 71 + xx, 116, 116);
+      await ovly.drawImage(tag.item, 12 + d + 80 - c, 200 + xx, wid, tag.height);
+
     }
 
 
@@ -167,8 +169,8 @@ try{
     })
   }catch(e){
     msg.channel.stopTyping()
-    console.log(e)
-    msg.channel.send("ERROR")
+    console.error(e)
+    msg.channel.send("ERROR: - Too few members or not enough activity")
 
   }
   }

@@ -1,4 +1,4 @@
-const cmd = 'tele';
+const cmd = 'alumi';
 const gear = require("../../gearbox.js");
 
 const init = function (message,userDB,DB) {
@@ -17,7 +17,7 @@ By pledging __$1 at Pollux's Patreon, or $5 on PayPal*__ you will receive the **
 `)
 }
  module.exports = {
-    pub:true,
+    pub:false,
     cmd: cmd,
     perms: 3,
     init: init,

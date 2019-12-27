@@ -1,17 +1,29 @@
-const Discord = require('discord.js');
-const gear = require('./core/gearbox.js');
+const colors=require('colors')
+
+const {ShardingManager} = require('discord.js');  
+//const gear = require('./core/gearbox.js');
 const cfg = require('./config.json');
 const rq = require("request");
-const messenger = require('messenger');
+//const messenger = require('messenger');
 
-let server = messenger.createListener(3055);
-
-
+//let server = messenger.createListener(3055);
+ 
 let guilds = 0;
-let users = 0;
-let SHARDS= 5;
+let users = 0; 
+let SHARDS= 'auto';  
+let UNIT = 0
 
-let ShardManager = new Discord.ShardingManager('./pollux.js',{token:cfg.token}, true);
+let ShardManager = new ShardingManager('./pollux_neounit.js',{
+  token:cfg.token,
+  respawn: true
+  //totalShards: SHARDS
+  //,shardList: 'auto'
+  //,shardCount:4
+ // ,mode: 'worker'
+ 
+
+});
+/*
 
 
   server.on('broadcast',(msg,data)=>{
@@ -29,15 +41,60 @@ let ShardManager = new Discord.ShardingManager('./pollux.js',{token:cfg.token}, 
       msg.reply(clean(flatten(res)),null);
     });
   })
+  
+*/
 
+console.log('start')
+ShardManager.spawn(SHARDS, 5200, -1).then(shards => {
+  TFS();
 
-ShardManager.spawn(SHARDS).then(shards => {
-  TFS()
+  shards.forEach(SHD=>{
 
+     SHD.on('death', subprocess=>{
+      //console.log(subprocess)
+      //subprocess.disconnect()
+       console.log((">> DEATH ["+SHD.id+"]").red )
+      // SHD.kill()
+      // SHD.respawn(5000,false)
+      })
+      SHD.on('disconnect', ()=>{
+        console.log((">> DISCON ["+SHD.id+"]").yellow)
+        //SHD.kill()
+        //SHD.respawn(5000,false)
+      })
+      SHD.on('message', message=>{
+       // console.log("MESSAGE-CHILD",message);
+      })
+      SHD.on('ready', ()=>{
+        setTimeout(()=>SHD.respawn(),  3*60*60*1000)
+        console.log((">> READY ["+SHD.id+"]").green)
+      })
+      SHD.on('reconnecting', ()=>{
+        console.log((">> RECON ["+SHD.id+"]").blue)
+      })
+      SHD.on('spawn', subprocess=>{
 
+        console.log((">> SPAWN ["+SHD.id+"]").magenta )
+        //subprocess.kill()
+      })
+    });
+    
+ // require('./core/cronjobs_global.js').run();
 }).catch(e=> {
-  console.log(e)
+  console.error(e);
+ 
 });
+
+ShardManager.on("message",msg=>{
+  eval(msg)
+})
+
+process.on("message",msg=>{
+  eval(msg)
+})
+
+ 
+
 function clean(thiss,deleteValue) {
   for (var i = 0; i < thiss.length; i++) {
 
@@ -89,10 +146,10 @@ function updateStats(guilds) {
 
     rq(rqOptions, function (err, response, body) {
         if (err) {
-            console.log(err)
+            console.log("DBOTS PW ERROR",err)
         }
 
-            console.log(body)
+            console.log("PW OK",body)
     });
 
     let rqCarbon = {
@@ -106,11 +163,16 @@ function updateStats(guilds) {
 
     rq(rqCarbon, function (err, response, body) {
         if (err) {
-            console.log(err)
+            console.log("CARBON ERROR",err)
         }
-console.log(body)
+console.log("Carbon OK",body)
     });
 
 }
 
 
+process.on('unhandledRejection', function(reason, p){
+
+  //process.exit()
+
+})

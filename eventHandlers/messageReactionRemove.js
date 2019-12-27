@@ -1,10 +1,11 @@
 const gear = require('../core/gearbox.js');
 exports.run=  async function run(bot, react,user) {
+  return;
   if (user.bot) return;
   let msg= react.message
   let S = msg.guild
 
-  let ddata = await gear.serverDB.findOne({id:msg.guild.id});
+  let ddata = await gear.serverDB.findOne({id:msg.guild.id},{"modules.LOCALRANKx":0}).lean().exec();
   if(!ddata.event          ||
      !ddata.event.enabled  ||
      !ddata.event.channel  ||
@@ -33,11 +34,11 @@ exports.run=  async function run(bot, react,user) {
   if(role){
      let M = S.member(user)
 
-    M.removeRole(role)
+    M.roles.remove(role)
     let embed=new gear.RichEmbed;
     embed.setColor(role.hexColor)
     embed.setDescription(gear.emoji('nope')+react.emoji+" Removed role "+role+" from **"+user.tag+"**")
-    msg.channel.send({embed}).then(m=>m.delete(5000))
+    msg.channel.send({embed}).then(m=>m.delete({timeout:5000}))
 
   }
     }

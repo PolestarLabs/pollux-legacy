@@ -1,23 +1,13 @@
 {
 
-  "PYB": {
-    "bot": "PyButt",
-    "icon": "**₽**",
-    "name": "PYB",
-    "rbnRate": 0.05
-  },
+  
 
-  "SBT": {
-    "bot": "SmoreBot",
-    "icon": "**$BT**",
-    "name": "Tokens",
-    "rbnRate": 0.05
 
-  },
 
   "ELT": {
     "bot": "Elite Looter",
-    "icon": "<:elitecoin:363622320620830721> ",
+    "icon": "<:elt:439167141774622720> ",
+    "iconbe": "elt",
     "name": "Elite Coins",
     "rbnRate": 0.05
 
@@ -25,35 +15,38 @@
 
   "DTS": {
     "bot": "DiscordTel",
-    "icon": ":telephone:",
+    "icon": ":telephone: ",
     "name": "Credits",
     "rbnRate": 0.05
   },
 
-  "DCN": {
-    "bot": "DerpBot",
-    "icon": "<:derpcoin:363622320561979402> ",
-    "name": "Derpcoin",
+  "KEK": {
+    "bot": "KekBot",
+    "icon": "<:topkek:439174015811321858> ",
+    "name": "TopKeks",
     "rbnRate": 0.05
   },
 
-  "PCN": {
-    "bot": "PokeBot",
-    "icon": ":heavy_dollar_sign: ",
+  "PIC": {
+    "bot": "Pinocchio",
+    "icon": "<:coin:563764850409472020> ",
     "name": "Coins",
-    "rbnRate": 0.11
+    "rbnRate": 0.05
   },
 
-    "OAT": {
+
+  "OAT": {
     "bot": "Dice",
-    "icon": ":heavy_dollar_sign: ",
+    "icon": "<:oats:439838470924402688> ",
+    "iconbe": "d6",
     "name": "Oats",
     "rbnRate": 0.11
   },
 
   "RBN": {
     "bot": "Pollux",
-    "icon": "<:rubine:343314186765336576> ",
+    "icon": "<:rubine:367128893372760064> ",
+    "iconbe": "rubine",
     "name": "Rubines",
     "rbnRate": 0.05
   },
@@ -61,6 +54,7 @@
   "DISCOIN":{
     "bot":"none",
     "icon":"<:Discoin:357656754642747403> ",
+    "iconbe":"discoin",
     "name": "Discoin",
     "rbnRate" : 0.05
   }

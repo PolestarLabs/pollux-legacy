@@ -14,7 +14,6 @@ var init = function (message,userDB,DB) {
     var  args = message.content.split(/ +/).slice(1).join(' ')
     //-------MAGIC----------------
 
-
 let curators = [
  {id:'156481129828843522',
  name:'PurpleCat',
@@ -41,7 +40,21 @@ let curators = [
   {id:'205842118273531905',
  name:'Yuki',
   color:'#d60606'
- }
+ },
+  {id:'114115657871654920',
+ name:'OrangeWan',
+  color:'#ff3303'
+ },
+  {
+    id:'206710860599525376'
+    ,name:'???'
+    ,color:'#2a8cd4'
+  },
+  {
+    id:'315541510315573259'
+    ,name:'Hana'
+    ,color:'#e1f2ff'
+  }
 
 ]
 
@@ -70,9 +83,9 @@ if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="h
     var filepath = paths.LEWD + files[rand]
 
     let embed = new gear.RichEmbed;
-    let attax = require('discord.js').Attachment;
+    let attax = require('discord.js').MessageAttachment ;
     let att = new attax(filepath,'lewdle.png')
-    embed.attachFile(att)
+    embed.attachFiles(att)
     embed.setImage("attachment://lewdle.png");
 
 
@@ -91,13 +104,17 @@ if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="h
 }catch(e){
    message.channel.stopTyping();
   message.channel.send("Couldn't fetch the file.")
-  console.log(e)
+  console.error(e)
 }
 
 
     message.channel.send({embed}).then(m => {
 
 
+    }).catch(e=>{
+      console.log("ERROR LEWD ts")
+    message.channel.send({files:[att]}).catch(e=>"ok")
+      
     })
   })
 
@@ -110,6 +127,6 @@ return;
 
 
 
- module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: 'nsfw'};
+ module.exports = {cool:10000,pub:true,cmd: cmd, perms: 3, init: init, cat: 'nsfw', botperms: ["ATTACH_FILES","EMBED_LINKS","SEND_MESSAGES"]};
 
 

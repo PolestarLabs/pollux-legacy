@@ -16,7 +16,7 @@ exports.run = function run(cmd, m, third) {
         v.mod = mm("dict.module", {lngs: m.lang});
         v.name = mm("modules." + third, {lngs: m.lang});
 
-        let emb = new gear.Discord.RichEmbed;
+        let emb = new gear.RichEmbed;
       try{
         emb.setColor(d[third].color)
       }catch(e){
@@ -27,27 +27,31 @@ exports.run = function run(cmd, m, third) {
         emb.setAuthor(mm("help.commUsage", {
             lngs: m.lang,
             comm: m.prefix + cmd
-        }), m.botUser.user.avatarURL, "http://Pollux.fun/commands");
-        emb.setDescription(mm("help." + cmd, {
+        }), m.botUser.user.displayAvatarURL({format:'png'}), "http://Pollux.fun/commands");
+        emb.setDescription(mm("commands:help." + cmd, {
             lngs: m.lang,
              prefix: m.prefix
         }) + "\n\n")
         emb.addField("**" + mm("dict.usage", {
             lngs: m.lang
-        }) + "**", mm("usage." + cmd, {
+        }) + "**", mm("commands:usage." + cmd, {
             lngs: m.lang,
             prefix: m.prefix,
             squad:"- PurpleCat\n - Shamisu\n - Pollyanna\n - Kurono\n - Yuki\n - Celeste"
         }), false)
 
         if (cmd == "exchange") {
-          let litzka = ""
+          let litzka = "\u200b"
           for (i in coinbase) {
-            if (i != "DISCOIN") litzka += `\`${i}\`  ${coinbase[i].icon} **${coinbase[i].bot}**'s  ${coinbase[i].name}\n`;
+            
+           
+            if (i != "DISCOIN"&&i != "RBN") litzka += "  `"+i+"`  " + coinbase[i].icon+`  **${coinbase[i].bot}**  ${coinbase[i].name}`+"\n" 
+       
+
           };
-          emb.addField("======", `
-          ${litzka}
-          `, false)
+          
+          emb.addField("\u200b", litzka, false)
+          
 
         }
       if (third === "language") {

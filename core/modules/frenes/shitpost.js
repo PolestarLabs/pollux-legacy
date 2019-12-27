@@ -46,6 +46,6 @@ if (MSG.split(" ")[1]==helpkey || MSG.split(" ")[1]=="?"|| MSG.split(" ")[1]=="h
 
 
 
- module.exports = {pub:true,cmd: cmd, perms: 3, init: init, cat: 'memes'};
+ module.exports = {pub:false,cmd: cmd, perms: 3, init: init, cat: 'memes'};
 
 

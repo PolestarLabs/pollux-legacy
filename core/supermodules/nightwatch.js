@@ -33,18 +33,18 @@ module.exports = {
         msg.delete().then(m => m.channel.send(gear.emoji('nope') + " No links here")).catch()
       }
     }
-  },
+  }, 
 
   invitesBuster: function (msg, bot, data) {
 
-    if (msg.member && (msg.member.roles.has(data.modules.BUSTER.bypass.invites) || msg.member.id == msg.guild.owner.id)) return;
+    if (msg.member && (msg.member.roles.has(data.modules.BUSTER.bypass.invites) || msg.member.id == msg.guild.owner)) return;
     let whitelist = data.modules.BUSTER.params.invites || []
     let amt = (data.modules.BUSTER.params.invites || 0).length;
     let cleanedMessage = msg.content.replace(/\s+/g, '');
 
     if (cleanedMessage.includes('http') && cleanedMessage.includes('://')) {
       let link = 'https://' + (cleanedMessage.match(/(discord.gg\/)([A-z|0-9]*)/g)||[])[0];
-      //console.log(link)
+      
       rq(link, (err, data) => {
         try{
 
@@ -69,12 +69,12 @@ module.exports = {
 
   wordsBuster: function (msg,bot,data) {
 
-    if (msg.member&&msg.member.roles.has(data.modules.BUSTER.bypass.words)||msg.member.id==msg.guild.owner.id)return;
+    if (msg.member&&msg.member.roles.has(data.modules.BUSTER.bypass.words)||msg.author.id==msg.guild.ownerID)return;
 
     let words = data.modules.BUSTER.params.words || []
     let amt   = (data.modules.BUSTER.params.words||0).length;
 
-    //console.log(words)
+    
     if (amt==0)return;
 
     for (i=0;i<amt;i++){
@@ -94,7 +94,7 @@ module.exports = {
   mentionBuster: function (msg,bot,data) {
 
       if (msg.member && msg.member.roles.has(data.modules.BUSTER.bypass.mentionSpam))return;
-    //console.log("---------MENTION BUSTER---------------------")
+    
       if(!msg.author.onWatch) msg.author.onWatch = {offenses:0};
       let BUSTER = msg.author.onWatch
       if(BUSTER.offenses<0){

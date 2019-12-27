@@ -1,6 +1,6 @@
 const gear = require("../../gearbox.js");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'marry';
 
@@ -13,12 +13,12 @@ const init = async function (message, userDB, DB) {
   const TargetData = message.target;
   const MSG = message.content;
   const LANG = message.lang;
-  const userData = Author.dDATA
+  const userData = await gear.userDB.findOne({id:Author.id}).lean().exec();
   const args = MSG.split(/ +/).slice(1).join(' ');
 
   const person = args.split(' ')[0]
   const ring   = args.split(' ')[1]
-  const Target = message.mentions.members.first() || message.guild.members.find(mb=>mb.displayName.includes(person)||mb.username.includes(person)||mb.id == person);
+  const Target =message.guild.member( await gear.getTarget(message));
 
   //HELP TRIGGER
     let P={lngs:message.lang,}
@@ -26,7 +26,7 @@ const init = async function (message, userDB, DB) {
   //------------
 
   const ITEMBASE = await gear.items.getAll();
-  const INVENTORY = Author.dDATA.modules.inventory.filter(itm=>(ITEMBASE.find(i=>i.id==itm)||{id:'none'}).id.includes('complete_ring'));
+  const INVENTORY = userData.modules.inventory.filter(itm=>(ITEMBASE.find(i=>i.id==itm)||{id:'none'}).id.includes('complete_ring'));
 
 
 
@@ -141,7 +141,7 @@ let NA = {r:":nope:339398829088571402",id:'339398829088571402'}
 
 
   }catch(e){
-    console.log(e)
+    console.error(e)
   }
 }
 
@@ -153,7 +153,7 @@ async function contrairOsLacosDoMatrimonio(loverA,loverB,ring_pic){
 
 
   let LADATA = {
-    pix: loverA.avatarURL,
+    pix: loverA.displayAvatarURL({format:'png'}),
     id:loverA.id,
     tag:loverA.tag,
     shipname:"",
@@ -164,7 +164,7 @@ async function contrairOsLacosDoMatrimonio(loverA,loverB,ring_pic){
   }
 
   let LBDATA = {
-    pix: loverB.user.avatarURL,
+    pix: loverB.user.displayAvatarURL({format:'png'}),
     id:loverB.id,
     tag:loverB.user.tag,
     shipname:"",
@@ -179,7 +179,7 @@ async function contrairOsLacosDoMatrimonio(loverA,loverB,ring_pic){
   await gear.userDB.set(loverB.id,{$push:{'married':LADATA}});
 
   }catch(e){
-    console.log(e)
+    console.error(e)
   }
 
 }

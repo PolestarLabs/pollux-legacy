@@ -1,6 +1,6 @@
 const gear = require("../../gearbox.js");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'personalTxt';
 
@@ -9,7 +9,7 @@ const init = async function (message, userDB, DB) {
   const Author = message.author;
   const MSG = message.content;
   const LANG = message.lang;
-  const userData = Author.dDATA
+  const userData =  await gear.userDB.findOne({id:message.author.id}).lean().exec();
   const persotxt = MSG.split(/ +/).slice(1).join(' ');
 
   //HELP TRIGGER

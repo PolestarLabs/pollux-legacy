@@ -1,7 +1,28 @@
 {
+  
+    "mine": "minesweep",
+    "mswp": "minesweep",
+  "colleggction":"colleggtion",
+  "collegtion":"colleggtion",
+  "eggcollection":"colleggtion",
+  
+    "sanctify": "santificar",
     "aerowaifu": "airwaifu"
     ,"pong":"ping"
     ,"ピング":"ping"
+    ,"monologoakira":"monologomaçã"
+    ,"monologo":"monologomaçã"
+    ,"ev$":"evcontrib"
+    ,"evcon":"evcontrib"
+    ,"evinfo":"eventinfo"
+    ,"evboard":"eventinfo"
+ 
+  
+  
+    ,"gtf":"guessflag"
+    ,"gflag":"guessflag"
+    ,"guesstheflag":"guessflag"
+  
 
     ,"credits":"cash"
     ,"rubines":"cash"
@@ -45,7 +66,7 @@
     ,"role-add":"roleadd"
     ,"add-cargo":"roleadd"
     ,"addcargo":"roleadd"
-    ,"addrole":"roleadd"
+    ,"roles.add":"roleadd"
     ,"ar":"roleadd"
 
     ,"r-":"rolerem"
@@ -56,7 +77,7 @@
     ,"remover-cargo":"rolerem"
     ,"addcargo":"rolerem"
     ,"remcargo":"rolerem"
-    ,"addrole":"rolerem"
+    ,"roles.add":"rolerem"
     ,"remrole":"rolerem"
     ,"rr":"rolerem"
 
@@ -300,4 +321,7 @@
 
   ,"trt":"tarot"
   ,"tarô":"tarot"
+  
+  ,"ppclk":"profilelink"
+  ,"pfl":"profilelink"
 }

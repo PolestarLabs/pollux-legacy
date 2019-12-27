@@ -6,7 +6,7 @@ module.exports = {
 
     var Server = channel.guild
 
-    Server.dDATA = await gear.serverDB.findOne({id: Server.id});
+    Server.dDATA = await gear.serverDB.findOne({id: Server.id},{'modules.LOCALRANKx':0});
     gear.channelDB.remove({id:channel.id});
 
     if (Server.dDATA) {
@@ -21,7 +21,7 @@ module.exports = {
           channel: channel,
           logtype: "updtChan"
         })
-
+          Server = null;
       }
     }
   }

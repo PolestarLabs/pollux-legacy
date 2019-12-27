@@ -1,15 +1,16 @@
 const gear = require("../../gearbox.js");
 const paths = require("../../paths.json");
-const locale = require('../../../utils/multilang_b');
-const mm = locale.getT();
+//const locale = require('../../../utils/multilang_b');
+//const mm = locale.getT();
 
 const cmd = 'roleadd';
 
-const init = function (message) {
+const init = async function (message) {
         const Server = message.guild;
         const Channel = message.channel;
         const Member = message.member;
-        const Target = message.mentions.members.first() || Member;
+  const tgg = await gear.getTarget(message);
+        const Target = message.mentions.members.first() || Server.member(tgg);
         const MSG = message.content;
         const bot = message.botUser;
         const args = MSG.split(/ +/).slice(1)
@@ -19,7 +20,7 @@ const init = function (message) {
 if(gear.autoHelper([mm("helpkey",P),'noargs',''],{cmd,message,opt:this.cat}))return;
   if(args.length<2||args[1].includes("<"))return gear.autoHelper('force',{cmd,message,opt:this.cat});
 
- const modPass = gear.hasPerms(Member);
+ const modPass = gear.hasPerms(Member); 
     if (!modPass) {
         return message.reply(mm('CMD.moderationNeeded', {
             lngs: LANG
@@ -57,8 +58,8 @@ if(gear.autoHelper([mm("helpkey",P),'noargs',''],{cmd,message,opt:this.cat}))ret
                 });
                // message.reply(role)
                 if (a == undefined) return message.reply(superRoleNope);
-                memb.addRole(a).then(a => message.channel.send(roleadd_confirm)).then(e => {
-                  e.delete(120000);
+                memb.roles.add(a).then(a => message.channel.send(roleadd_confirm)).then(e => {
+                  e.delete({timeout:120000});
                   message.delete().catch();
                 }).catch(e => message.channel.send(noPermsMe))
             }
@@ -70,5 +71,5 @@ if(gear.autoHelper([mm("helpkey",P),'noargs',''],{cmd,message,opt:this.cat}))ret
           cmd: cmd,
           perms: 3,
           init: init,
-          cat: 'mod'
+          cat: 'mod', botperms: ["MANAGE_ROLES"]
         };
