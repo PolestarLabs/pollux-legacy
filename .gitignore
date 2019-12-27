@@ -10,7 +10,26 @@
 *.exe
 *.html
 *.conf
+*.7z
+XXX/
+WINTER/
+node_modules
+resources/
+stardust/
+things/
+New Folder*
 *.mp3
+*.json
+IWD*
+7set
+ASSETS
+bg
+CARDS
+ag
+cache
+artwork
+HALLOW
+*_old
 /core/modules/sound
 *profile*
 *overtimes*
@@ -83,7 +102,7 @@ pollux_c4.js
 Pollux_cluster.json
 pollux_neounit-p.js
 Pollux_fork.json
-pollux_neounit.js
+
 pollux_unit.js
 Pollux.json
 Pollux2.json
@@ -95,3 +114,8 @@ XXX/*
 Halloween/*
 dash/*
 scss/*
+core/schemas.js
+*config*.*
+
+/core/modules/*
+
