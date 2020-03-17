@@ -1,4 +1,3 @@
-# Supernova
-Rewrite of @polluxbot 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/73001f327c5e49d89aafbc27a16ba4c1)](https://www.codacy.com/app/Flicksie/Supernova?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PolluxBot/Supernova&amp;utm_campaign=Badge_Grade)
-[![Maintainability](https://api.codeclimate.com/v1/badges/5244a68231020b2af812/maintainability)](https://codeclimate.com/github/PolluxBot/Supernova/maintainability)
+# **THIS CODEBASE IS NO LONGER MAINTAINED SINCE MID 2018**
+Pollux now runs on Eris.js and this entire codebase is *extremely* deprecated. 
+Posted here just as a dark reminder of how bad its code used to be;
